@@ -66,7 +66,7 @@ const theme = createTheme({
           textTransform: "none", // No uppercase transformation
         },
         containedPrimary: {
-          gap:"8px",
+          gap: "8px",
           borderRadius: 4,
           padding: "8px 20px 8px 20px",
           backgroundColor: "#FC8229", // Primary button background color
@@ -76,10 +76,10 @@ const theme = createTheme({
           },
           fontFamily: mont.style.fontFamily,
           fontWeight: "600",
-          boxShadow: "none"
+          boxShadow: "none",
         },
         outlinedPrimary: {
-          gap:"8px",
+          gap: "8px",
           borderRadius: 4,
           padding: "8px 20px 8px 20px",
           borderColor: "#FF7043", // Primary button border color
@@ -90,7 +90,7 @@ const theme = createTheme({
           },
           fontFamily: mont.style.fontFamily,
           fontWeight: "600",
-          boxShadow: "none"
+          boxShadow: "none",
         },
       },
     },
@@ -107,6 +107,32 @@ const theme = createTheme({
         root: {
           borderRadius: 8, // Rounded corners for cards
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Subtle shadow for cards
+        },
+      },
+    },
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          fontFamily: mont.style.fontFamily, // Apply Montserrat font to input forms
+          fontSize: "1rem", // Example font size for input forms
+          color: "#000000", // Example text color for input forms
+        },
+        input: {
+          // Placeholder styles
+          color: "#555555", // Placeholder text color
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          fontFamily: mont.style.fontFamily, // Apply Montserrat font to Select components
+          fontSize: "1rem", // Example font size for Select components
+          color: "#000000", // Example text color for Select components
+          borderColor: "#CCCCCC", // Border color for Select components
+          "&:focus": {
+            borderColor: "#FC8229", // Border color on focus
+          },
         },
       },
     },
