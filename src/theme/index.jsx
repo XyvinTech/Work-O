@@ -48,13 +48,23 @@ const theme = createTheme({
       fontWeight: "500",
       fontFamily: mont.style.fontFamily,
     },
+    card:{
+      fontSize: "25px",
+      fontWeight: "600",
+      fontFamily: mont.style.fontFamily,
+    },
     h5: {
       fontSize: "18px",
       fontWeight: "normal",
       fontFamily: mont.style.fontFamily,
     },
-    h5: {
+    h6: {
       fontSize: "16px",
+      fontWeight: "normal",
+      fontFamily: mont.style.fontFamily,
+    },
+    h7: {
+      fontSize: "14px",
       fontWeight: "normal",
       fontFamily: mont.style.fontFamily,
     },
@@ -105,6 +115,7 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
+          fontFamily: mont.style.fontFamily,
           borderRadius: 8, // Rounded corners for cards
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Subtle shadow for cards
         },
