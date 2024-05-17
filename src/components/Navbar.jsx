@@ -38,7 +38,7 @@ const Navbar = () => {
   ];
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky">
       <Toolbar>
         <Box display="flex" flexDirection="column" width="100%" p={2}>
           <Box display="flex" justifyContent="space-between" alignItems="center">

@@ -97,8 +97,8 @@ const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: "#FFFFFF", // White background for app bar
-          color: "#000000", // Black color for app bar text
+          backgroundColor: "transparent", // White background for app bar
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)", // Subtle shadow for cards
         },
       },
     },

@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import StyledInput from "@/ui/StyledInput";
 import StyledPhoneInput from "@/ui/StyledPhoneInput";
 import StyledRadioButton from "@/ui/StyledRadioButton";
@@ -31,7 +30,6 @@ export default function Page() {
       <StyledRadioButton/><br /><br /><br>
       </br>
       <StyledTabs/>
-      <Navbar />
     </>
   );
 }
