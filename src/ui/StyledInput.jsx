@@ -20,11 +20,11 @@ const StyledInput = ({ placeholder }) => {
             borderColor: "text.secondary", // Custom border color on hover
           },
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "text.secondary", // Custom border color when focused
+            borderColor: "none !important", // Custom border color when focused
           },
           "& .MuiInputBase-input": {
             color: "background.paper",
-            fontWeight: 500, // Custom font weight
+            // fontWeight: 500, // Custom font weight
             padding: "14px", // Custom padding
           },
         }}

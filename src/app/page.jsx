@@ -1,8 +1,12 @@
+import Navbar from "@/components/Navbar";
+import ServiceCard from "@/components/ServiceCard";
+import StyledAccordion from "@/components/StyledAccordion";
+import ViewMoreCard from "@/components/ViewMoreCard";
 import StyledInput from "@/ui/StyledInput";
 import StyledRadioButton from "@/ui/StyledRadioButton";
 import StyledSelect from "@/ui/StyledSelect";
 import StyledTabs from "@/ui/StyledTabs";
-import { Button, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 
 export default function Page() {
   const options = [
@@ -20,12 +24,23 @@ export default function Page() {
       </Button>
       <Button variant="outlined" color="primary">
         View services
-      </Button><br /><br />
-      <StyledInput placeholder="First Name" /><br /><br />
+      </Button>
+      <br />
+      <br />
+      <StyledInput placeholder="First Name" />
+      <br />
+      <br />
       <StyledSelect options={options} placeholder="Select an option" />
-      <StyledRadioButton/><br /><br /><br>
-      </br>
-      <StyledTabs/>
+      <StyledRadioButton />
+      <br />
+      <br />
+      <br></br>
+      <StyledTabs />
+      <br></br>
+      <Navbar />
+      <StyledAccordion />
+      <br></br>
+      <ServiceCard /><br /><ViewMoreCard/>
     </>
   );
 }
