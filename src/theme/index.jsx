@@ -2,12 +2,12 @@
 import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import { createTheme } from "@mui/material/styles";
 
-const cormo = Cormorant_Garamond({
+export const cormo = Cormorant_Garamond({
   weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
 });
 
-const mont = Montserrat({
+export const mont = Montserrat({
   weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
 });
@@ -133,6 +133,16 @@ const theme = createTheme({
           "&:focus": {
             borderColor: "#FC8229", // Border color on focus
           },
+        },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          fontFamily: mont.style.fontFamily, // Apply Montserrat font to Tabs component
+        },
+        indicator: {
+          // Adjust indicator styles if necessary
         },
       },
     },

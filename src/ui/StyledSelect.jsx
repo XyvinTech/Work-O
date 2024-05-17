@@ -2,6 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 import Select from "react-select";
+import { mont } from "@/theme";
 
 const SelectContainer = styled.div`
   position: relative;
@@ -9,6 +10,8 @@ const SelectContainer = styled.div`
 `;
 
 const StyledSelectField = ({ placeholder,options, onChange,value }) => {
+
+
   const customStyles = {
     control: (provided, state) => ({
       ...provided,
@@ -20,7 +23,7 @@ const StyledSelectField = ({ placeholder,options, onChange,value }) => {
       color: "#FFFFFF",
       boxShadow: state.isFocused ? "0 0 0 2px #fff" : "none",
       cursor: "pointer",
-      fontFamily: "mont.style.fontFamily",
+      fontFamily: mont.style.fontFamily,
     }),
     indicatorSeparator: (provided) => ({
       ...provided,
@@ -32,6 +35,7 @@ const StyledSelectField = ({ placeholder,options, onChange,value }) => {
       color: state.isFocused ? "#fff" : "#B5B8C5",
       cursor: "pointer",
       backgroundColor: state.isSelected ? "#242424" : "initial",
+      fontFamily: mont.style.fontFamily,
       // fontSize:'12px'
       // Add a :active pseudo-class for selected option
       ":active": {
@@ -46,17 +50,8 @@ const StyledSelectField = ({ placeholder,options, onChange,value }) => {
     singleValue: (provided) => ({
       ...provided,
       color: "##F7F8FC",
-      fontFamily: "mont.style.fontFamily", // Set the text color for the selected value
     })
   };
-
-  const customTheme = (theme) => ({
-    ...theme,
-    colors: {
-      ...theme.colors,
-      primary: "var(--inner, #39383D)",
-    },
-  });
 
 
   return (
@@ -66,7 +61,6 @@ const StyledSelectField = ({ placeholder,options, onChange,value }) => {
         options={options}
         onChange={onChange}
         styles={customStyles}
-        theme={customTheme}
       />
     </SelectContainer>
   );

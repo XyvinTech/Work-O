@@ -25,7 +25,6 @@ const StyledInput = ({ placeholder }) => {
           "& .MuiInputBase-input": {
             color: "background.paper",
             fontWeight: 500, // Custom font weight
-            fontFamily: "Montserrat", // Custom font family
             padding: "14px", // Custom padding
           },
         }}
