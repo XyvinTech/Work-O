@@ -1,7 +1,10 @@
+import Navbar from "@/components/Navbar";
 import StyledInput from "@/ui/StyledInput";
+import StyledPhoneInput from "@/ui/StyledPhoneInput";
 import StyledRadioButton from "@/ui/StyledRadioButton";
 import StyledSelect from "@/ui/StyledSelect";
 import StyledTabs from "@/ui/StyledTabs";
+import StyledTextArea from "@/ui/StyledTextArea";
 import { Button, Typography } from "@mui/material";
 
 export default function Page() {
@@ -22,10 +25,13 @@ export default function Page() {
         View services
       </Button><br /><br />
       <StyledInput placeholder="First Name" /><br /><br />
+      <StyledPhoneInput />
       <StyledSelect options={options} placeholder="Select an option" />
+      <StyledTextArea placeholder="Add a description/enquiry (less than 500 words)"/>
       <StyledRadioButton/><br /><br /><br>
       </br>
       <StyledTabs/>
+      <Navbar />
     </>
   );
 }
