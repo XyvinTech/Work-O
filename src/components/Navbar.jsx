@@ -4,7 +4,6 @@ import {
   AppBar,
   Toolbar,
   IconButton,
-  Typography,
   Button,
   Collapse,
   useTheme,
@@ -16,6 +15,8 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import PhoneIcon from "@mui/icons-material/Phone";
 import { mont } from "@/theme";
+import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,28 +28,53 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    "Home",
-    "About Us",
-    "Skill Development",
-    "Services",
-    "Locations",
-    "Blog",
-    "Resources",
-    "Contact Us",
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Skill Development", href: "/skill" },
+    { label: "Services", href: "/services" },
+    { label: "Locations", href: "/locations" },
+    { label: "Blog", href: "/blog" },
+    { label: "Resources", href: "/resources" },
+    { label: "Contact Us", href: "/contact" },
   ];
 
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const isTransparent = pathname === "/" || pathname === "/blogs";
+
   return (
-    <AppBar position="sticky">
+    <AppBar
+      position="absolute"
+      style={{
+        backgroundColor:
+          mobileMenuOpen && isTransparent
+            ? "#fff"
+            : mobileMenuOpen
+            ? "#000000"
+            : isTransparent
+            ? "transparent"
+            : "#00000033",
+        color:
+          mobileMenuOpen && isTransparent
+            ? "#000"
+            : mobileMenuOpen
+            ? "#fff"
+            : isTransparent
+            ? "#000"
+            : "#fff",
+      }}
+    >
       <Toolbar>
         <Box display="flex" flexDirection="column" width="100%" p={2}>
           <Box display="flex" justifyContent="space-between" alignItems="center">
-            <Typography variant="h6">Worko</Typography>
+            <img src="/main_logo.png" alt="Logo" width={"168px"} height={"auto"} />
             {!isMobile && (
               <Stack direction={"row"} spacing={4}>
                 <Button startIcon={<PhoneIcon />} color="inherit">
                   Customer Care
                 </Button>
-                <Button variant="contained" color="primary">
+                <Button variant="contained" color="primary" onClick={() => router.push('/get-the-app')}>
                   Get the App
                 </Button>
               </Stack>
@@ -63,50 +89,54 @@ const Navbar = () => {
           {isMobile ? (
             <Collapse in={mobileMenuOpen} timeout="auto" unmountOnExit>
               <Box mt={2} width="100%">
-                {menuItems.map((item) => (
-                  <Button
-                    key={item}
-                    color="inherit"
-                    fullWidth
-                    sx={{
-                      fontFamily: mont.style.fontFamily,
-                      textTransform: "uppercase",
-                      fontSize: "14px",
-                      fontWeight: 700,
-                      "&:hover": {
-                        color: "#FC8229", 
-                      },
-                    }}
-                  >
-                    {item}
-                  </Button>
+                {menuItems.map(({ label, href }) => (
+                  <Link href={href} key={label}>
+                    <Button
+                      color="inherit"
+                      fullWidth
+                      sx={{
+                        fontFamily: mont.style.fontFamily,
+                        textTransform: "uppercase",
+                        color: isMobile && isTransparent ? "#000" : isTransparent ? "#000" : "#fff",
+                        fontSize: "14px",
+                        fontWeight: 700,
+                        "&:hover": {
+                          color: "#FC8229",
+                        },
+                      }}
+                    >
+                      {label}
+                    </Button>
+                  </Link>
                 ))}
                 <Button startIcon={<PhoneIcon />} color="inherit" fullWidth>
                   Customer Care
                 </Button>
-                <Button variant="contained" color="primary" fullWidth>
+                <Button variant="contained" color="primary" fullWidth onClick={() => router.push('/get-the-app')}>
                   Get the App
                 </Button>
               </Box>
             </Collapse>
           ) : (
             <Stack alignItems="center" direction={"row"} justifyContent={"center"} spacing={4}>
-              {menuItems.map((item) => (
-                <Button
-                  key={item}
-                  color="inherit"
-                  sx={{
-                    fontFamily: mont.style.fontFamily,
-                    textTransform: "uppercase",
-                    fontSize: "14px",
-                    fontWeight: 700,
-                    "&:hover": {
-                      color: "#FC8229", 
-                    },
-                  }}
-                >
-                  {item}
-                </Button>
+              {menuItems.map(({ label, href }) => (
+                <Link href={href} key={label}>
+                  <Button
+                    color="inherit"
+                    sx={{
+                      fontFamily: mont.style.fontFamily,
+                      textTransform: "uppercase",
+                      color: isMobile && isTransparent ? "#000" : isTransparent ? "#000" : "#fff",
+                      fontSize: "14px",
+                      fontWeight: 700,
+                      "&:hover": {
+                        color: "#FC8229",
+                      },
+                    }}
+                  >
+                    {label}
+                  </Button>
+                </Link>
               ))}
             </Stack>
           )}
