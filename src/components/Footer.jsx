@@ -1,8 +1,9 @@
 "use client";
-import { Box, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Button, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 import bgImage from "/public/assets/home/img/footer.png";
 import styled from "styled-components";
 import { mont } from "@/theme";
+import StyledInput from "@/ui/StyledInput";
 
 const FooterContainer = styled(Box)(() => ({
   backgroundImage: `url(${bgImage.src})`,
@@ -30,6 +31,18 @@ const FooterContainer = styled(Box)(() => ({
 function Footer() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const styles = {
+    typography: {
+      fontSize: "20px",
+      fontWeight: 700,
+      fontFamily: mont.style.fontFamily,
+      backgroundImage: "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.31) 100%)",
+      WebkitBackgroundClip: "text",
+      backgroundClip: "text",
+      color: "transparent",
+    },
+  };
 
   return (
     <FooterContainer>
@@ -100,11 +113,42 @@ function Footer() {
           </Stack>
         </Stack>
       </Stack>
-      {/* <Stack>
-            <Box>Newsletter</Box>
-            <Box>Need help</Box>
+      <Stack
+        direction={isMobile ? "column" : "row"}
+        px={isMobile ? 3 : 6}
+        py={1}
+        spacing={isMobile ? 5 : 10}
+        alignItems={"center"}
+        width={"100%"}
+      >
+        <Stack spacing={2} width={isMobile ? "100%" : "55%"}>
+          <Typography variant="h5">Join our newsletter</Typography>
+          <Stack direction={"row"} spacing={2}>
+            <StyledInput placeholder={"Email ID"} backgroundColor={"background.paper"} />
+            <Button variant="contained">Submit</Button>
+          </Stack>
         </Stack>
-        <Stack>
+        <Stack width={isMobile ? "100%" : "55%"} pt={3} spacing={2}>
+          <Typography style={styles.typography}>Need some Help?</Typography>
+          <Typography
+            fontFamily={mont.style.fontFamily}
+            fontSize={"30px"}
+            fontWeight={"700"}
+            color={"primary"}
+          >
+            Reach out to us
+          </Typography>
+          <Stack
+            direction={isMobile ? "column" : "row"}
+            spacing={3}
+            width={isMobile ? "50%" : "100%"}
+          >
+            <Button variant="contained">Submit</Button>
+            <Button variant="outlined">Submit</Button>
+          </Stack>
+        </Stack>
+      </Stack>
+      {/* <Stack>
             Locations
         </Stack>
         <Stack>

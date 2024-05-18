@@ -171,6 +171,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           fontFamily: mont.style.fontFamily, // Apply Montserrat font to input forms
+          fontWeight: 500,
           fontSize: "1rem", // Example font size for input forms
           color: "#000000", // Example text color for input forms
         },
