@@ -41,6 +41,9 @@ const theme = createTheme({
     },
     h2: {
       fontSize: "48px",
+      '@media (max-width:600px)': {
+        fontSize: '28px',
+      },
       fontWeight: "bold",
     },
     h3: {

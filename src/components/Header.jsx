@@ -47,7 +47,7 @@ function Header({ bgImg, title, subtitle, isHome, isButtons }) {
         variant="h1"
         color={isHome ? "#000" : "#fff"}
         textAlign={"center"}
-        px={!isMobile && 20}
+        px={isMobile ? 10 : 20}
       >
         {title}
       </Typography>
