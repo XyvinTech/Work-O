@@ -33,16 +33,16 @@ const theme = createTheme({
     fontFamily: cormo.style.fontFamily,
     h1: {
       fontSize: "54px",
-      '@media (max-width:600px)': {
+      "@media (max-width:600px)": {
         textAlign: "center",
-        fontSize: '35px',
+        fontSize: "35px",
       },
       fontWeight: "bold",
     },
     h2: {
       fontSize: "48px",
-      '@media (max-width:600px)': {
-        fontSize: '28px',
+      "@media (max-width:600px)": {
+        fontSize: "28px",
       },
       fontWeight: "bold",
     },
@@ -55,7 +55,7 @@ const theme = createTheme({
       fontWeight: "500",
       fontFamily: mont.style.fontFamily,
     },
-    card:{
+    card: {
       fontSize: "25px",
       fontWeight: "600",
       fontFamily: mont.style.fontFamily,
@@ -75,6 +75,23 @@ const theme = createTheme({
       fontWeight: "normal",
       fontFamily: mont.style.fontFamily,
     },
+    footer_title: {
+      fontSize: "18px",
+      "@media (max-width:600px)": {
+        fontSize: "14px",
+      },
+      fontWeight: "700",
+      fontFamily: mont.style.fontFamily,
+    },
+    footer_subtitle: {
+      color: "#BDBDBD",
+      fontSize: "16px",
+      "@media (max-width:600px)": {
+        fontSize: "12px",
+      },
+      fontWeight: "400",
+      fontFamily: mont.style.fontFamily,
+    },
   },
   components: {
     MuiButton: {
@@ -86,8 +103,8 @@ const theme = createTheme({
           gap: "8px",
           borderRadius: 4,
           padding: "8px 40px",
-          '@media (max-width:600px)': {
-            padding: "8px 20px"
+          "@media (max-width:600px)": {
+            padding: "8px 20px",
           },
           backgroundColor: "#FC8229", // Primary button background color
           color: "#FFFFFF", // Primary button text color
@@ -102,8 +119,8 @@ const theme = createTheme({
           gap: "8px",
           borderRadius: 4,
           padding: "8px 40px",
-          '@media (max-width:600px)': {
-            padding: "8px 20px"
+          "@media (max-width:600px)": {
+            padding: "8px 20px",
           },
           borderColor: "#FF7043", // Primary button border color
           color: "#FF7043", // Primary button text color
@@ -119,8 +136,8 @@ const theme = createTheme({
           gap: "8px",
           borderRadius: 4,
           padding: "8px 40px",
-          '@media (max-width:600px)': {
-            padding: "8px 20px"
+          "@media (max-width:600px)": {
+            padding: "8px 20px",
           },
           borderColor: "#FFF", // Primary button border color
           color: "#FFF", // Primary button text color
