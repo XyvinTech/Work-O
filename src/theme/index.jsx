@@ -75,6 +75,11 @@ const theme = createTheme({
       fontWeight: "normal",
       fontFamily: mont.style.fontFamily,
     },
+    h8: {
+      fontSize: "10px",
+      fontWeight: "normal",
+      fontFamily: mont.style.fontFamily,
+    },
     footer_title: {
       fontSize: "18px",
       "@media (max-width:600px)": {
