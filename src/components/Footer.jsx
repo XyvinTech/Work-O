@@ -148,12 +148,85 @@ function Footer() {
           </Stack>
         </Stack>
       </Stack>
-      {/* <Stack>
-            Locations
+      <Stack>
+        <Typography variant="footer_title" px={isMobile ? 4 : 6} py={2}>
+          Worko Locations
+        </Typography>
+      </Stack>
+      <Stack
+        direction={isMobile ? "column" : "row"}
+        p={isMobile ? 2 : 4}
+        px={isMobile ? 4 : 6}
+        justifyContent={"space-between"}
+      >
+        <Stack spacing={2}>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Kerala
+          </Typography>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Tamil Nadu
+          </Typography>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Andhra Pradesh
+          </Typography>
         </Stack>
-        <Stack>
-            Copyright
-        </Stack> */}
+        <Stack spacing={2}>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Kerala
+          </Typography>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Tamil Nadu
+          </Typography>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Andhra Pradesh
+          </Typography>
+        </Stack>
+        <Stack spacing={2}>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Kerala
+          </Typography>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Tamil Nadu
+          </Typography>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Andhra Pradesh
+          </Typography>
+        </Stack>
+        <Stack spacing={2}>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Kerala
+          </Typography>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Tamil Nadu
+          </Typography>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Andhra Pradesh
+          </Typography>
+        </Stack>
+        <Stack spacing={2}>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Kerala
+          </Typography>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Tamil Nadu
+          </Typography>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Andhra Pradesh
+          </Typography>
+        </Stack>
+      </Stack>
+      <Stack
+        direction={isMobile ? "column" : "row"}
+        justifyContent={"space-between"}
+        bgcolor={"#333333"}
+        p={4}
+        spacing={2}
+      >
+        <Typography variant="copyrights">
+          &copy; 2005-2024 Worko Private limited. All Rights Reserved
+        </Typography>
+        <Typography variant="copyrights">Handcrafted with ❤️ by Acute Angle</Typography>
+      </Stack>
     </FooterContainer>
   );
 }

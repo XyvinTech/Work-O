@@ -92,6 +92,14 @@ const theme = createTheme({
       fontWeight: "400",
       fontFamily: mont.style.fontFamily,
     },
+    copyrights: {
+      fontSize: "12px",
+      "@media (max-width:600px)": {
+        fontSize: "10px",
+      },
+      fontWeight: "600",
+      fontFamily: mont.style.fontFamily,
+    },
   },
   components: {
     MuiButton: {
