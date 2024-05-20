@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -20,6 +20,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -42,6 +43,11 @@ const Navbar = () => {
   const router = useRouter();
 
   const isTransparent = pathname === "/" || pathname === "/blogs";
+
+  useEffect(() => {
+    const activeMenuItem = menuItems.find((item) => item.href === pathname);
+    setActiveTab(activeMenuItem?.label || "");
+  }, [pathname]);
 
   return (
     <AppBar
@@ -74,7 +80,11 @@ const Navbar = () => {
                 <Button startIcon={<PhoneIcon />} color="inherit">
                   Customer Care
                 </Button>
-                <Button variant="contained" color="primary" onClick={() => router.push('/get-the-app')}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={() => router.push("/get-the-app")}
+                >
                   Get the App
                 </Button>
               </Stack>
@@ -97,7 +107,16 @@ const Navbar = () => {
                       sx={{
                         fontFamily: mont.style.fontFamily,
                         textTransform: "uppercase",
-                        color: isMobile && isTransparent ? "#000" : isTransparent ? "#000" : "#fff",
+                        color:
+                          isMobile && isTransparent
+                            ? activeTab === label
+                              ? theme.palette.primary.main
+                              : "#000"
+                            : activeTab === label
+                            ? theme.palette.primary.main
+                            : isTransparent
+                            ? "#000"
+                            : "#fff",
                         fontSize: "14px",
                         fontWeight: 700,
                         "&:hover": {
@@ -112,7 +131,12 @@ const Navbar = () => {
                 <Button startIcon={<PhoneIcon />} color="inherit" fullWidth>
                   Customer Care
                 </Button>
-                <Button variant="contained" color="primary" fullWidth onClick={() => router.push('/get-the-app')}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                  onClick={() => router.push("/get-the-app")}
+                >
                   Get the App
                 </Button>
               </Box>
@@ -126,7 +150,16 @@ const Navbar = () => {
                     sx={{
                       fontFamily: mont.style.fontFamily,
                       textTransform: "uppercase",
-                      color: isMobile && isTransparent ? "#000" : isTransparent ? "#000" : "#fff",
+                      color:
+                        isMobile && isTransparent
+                          ? activeTab === label
+                            ? theme.palette.primary.main
+                            : "#000"
+                          : activeTab === label
+                          ? theme.palette.primary.main
+                          : isTransparent
+                          ? "#000"
+                          : "#fff",
                       fontSize: "14px",
                       fontWeight: 700,
                       "&:hover": {
