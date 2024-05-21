@@ -5,6 +5,13 @@ import CarouselOne from "@/components/CarouselOne";
 import BookNowCarousel from "@/components/BookNowCarousel";
 import ReviewCarousel from "@/components/ReviewCarousel";
 import ViewMore from "@/components/ViewMore";
+import { Box, Typography } from "@mui/material";
+import AvatarCarousel from "@/components/AvatarCarousel";
+import AcService from "@/components/AcService";
+import HomeApplianceService from "@/components/HomeApplianceService";
+import BeautyService from "@/components/BeautyService";
+import TechnicalService from "@/components/TechnicalService";
+import StyledForm from "@/components/StyledForm";
 function page() {
   const images = [
     "/assets/home/carousel-1/image1.png",
@@ -31,13 +38,46 @@ function page() {
         isHome
       />
       <CarouselOne images={images} />
-
-      <StyledTabs />
-      <div style={{ marginBottom: "20px" }}>
+      <Box>
+        <Typography variant="h3" textAlign="center">
+          Our Services
+        </Typography>{" "}
+        <StyledTabs />
+      </Box>
+      <Box bgcolor="#F2F2F2" height="300px" marginTop="60px">
         <BookNowCarousel />
-        <ReviewCarousel/>
-        <ViewMore/>
-      </div>
+      </Box>
+      <Box marginTop="50px">
+        <Typography variant="h3" textAlign="center">
+          Upgrading 2,000+ Lives Through Skill-Development Program
+        </Typography>
+        <AvatarCarousel images={images} />
+      </Box>
+      <Box marginTop="20px">
+        <Typography variant="h3" textAlign="center">
+          Testimonials
+        </Typography>
+        <ReviewCarousel />
+      </Box>
+      <Box marginTop="70px">
+        <Typography variant="h3" textAlign="center">
+          Blogs
+        </Typography>
+
+        <ViewMore />
+      </Box>
+      <Box>
+        <AcService />
+      </Box>
+      <Box>
+        <HomeApplianceService />
+      </Box>
+      <Box>
+        <BeautyService />
+      </Box>
+      <Box>
+        <TechnicalService />
+      </Box>
     </>
   );
 }

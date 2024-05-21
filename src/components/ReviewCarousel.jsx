@@ -17,6 +17,14 @@ const ButtonBox = styled(Box)`
     display: none;
   }
 `;
+const Container = styled(Box)`
+  overflow:hidden;
+  margin-Left:100px;
+
+  @media (max-width: 600px) {
+   margin:0px;
+  }
+`;
 const ReviewCarousel = () => {
     let sliderRef = useRef(null);
 
@@ -57,7 +65,7 @@ const ReviewCarousel = () => {
     ],
   };
   return (
-    <div className="slider-container" style={{overflow:"hidden"}}>
+    <Container className="slider-container">
       <Slider  ref={(slider) => {
           sliderRef = slider;
         }} {...settings}>
@@ -94,7 +102,7 @@ const ReviewCarousel = () => {
           alt="Next"
         />
       </ButtonBox>
-    </div>
+    </Container>
   );
 };
 

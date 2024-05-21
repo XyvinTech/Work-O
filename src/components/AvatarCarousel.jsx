@@ -1,4 +1,4 @@
-import React from "react";
+"use client"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -27,8 +27,8 @@ function AvatarCarousel({images}) {
         {
           breakpoint: 600,
           settings: {
-            slidesToShow: 7,
-            slidesToScroll: 7,
+            slidesToShow: 4,
+            slidesToScroll: 4,
             initialSlide: 2
           }
         },
