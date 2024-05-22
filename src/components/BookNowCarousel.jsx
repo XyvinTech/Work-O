@@ -7,6 +7,7 @@ import { Box } from "@mui/material";
 import styled from "styled-components";
 import { useRef } from "react";
 import carouselData from "../assets/json/BookNowCarouselData";
+
 const ButtonBox = styled(Box)`
   position: absolute;
   right: 40px;
@@ -18,8 +19,11 @@ const ButtonBox = styled(Box)`
   }
 `;
 
+const SlideWrapper = styled(Box)`
+  padding: 0 10px; // Adjust the spacing between slides here
+`;
+
 const BookNowCarousel = () => {
-  
   let sliderRef = useRef(null);
 
   const next = () => {
@@ -29,8 +33,9 @@ const BookNowCarousel = () => {
   const previous = () => {
     sliderRef.slickPrev();
   };
-  var settings = {
-    dots:false,
+
+  const settings = {
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 3,
@@ -47,8 +52,9 @@ const BookNowCarousel = () => {
       },
     ],
   };
+
   return (
-    <div className="slider-container" style={{ overflow: "hidden" ,height:"515px",alignContent:"center"}}>
+    <div className="slider-container" style={{ overflow: "hidden", height: "515px", alignContent: "center" }}>
       <Slider
         ref={(slider) => {
           sliderRef = slider;
@@ -56,7 +62,7 @@ const BookNowCarousel = () => {
         {...settings}
       >
         {carouselData.map((item, index) => (
-          <div key={index}>
+          <SlideWrapper key={index}>
             <BookNowCard
               imageSrc={item.imageSrc}
               title={item.title}
@@ -65,21 +71,10 @@ const BookNowCarousel = () => {
               backgroundColor={item.backgroundColor}
               textColor={item.textColor}
             />
-          </div>
+          </SlideWrapper>
         ))}
       </Slider>
-      <ButtonBox
-        sx={{
-          position: "absolute",
-
-          right: "40px",
-          display: "flex",
-          gap: "10px",
-          "@media (max-width: 600px)": {
-            display: "none",
-          },
-        }}
-      >
+      <ButtonBox>
         <img
           src="/images/Button1.png"
           style={{ width: "48px", height: "48px" }}

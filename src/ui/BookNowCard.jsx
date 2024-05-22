@@ -7,7 +7,7 @@ import { mont } from "@/theme";
 const CardContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: 445px;
+  width:100%;
   height: 202px;
   margin: 20px auto;
   border: 1px solid #ddd;
@@ -33,7 +33,7 @@ const Content = styled.div`
 
 const ImageContainer = styled.div`
   position: relative;
-  width: 156px;
+  width: 50%;
   height: 100%;
   @media (max-width: 600px) {
     width: 50%; /* Use 50% width on mobile for equal split */
@@ -70,7 +70,7 @@ const BookNowCard = ({
         </div>
         <Button
           sx={{
-            width: "130px",
+            // width: "130px",
             height: "43px",
             fontSize: "16px",
             backgroundColor: buttonColor,
