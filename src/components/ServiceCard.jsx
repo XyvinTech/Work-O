@@ -34,7 +34,7 @@ const ServiceCard = ({ title, image, description }) => {
               transform: "scale(1.1)",
             },
             "@media (max-width: 600px)": {
-              width: "190px",
+              width: "100%",
               height: "190px",
             },
           }}
