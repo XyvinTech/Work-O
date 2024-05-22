@@ -68,10 +68,14 @@ const BookNowCard = ({
           </DescriptionTypography>
         </div>
         <Button
-          variant="contained"
-          sx={{ width: "130px", height: "43px", backgroundColor: buttonColor }}
+          sx={{
+            width: "130px",
+            height: "43px",
+            fontSize: "16px",
+            backgroundColor: buttonColor,
+          }}
         >
-          Book Now
+          <Typography fontFamily={mont.style.fontFamily}>Book Now</Typography>
         </Button>
       </Content>
       <ImageContainer>

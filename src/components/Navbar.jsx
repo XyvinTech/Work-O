@@ -14,11 +14,10 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import PhoneIcon from "@mui/icons-material/Phone";
+import PlusIcon from "../assets/icons/call.svg";
 import { mont } from "@/theme";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import PlusIcon from "../assets/icons/call.svg";
-import StyledIconButton from "@/ui/StyledIconButton";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -79,8 +78,9 @@ const Navbar = () => {
             <img src="/main_logo.png" alt="Logo" width={"168px"} height={"auto"} />
             {!isMobile && (
               <Stack direction={"row"} spacing={4}>
-                <StyledIconButton icon={PlusIcon} buttonText="Customer care" />
-                
+                <Button startIcon={<PhoneIcon />} color="inherit">
+                  Customer Care
+                </Button>
                 <Button
                   variant="contained"
                   color="primary"
