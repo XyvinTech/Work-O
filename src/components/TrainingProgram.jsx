@@ -2,7 +2,7 @@
 import viewMoreData from "../assets/json/TrainingProgramData";
 import { Box } from "@mui/material";
 import styled from "styled-components";
-import ServiceCard from "./ServiceCard";
+import TrainCard from "./TrainCard";
 
 
 const ViewMoreContainer = styled(Box)`
@@ -22,7 +22,7 @@ const TrainingProgram = () => {
   return (
     <ViewMoreContainer>
       {viewMoreData.map((item, index) => (
-        <ServiceCard
+        <TrainCard
           key={index}
           image={item.image}
           title={item.title}

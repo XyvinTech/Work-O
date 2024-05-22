@@ -81,6 +81,11 @@ const theme = createTheme({
       fontWeight: "normal",
       fontFamily: mont.style.fontFamily,
     },
+    h9: {
+      fontSize: "12px",
+      fontWeight: "normal",
+      fontFamily: mont.style.fontFamily,
+    },
     subtitle:{
       fontSize: "31px",
       fontWeight: "500",
