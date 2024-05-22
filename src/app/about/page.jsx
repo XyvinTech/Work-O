@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import React from "react";
 import bgImage from "/public/assets/about/img/header.png";
-import { Box, Typography } from "@mui/material";
 import VisionCardView from "@/components/VisionCardView";
 import TeamCarousel from "@/components/TeamCarousel";
 import PromiseCardView from "@/components/PromiseCardView";
