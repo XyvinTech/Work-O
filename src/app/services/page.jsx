@@ -9,6 +9,7 @@ import StyledBox from "@/components/StyledBox";
 import PromiseCardView from "@/components/PromiseCardView";
 import GetApp from "@/components/GetApp";
 import viewMoreData from "../../assets/json/WorkData";
+import FreqenlyAskedQuestion from "@/components/FreqenlyAskedQuestion";
 
 function page() {
   return (
@@ -31,6 +32,7 @@ function page() {
       <StyledBox>
         <GetApp />
       </StyledBox>
+      <FreqenlyAskedQuestion/>
     </>
   );
 }

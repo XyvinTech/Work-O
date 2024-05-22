@@ -4,7 +4,6 @@ import bgImage from "/public/assets/home/img/footer.png";
 import styled from "styled-components";
 import { mont } from "@/theme";
 import StyledInput from "@/ui/StyledInput";
-import FreqenlyAskedQuestion from "./FreqenlyAskedQuestion";
 
 
 const FooterContainer = styled(Box)(() => ({
@@ -48,8 +47,6 @@ function Footer() {
 
   return (
     <FooterContainer>
-     
-      <FreqenlyAskedQuestion/>
       <Stack
         direction={isMobile ? "column" : "row"}
         p={isMobile ? 1 : 4}
