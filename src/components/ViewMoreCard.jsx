@@ -10,15 +10,15 @@ const ViewMoreCard = ({image,title,description,date}) => {
   return (
     <Card
       sx={{
-        maxWidth: "440px",
+        width: "100%",
         height: "514px",
         padding: "30px",
         gap: "21px",
         margin: "auto",
         boxShadow: "none",
         background: "white",
+        border: "1px solid rgba(0, 0, 0, 0.12)",
         borderRadius: 0,
-        transition: "0.3s cubic-bezier(.47,1.64,.41,.8)",
       }}
     >
       <CardActionArea>

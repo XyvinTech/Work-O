@@ -92,7 +92,7 @@ const HomeApplianceService = () => {
         </Stack>
         <Box>
          
-          {/* <img src="/images/Frame2.png" height={"834"} /> */}
+          <img src="/images/Frame3.png" height={"834"} />
         </Box>
       </Stack>
     </Box>

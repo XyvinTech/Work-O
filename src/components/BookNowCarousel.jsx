@@ -18,17 +18,18 @@ const ButtonBox = styled(Box)`
   }
 `;
 const BookNowCarousel = () => {
-    let sliderRef = useRef(null);
-
-    const next = () => {
-      sliderRef.slickNext();
-    };
   
-    const previous = () => {
-      sliderRef.slickPrev();
-    };
+  let sliderRef = useRef(null);
+
+  const next = () => {
+    sliderRef.slickNext();
+  };
+
+  const previous = () => {
+    sliderRef.slickPrev();
+  };
   var settings = {
-    dots: true,
+    dots:false,
     infinite: false,
     speed: 500,
     slidesToShow: 3,
@@ -36,30 +37,23 @@ const BookNowCarousel = () => {
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 1,
         },
-      }
-    
+      },
     ],
   };
   return (
-    <div className="slider-container" style={{overflow:"hidden"}}>
-      <Slider  ref={(slider) => {
+    <div className="slider-container" style={{ overflow: "hidden" ,height:"515px",alignContent:"center"}}>
+      <Slider
+        ref={(slider) => {
           sliderRef = slider;
-        }} {...settings}>
+        }}
+        {...settings}
+      >
         {carouselData.map((item, index) => (
           <div key={index}>
             <BookNowCard
@@ -76,10 +70,13 @@ const BookNowCarousel = () => {
       <ButtonBox
         sx={{
           position: "absolute",
-       
+
           right: "40px",
           display: "flex",
           gap: "10px",
+          "@media (max-width: 600px)": {
+            display: "none",
+          },
         }}
       >
         <img

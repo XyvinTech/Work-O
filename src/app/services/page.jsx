@@ -1,6 +1,12 @@
 import Header from "@/components/Header";
 import React from "react";
 import bgImage from "/public/assets/services/img/header.png";
+import AcService from "@/components/AcService";
+import HomeApplianceService from "@/components/HomeApplianceService";
+import BeautyService from "@/components/BeautyService";
+import TechnicalService from "@/components/TechnicalService";
+import PromiseCardView from "@/components/PromiseCardView";
+import GetApp from "@/components/GetApp";
 
 function page() {
   return (
@@ -13,6 +19,9 @@ function page() {
         isButtons
         bgImg={bgImage.src}
       />
+      <AcService/><HomeApplianceService/><BeautyService/><TechnicalService/> 
+      {/* <PromiseCardView/> */}
+      <GetApp/>
     </>
   );
 }

@@ -95,7 +95,7 @@ const AcService = () => {
           </Stack>
           <Stack
             direction={isMobile ? "column" : "row"}
-            justifyContent={"center"}
+            // justifyContent={"center"}
             spacing={6}
           >
             <Stack direction="column" spacing={2}>

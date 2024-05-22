@@ -5,13 +5,13 @@ import CarouselOne from "@/components/CarouselOne";
 import BookNowCarousel from "@/components/BookNowCarousel";
 import ReviewCarousel from "@/components/ReviewCarousel";
 import ViewMore from "@/components/ViewMore";
-import { Box, Typography } from "@mui/material";
 import AvatarCarousel from "@/components/AvatarCarousel";
-import AcService from "@/components/AcService";
-import HomeApplianceService from "@/components/HomeApplianceService";
-import BeautyService from "@/components/BeautyService";
-import TechnicalService from "@/components/TechnicalService";
-import StyledForm from "@/components/StyledForm";
+import PromiseCardView from "@/components/PromiseCardView";
+import GetApp from "@/components/GetApp";
+import Achievements from "@/components/Achievements";
+import StyledBox from "@/components/StyledBox";
+import OurStory from "@/components/OurStory";
+import viewMoreData from "../assets/json/PromiseCardData";
 function page() {
   const images = [
     "/assets/home/carousel-1/image1.png",
@@ -38,46 +38,34 @@ function page() {
         isHome
       />
       <CarouselOne images={images} />
-      <Box>
-        <Typography variant="h3" textAlign="center">
-          Our Services
-        </Typography>{" "}
+      <StyledBox title={"Our Service"}>
         <StyledTabs />
-      </Box>
-      <Box bgcolor="#F2F2F2" height="300px" marginTop="60px">
+      </StyledBox>
+      <StyledBox title={"Our Major Locations"}></StyledBox>
+      <StyledBox bgcolor={"#F2F2F2"}>
         <BookNowCarousel />
-      </Box>
-      <Box marginTop="50px">
-        <Typography variant="h3" textAlign="center">
-          Upgrading 2,000+ Lives Through Skill-Development Program
-        </Typography>
+      </StyledBox>
+      <StyledBox>
+        <OurStory />
+      </StyledBox>
+      <StyledBox
+        title={"Upgrading 2,000+ Lives Through Skill-Development Program"}
+      >
         <AvatarCarousel images={images} />
-      </Box>
-      <Box marginTop="20px">
-        <Typography variant="h3" textAlign="center">
-          Testimonials
-        </Typography>
+      </StyledBox>
+      <StyledBox title={"Who is this for?"}>
+        <PromiseCardView viewMoreData={viewMoreData} />
+        <GetApp />
+      </StyledBox>
+      <StyledBox title={"Testimonials"}>
+        {" "}
         <ReviewCarousel />
-      </Box>
-      <Box marginTop="70px">
-        <Typography variant="h3" textAlign="center">
-          Blogs
-        </Typography>
-
+      </StyledBox>
+      <StyledBox title={"Blogs"}>
         <ViewMore />
-      </Box>
-      <Box>
-        <AcService />
-      </Box>
-      <Box>
-        <HomeApplianceService />
-      </Box>
-      <Box>
-        <BeautyService />
-      </Box>
-      <Box>
-        <TechnicalService />
-      </Box>
+       
+      </StyledBox>
+      <StyledBox> <Achievements/></StyledBox>
     </>
   );
 }

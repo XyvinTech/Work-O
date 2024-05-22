@@ -9,32 +9,28 @@ import carouselData from "../assets/json/ReviewCarouselData";
 import ReviewCard from "./ReviewCard";
 const ButtonBox = styled(Box)`
   position: absolute;
-  right: 40px;
+  right: 50px;
+  margintop: 30px;
   display: flex;
   gap: 10px;
-
   @media (max-width: 600px) {
     display: none;
   }
 `;
 const Container = styled(Box)`
-  overflow:hidden;
-  margin-Left:100px;
-
-  @media (max-width: 600px) {
-   margin:0px;
-  }
+  overflow: hidden;
+  height: 300px;
 `;
 const ReviewCarousel = () => {
-    let sliderRef = useRef(null);
+  let sliderRef = useRef(null);
 
-    const next = () => {
-      sliderRef.slickNext();
-    };
-  
-    const previous = () => {
-      sliderRef.slickPrev();
-    };
+  const next = () => {
+    sliderRef.slickNext();
+  };
+
+  const previous = () => {
+    sliderRef.slickPrev();
+  };
   var settings = {
     dots: true,
     infinite: false,
@@ -60,15 +56,17 @@ const ReviewCarousel = () => {
           slidesToScroll: 1,
           initialSlide: 1,
         },
-      }
-    
+      },
     ],
   };
   return (
     <Container className="slider-container">
-      <Slider  ref={(slider) => {
+      <Slider
+        ref={(slider) => {
           sliderRef = slider;
-        }} {...settings}>
+        }}
+        {...settings}
+      >
         {carouselData.map((item, index) => (
           <div key={index}>
             <ReviewCard
@@ -83,10 +81,10 @@ const ReviewCarousel = () => {
       <ButtonBox
         sx={{
           position: "absolute",
-       
+
           right: "40px",
           display: "flex",
-          gap: "10px",
+          gap: "30px",
         }}
       >
         <img

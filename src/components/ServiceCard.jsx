@@ -10,12 +10,12 @@ const ServiceCard = ({ title, image, description }) => {
   return (
     <Card
       sx={{
-        width: "400px",
+        width: "100%",
         boxShadow: "none",
         height: "559px",
-
+        borderRadius:"0px",
         "@media (max-width: 600px)": {
-          width: "189px", // Full width on mobile
+          width: "100%", // Full width on mobile
           height: "302px", // Adjust height automatically
         },
       }}
