@@ -26,6 +26,11 @@ const FlowerImage = styled.img`
   top: -150px;
   left: 538px;
   backgroundcolor: #f4f3f3;
+  @media (max-width: 600px) {
+    height: 230px;
+    top: -90px;
+    left: 160px;
+  }
 `;
 
 const FrameImage = styled.img`
