@@ -111,7 +111,8 @@ const AcService = () => {
               <Typography variant="h6" color={"#605F5E"}>
                 Keep your AC running smoothly with our maintenance services.
               </Typography>
-            </Stack><Stack></Stack>
+            </Stack>
+            <Stack direction="column" spacing={2}></Stack>
           </Stack>
         </Stack>
       </Stack>

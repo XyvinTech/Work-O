@@ -15,8 +15,8 @@ const BeautyService = () => {
     >
       <Stack
         direction={isMobile ? "column" : "row"}
-        alignItems={isMobile ? "center" : "flex-start"} 
-        spacing={40}
+        alignItems={"center"}
+        spacing={50}
       >
         <Box>
           <img
@@ -41,7 +41,7 @@ const BeautyService = () => {
           />
           <img src="/images/Beautyservice.png" height={"834"} />
         </Box>
-        <Stack alignItems={"center"} spacing={6}>
+        <Stack alignItems={isMobile ? "center" : "flex-start"} spacing={6}>
           <Stack spacing={1}>
             <Box>
               <Typography
@@ -92,25 +92,24 @@ const BeautyService = () => {
             </Stack>
           </Stack>
           <Stack
-  direction={isMobile ? "column" : "row"}
-  justifyContent={"center"} 
-  spacing={6}
->
-  <Stack direction="column" spacing={2}>
-    <Spa />
-    <Typography
-      fontSize={isMobile ? "25px" : "31px"}
-      variant="subtitle"
-      color={"#FC8229"}
-    >
-      Spa Services
-    </Typography>
-    <Typography variant="h6" color={"#605F5E"}>
-      Relax and rejuvenate with our luxurious spa treatments
-    </Typography>
-  </Stack>
-</Stack>
-
+            direction={isMobile ? "column" : "row"}
+            justifyContent={"center"}
+            spacing={6}
+          >
+            <Stack direction="column" spacing={2}>
+              <Spa />
+              <Typography
+                fontSize={isMobile ? "25px" : "31px"}
+                variant="subtitle"
+                color={"#FC8229"}
+              >
+                Spa Services
+              </Typography>
+              <Typography variant="h6" color={"#605F5E"}>
+                Relax and rejuvenate with our luxurious spa treatments
+              </Typography>
+            </Stack>
+          </Stack>
         </Stack>
       </Stack>
     </Box>
