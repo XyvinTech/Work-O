@@ -55,6 +55,7 @@ const theme = createTheme({
       fontWeight: "500",
       fontFamily: mont.style.fontFamily,
     },
+    
     card: {
       fontSize: "25px",
       fontWeight: "600",
@@ -78,6 +79,11 @@ const theme = createTheme({
     h8: {
       fontSize: "10px",
       fontWeight: "normal",
+      fontFamily: mont.style.fontFamily,
+    },
+    subtitle:{
+      fontSize: "31px",
+      fontWeight: "500",
       fontFamily: mont.style.fontFamily,
     },
     footer_title: {

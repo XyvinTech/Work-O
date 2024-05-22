@@ -18,16 +18,17 @@ const StyledLabel = styled.span`
     font-weight: 500;
   }
 `;
+
 const ReviewCard = ({image,title,subheader,description}) => {
   return (
     <Card
       sx={{
-        maxWidth: "380px",
+       maxWidth:"500px",
         height: "260px",
         // boxShadow: "none",
         background: "white",
         borderRadius: 0,
-       border:"1px solid #555555"
+       border:"1px solid #e3dccd"
       }}
     >
       <CardActionArea>

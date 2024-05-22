@@ -11,7 +11,6 @@ const SelectContainer = styled.div`
 
 const StyledSelectField = ({ placeholder,options, onChange,value }) => {
 
-
   const customStyles = {
     control: (provided, state) => ({
       ...provided,

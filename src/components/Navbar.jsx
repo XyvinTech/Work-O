@@ -14,10 +14,10 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import PhoneIcon from "@mui/icons-material/Phone";
+import PlusIcon from "../assets/icons/call.svg";
 import { mont } from "@/theme";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import PlusIcon from "../assets/icons/call.svg";
 import StyledIconButton from "@/ui/StyledIconButton";
 
 const Navbar = () => {
@@ -80,7 +80,6 @@ const Navbar = () => {
             {!isMobile && (
               <Stack direction={"row"} spacing={4}>
                 <StyledIconButton icon={PlusIcon} buttonText="Customer care" />
-                
                 <Button
                   variant="contained"
                   color="primary"
@@ -90,6 +89,7 @@ const Navbar = () => {
                 </Button>
               </Stack>
             )}
+            
             {isMobile && (
               <IconButton color="inherit" aria-label="menu" onClick={handleMobileMenuToggle}>
                 <MenuIcon color="primary" />

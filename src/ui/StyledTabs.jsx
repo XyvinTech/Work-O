@@ -3,7 +3,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { mont } from "@/theme";
 import ServiceCard from "@/components/ServiceCard";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import serviceDetails from "../assets/json/serviceDetails";
 const TabsContainer = styled.div`
   width: 100%;
@@ -12,9 +12,8 @@ const TabsContainer = styled.div`
     max-width: 100%;
   }
 `;
-
 const TabHeader = styled.div`
-  padding: 20px;
+  padding-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -54,7 +53,7 @@ const TabButton = styled.button`
 `;
 
 const TabContent = styled.div`
-  margin-left: 40px;
+  padding: 40px;
   background-color: white;
   border-top: none;
   display: grid;
@@ -62,17 +61,16 @@ const TabContent = styled.div`
   gap: 20px;
 
   @media (max-width: 600px) {
-    margin:0;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-auto-flow: dense;
-
+    padding:0px;
+    gap:10px;
     & > :nth-child(3) {
       grid-column: 1 / -1;
     }
   }
 `;
-
 
 const StyledTabs = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -99,7 +97,7 @@ const StyledTabs = () => {
         ))}
       </TabHeader>
       <TabContent>
-      {serviceDetails[activeTab].services.map((service, index) => (
+        {serviceDetails[activeTab].services.map((service, index) => (
           <ServiceCard
             key={index}
             title={service.title}
@@ -111,10 +109,13 @@ const StyledTabs = () => {
       <Box
         sx={{
           position: "absolute",
-       
+
           right: "40px",
           display: "flex",
           gap: "10px",
+          "@media (max-width: 600px)": {
+            display: "none",
+          },
         }}
       >
         <img

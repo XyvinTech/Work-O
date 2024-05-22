@@ -13,7 +13,6 @@ const PhoneNumberContainer = styled.div`
   padding: 8px;
   color: #fff; /* White text */
 `;
-
 const CountryCodeSelect = styled.select`
   color: #fff;
   background-color: #555;

@@ -1,9 +1,12 @@
-import React from "react";
+"use client"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Avatar } from "@mui/material";
+import { Avatar, Box, Button, Stack, Typography, useMediaQuery } from "@mui/material";
 function AvatarCarousel({images}) {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const mobileStyle = { width: "56px", height: "56px"};
+  const desktopStyle = { width: "100px", height: "100px" };
   const settings = {
     dots: false,
     infinite: true,
@@ -15,20 +18,13 @@ function AvatarCarousel({images}) {
     autoplaySpeed: 2000,
     cssEase: "linear",
     responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 12,
-            slidesToScroll: 1,
-            infinite: true,
-            dots: true
-          }
-        },
+      
+      
         {
           breakpoint: 600,
           settings: {
-            slidesToShow: 7,
-            slidesToScroll: 7,
+            slidesToShow: 6,
+            slidesToScroll: 6,
             initialSlide: 2
           }
         },
@@ -48,15 +44,40 @@ function AvatarCarousel({images}) {
   //   '/assets/home/carousel-1/image10.png',
   // ];
   return (
+    <>
     <div className="slider-container" style={{overflow:"hidden"}}>
       <Slider {...settings}>
       {images.map((image, index) => (
           <div key={index}>
-            <Avatar src={image} sx={{height:"100px",width:"100px"}}/>
+            <Avatar src={image} sx={isMobile ? mobileStyle : desktopStyle}/>
           </div>
         ))}
       </Slider>
+      
     </div>
+    <Stack direction={isMobile?"column":"row"} spacing={isMobile?2:6} marginTop={"20px"}>
+          <Typography variant="h6" textAlign={"justify"}>
+            Empowering over 2,000 individuals through our skill-development
+            program underscores our steadfast dedication to community
+            transformation. At Worko, we firmly believe in the transformative
+            power of education and training to open doors to brighter futures.
+            Through our comprehensive programs, we equip participants with
+            practical skills essential for success in today's competitive job
+            market.
+          </Typography>
+          <Typography variant="h6" textAlign={"justify"}>
+            From technical proficiencies to soft skills refinement, we enable
+            our students to explore their potential and pursue rewarding
+            careers. With the backing of our committed team and esteemed
+            partners, we're not merely changing lives; we're fostering a
+            more strong, resilient workforce for the future. Join us as we
+            continue our mission to make a positive impact.
+          </Typography>
+        </Stack>
+        <Box display="flex" justifyContent="center" marginTop="20px">
+          <Button variant="contained">Enroll Now</Button>
+        </Box>
+    </>
   );
 }
 
