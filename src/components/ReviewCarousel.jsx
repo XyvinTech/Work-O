@@ -8,13 +8,14 @@ import { useRef } from "react";
 import carouselData from "../assets/json/ReviewCarouselData";
 import ReviewCard from "./ReviewCard";
 const ButtonBox = styled(Box)`
-  position: absolute;
-  right: 50px;
-  margintop: 30px;
   display: flex;
   gap: 10px;
+  justify-content: flex-end; 
+  margin-top: 20px;
+  padding-right: 40px;
   @media (max-width: 600px) {
-    display: none;
+    margin-top: 30px;
+    padding-right:10px
   }
 `;
 
