@@ -4,7 +4,8 @@ import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
 import { cormo } from "@/theme";
 import Repair from "../assets/icons/HomeRepair.svg";
 import Refridgerator from "../assets/icons/Refrigerator.svg";
-import WashingMachine from "../assets/icons/Washingmachine.svg";
+import WashingMachine from "../assets/icons/washingmachine.svg";
+
 import Maintance from "../assets/icons/Maintance.svg";
 const HomeApplianceService = () => {
 
