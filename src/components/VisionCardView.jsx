@@ -17,6 +17,7 @@ const ViewMoreContainer = styled(Box)`
   }
 `;
 
+
 const VisionCardView = ({viewMoreData}) => {
   return (
     <ViewMoreContainer>

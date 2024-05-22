@@ -7,6 +7,7 @@ import CCTV from "../assets/icons/cctv.svg";
 import Laptop from "../assets/icons/Laptop.svg";
 const TechnicalService = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  
   return (
     <Box
       sx={{ position: "relative", overflow: "hidden" }}

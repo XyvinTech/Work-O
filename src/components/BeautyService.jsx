@@ -93,7 +93,7 @@ const BeautyService = () => {
           </Stack>
           <Stack
   direction={isMobile ? "column" : "row"}
-  justifyContent={isMobile ? "center" : "flex-start"} 
+  justifyContent={"center"} 
   spacing={6}
 >
   <Stack direction="column" spacing={2}>

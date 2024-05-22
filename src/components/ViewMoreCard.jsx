@@ -6,6 +6,7 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
+
 const ViewMoreCard = ({image,title,description,date}) => {
   return (
     <Card

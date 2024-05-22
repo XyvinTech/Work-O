@@ -9,6 +9,7 @@ function CarouselOne({ images }) {
     
   const mobileStyle = { width: "90px", height: "104px", objectFit: "cover", padding: "1px" };
   const desktopStyle = { width: "187px", height: "217px", objectFit: "cover", padding: "1px" };
+  
   const settings1 = {
     dots: false,
     infinite: true,

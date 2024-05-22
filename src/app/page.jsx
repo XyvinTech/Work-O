@@ -58,7 +58,7 @@ function page() {
         <GetApp />
       </StyledBox>
       <StyledBox title={"Testimonials"}>
-        {" "}
+       
         <ReviewCarousel />
       </StyledBox>
       <StyledBox title={"Blogs"}>

@@ -12,6 +12,7 @@ const Card = styled.div`
   overflow: hidden;
 `;
 
+
 const CardActionArea = styled.div`
   position: relative;
 `;

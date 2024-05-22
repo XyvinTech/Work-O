@@ -20,6 +20,7 @@ function page() {
     "/assets/home/carousel-1/image9.png",
     "/assets/home/carousel-1/image10.png",
   ];
+  
   return (
     <>
       <Header

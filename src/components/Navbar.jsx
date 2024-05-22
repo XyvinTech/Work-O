@@ -89,6 +89,7 @@ const Navbar = () => {
                 </Button>
               </Stack>
             )}
+            
             {isMobile && (
               <IconButton color="inherit" aria-label="menu" onClick={handleMobileMenuToggle}>
                 <MenuIcon color="primary" />

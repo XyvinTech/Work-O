@@ -19,6 +19,7 @@ function AvatarCarousel({images}) {
     cssEase: "linear",
     responsive: [
       
+      
         {
           breakpoint: 600,
           settings: {

@@ -20,6 +20,7 @@ const ServiceCard = ({ title, image, description }) => {
         },
       }}
     >
+      
       <CardActionArea>
         <CardMedia
           component="img"

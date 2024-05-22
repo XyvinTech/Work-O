@@ -20,6 +20,7 @@ const TextArea = styled.textarea`
   }
 `;
 
+
 const StyledTextArea = ({ placeholder, onChange }) => {
   return <TextArea placeholder={placeholder} onChange={onChange} />;
 };

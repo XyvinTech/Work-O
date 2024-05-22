@@ -11,6 +11,7 @@ const StyledAccordion = () => {
     setExpanded(!expanded);
   };
 
+  
   return (
     <Accordion
       expanded={expanded}

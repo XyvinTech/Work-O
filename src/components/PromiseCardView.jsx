@@ -16,6 +16,7 @@ const ViewMoreContainer = styled(Box)`
   }
 `;
 
+
 const PromiseCardView = ({viewMoreData}) => {
   return (
     <ViewMoreContainer>

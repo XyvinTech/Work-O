@@ -11,6 +11,7 @@ const StyledBox = ({ children, bgcolor, title }) => {
         </Typography>
       )}
       {children}
+      
     </Box>
   );
 };

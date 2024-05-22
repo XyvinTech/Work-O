@@ -8,6 +8,7 @@ import appStore from "/public/assets/get-the-app/img/app-store-badge.png";
 import { mont } from "@/theme";
 
 function GetApp() {
+  
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
   return (

@@ -8,6 +8,7 @@ import { useRef } from "react";
 import carouselData from "../assets/json/TeamData";
 import TeamCard from "@/ui/TeamCard";
 
+
 const ButtonBox = styled(Box)`
   display: flex;
   gap: 10px;

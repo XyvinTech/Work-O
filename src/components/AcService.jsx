@@ -94,11 +94,11 @@ const AcService = () => {
               </Typography>
             </Stack>
           </Stack>
-           <Stack
-          direction={isMobile ? "column" : "row"}
-          justifyContent={"center"}
-          spacing={6}
-        >
+          <Stack
+            direction={isMobile ? "column" : "row"}
+            justifyContent={"center"}
+            spacing={6}
+          >
             <Stack direction="column" spacing={2}>
               <Maintance />
               <Typography
@@ -109,9 +109,9 @@ const AcService = () => {
                 AC Maintenance
               </Typography>
               <Typography variant="h6" color={"#605F5E"}>
-                Keep your AC running smoothly <br></br> with our maintenance services.
+                Keep your AC running smoothly with our maintenance services.
               </Typography>
-            </Stack>
+            </Stack><Stack></Stack>
           </Stack>
         </Stack>
       </Stack>
