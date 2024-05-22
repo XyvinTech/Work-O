@@ -11,17 +11,16 @@ const StyledInput = ({ placeholder, backgroundColor }) => {
         sx={{
           width: "100%",
           padding: "3px",
-          backgroundColor: backgroundColor || "text.secondary",
+          backgroundColor: backgroundColor || "text.background",
           borderRadius: "8px",
           "& .MuiOutlinedInput-notchedOutline": {
-            borderColor: "background.default",
-            borderWidth: "1px",
+            borderColor: "1px solid #2F2F2F",
           },
           "&:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: "text.secondary",
+            borderColor: "text.background",
           },
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "none !important",
+            borderColor: "#2F2F2F",
           },
           "& .MuiInputBase-input": {
             color: backgroundColor ? "#000" : "background.paper",

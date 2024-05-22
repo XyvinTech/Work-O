@@ -9,13 +9,13 @@ const PhoneNumberContainer = styled.div`
   display: flex;
   align-items: center;
   border-radius: 8px;
-  background-color: #555;
+  background-color: #2F2F2F;
   padding: 8px;
   color: #fff; /* White text */
 `;
 const CountryCodeSelect = styled.select`
   color: #fff;
-  background-color: #555;
+  background-color: #2F2F2F;
   border: none;
   padding: 8px;
   outline: none;
@@ -25,7 +25,7 @@ const CountryCodeSelect = styled.select`
     outline: none;
   }
   option {
-    background-color: #2c2c2c;
+    background-color: #2F2F2F;
     color: #BDBDBD;
   }
 `;

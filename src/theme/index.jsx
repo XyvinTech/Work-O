@@ -23,6 +23,7 @@ const theme = createTheme({
     text: {
       primary: "#000000", // Black color for primary text
       secondary: "#555555", // Grey color for secondary text
+      background: "#2F2F2F", // Grey color for secondary text
     },
     background: {
       default: "#F5F5F5", // Light grey background
