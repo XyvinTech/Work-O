@@ -17,6 +17,7 @@ const ButtonBox = styled(Box)`
     display: none;
   }
 `;
+
 const BookNowCarousel = () => {
   
   let sliderRef = useRef(null);

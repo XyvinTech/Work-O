@@ -12,7 +12,6 @@ const TabsContainer = styled.div`
     max-width: 100%;
   }
 `;
-
 const TabHeader = styled.div`
   padding-bottom: 20px;
   display: flex;

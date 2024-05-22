@@ -17,6 +17,7 @@ const ServiceCarousel = () => {
     sliderRef.slickPrev();
   };
 
+  
   const settings = {
     dots: false,
     infinite: true,

@@ -16,7 +16,7 @@ const BeautyService = () => {
       <Stack
         direction={isMobile ? "column" : "row"}
         alignItems={"center"}
-        spacing={40}
+        spacing={50}
       >
         <Box>
           <img
@@ -41,7 +41,7 @@ const BeautyService = () => {
           />
           <img src="/images/Beautyservice.png" height={"834"} />
         </Box>
-        <Stack alignItems={"center"} spacing={6}>
+        <Stack alignItems={isMobile ? "center" : "flex-start"} spacing={6}>
           <Stack spacing={1}>
             <Box>
               <Typography

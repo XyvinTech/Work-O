@@ -10,6 +10,7 @@ const AboutMain = () => {
         direction={isMobile ? "column" : "row"}
         spacing={isMobile ? 2 :40}marginTop={isMobile?"300px":0}
       >
+        
         <img
           src="/images/OurStory.png"
           height={isMobile ? "294px" : "520px"}

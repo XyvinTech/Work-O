@@ -7,6 +7,7 @@ const StyledInput = ({ placeholder, backgroundColor }) => {
     <FormControl sx={{ width: "100%" }} variant="outlined">
       <OutlinedInput
         placeholder={placeholder}
+        
         sx={{
           width: "100%",
           padding: "3px",

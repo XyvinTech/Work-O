@@ -7,6 +7,7 @@ const OurStory = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   return (
     <Box>
+      
       <Stack direction={isMobile? "column":"row"} spacing={isMobile?2:10}>
         <img
           src="/images/OurStory.png"

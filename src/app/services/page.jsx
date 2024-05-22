@@ -20,7 +20,7 @@ function page() {
         bgImg={bgImage.src}
       />
       <AcService/><HomeApplianceService/><BeautyService/><TechnicalService/> 
-      {/* <PromiseCardView/> */}
+      
       <GetApp/>
     </>
   );

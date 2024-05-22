@@ -2,28 +2,28 @@ import Header from "@/components/Header";
 import React from "react";
 import StyledTabs from "@/ui/StyledTabs";
 import CarouselOne from "@/components/CarouselOne";
-import StyledBox from "@/components/StyledBox";
 import BookNowCarousel from "@/components/BookNowCarousel";
-import OurStory from "@/components/OurStory";
-import AvatarCarousel from "@/components/AvatarCarousel";
-import PromiseCardView from "@/components/PromiseCardView";
-import viewMoreData from "@/assets/json/BlogData";
-import { GetApp } from "@mui/icons-material";
 import ReviewCarousel from "@/components/ReviewCarousel";
 import ViewMore from "@/components/ViewMore";
+import AvatarCarousel from "@/components/AvatarCarousel";
+import PromiseCardView from "@/components/PromiseCardView";
+import GetApp from "@/components/GetApp";
 import Achievements from "@/components/Achievements";
+import StyledBox from "@/components/StyledBox";
+import OurStory from "@/components/OurStory";
+import viewMoreData from "../assets/json/PromiseCardData";
 function page() {
-    const images = [
-    '/assets/home/carousel-1/image1.png',
-    '/assets/home/carousel-1/image2.png',
-    '/assets/home/carousel-1/image3.png',
-    '/assets/home/carousel-1/image4.png',
-    '/assets/home/carousel-1/image5.jpeg',
-    '/assets/home/carousel-1/image6.png',
-    '/assets/home/carousel-1/image7.png',
-    '/assets/home/carousel-1/image8.jpeg',
-    '/assets/home/carousel-1/image9.png',
-    '/assets/home/carousel-1/image10.png',
+  const images = [
+    "/assets/home/carousel-1/image1.png",
+    "/assets/home/carousel-1/image2.png",
+    "/assets/home/carousel-1/image3.png",
+    "/assets/home/carousel-1/image4.png",
+    "/assets/home/carousel-1/image5.jpeg",
+    "/assets/home/carousel-1/image6.png",
+    "/assets/home/carousel-1/image7.png",
+    "/assets/home/carousel-1/image8.jpeg",
+    "/assets/home/carousel-1/image9.png",
+    "/assets/home/carousel-1/image10.png",
   ];
   return (
     <>
@@ -58,6 +58,7 @@ function page() {
         <GetApp />
       </StyledBox>
       <StyledBox title={"Testimonials"}>
+       
         <ReviewCarousel />
       </StyledBox>
       <StyledBox title={"Blogs"}>

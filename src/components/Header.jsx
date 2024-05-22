@@ -4,6 +4,7 @@ import { Button, Stack, Typography, useMediaQuery, useTheme } from "@mui/materia
 function Header({ bgImg, title, subtitle, isHome, isButtons }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  
   return (
     <Stack
       sx={

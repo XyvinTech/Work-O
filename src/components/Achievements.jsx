@@ -12,6 +12,7 @@ const awards = [
   { src: "/assets/award/award2.png", alt: "award2" },
 ];
 
+
 function Achievements() {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));

@@ -12,6 +12,7 @@ import AboutMain from "@/components/AboutMain";
 import VisionData from "../../assets/json/VisionData";
 import Certification from "../../assets/json/CertificationData";
 import viewMoreData from "../../assets/json/HowWeDifferData";
+
 function page() {
   const images = [
     "/assets/home/carousel-1/image1.png",

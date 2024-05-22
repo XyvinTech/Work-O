@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { mont } from "@/theme";
 import StyledInput from "@/ui/StyledInput";
 
+
 const FooterContainer = styled(Box)(() => ({
   backgroundImage: `url(${bgImage.src})`,
   backgroundSize: "cover",

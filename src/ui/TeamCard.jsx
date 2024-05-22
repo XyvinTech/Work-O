@@ -14,6 +14,7 @@ const TeamCard = ({ image, title, description }) => {
       flexDirection="column"
       alignItems="center"
     >
+      
       <img
         src={image}
         alt="Frame"

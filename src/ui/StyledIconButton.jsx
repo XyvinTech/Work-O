@@ -2,7 +2,7 @@
 import { Button } from '@mui/material';
 import styled from 'styled-components';
 
-// Define a styled component for the icon
+
 const RoundIcon = styled.div`
   display: inline-flex;
   align-items: center;

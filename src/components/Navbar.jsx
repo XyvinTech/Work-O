@@ -18,6 +18,7 @@ import PlusIcon from "../assets/icons/call.svg";
 import { mont } from "@/theme";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+import StyledIconButton from "@/ui/StyledIconButton";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -78,9 +79,7 @@ const Navbar = () => {
             <img src="/main_logo.png" alt="Logo" width={"168px"} height={"auto"} />
             {!isMobile && (
               <Stack direction={"row"} spacing={4}>
-                <Button startIcon={<PhoneIcon />} color="inherit">
-                  Customer Care
-                </Button>
+                <StyledIconButton icon={PlusIcon} buttonText="Customer care" />
                 <Button
                   variant="contained"
                   color="primary"
@@ -90,6 +89,7 @@ const Navbar = () => {
                 </Button>
               </Stack>
             )}
+            
             {isMobile && (
               <IconButton color="inherit" aria-label="menu" onClick={handleMobileMenuToggle}>
                 <MenuIcon color="primary" />
