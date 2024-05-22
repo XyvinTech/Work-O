@@ -10,6 +10,7 @@ import PromiseCardView from "@/components/PromiseCardView";
 import GetApp from "@/components/GetApp";
 import viewMoreData from "../../assets/json/WorkData";
 import FreqenlyAskedQuestion from "@/components/FreqenlyAskedQuestion";
+import ConnectUs from "@/components/ConnectUs";
 
 function page() {
   return (
@@ -32,6 +33,7 @@ function page() {
       <StyledBox>
         <GetApp />
       </StyledBox>
+      <ConnectUs/>
       <FreqenlyAskedQuestion/>
     </>
   );

@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import React from "react";
 import bgImage from "/public/assets/blog/img/header.png";
+import BlogData from "@/components/BlogData";
+import StyledBox from "@/components/StyledBox";
 
 function page() {
   return (
@@ -13,6 +15,8 @@ function page() {
         isButtons
         bgImg={bgImage.src}
       />
+      <StyledBox> <BlogData/></StyledBox>
+     
     </>
   );
 }
