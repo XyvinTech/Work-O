@@ -5,7 +5,7 @@ import StyledBox from "@/components/StyledBox";
 import AvatarCarousel from "@/components/AvatarCarousel";
 import TrainingProgram from "@/components/TrainingProgram";
 import PromiseCardView from "@/components/PromiseCardView";
-import viewMoreData from "../../assets/json/HowWeDifferData";
+import viewMoreData from "../../assets/json/EmpowermentData";
 
 function page() {
   const images = [

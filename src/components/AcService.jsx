@@ -6,9 +6,10 @@ import Installation from "../assets/icons/Installation.svg";
 import Maintance from "../assets/icons/Maintance.svg";
 const AcService = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+
   return (
     <Box
-      sx={{ position: "relative",overflow:"hidden" }}
+      sx={{ position: "relative", overflow: "hidden" }}
       paddingTop={isMobile ? 35 : 0}
       paddingRight={isMobile ? 0 : 20}
       paddingLeft={isMobile ? 4 : 0}
@@ -16,7 +17,7 @@ const AcService = () => {
       <Stack
         direction={isMobile ? "column" : "row"}
         alignItems={"center"}
-       spacing={50}
+        spacing={50}
       >
         <Box>
           <img
@@ -41,7 +42,7 @@ const AcService = () => {
           />
           <img src="/images/ACservice.png" height={"834"} />
         </Box>
-        <Stack alignItems={"center"} spacing={6}>
+        <Stack alignItems={isMobile ? "center" : "flex-start"} spacing={6}>
           <Stack spacing={1}>
             <Box>
               <Typography
@@ -93,11 +94,11 @@ const AcService = () => {
               </Typography>
             </Stack>
           </Stack>
-          <Stack
-            direction={isMobile ? "column" : "row"}
-            // justifyContent={"center"}
-            spacing={6}
-          >
+           <Stack
+          direction={isMobile ? "column" : "row"}
+          justifyContent={"center"}
+          spacing={6}
+        >
             <Stack direction="column" spacing={2}>
               <Maintance />
               <Typography
@@ -108,7 +109,7 @@ const AcService = () => {
                 AC Maintenance
               </Typography>
               <Typography variant="h6" color={"#605F5E"}>
-                Keep your AC running smoothly with our maintenance services.
+                Keep your AC running smoothly <br></br> with our maintenance services.
               </Typography>
             </Stack>
           </Stack>
