@@ -5,8 +5,10 @@ import AcService from "@/components/AcService";
 import HomeApplianceService from "@/components/HomeApplianceService";
 import BeautyService from "@/components/BeautyService";
 import TechnicalService from "@/components/TechnicalService";
+import StyledBox from "@/components/StyledBox";
 import PromiseCardView from "@/components/PromiseCardView";
 import GetApp from "@/components/GetApp";
+import viewMoreData from "../../assets/json/WorkData";
 
 function page() {
   return (
@@ -19,9 +21,16 @@ function page() {
         isButtons
         bgImg={bgImage.src}
       />
-      <AcService/><HomeApplianceService/><BeautyService/><TechnicalService/> 
-      
-      <GetApp/>
+      <AcService />
+      <HomeApplianceService />
+      <BeautyService />
+      <TechnicalService />
+      <StyledBox title={"How we works"}>
+        <PromiseCardView viewMoreData={viewMoreData}/>
+      </StyledBox>
+      <StyledBox>
+        <GetApp />
+      </StyledBox>
     </>
   );
 }
