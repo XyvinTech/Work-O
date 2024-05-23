@@ -16,7 +16,6 @@ const StyledIconButton = ({ icon: Icon, buttonText }) => {
   return (
     <Button
       variant="outlined"
-     
       startIcon={
         <RoundIcon>
           <Icon />

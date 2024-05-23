@@ -134,7 +134,7 @@ const theme = createTheme({
           backgroundColor: "#FC8229", // Primary button background color
           color: "#FFFFFF", // Primary button text color
           "&:hover": {
-            backgroundColor: "#FF5722", // Darker shade for hover state
+            backgroundColor: "#FC8229", // Darker shade for hover state
           },
           fontFamily: mont.style.fontFamily,
           fontWeight: "600",
@@ -166,7 +166,7 @@ const theme = createTheme({
           borderColor: "#FF7043", // Primary button border color
           color: "#FF7043", // Primary button text color
           "&:hover": {
-            borderColor: "#FF5722", // Darker shade for hover state
+            borderColor: "#FF7043", // Darker shade for hover state
             color: "#FF5722",
           },
           fontFamily: mont.style.fontFamily,
