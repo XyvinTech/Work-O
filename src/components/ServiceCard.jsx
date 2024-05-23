@@ -12,8 +12,9 @@ const Card = styled.div`
     background-color: inherit;
   }
   @media (max-width: 600px) {
-    width: 190px;
+    width: 170px;
     height: 302px;
+
   }
 `;
 
@@ -37,6 +38,7 @@ const CardMedia = styled.img`
 
 const CardContent = styled.div`
   padding: 16px;
+ 
 `;
 
 

@@ -10,6 +10,7 @@ const TabsContainer = styled.div`
 
   @media (max-width: 600px) {
     max-width: 100%;
+    
   }
 `;
 const TabHeader = styled.div`
@@ -21,12 +22,15 @@ const TabHeader = styled.div`
 
 const TabButton = styled.button`
   flex: 1;
+  display:flex;
+  justify-content:center;
   padding: 36px 26px 36px 26px;
   width: 324px;
   font-family: ${mont.style.fontFamily};
   font-weight: 500;
   font-size: 20px;
   height: 59px;
+  align-items:center;
   text-align: center;
   background-color: white;
   border: 1px solid #e3dccd;
@@ -61,6 +65,7 @@ const TabContent = styled.div`
   gap: 20px;
 
   @media (max-width: 600px) {
+    border:1px solid red;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-auto-flow: dense;
