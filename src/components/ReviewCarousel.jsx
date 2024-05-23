@@ -15,6 +15,7 @@ const ButtonBox = styled(Box)`
   padding-right: 40px;
   @media (max-width: 600px) {
     margin-top: 30px;
+    gap:5px;
     padding-right:10px
   }
 `;
