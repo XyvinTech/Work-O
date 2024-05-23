@@ -40,6 +40,7 @@ function Header({ bgImg, title, subtitle, isHome, isButtons }) {
       justifyContent={"center"}
       spacing={2}
       mt={10}
+      mb={isMobile && 30}
     >
       {isHome && (
         <img src="/assets/home/img/header.png" alt="Logo" height={isMobile ? "42px" : "85px"} />
