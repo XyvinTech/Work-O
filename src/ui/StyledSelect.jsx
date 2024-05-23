@@ -18,7 +18,7 @@ const StyledSelectField = ({ placeholder,options, onChange,value }) => {
       padding: "8px",
       border: "1px solid var(--White-20, rgba(255, 255, 255, 0.20));",
       borderRadius: "4px",
-      backgroundColor:  "#555555" ,
+      backgroundColor:  "#2F2F2F" ,
       color: "#FFFFFF",
       boxShadow: state.isFocused ? "0 0 0 2px #fff" : "none",
       cursor: "pointer",
