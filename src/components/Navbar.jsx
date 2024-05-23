@@ -74,8 +74,17 @@ const Navbar = () => {
     >
       <Toolbar>
         <Box display="flex" flexDirection="column" width="100%" p={2}>
-          <Box display="flex" justifyContent="space-between" alignItems="center">
-            <img src="/main_logo.png" alt="Logo" width={"168px"} height={"auto"} />
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <img
+              src="/main_logo.png"
+              alt="Logo"
+              width={"168px"}
+              height={"auto"}
+            />
             {!isMobile && (
               <Stack direction={"row"} spacing={4}>
                 <StyledIconButton icon={PlusIcon} buttonText="Customer care" />
@@ -88,9 +97,13 @@ const Navbar = () => {
                 </Button>
               </Stack>
             )}
-            
+
             {isMobile && (
-              <IconButton color="inherit" aria-label="menu" onClick={handleMobileMenuToggle}>
+              <IconButton
+                color="inherit"
+                aria-label="menu"
+                onClick={handleMobileMenuToggle}
+              >
                 <MenuIcon color="primary" />
               </IconButton>
             )}
@@ -128,19 +141,29 @@ const Navbar = () => {
                     </Button>
                   </Link>
                 ))}
-                <StyledIconButton icon={PlusIcon} buttonText="Customer care" />
-                <Button
-                  variant="contained"
-                  color="primary"
-                  fullWidth
-                  onClick={() => router.push("/get-the-app")}
-                >
-                  Get the App
-                </Button>
+                <Stack spacing={2} mt={2}>
+                  <StyledIconButton
+                    icon={PlusIcon}
+                    buttonText="Customer care"
+                  />
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    fullWidth
+                    onClick={() => router.push("/get-the-app")}
+                  >
+                    Get the App
+                  </Button>{" "}
+                </Stack>
               </Box>
             </Collapse>
           ) : (
-            <Stack alignItems="center" direction={"row"} justifyContent={"center"} spacing={4}>
+            <Stack
+              alignItems="center"
+              direction={"row"}
+              justifyContent={"center"}
+              spacing={4}
+            >
               {menuItems.map(({ label, href }) => (
                 <Link href={href} key={label}>
                   <Button
