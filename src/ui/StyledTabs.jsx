@@ -36,7 +36,7 @@ const TabButton = styled.button`
 
   &.active {
     border: 0px;
-    border-bottom: 2px solid orange;
+    border-bottom: 3px solid orange;
 
     background-color: #ffe7d5;
   }
@@ -66,7 +66,9 @@ const TabContent = styled.div`
     grid-auto-flow: dense;
     padding:0px;
     gap:10px;
+    
     & > :nth-child(3) {
+      margin-top:50px;
       grid-column: 1 / -1;
     }
   }

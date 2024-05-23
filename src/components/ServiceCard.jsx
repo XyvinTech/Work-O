@@ -1,44 +1,51 @@
-import {
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@mui/material";
+import { Typography } from "@mui/material";
 import React from "react";
+import styled from "styled-components";
+
+const Card = styled.div`
+  width: 415px;
+  height: 559px;
+  box-shadow: none;
+  border-radius: 0;
+  &:hover {
+    box-shadow: none;
+    background-color: inherit;
+  }
+  @media (max-width: 600px) {
+    width: 190px;
+    height: 302px;
+  }
+`;
+
+const CardActionArea = styled.div`
+  cursor: pointer;
+`;
+
+const CardMedia = styled.img`
+  width: 395px;
+  height: 395px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+  @media (max-width: 600px) {
+    width: 140px;
+    height: 190px;
+  }
+`;
+
+const CardContent = styled.div`
+  padding: 16px;
+`;
+
+
+
 const ServiceCard = ({ title, image, description }) => {
   return (
-    <Card
-      sx={{
-        width: "100%",
-        boxShadow: "none",
-        height: "559px",
-        borderRadius:"0px",
-        "@media (max-width: 600px)": {
-          width: "190px", // Full width on mobile
-          height: "302px", // Adjust height automatically
-        },
-      }}
-    >
-      
+    <Card>
       <CardActionArea>
-        <CardMedia
-          component="img"
-          height="395"
-          image={image}
-          alt="green iguana"
-          sx={{
-            transform: "scale(1)",
-            transition: "transform 0.3s ease-in-out",
-            ":hover": {
-              transform: "scale(1.1)",
-            },
-            "@media (max-width: 600px)": {
-              width: "190px",
-              height: "190px",
-            },
-          }}
-        />
+        <CardMedia src={image} alt="Service Image" />
         <CardContent>
           <Typography
             gutterBottom
@@ -55,7 +62,7 @@ const ServiceCard = ({ title, image, description }) => {
           <Typography
             variant="h6"
             sx={{
-              textAlign: "justify",
+              // textAlign: "justify",
               "@media (max-width: 600px)": {
                 fontSize: "12px",
               },

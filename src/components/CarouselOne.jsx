@@ -4,21 +4,21 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useMediaQuery } from "@mui/material";
 
-function CarouselOne({ images }) {
+function CarouselOne({ images,pic }) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
     
   const mobileStyle = { width: "90px", height: "104px", objectFit: "cover", padding: "1px" };
-  const desktopStyle = { width: "187px", height: "217px", objectFit: "cover", padding: "1px" };
+  const desktopStyle = { width: "186px", height: "216px", objectFit: "cover", padding: "1px" };
   
   const settings1 = {
     dots: false,
     infinite: true,
-    slidesToShow: 7,
+    slidesToShow: 9,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
+    speed: 1000,
     pauseOnHover: false,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1000,
     cssEase: "linear",
     responsive: [
       {
@@ -35,12 +35,12 @@ function CarouselOne({ images }) {
   const settings2 = {
     dots: false,
     infinite: true,
-    slidesToShow: 6,
+    slidesToShow: 9,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
+    speed: 800,
     pauseOnHover: false,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 800,
     cssEase: "linear",
     responsive: [
       {
@@ -64,16 +64,16 @@ function CarouselOne({ images }) {
                 src={image}
                 alt={`Slide ${index}`}
                 className="carousel-image"
+                objectFit="cover"
                 style={isMobile ? mobileStyle : desktopStyle}
               />
             </div>
           ))}
         </Slider>
       </div>
-
       <div className="slider-container" style={{ overflow: "hidden", marginTop: "20px" }}>
         <Slider {...settings2}>
-          {images.map((image, index) => (
+          {pic.map((image, index) => (
             <div key={`slider2-${index}`}>
               <img
                 src={image}

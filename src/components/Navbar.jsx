@@ -128,9 +128,7 @@ const Navbar = () => {
                     </Button>
                   </Link>
                 ))}
-                <Button startIcon={<PhoneIcon />} color="inherit" fullWidth>
-                  Customer Care
-                </Button>
+                <StyledIconButton icon={PlusIcon} buttonText="Customer care" />
                 <Button
                   variant="contained"
                   color="primary"

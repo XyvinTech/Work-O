@@ -1,10 +1,19 @@
 "use client";
-import { Box, Button, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import bgImage from "/public/assets/home/img/footer.png";
 import styled from "styled-components";
 import { mont } from "@/theme";
 import StyledInput from "@/ui/StyledInput";
-
+import PlusIcon from "../assets/icons/call.svg";
+import SMSIcon from "../assets/icons/sms.svg";
+import StyledIconButton from "@/ui/StyledIconButton";
 
 const FooterContainer = styled(Box)(() => ({
   backgroundImage: `url(${bgImage.src})`,
@@ -38,7 +47,8 @@ function Footer() {
       fontSize: "20px",
       fontWeight: 700,
       fontFamily: mont.style.fontFamily,
-      backgroundImage: "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.31) 100%)",
+      backgroundImage:
+        "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.31) 100%)",
       WebkitBackgroundClip: "text",
       backgroundClip: "text",
       color: "transparent",
@@ -61,12 +71,17 @@ function Footer() {
           />
           <Typography variant="h6" lineHeight={"30px"} p={2}>
             Address: <br />
-            Nextra the address, plot no. 4B, District <br /> center, Mayur Vihar phase 1 extension,
+            Nextra the address, plot no. 4B, District <br /> center, Mayur Vihar
+            phase 1 extension,
             <br />
             New Delhi
           </Typography>
         </Box>
-        <Stack direction={"row"} spacing={isMobile ? 3 : 10} p={isMobile ? 2 : 4}>
+        <Stack
+          direction={"row"}
+          spacing={isMobile ? 3 : 10}
+          p={isMobile ? 2 : 4}
+        >
           <Stack spacing={2}>
             <Typography variant="footer_title">Legal</Typography>
             <Typography fontSize="18px" variant="footer_subtitle">
@@ -125,7 +140,10 @@ function Footer() {
         <Stack spacing={2} width={isMobile ? "100%" : "55%"}>
           <Typography variant="h5">Join our newsletter</Typography>
           <Stack direction={"row"} spacing={2}>
-            <StyledInput placeholder={"Email ID"} backgroundColor={"background.paper"} />
+            <StyledInput
+              placeholder={"Email ID"}
+              backgroundColor={"background.paper"}
+            />
             <Button variant="contained">Submit</Button>
           </Stack>
         </Stack>
@@ -144,8 +162,8 @@ function Footer() {
             spacing={3}
             width={isMobile ? "50%" : "100%"}
           >
-            <Button variant="contained">Submit</Button>
-            <Button variant="outlined">Submit</Button>
+            <StyledIconButton icon={PlusIcon} buttonText="7-666-666-559"  />
+            <StyledIconButton icon={SMSIcon} buttonText="info@workoindia.com" />
           </Stack>
         </Stack>
       </Stack>
@@ -226,7 +244,9 @@ function Footer() {
         <Typography variant="copyrights">
           &copy; 2005-2024 Worko Private limited. All Rights Reserved
         </Typography>
-        <Typography variant="copyrights">Handcrafted with ❤️ by Acute Angle</Typography>
+        <Typography variant="copyrights">
+          Handcrafted with ❤️ by Acute Angle
+        </Typography>
       </Stack>
     </FooterContainer>
   );
