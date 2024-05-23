@@ -47,12 +47,15 @@ const TabButton = styled.button`
 
   @media (max-width: 600px) {
     height: 34px;
-    padding: 2px 1px 1px 1px;
+    display:flex;
+    justify-content:center;
+    text-align: center;
+    padding: 2px 2px 2px 1px;
     font-weight: 400;
     text-align: top;
     font-size: 12px;
     flex-basis: calc(50% - 10px);
-    align-items: flex-start;
+    
   }
 `;
 

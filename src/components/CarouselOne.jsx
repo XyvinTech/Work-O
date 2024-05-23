@@ -24,7 +24,7 @@ function CarouselOne({ images,pic }) {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 5,
           slidesToScroll: 1,
           initialSlide: 4,
         },
@@ -46,7 +46,7 @@ function CarouselOne({ images,pic }) {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 5,
           slidesToScroll: 1,
           initialSlide: 3,
         },
