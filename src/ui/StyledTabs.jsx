@@ -65,7 +65,6 @@ const TabContent = styled.div`
   gap: 20px;
 
   @media (max-width: 600px) {
-    border:1px solid red;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-auto-flow: dense;
