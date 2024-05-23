@@ -56,7 +56,7 @@ const theme = createTheme({
       fontWeight: "500",
       fontFamily: mont.style.fontFamily,
     },
-    
+
     card: {
       fontSize: "25px",
       fontWeight: "600",
@@ -87,7 +87,7 @@ const theme = createTheme({
       fontWeight: "normal",
       fontFamily: mont.style.fontFamily,
     },
-    subtitle:{
+    subtitle: {
       fontSize: "31px",
       fontWeight: "500",
       fontFamily: mont.style.fontFamily,
@@ -140,6 +140,22 @@ const theme = createTheme({
           fontWeight: "600",
           boxShadow: "none",
         },
+        containedSecondary: {
+          gap: "8px",
+          borderRadius: 4,
+          padding: "8px 20px",
+          "@media (max-width:600px)": {
+            padding: "8px 20px",
+          },
+          "&:hover": {
+            backgroundColor:"#FFFFFF"
+           },
+          backgroundColor: "#FFFFFF",
+          color: "#3A3A3A", // Primary button text color
+          fontFamily: mont.style.fontFamily,
+          fontWeight: "700",
+          boxShadow: "none",
+        },
         outlinedPrimary: {
           gap: "8px",
           borderRadius: 4,
@@ -172,6 +188,22 @@ const theme = createTheme({
           },
           fontFamily: mont.style.fontFamily,
           fontWeight: "600",
+          boxShadow: "none",
+        },
+        filledPrimary: {
+          gap: "8px",
+          borderRadius: 4,
+          padding: "8px 20px",
+          "@media (max-width:600px)": {
+            padding: "8px 20px",
+          },
+          "&:hover": {
+           backgroundColor:"#3B3B3B"
+          },
+          backgroundColor: "#3B3B3B",
+          color: "#FFFFFF", // Primary button text color
+          fontFamily: mont.style.fontFamily,
+          fontWeight: "700",
           boxShadow: "none",
         },
       },

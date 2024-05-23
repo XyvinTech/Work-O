@@ -8,7 +8,7 @@ const AboutMain = () => {
     <Box>
       <Stack
         direction={isMobile ? "column" : "row"}
-        spacing={isMobile ? 2 :40}marginTop={isMobile?"300px":0}
+        spacing={isMobile ? 2 :40}
       >
         
         <img

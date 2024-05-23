@@ -70,6 +70,7 @@ const BookNowCarousel = () => {
               buttonColor={item.buttonColor}
               backgroundColor={item.backgroundColor}
               textColor={item.textColor}
+              borderColor={item.borderColor}
             />
           </SlideWrapper>
         ))}

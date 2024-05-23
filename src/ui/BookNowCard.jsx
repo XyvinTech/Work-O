@@ -57,6 +57,7 @@ const BookNowCard = ({
   buttonColor,
   backgroundColor,
   textColor,
+  borderColor
 }) => {
   return (
     <CardContainer>
@@ -69,13 +70,8 @@ const BookNowCard = ({
             {description}
           </DescriptionTypography>
         </div>
-        <Button
-          sx={{
-            // width: "130px",
-            height: "43px",
-            fontSize: "16px",
-            backgroundColor: buttonColor,
-          }}
+        <Button variant={buttonColor} color={borderColor}
+         
         >
           <Typography fontFamily={mont.style.fontFamily}>Book Now</Typography>
         </Button>
