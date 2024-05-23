@@ -74,20 +74,11 @@ const Navbar = () => {
     >
       <Toolbar>
         <Box display="flex" flexDirection="column" width="100%" p={2}>
-          <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <img
-              src="/main_logo.png"
-              alt="Logo"
-              width={"168px"}
-              height={"auto"}
-            />
+          <Box display="flex" justifyContent="space-between" alignItems="center">
+            <img src="/main_logo.png" alt="Logo" width={"168px"} height={"auto"} />
             {!isMobile && (
               <Stack direction={"row"} spacing={4}>
-                <StyledIconButton icon={PlusIcon} buttonText="Customer care"/>
+                <StyledIconButton icon={PlusIcon} buttonText="Customer care" />
                 <Button
                   variant="contained"
                   color="primary"
@@ -97,13 +88,9 @@ const Navbar = () => {
                 </Button>
               </Stack>
             )}
-
+            
             {isMobile && (
-              <IconButton
-                color="inherit"
-                aria-label="menu"
-                onClick={handleMobileMenuToggle}
-              >
+              <IconButton color="inherit" aria-label="menu" onClick={handleMobileMenuToggle}>
                 <MenuIcon color="primary" />
               </IconButton>
             )}
@@ -113,31 +100,32 @@ const Navbar = () => {
             <Collapse in={mobileMenuOpen} timeout="auto" unmountOnExit>
               <Box mt={2} width="100%">
                 {menuItems.map(({ label, href }) => (
-                  <Link
-                    href={href}
-                    key={label}
-                    style={{
-                      textDecoration: "none",
-                      fontFamily: mont.style.fontFamily,
-                      textTransform: "uppercase",
-                      color:
-                        isMobile && isTransparent
-                          ? activeTab === label
+                  <Link href={href} key={label}>
+                    <Button
+                      color="inherit"
+                      fullWidth
+                      sx={{
+                        fontFamily: mont.style.fontFamily,
+                        textTransform: "uppercase",
+                        color:
+                          isMobile && isTransparent
+                            ? activeTab === label
+                              ? theme.palette.primary.main
+                              : "#000"
+                            : activeTab === label
                             ? theme.palette.primary.main
-                            : "#1B1B1B"
-                          : activeTab === label
-                          ? theme.palette.primary.main
-                          : isTransparent
-                          ? "#1B1B1B"
-                          : "#fff",
-                      fontSize: "14px",
-                      fontWeight: 600,
-                      "&:hover": {
-                        color: "#FC8229",
-                      },
-                    }}
-                  >
-                    {label}
+                            : isTransparent
+                            ? "#000"
+                            : "#fff",
+                        fontSize: "14px",
+                        fontWeight: 700,
+                        "&:hover": {
+                          color: "#FC8229",
+                        },
+                      }}
+                    >
+                      {label}
+                    </Button>
                   </Link>
                 ))}
                 <StyledIconButton icon={PlusIcon} buttonText="Customer care" />
@@ -152,38 +140,33 @@ const Navbar = () => {
               </Box>
             </Collapse>
           ) : (
-            <Stack
-              alignItems="center"
-              direction={"row"}
-              justifyContent={"center"}
-              spacing={4}
-            >
+            <Stack alignItems="center" direction={"row"} justifyContent={"center"} spacing={4}>
               {menuItems.map(({ label, href }) => (
-                <Link
-                  href={href}
-                  key={label}
-                  style={{
-                    textDecoration: "none",
-                    fontFamily: mont.style.fontFamily,
-                    textTransform: "uppercase",
-                    color:
-                      isMobile && isTransparent
-                        ? activeTab === label
+                <Link href={href} key={label}>
+                  <Button
+                    color="inherit"
+                    sx={{
+                      fontFamily: mont.style.fontFamily,
+                      textTransform: "uppercase",
+                      color:
+                        isMobile && isTransparent
+                          ? activeTab === label
+                            ? theme.palette.primary.main
+                            : "#000"
+                          : activeTab === label
                           ? theme.palette.primary.main
-                          : "#1B1B1B"
-                        : activeTab === label
-                        ? theme.palette.primary.main
-                        : isTransparent
-                        ? "#1B1B1B"
-                        : "#fff",
-                    fontSize: "14px",
-                    fontWeight: 600,
-                    "&:hover": {
-                      color: "#FC8229",
-                    },
-                  }}
-                >
-                  {label}
+                          : isTransparent
+                          ? "#000"
+                          : "#fff",
+                      fontSize: "14px",
+                      fontWeight: 700,
+                      "&:hover": {
+                        color: "#FC8229",
+                      },
+                    }}
+                  >
+                    {label}
+                  </Button>
                 </Link>
               ))}
             </Stack>

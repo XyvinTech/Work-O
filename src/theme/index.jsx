@@ -33,7 +33,7 @@ const theme = createTheme({
   typography: {
     fontFamily: cormo.style.fontFamily,
     h1: {
-      fontSize: "54px",
+      fontSize: "61px",
       "@media (max-width:600px)": {
         textAlign: "center",
         fontSize: "35px",
@@ -60,6 +60,11 @@ const theme = createTheme({
     card: {
       fontSize: "25px",
       fontWeight: "600",
+      fontFamily: mont.style.fontFamily,
+    },
+  subtitle1: {
+      fontSize: "18px",
+      fontWeight: "normal",
       fontFamily: mont.style.fontFamily,
     },
     h5: {
@@ -168,6 +173,7 @@ const theme = createTheme({
           "&:hover": {
             borderColor: "#FF7043", // Darker shade for hover state
             color: "#FF5722",
+            backgroundColor:"#FFFFFF"
           },
           fontFamily: mont.style.fontFamily,
           fontWeight: "600",

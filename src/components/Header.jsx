@@ -54,7 +54,7 @@ function Header({ bgImg, title, subtitle, isHome, isButtons }) {
         {title}
       </Typography>
       {(isHome || isMobile) && (
-        <Typography variant="h5" color={isHome ? "#3B3B3B" : "#fff"} textAlign={"center"}>
+        <Typography variant="subtitle1" color={isHome ? "#3B3B3B" : "#fff"} textAlign={"center"}>
           {subtitle}
         </Typography>
       )}
