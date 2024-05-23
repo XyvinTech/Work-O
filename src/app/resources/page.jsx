@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import React from "react";
 import bgImage from "/public/assets/resources/img/header.png";
+import Resources from "@/components/Resources";
 
 function page() {
   return (
@@ -13,6 +14,7 @@ function page() {
         isButtons
         bgImg={bgImage.src}
       />
+      <Resources/>
     </>
   );
 }

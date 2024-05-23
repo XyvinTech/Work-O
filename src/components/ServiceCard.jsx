@@ -15,7 +15,7 @@ const ServiceCard = ({ title, image, description }) => {
         height: "559px",
         borderRadius:"0px",
         "@media (max-width: 600px)": {
-          width: "100%", // Full width on mobile
+          width: "190px", // Full width on mobile
           height: "302px", // Adjust height automatically
         },
       }}

@@ -12,6 +12,7 @@ import Achievements from "@/components/Achievements";
 import StyledBox from "@/components/StyledBox";
 import OurStory from "@/components/OurStory";
 import viewMoreData from "../assets/json/PromiseCardData";
+import FreqenlyAskedQuestion from "@/components/FreqenlyAskedQuestion";
 function page() {
   const images = [
     "/assets/home/carousel-1/image1.png",
@@ -66,6 +67,7 @@ function page() {
        
       </StyledBox>
       <StyledBox> <Achievements/></StyledBox>
+      <FreqenlyAskedQuestion/>
     </>
   );
 }

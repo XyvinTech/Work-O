@@ -2,94 +2,85 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import styled from "styled-components";
 import { useRef } from "react";
-import carouselData from "../assets/json/ReviewCarouselData";
-import ReviewCard from "./ReviewCard";
+import carouselData from "../assets/json/Blogs";
+import ViewMoreCard from "./ViewMoreCard";
+
 const ButtonBox = styled(Box)`
   display: flex;
   gap: 10px;
   justify-content: flex-end; 
   margin-top: 20px;
   padding-right: 40px;
+
   @media (max-width: 600px) {
     margin-top: 30px;
-    gap:5px;
-    padding-right:10px
+    padding-right: 10px;
   }
 `;
 
 const Container = styled(Box)`
   overflow: hidden;
-  height: 300px;
+  @media (max-width: 600px) {
+    margin-top: 300px;
+  }
 `;
-const ReviewCarousel = () => {
-  let sliderRef = useRef(null);
+
+const Slide = styled(Box)`
+  padding: 0 10px; // Adjust this value for more or less padding
+`;
+
+const BlogData = () => {
+  const sliderRef = useRef(null);
 
   const next = () => {
-    sliderRef.slickNext();
+    sliderRef.current.slickNext();
   };
 
   const previous = () => {
-    sliderRef.slickPrev();
+    sliderRef.current.slickPrev();
   };
-  var settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    waitForAnimate: false,
+
+  const settings = {
+    infinite: true,
     slidesToShow: 3,
-    slidesToScroll: 3,
-    initialSlide: 0,
+    speed: 500,
+    rows: 2,
+    slidesPerRow: 1,
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          slidesPerRow: 1,
           initialSlide: 1,
         },
       },
     ],
   };
+
   return (
     <Container className="slider-container">
+      <Typography variant="h4">All Blog Posts</Typography>
       <Slider
-        ref={(slider) => {
-          sliderRef = slider;
-        }}
+        ref={sliderRef}
         {...settings}
       >
         {carouselData.map((item, index) => (
-          <div key={index}>
-            <ReviewCard
+          <Slide key={index}>
+            <ViewMoreCard
               image={item.image}
               title={item.title}
               description={item.description}
-              subheader={item.subheader}
+              date={item.date}
             />
-          </div>
+          </Slide>
         ))}
       </Slider>
-      <ButtonBox
-        sx={{
-          position: "absolute",
-
-          right: "40px",
-          display: "flex",
-          gap: "30px",
-        }}
-      >
+      <ButtonBox>
         <img
           src="/images/Button1.png"
           style={{ width: "48px", height: "48px" }}
@@ -107,4 +98,4 @@ const ReviewCarousel = () => {
   );
 };
 
-export default ReviewCarousel;
+export default BlogData;

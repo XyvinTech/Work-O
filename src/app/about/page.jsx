@@ -11,6 +11,7 @@ import AboutMain from "@/components/AboutMain";
 import VisionData from "../../assets/json/VisionData";
 import Certification from "../../assets/json/CertificationData";
 import viewMoreData from "../../assets/json/HowWeDifferData";
+import FreqenlyAskedQuestion from "@/components/FreqenlyAskedQuestion";
 
 function page() {
   const images = [
@@ -58,6 +59,7 @@ function page() {
       <StyledBox>
         <Achievements />
       </StyledBox>
+      <FreqenlyAskedQuestion/>
     </>
   );
 }

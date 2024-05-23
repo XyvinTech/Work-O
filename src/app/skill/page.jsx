@@ -6,6 +6,7 @@ import AvatarCarousel from "@/components/AvatarCarousel";
 import TrainingProgram from "@/components/TrainingProgram";
 import PromiseCardView from "@/components/PromiseCardView";
 import viewMoreData from "../../assets/json/EmpowermentData";
+import FreqenlyAskedQuestion from "@/components/FreqenlyAskedQuestion";
 
 function page() {
   const images = [
@@ -20,7 +21,7 @@ function page() {
     "/assets/home/carousel-1/image9.png",
     "/assets/home/carousel-1/image10.png",
   ];
-  
+
   return (
     <>
       <Header
@@ -31,15 +32,18 @@ function page() {
         isButtons
         bgImg={bgImage.src}
       />
-       <StyledBox
+      <StyledBox
         title={"Upgrading 2,000+ Lives Through Skill-Development Program"}
       >
         <AvatarCarousel images={images} />
       </StyledBox>
       <StyledBox title={"Training Program"}>
-        <TrainingProgram/>
+        <TrainingProgram />
       </StyledBox>
-      <StyledBox title={"Gig Worker Empowerment"}>  <PromiseCardView viewMoreData={viewMoreData} /></StyledBox>
+      <StyledBox title={"Gig Worker Empowerment"}>
+        {" "}
+        <PromiseCardView viewMoreData={viewMoreData} />
+      </StyledBox><FreqenlyAskedQuestion/>
     </>
   );
 }
