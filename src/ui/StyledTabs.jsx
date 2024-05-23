@@ -27,7 +27,7 @@ const TabButton = styled.button`
   padding: 36px 26px 36px 26px;
   width: 324px;
   font-family: ${mont.style.fontFamily};
-  font-weight: 500;
+  font-weight: 600;
   font-size: 20px;
   height: 59px;
   align-items:center;
