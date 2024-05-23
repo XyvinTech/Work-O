@@ -47,6 +47,7 @@ const DescriptionTypography = styled(Typography)`
   font-weight: 500;
   font-size: 17px;
   color: #a0a0a0;
+  padding-bottom:2px;
 `;
 
 const BookNowCard = ({
