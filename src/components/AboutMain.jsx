@@ -8,15 +8,42 @@ const AboutMain = () => {
     <Box>
       <Stack
         direction={isMobile ? "column" : "row"}
-        spacing={isMobile ? 2 :40}marginTop={isMobile?"300px":0}
+        spacing={isMobile ? 2 : 40}
+        position={"relative"}
       >
-        
-        <img
-          src="/images/OurStory.png"
-          height={isMobile ? "294px" : "520px"}
-          width={isMobile ? "100%" : "670px"}
-          style={{ objectFit: "cover" }}
-        />
+        <Box
+          width={isMobile ? "100%" : "50%"}
+          display="flex"
+          justifyContent={"flex-start"}
+          alignItems={"flex-start"}
+        >
+          <img
+            src={"/images/Service1.png"}
+            height={isMobile ? "374px " : "638px"}
+          />
+          <img
+            src="/images/ServiceElli2.png"
+            height={isMobile ? "274px " : "430px"}
+            style={{
+              position: "absolute",
+              left: isMobile ? "10px" : "0",
+              zIndex: "-1",
+              bottom: !isMobile && "0",
+              top: isMobile && "6.2rem",
+            }}
+          />
+          <img
+            src="/images/ServiceElli.png"
+            height={isMobile ? "374px " : "510px"}
+            style={{
+              position: "absolute",
+              left: isMobile ? "10px" : "0",
+              zIndex: "-3",
+              bottom: !isMobile && "0",
+              top: isMobile && "0",
+            }}
+          />
+        </Box>
         <Stack direction={"column"} spacing={4} paddingTop={"100px"}>
           <Typography variant="h2">Who are we?</Typography>
           <Typography
