@@ -10,6 +10,8 @@ import StyledAccordion from "./StyledAccordion";
 import bgImageFooter from "/public/assets/home/img/footer.png";
 import { Box, useMediaQuery } from "@mui/material";
 import StyledSelectField from "@/ui/StyledSelect";
+import StyledBox from "./StyledBox";
+
 
 const tabData = [
   { tabName: "General FAQ's", accordions: generalData },
@@ -22,7 +24,10 @@ const Container = styled(Box)(({ theme }) => ({
   backgroundImage: `url(${bgImageFooter.src})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
-  paddingTop: "20px",
+  padding: "80px",
+  '@media (max-width:600px)': {
+    padding: "20px"
+  },  
   color: "white",
   display: "flex",
   flexDirection: "row",

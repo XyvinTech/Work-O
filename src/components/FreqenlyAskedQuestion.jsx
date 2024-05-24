@@ -2,7 +2,7 @@
 import StyledAccordion from "./StyledAccordion";
 import accordionData from "../assets/json/FrequentlyAsked";
 import styled from "styled-components";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import bgImageFooter from "/public/assets/home/img/footer.png";
 import StyledBox from "./StyledBox";
 const Container = styled(Box)(() => ({
@@ -41,10 +41,12 @@ const FreqenlyAskedQuestion = () => {
           <StyledAccordion question={item.question} answer={item.answer} />
         </Box>
       ))}
-      <Box display="flex" flexDirection="column" alignItems="center" gap={"10px"}>
+      <Box display="flex" flexDirection="column" paddingTop={5} alignItems="center" gap={"10px"}>
+        <Stack spacing={2} justifyContent={"center"} alignItems={"center"}>
         <Typography variant="h7" fontWeight={"500"}>Still have Questions?</Typography>
         <Typography variant="h9">Contact us for further assistance</Typography>
         <Button variant="contained" color="primary"> Contact Us</Button>
+        </Stack>
       </Box>
       </StyledBox>
     </Box>

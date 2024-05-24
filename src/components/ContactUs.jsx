@@ -55,6 +55,10 @@ const Container = styled(Box)(() => ({
   backgroundPosition: "center",
   color: "white",
   display: "flex",
+    padding: "80px",
+  '@media (max-width:600px)': {
+    padding: "20px"
+  },  
   flexDirection: "column",
   position: "relative",
   "&::before": {

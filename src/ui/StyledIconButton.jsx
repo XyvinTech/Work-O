@@ -22,7 +22,7 @@ const StyledIconButton = ({ icon: Icon, buttonText }) => {
       }
       sx={{
         border: "1px solid #FC8229",
-        width: "208px",
+        minWidth: "300px",
         fontWeight: "700",
         fontSize: "16px",
         fontFamily: mont.style.fontFamily,

@@ -14,7 +14,9 @@ function page() {
         isButtons
         bgImg={bgImage.src}
       />
-      <Resources/>
+    
+        <Resources />
+     
     </>
   );
 }

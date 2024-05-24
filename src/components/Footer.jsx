@@ -147,7 +147,7 @@ function Footer() {
               placeholder={"Email ID"}
               backgroundColor={"background.paper"}
             />
-            <Button variant="contained">Submit</Button>
+            <Button variant="contained" fullWidth>Submit</Button>
           </Stack>
         </Stack>
         <Stack width={isMobile ? "100%" : "55%"} pt={3} spacing={2}>
