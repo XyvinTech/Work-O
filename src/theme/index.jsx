@@ -149,9 +149,9 @@ const theme = createTheme({
         containedSecondary: {
           gap: "8px",
           borderRadius: 4,
-          padding: "8px 20px",
+          padding: "15px 20px",
           "@media (max-width:600px)": {
-            padding: "8px 20px",
+            padding: "10px 20px",
           },
           "&:hover": {
             backgroundColor:"#FFFFFF"
@@ -165,9 +165,9 @@ const theme = createTheme({
         outlinedPrimary: {
           gap: "8px",
           borderRadius: 4,
-          padding: "8px 40px",
+          padding: "15px 20px",
           "@media (max-width:600px)": {
-            padding: "8px 20px",
+            padding: "10px 20px",
           },
           borderColor: "#FF7043", // Primary button border color
           color: "#FF7043", // Primary button text color
