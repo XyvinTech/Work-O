@@ -7,7 +7,7 @@ import { mont } from "@/theme";
 const CardContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width:100%;
+  width: 100%;
   height: 202px;
   margin: 20px auto;
   border: 1px solid #ddd;
@@ -20,7 +20,6 @@ const CardContainer = styled.div`
     height: auto; /* Allow height to adjust */
   }
 `;
-
 
 const Content = styled.div`
   flex: 1;
@@ -47,7 +46,7 @@ const DescriptionTypography = styled(Typography)`
   font-weight: 500;
   font-size: 15px;
   color: #a0a0a0;
-  padding-bottom:2px;
+  padding-bottom: 2px;
 `;
 
 const BookNowCard = ({
@@ -57,7 +56,7 @@ const BookNowCard = ({
   buttonColor,
   backgroundColor,
   textColor,
-  borderColor
+  borderColor,
 }) => {
   return (
     <CardContainer>
@@ -70,8 +69,10 @@ const BookNowCard = ({
             {description}
           </DescriptionTypography>
         </div>
-        <Button variant={buttonColor} color={borderColor} sx={{width:"131px",fontSize:"16px"}}
-         
+        <Button
+          variant={buttonColor}
+          color={borderColor}
+          sx={{ fontWeight: "700",width:"180px", fontSize: "16px",padding:"10px 20px" }}
         >
           <Typography fontFamily={mont.style.fontFamily}>Book Now</Typography>
         </Button>
