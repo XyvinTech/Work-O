@@ -1,14 +1,22 @@
 "use client";
-import { Button, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Button,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 
 function Header({ bgImg, title, subtitle, isHome, isButtons }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  
+
   return (
     <Stack
-      sx={
-        bgImg && {
+      sx={{
+        position: "relative",
+        overflow: "hidden",
+        ...(bgImg && {
           "&::before": {
             content: '""',
             position: "absolute",
@@ -31,30 +39,37 @@ function Header({ bgImg, title, subtitle, isHome, isButtons }) {
             backgroundColor: "rgba(0, 0, 0, 0.5)",
             zIndex: -1,
           },
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }
-      }
-      height={isMobile ? "410px" : "680px"}
+        }),
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      height={isMobile ? "510px" : "680px"}
       alignItems={"center"}
       justifyContent={"center"}
       spacing={2}
-      mt={10}
-      mb={isMobile && 30}
     >
       {isHome && (
-        <img src="/assets/home/img/header.png" alt="Logo" height={isMobile ? "42px" : "85px"} />
+        <img
+          src="/assets/home/img/header.png"
+          alt="Logo"
+          height={isMobile ? "42px" : "84px"}
+          style={{ marginTop: "50px" }}
+        />
       )}
       <Typography
         variant="h1"
         color={isHome ? "#000" : "#fff"}
         textAlign={"center"}
-        px={isMobile ? 10 : isMobile && isHome ? 0 : 20}
+        px={isMobile ? 2 : 20}
       >
         {title}
       </Typography>
       {(isHome || isMobile) && (
-        <Typography variant="subtitle1" color={isHome ? "#3B3B3B" : "#fff"} textAlign={"center"}>
+        <Typography
+          variant="subtitle1"
+          color={isHome ? "#3B3B3B" : "#fff"}
+          textAlign={"center"}
+        >
           {subtitle}
         </Typography>
       )}
