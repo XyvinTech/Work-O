@@ -117,6 +117,7 @@ const Navbar = () => {
                     <Button
                       color="inherit"
                       disableRipple
+                      fullWidth
                       sx={{
                         fontFamily: mont.style.fontFamily,
                         textTransform: "uppercase",
@@ -169,6 +170,7 @@ const Navbar = () => {
                   <Button
                     color="inherit"
                     disableRipple
+                    fullWidth
                     sx={{
                       fontFamily: mont.style.fontFamily,
                       textTransform: "uppercase",
