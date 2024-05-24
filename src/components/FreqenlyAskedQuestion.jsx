@@ -4,6 +4,7 @@ import accordionData from "../assets/json/FrequentlyAsked";
 import styled from "styled-components";
 import { Box, Button, Typography } from "@mui/material";
 import bgImageFooter from "/public/assets/home/img/footer.png";
+import StyledBox from "./StyledBox";
 const Container = styled(Box)(() => ({
     backgroundImage: `url(${bgImageFooter.src})`,
     backgroundSize: "cover",
@@ -30,6 +31,7 @@ const FreqenlyAskedQuestion = () => {
   return (
     <Container>
     <Box padding={"10px"} paddingTop={"60px"} marginBottom={"10px"}>
+      <StyledBox>
       <Typography variant="h2" textAlign={"center"} marginBottom={"10px"}>
         {" "}
         Frequently Asked Questions
@@ -44,6 +46,7 @@ const FreqenlyAskedQuestion = () => {
         <Typography variant="h9">Contact us for further assistance</Typography>
         <Button variant="contained" color="primary"> Contact Us</Button>
       </Box>
+      </StyledBox>
     </Box>
     </Container>
   );

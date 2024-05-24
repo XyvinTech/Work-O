@@ -132,9 +132,9 @@ const theme = createTheme({
         containedPrimary: {
           gap: "8px",
           borderRadius: 4,
-          padding: "8px 20px",
+          padding: "15px 20px",
           "@media (max-width:600px)": {
-            padding: "8px 20px",
+            padding: "10px 20px",
           },
           backgroundColor: "#FC8229", // Primary button background color
           color: "#FFFFFF", // Primary button text color
@@ -144,6 +144,7 @@ const theme = createTheme({
           fontFamily: mont.style.fontFamily,
           fontWeight: "600",
           boxShadow: "none",
+          
         },
         containedSecondary: {
           gap: "8px",

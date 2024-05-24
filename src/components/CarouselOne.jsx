@@ -8,12 +8,12 @@ function CarouselOne({ images,pic }) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
     
   const mobileStyle = { width: "90px", height: "104px", objectFit: "cover", padding: "1px" };
-  const desktopStyle = { width: "186px", height: "216px", objectFit: "cover", padding: "1px" };
+  const desktopStyle = { width: "180px", height: "216px", objectFit: "cover", padding: "1px" };
   
   const settings1 = {
     dots: false,
     infinite: true,
-    slidesToShow: 9,
+    slidesToShow: 8,
     slidesToScroll: 1,
     autoplay: true,
     speed: 1000,
@@ -36,7 +36,7 @@ function CarouselOne({ images,pic }) {
   const settings2 = {
     dots: false,
     infinite: true,
-    slidesToShow: 9,
+    slidesToShow: 8,
     slidesToScroll: 1,
     autoplay: true,
     speed: 800,
