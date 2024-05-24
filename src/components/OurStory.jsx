@@ -8,7 +8,7 @@ const OurStory = () => {
   return (
     <Box>
       
-      <Stack direction={isMobile? "column":"row"} spacing={isMobile?2:10}>
+      <Stack direction={isMobile? "column":"row"} spacing={isMobile?2:7}>
         <img
           src="/images/OurStory.png"
           height={isMobile?"294px":"520px"}
@@ -21,7 +21,7 @@ const OurStory = () => {
             variant="h5"
             textAlign={"justify"}
             lineHeight={"27px"}
-            paddingRight={isMobile?"0px":"80px"}
+           
           >
             Welcome to Worko, where we're not just shaping careers; we're
             shaping futures. As a non-profit organization, our mission is to
@@ -32,7 +32,6 @@ const OurStory = () => {
             variant="h5"
             textAlign={"justify"}
             lineHeight={"27px"}
-            paddingRight={isMobile?"0px":"80px"}
           >
             At Worko, we understand that the key to success lies in practical,
             job-oriented skills. That's why we offer comprehensive training

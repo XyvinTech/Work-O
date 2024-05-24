@@ -10,19 +10,43 @@ import ReviewCard from "./ReviewCard";
 const ButtonBox = styled(Box)`
   display: flex;
   gap: 10px;
-  justify-content: flex-end; 
+  justify-content: flex-end;
   margin-top: 20px;
   padding-right: 40px;
   @media (max-width: 600px) {
     margin-top: 30px;
-    gap:5px;
-    padding-right:10px
+    gap: 5px;
+    padding-right: 10px;
   }
 `;
 
 const Container = styled(Box)`
   overflow: hidden;
   height: 300px;
+`;
+const StyledSlider = styled(Slider)`
+
+  .slick-dots {
+    left: 10px;
+    bottom: -30px;
+    text-align: left;
+
+    li {
+      margin: 0;
+    }
+
+    li button:before {
+      color: orange;
+      font-size: 8px;
+    }
+
+    li.slick-active button:before {
+      color: orange;
+      font-size: 8px;
+    }
+  
+    }
+  }
 `;
 const ReviewCarousel = () => {
   let sliderRef = useRef(null);
@@ -64,7 +88,7 @@ const ReviewCarousel = () => {
   };
   return (
     <Container className="slider-container">
-      <Slider
+      <StyledSlider
         ref={(slider) => {
           sliderRef = slider;
         }}
@@ -80,7 +104,7 @@ const ReviewCarousel = () => {
             />
           </div>
         ))}
-      </Slider>
+      </StyledSlider>
       <ButtonBox
         sx={{
           position: "absolute",

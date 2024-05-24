@@ -21,6 +21,7 @@ function CarouselOne({ images,pic }) {
     autoplaySpeed: 1000,
     cssEase: "linear",
     responsive: [
+      
       {
         breakpoint: 600,
         settings: {
