@@ -10,9 +10,12 @@ const ViewMoreContainer = styled(Box)`
   justify-content: space-between;
   overflow-x: auto;
   gap: 20px;
+  padding: 10px 0;
   @media (max-width: 600px) {
     flex-wrap: wrap;
-    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    
   }
 `;
 
