@@ -23,12 +23,16 @@ const ReviewCard = ({image,title,subheader,description}) => {
   return (
     <Card
       sx={{
-       maxWidth:"500px",
+       width:"100%",
         height: "260px",
         // boxShadow: "none",
         background: "white",
         borderRadius: 0,
-       border:"1px solid #e3dccd"
+       border:"1px solid #e3dccd",
+       "@media (max-width: 600px)": {
+        maxWidth: "500px;", // Adjust the width for mobile devices
+      },
+
       }}
     >
       <CardActionArea>
@@ -61,7 +65,7 @@ const ReviewCard = ({image,title,subheader,description}) => {
           <CardHeader
             sx={{ padding: "0", marginTop: "30px" }}
             avatar={<Avatar alt="Cindy Baker" src={image} />}
-            title={<Typography variant="h6">{title}</Typography>}
+            title={<Typography variant="h6" fontWeight={"600"}>{title}</Typography>}
             subheader={
               <StyledLabel>{subheader}</StyledLabel>
             }

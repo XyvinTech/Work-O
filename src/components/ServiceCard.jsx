@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Card = styled.div`
-  width: 415px;
+  width: 100%;
   height: 559px;
   box-shadow: none;
   border-radius: 0;
@@ -23,7 +23,7 @@ const CardActionArea = styled.div`
 `;
 
 const CardMedia = styled.img`
-  width: 395px;
+  width: 100%;
   height: 395px;
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
@@ -47,7 +47,7 @@ const ServiceCard = ({ title, image, description }) => {
   return (
     <Card>
       <CardActionArea>
-        <CardMedia src={image} alt="Service Image" />
+        <CardMedia src={image} alt="Service Image"  />
         <CardContent>
           <Typography
             gutterBottom

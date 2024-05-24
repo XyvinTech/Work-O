@@ -10,7 +10,7 @@ const TabsContainer = styled.div`
 
   @media (max-width: 600px) {
     max-width: 100%;
-    
+    padding-bottom:50px;
   }
 `;
 const TabHeader = styled.div`
