@@ -58,7 +58,7 @@ const theme = createTheme({
     },
 
     card: {
-      fontSize: "25px",
+      fontSize: "32px",
       fontWeight: "600",
       fontFamily: mont.style.fontFamily,
     },

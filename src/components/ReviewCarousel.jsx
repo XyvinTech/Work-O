@@ -9,20 +9,23 @@ import carouselData from "../assets/json/ReviewCarouselData";
 import ReviewCard from "./ReviewCard";
 const ButtonBox = styled(Box)`
   display: flex;
-  gap: 10px;
+  gap: 7px;
   justify-content: flex-end;
   margin-top: 20px;
   padding-right: 40px;
   @media (max-width: 600px) {
     margin-top: 30px;
-    gap: 5px;
-    padding-right: 10px;
+    gap: 2px;
+    padding-right: 1px;
   }
 `;
 
 const Container = styled(Box)`
   overflow: hidden;
   height: 300px;
+  @media (max-width: 600px) {
+    height:350px
+  }
 `;
 const StyledSlider = styled(Slider)`
 .slick-slide {
@@ -118,13 +121,13 @@ const ReviewCarousel = () => {
       >
         <img
           src="/images/Button1.png"
-          style={{ width: "48px", height: "48px" }}
+          style={{ width: "48px", height: "48px", opacity: settings.initialSlide === 0 ? 0.5 : 1 }}
           onClick={previous}
           alt="Previous"
         />
         <img
           src="/images/Button.png"
-          style={{ width: "48px", height: "48px" }}
+          style={{ width: "48px", height: "48px", opacity: settings.initialSlide === 1 ? 0.5 : 1 }}
           onClick={next}
           alt="Next"
         />

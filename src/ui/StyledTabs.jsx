@@ -65,7 +65,7 @@ const TabContent = styled.div`
   border-top: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 70px;
   opacity: 0;
   animation: fadeIn ease 2s;
   animation-fill-mode: forwards;

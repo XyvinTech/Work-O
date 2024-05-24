@@ -37,7 +37,7 @@ const ViewMoreCard = ({image,title,description,date}) => {
         >
           <Typography
             variant="h7"
-            sx={{ color: "primary.main", textAlign: "justify" }}
+            sx={{ color: "primary.main", textAlign: "justify" ,fontWeight:"600"}}
           >
            {date}
           </Typography>
@@ -51,7 +51,6 @@ const ViewMoreCard = ({image,title,description,date}) => {
           <Typography
             variant="h6"
             sx={{
-              textAlign: "justify",
               marginTop: "15px",
               marginBottom: "15px",
             }}
