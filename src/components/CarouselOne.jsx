@@ -16,9 +16,10 @@ function CarouselOne({ images,pic }) {
     slidesToShow: 8,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 1000,
     pauseOnHover: false,
-    autoplaySpeed: 1000,
+    speed:1500,
+    autoplaySpeed: 1500,
+    easing:'linear',
     cssEase: "linear",
     responsive: [
       {
@@ -38,10 +39,11 @@ function CarouselOne({ images,pic }) {
     slidesToShow: 8,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 800,
+    speed:800,
     pauseOnHover: false,
     autoplaySpeed: 800,
     cssEase: "linear",
+    easing:'linear',
     responsive: [
       {
         breakpoint: 600,

@@ -60,12 +60,20 @@ const TabButton = styled.button`
 `;
 
 const TabContent = styled.div`
-  padding: 40px;
+  padding: 20px;
   background-color: white;
   border-top: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  opacity: 0;
+  animation: fadeIn ease 0.3s;
+  animation-fill-mode: forwards;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr 1fr;
@@ -83,14 +91,22 @@ const TabContent = styled.div`
 
 const StyledTabs = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [renderKey, setRenderKey] = useState(0);
   const tabs = serviceDetails.map((detail) => detail.tabName);
 
   const handleNext = () => {
     setActiveTab((prev) => (prev + 1) % tabs.length);
+    setRenderKey(prevKey => prevKey + 1);
   };
 
   const handlePrevious = () => {
     setActiveTab((prev) => (prev - 1 + tabs.length) % tabs.length);
+    setRenderKey(prevKey => prevKey + 1);
+  };
+
+  const handleTabClick = (index) => {
+    setActiveTab(index);
+    setRenderKey(prevKey => prevKey + 1); // Increment key to re-trigger animation
   };
   return (
     <TabsContainer>
@@ -99,13 +115,13 @@ const StyledTabs = () => {
           <TabButton
             key={index}
             className={activeTab === index ? "active" : ""}
-            onClick={() => setActiveTab(index)}
+            onClick={() => handleTabClick(index)}
           >
             {tab}
           </TabButton>
         ))}
       </TabHeader>
-      <TabContent>
+      <TabContent  key={renderKey}>
         {serviceDetails[activeTab].services.map((service, index) => (
           <ServiceCard
             key={index}
