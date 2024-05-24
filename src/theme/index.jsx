@@ -206,8 +206,15 @@ const theme = createTheme({
           borderColor: "#FFF", // Primary button border color
           color: "#FFF", // Primary button text color
           "&:hover": {
-            borderColor: "#FEE", // Darker shade for hover state
-            color: "#FEE",
+            "&::after": {
+              content: '""',
+              display: "inline-block",
+              width: "23px",
+              height: "17px",
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg width='23' height='17' viewBox='0 0 23 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97428 14.5284L21.0261 3.47145M21.0261 3.47145L8.57695 1.22022M21.0261 3.47145L16.8049 15.3975' stroke='%23FBF8F2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
+              marginLeft: "8px",
+            },
           },
           fontFamily: mont.style.fontFamily,
           fontWeight: "600",
