@@ -87,7 +87,7 @@ const Navbar = () => {
             />
             {!isMobile && (
               <Stack direction={"row"} spacing={4}>
-                <StyledIconButton icon={PlusIcon} buttonText="Customer care"/>
+                <StyledIconButton icon={PlusIcon} buttonText="Customer care" />
                 <Button
                   variant="contained"
                   color="primary"
@@ -116,7 +116,7 @@ const Navbar = () => {
                   <Link href={href} key={label}>
                     <Button
                       color="inherit"
-                      fullWidth
+                      disableRipple
                       sx={{
                         fontFamily: mont.style.fontFamily,
                         textTransform: "uppercase",
@@ -124,16 +124,16 @@ const Navbar = () => {
                           isMobile && isTransparent
                             ? activeTab === label
                               ? theme.palette.primary.main
-                              : "#000"
+                              : "#1B1B1B"
                             : activeTab === label
                             ? theme.palette.primary.main
                             : isTransparent
-                            ? "#000"
+                            ? "#1B1B1B"
                             : "#fff",
                         fontSize: "14px",
-                        fontWeight: 700,
+                        fontWeight: 600,
                         "&:hover": {
-                          color: "#FC8229",
+                          backgroundColor: "transparent",
                         },
                       }}
                     >
@@ -168,6 +168,7 @@ const Navbar = () => {
                 <Link href={href} key={label}>
                   <Button
                     color="inherit"
+                    disableRipple
                     sx={{
                       fontFamily: mont.style.fontFamily,
                       textTransform: "uppercase",
@@ -175,16 +176,16 @@ const Navbar = () => {
                         isMobile && isTransparent
                           ? activeTab === label
                             ? theme.palette.primary.main
-                            : "#000"
+                            : "#1B1B1B"
                           : activeTab === label
                           ? theme.palette.primary.main
                           : isTransparent
-                          ? "#000"
+                          ? "#1B1B1B"
                           : "#fff",
                       fontSize: "14px",
-                      fontWeight: 700,
+                      fontWeight: 600,
                       "&:hover": {
-                        color: "#FC8229",
+                        backgroundColor: "transparent",
                       },
                     }}
                   >
