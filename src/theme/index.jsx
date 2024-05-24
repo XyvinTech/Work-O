@@ -62,7 +62,7 @@ const theme = createTheme({
       fontWeight: "600",
       fontFamily: mont.style.fontFamily,
     },
-  subtitle1: {
+    subtitle1: {
       fontSize: "18px",
       fontWeight: "normal",
       fontFamily: mont.style.fontFamily,
@@ -132,14 +132,23 @@ const theme = createTheme({
         containedPrimary: {
           gap: "8px",
           borderRadius: 4,
-          padding: "8px 20px",
+          padding: "15px 20px",
           "@media (max-width:600px)": {
             padding: "8px 20px",
           },
-          backgroundColor: "#FC8229", // Primary button background color
-          color: "#FFFFFF", // Primary button text color
+          backgroundColor: "#FC8229",
+          color: "#FFFFFF",
           "&:hover": {
-            backgroundColor: "#FC8229", // Darker shade for hover state
+            backgroundColor: "#FC8229",
+            "&::after": {
+              content: '""',
+              display: "inline-block",
+              width: "23px",
+              height: "17px",
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg width='23' height='17' viewBox='0 0 23 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97428 14.5284L21.0261 3.47145M21.0261 3.47145L8.57695 1.22022M21.0261 3.47145L16.8049 15.3975' stroke='%23FBF8F2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
+              marginLeft: "8px",
+            },
           },
           fontFamily: mont.style.fontFamily,
           fontWeight: "600",
@@ -153,8 +162,8 @@ const theme = createTheme({
             padding: "8px 20px",
           },
           "&:hover": {
-            backgroundColor:"#FFFFFF"
-           },
+            backgroundColor: "#FFFFFF",
+          },
           backgroundColor: "#FFFFFF",
           color: "#3A3A3A", // Primary button text color
           fontFamily: mont.style.fontFamily,
@@ -173,7 +182,15 @@ const theme = createTheme({
           "&:hover": {
             borderColor: "#FF7043", // Darker shade for hover state
             color: "#FF5722",
-            backgroundColor:"#FFFFFF"
+            backgroundColor: "#FFFFFF",
+            "&::after": {
+              content: '""', // Empty content to use background image
+              display: 'inline-block',
+              width: '23px', // Adjust based on your SVG size
+              height: '17px', // Adjust based on your SVG size
+              backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'23\' height=\'17\' viewBox=\'0 0 23 17\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M1.97428 14.5285L21.0261 3.47157M21.0261 3.47157L8.57695 1.22034M21.0261 3.47157L16.8049 15.3976\' stroke=\'%23FC8229\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'/%3E%3C/svg%3E")',
+              marginLeft: '8px',
+            },
           },
           fontFamily: mont.style.fontFamily,
           fontWeight: "600",
@@ -204,7 +221,7 @@ const theme = createTheme({
             padding: "8px 20px",
           },
           "&:hover": {
-           backgroundColor:"#3B3B3B"
+            backgroundColor: "#3B3B3B",
           },
           backgroundColor: "#3B3B3B",
           color: "#FFFFFF", // Primary button text color
