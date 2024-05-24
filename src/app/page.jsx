@@ -13,6 +13,8 @@ import StyledBox from "@/components/StyledBox";
 import OurStory from "@/components/OurStory";
 import viewMoreData from "../assets/json/PromiseCardData";
 import FreqenlyAskedQuestion from "@/components/FreqenlyAskedQuestion";
+import Location from "@/components/Location";
+import LocationCard from "@/components/LocationCard";
 function page() {
   const images = [
     "/assets/home/carousel-1/image1.png",
@@ -28,9 +30,8 @@ function page() {
     "/assets/home/carousel-1/image1.png",
     "/assets/home/carousel-1/image2.png",
     "/assets/home/carousel-1/image3.png",
-    
   ];
-  const pic=[
+  const pic = [
     "/assets/home/carousel-1/image7.png",
     "/assets/home/carousel-1/image8.jpeg",
     "/assets/home/carousel-1/image9.png",
@@ -45,7 +46,7 @@ function page() {
     "/assets/home/carousel-1/image5.jpeg",
     "/assets/home/carousel-1/image6.png",
     "/assets/home/carousel-1/image7.png",
-  ]
+  ];
   return (
     <>
       <Header
@@ -62,7 +63,9 @@ function page() {
       <StyledBox title={"Our Service"}>
         <StyledTabs />
       </StyledBox>
-      <StyledBox title={"Our Major Locations"}></StyledBox>
+      <StyledBox title={"Our Major Locations"}>
+        <Location />
+      </StyledBox>
       <StyledBox bgcolor={"#F2F2F2"}>
         <BookNowCarousel />
       </StyledBox>
@@ -79,15 +82,16 @@ function page() {
         <GetApp />
       </StyledBox>
       <StyledBox title={"Testimonials"}>
-       
         <ReviewCarousel />
       </StyledBox>
       <StyledBox title={"Blogs"}>
         <ViewMore />
-       
       </StyledBox>
-      <StyledBox> <Achievements/></StyledBox>
-      <FreqenlyAskedQuestion/>
+      <StyledBox>
+        {" "}
+        <Achievements />
+      </StyledBox>
+      <FreqenlyAskedQuestion />
     </>
   );
 }

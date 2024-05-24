@@ -33,8 +33,8 @@ const Content = styled.div`
 
 const ImageContainer = styled.div`
   position: relative;
-  width: 50%;
-  height: 100%;
+  width: 37%;
+  height: 199px;
   @media (max-width: 600px) {
     width: 50%; /* Use 50% width on mobile for equal split */
     height: auto; /* Allow height to adjust */
@@ -45,7 +45,7 @@ const DescriptionTypography = styled(Typography)`
   margin-top: 16px;
   font-family: ${mont.style.fontFamily};
   font-weight: 500;
-  font-size: 17px;
+  font-size: 15px;
   color: #a0a0a0;
   padding-bottom:2px;
 `;
@@ -70,7 +70,7 @@ const BookNowCard = ({
             {description}
           </DescriptionTypography>
         </div>
-        <Button variant={buttonColor} color={borderColor}
+        <Button variant={buttonColor} color={borderColor} sx={{width:"131px",fontSize:"16px"}}
          
         >
           <Typography fontFamily={mont.style.fontFamily}>Book Now</Typography>

@@ -132,7 +132,7 @@ const theme = createTheme({
         containedPrimary: {
           gap: "8px",
           borderRadius: 4,
-          padding: "8px 40px",
+          padding: "8px 20px",
           "@media (max-width:600px)": {
             padding: "8px 20px",
           },

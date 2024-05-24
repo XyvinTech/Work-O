@@ -87,7 +87,7 @@ const Navbar = () => {
             />
             {!isMobile && (
               <Stack direction={"row"} spacing={4}>
-                <StyledIconButton icon={PlusIcon} buttonText="Customer care" />
+                <StyledIconButton icon={PlusIcon} buttonText="Customer care"/>
                 <Button
                   variant="contained"
                   color="primary"
@@ -141,7 +141,7 @@ const Navbar = () => {
                     </Button>
                   </Link>
                 ))}
-                <Stack spacing={2} mt={2}>
+                <Stack spacing={2} mt={2} alignItems={"center"}>
                   <StyledIconButton
                     icon={PlusIcon}
                     buttonText="Customer care"

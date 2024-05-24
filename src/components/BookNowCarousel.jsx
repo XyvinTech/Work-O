@@ -20,7 +20,29 @@ const ButtonBox = styled(Box)`
 `;
 
 const SlideWrapper = styled(Box)`
-  padding: 0 10px; // Adjust the spacing between slides here
+  padding: 0 10px;
+`;
+
+const StyledSlider = styled(Slider)`
+  .slick-dots {
+    left: 10px; 
+    bottom: -30px; 
+    text-align: left;
+
+    li {
+      margin: 0; 
+    }
+
+    li button:before {
+      color: orange; 
+      font-size: 8px; 
+    }
+
+    li.slick-active button:before {
+      color: orange;
+      font-size: 8px;
+    }
+  }
 `;
 
 const BookNowCarousel = () => {
@@ -35,7 +57,7 @@ const BookNowCarousel = () => {
   };
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 3,
@@ -45,6 +67,7 @@ const BookNowCarousel = () => {
       {
         breakpoint: 600,
         settings: {
+          
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 1,
@@ -54,8 +77,8 @@ const BookNowCarousel = () => {
   };
 
   return (
-    <div className="slider-container" style={{ overflow: "hidden", height: "515px", alignContent: "center" }}>
-      <Slider
+    <div className="slider-container" style={{ overflow: "hidden", height: "515px", alignContent: "center", position: "relative" }}>
+      <StyledSlider
         ref={(slider) => {
           sliderRef = slider;
         }}
@@ -74,7 +97,7 @@ const BookNowCarousel = () => {
             />
           </SlideWrapper>
         ))}
-      </Slider>
+      </StyledSlider>
       <ButtonBox>
         <img
           src="/images/Button1.png"

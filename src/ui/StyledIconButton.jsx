@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@mui/material";
 import styled from "styled-components";
-
+import { mont } from "@/theme";
 const RoundIcon = styled.div`
   display: inline-flex;
   align-items: center;
@@ -15,13 +15,18 @@ const RoundIcon = styled.div`
 const StyledIconButton = ({ icon: Icon, buttonText }) => {
   return (
     <Button
-      variant="outlined"
-     
       startIcon={
         <RoundIcon>
           <Icon />
         </RoundIcon>
       }
+      sx={{
+        border: "1px solid #FC8229",
+        width: "208px",
+        fontWeight: "700",
+        fontSize: "16px",
+        fontFamily: mont.style.fontFamily,
+      }}
     >
       {buttonText}
     </Button>

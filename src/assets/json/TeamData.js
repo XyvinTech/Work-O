@@ -10,12 +10,12 @@ const TeamData = [
     description: "Marketing specialist",
   },
   {
-    image: "/images/member3.jpeg",
+    image: "/images/m.jpeg",
     title: "John Doe",
     description: "Engineer",
   },
   {
-    image: "/images/member3.jpeg",
+    image: "/images/m.jpeg",
     title: "John Doe",
     description: "Engineer",
   },

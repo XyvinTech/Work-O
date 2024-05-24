@@ -30,6 +30,25 @@ const StyledSlider = styled(Slider)`
   .slick-slide {
     padding: 0 20px; 
   }
+  .slick-dots {
+    left: 10px; 
+    bottom: -30px; 
+    text-align: left;
+
+    li {
+      margin: 0; 
+    }
+
+    li button:before {
+      color: orange; 
+      font-size: 8px; 
+    }
+
+    li.slick-active button:before {
+      color: orange;
+      font-size: 8px;
+    }
+  }
 `;
 
 const TeamCarousel = () => {
