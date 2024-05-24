@@ -10,7 +10,7 @@ function AvatarCarousel({images}) {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 12,
+    slidesToShow: 8,
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
@@ -22,6 +22,14 @@ function AvatarCarousel({images}) {
       
         {
           breakpoint: 600,
+          settings: {
+            slidesToShow: 6,
+            slidesToScroll: 6,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 1200,
           settings: {
             slidesToShow: 6,
             slidesToScroll: 6,

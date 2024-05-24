@@ -25,7 +25,9 @@ const Container = styled(Box)`
   height: 300px;
 `;
 const StyledSlider = styled(Slider)`
-
+.slick-slide {
+  padding: 0 20px; 
+}
   .slick-dots {
     left: 10px;
     bottom: -30px;

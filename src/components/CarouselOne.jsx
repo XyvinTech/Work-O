@@ -9,50 +9,77 @@ function CarouselOne({ images,pic }) {
     
   const mobileStyle = { width: "90px", height: "104px", objectFit: "cover", padding: "1px" };
   const desktopStyle = { width: "180px", height: "216px", objectFit: "cover", padding: "1px" };
+  const responsiveCarousel = [
+    {
+      breakpoint: 2000, // Settings for extra large screens
+      settings: {
+        slidesToShow: 8,
+        slidesToScroll: 1,
+        initialSlide: 2
+      }
+    },
+    
+    {
+      breakpoint: 1440, // Typical for MacBook Air
+      settings: {
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 1200, // Settings for normal large screens
+      settings: {
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 900, // Settings for tablets
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 600, // Settings for mobile devices
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        initialSlide: 1
+      }
+    }
+  
+  ]
   
   const settings1 = {
     dots: false,
     infinite: true,
-    slidesToShow: 8,
+    slidesToShow: 10,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 1000,
     pauseOnHover: false,
-    autoplaySpeed: 1000,
+    speed:1500,
+    autoplaySpeed: 1500,
+    easing:'linear',
     cssEase: "linear",
-    responsive: [
-      
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          initialSlide: 4,
-        },
-      },
-    ],
+    responsive: responsiveCarousel
   };
 
   const settings2 = {
     dots: false,
     infinite: true,
-    slidesToShow: 8,
+    slidesToShow: 10,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 800,
+    speed:800,
     pauseOnHover: false,
     autoplaySpeed: 800,
     cssEase: "linear",
-    responsive: [
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          initialSlide: 3,
-        },
-      },
-    ],
+    easing:'linear',
+    responsive: responsiveCarousel
   };
 
   return (

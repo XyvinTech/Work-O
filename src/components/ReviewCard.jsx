@@ -23,7 +23,7 @@ const ReviewCard = ({image,title,subheader,description}) => {
   return (
     <Card
       sx={{
-       width:"380px",
+       width:"100%",
         height: "260px",
         // boxShadow: "none",
         background: "white",
