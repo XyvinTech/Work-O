@@ -16,6 +16,7 @@ import FreqenlyAskedQuestion from "@/components/FreqenlyAskedQuestion";
 import Location from "@/components/Location";
 import LocationCard from "@/components/LocationCard";
 import Statistics from "@/components/Statistics";
+import ContactUs from "@/components/ContactUs";
 function page() {
   const images = [
     "/assets/home/carousel-1/image1.png",
@@ -94,6 +95,7 @@ function page() {
         <Achievements />
       </StyledBox>
       <FreqenlyAskedQuestion />
+      <ContactUs/>
     </>
   );
 }
