@@ -31,16 +31,16 @@ const StyledForm = () => {
     display: flex;
     align-items: center;
     @media (max-width: 600px) {
-        font-size: 12px;
-        font-weight: 500;
-      }
+      font-size: 12px;
+      font-weight: 500;
+    }
   `;
   const StyledToolTipIcon = styled(ToolTipIcon)`
     margin-left: 8px;
-    margin-top:4px; 
+    margin-top: 4px;
     @media (max-width: 600px) {
-       margin:0px;
-      }
+      margin: 0px;
+    }
   `;
   const HtmlTooltip = styled(({ className, ...props }) => (
     <Tooltip {...props} classes={{ popper: className }} />
@@ -192,27 +192,40 @@ const StyledForm = () => {
             <StyledInput placeholder="Email ID" />
           </Grid>
           <Grid item xs={12}>
-            <StyledTextArea placeholder="Your Message" />
+            <StyledPhoneInput />
+          </Grid>
+          <Grid item xs={6}>
+            <StyledSelectField placeholder="Country" />
+          </Grid>
+          <Grid item xs={6}>
+            <StyledSelectField placeholder="City" />
+          </Grid>
+          <Grid item xs={12}>
+            <StyledTextArea placeholder="Add a Description/Enquiry" />
           </Grid>
         </Grid>
       )}
 
       {selectedForm === "form3" && (
         <Grid container spacing={2}>
-          <Grid item xs={6}>
-            <StyledInput placeholder="Company Name" />
+          <Grid item xs={12}>
+            <StyledInput placeholder="Partner Name" />
           </Grid>
-          <Grid item xs={6}>
-            <StyledInput placeholder="Contact Person" />
+          <Grid item xs={12}>
+            <StyledInput placeholder="Company ID" />
           </Grid>
           <Grid item xs={12}>
             <StyledPhoneInput />
           </Grid>
-          <Grid item xs={12}>
-            <StyledInput placeholder="Email ID" />
+
+          <Grid item xs={6}>
+            <StyledSelectField placeholder="Country" />
+          </Grid>
+          <Grid item xs={6}>
+            <StyledSelectField placeholder="City" />
           </Grid>
           <Grid item xs={12}>
-            <StyledTextArea placeholder="Project Details" />
+            <StyledTextArea placeholder="Add a Description/Enquiry" />
           </Grid>
         </Grid>
       )}
