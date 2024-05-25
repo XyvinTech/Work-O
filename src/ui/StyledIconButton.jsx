@@ -1,7 +1,8 @@
 "use client";
-import { Button } from "@mui/material";
+import { Button,Grid } from "@mui/material";
 import styled from "styled-components";
 import { mont } from "@/theme";
+import { useEffect, useState } from "react";
 const RoundIcon = styled.div`
   display: inline-flex;
   align-items: center;
@@ -10,9 +11,36 @@ const RoundIcon = styled.div`
   height: 32px;
   border-radius: 135px;
   border: 1px solid #fc8229;
+
 `;
 
-const StyledIconButton = ({ icon: Icon, buttonText,color,borderColor ,width}) => {
+
+const TextWrapper = styled.div`
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+`;
+
+const StyledIconButton = ({ icon: Icon, buttonText, alternateText,color,borderColor ,width}) => {
+
+  const [activeText, setActiveText] = useState(buttonText);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+
+  useEffect(() => {
+    let intervalId;
+
+    if (alternateText) {
+      intervalId = setInterval(() => {
+        setIsAnimating(true);
+        setTimeout(() => {
+          setActiveText(prev => prev === buttonText ? alternateText : buttonText);
+          setIsAnimating(false);
+        }, 500); // Time for text change in the middle of the animation
+      }, 3000); // Change text every 3 seconds
+    }
+    return () => clearInterval(intervalId);
+  }, [buttonText, alternateText]);
+
   return (
     <Button
       startIcon={
@@ -28,9 +56,15 @@ const StyledIconButton = ({ icon: Icon, buttonText,color,borderColor ,width}) =>
         fontSize: "16px",
         fontFamily: mont.style.fontFamily,
         color: color || "#FC8229",
+        display: 'flex',
+        justifyContent: 'flex-start', // Align items to the start
+        alignItems: 'center',
+        padding: '8px 16px', // Adjust padding as necessary
       }}
     >
-      {buttonText}
+        <TextWrapper style={{ opacity: isAnimating ? 0 : 1 }}>
+        {activeText}
+      </TextWrapper>
     </Button>
   );
 };

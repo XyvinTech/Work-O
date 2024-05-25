@@ -87,7 +87,7 @@ const Navbar = () => {
             />
             {!isMobile && (
               <Stack direction={"row"} spacing={4}>
-                <StyledIconButton icon={PlusIcon} buttonText="Customer care" width={"208px"} />
+                <StyledIconButton icon={PlusIcon} buttonText="Customer care" alternateText='7-666-666-559' width={"210px"} />
                 <Button
                   variant="navbar"
                   color="primary"
