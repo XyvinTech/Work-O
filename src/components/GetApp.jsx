@@ -49,7 +49,7 @@ function GetApp() {
               color={"#1B1B1B"}
               fontFamily={mont.style.fontFamily}
             >
-              Lorem ipsum dolor sit amet consectetur. Ac
+              Download our Worko App on
             </Typography>
           </Stack>
           <Stack direction={"row"} spacing={3} alignItems={"center"}>
