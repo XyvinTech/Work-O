@@ -87,9 +87,9 @@ const Navbar = () => {
             />
             {!isMobile && (
               <Stack direction={"row"} spacing={4}>
-                <StyledIconButton icon={PlusIcon} buttonText="Customer care" />
+                <StyledIconButton icon={PlusIcon} buttonText="Customer care" width={"208px"} />
                 <Button
-                  variant="contained"
+                  variant="navbar"
                   color="primary"
                   onClick={() => router.push("/get-the-app")}
                 >

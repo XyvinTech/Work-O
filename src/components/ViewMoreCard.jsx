@@ -67,7 +67,7 @@ const ViewMoreCard = ({ image, title, description, date }) => {
         <DescriptionTypography variant="h6">
           {description}
         </DescriptionTypography>
-        <StyledButton variant="outlined" color="primary">
+        <StyledButton variant="outlined" color="primary" >
           View more
         </StyledButton>
       </StyledCardContent>

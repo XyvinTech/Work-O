@@ -10,7 +10,7 @@ function AvatarCarousel({images}) {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 8,
+    slidesToShow: 11,
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
@@ -83,7 +83,7 @@ function AvatarCarousel({images}) {
           </Typography>
         </Stack>
         <Box display="flex" justifyContent="center" marginTop="20px">
-          <Button variant="contained">Enroll Now</Button>
+          <Button variant="navbar" color="primary">Enroll Now</Button>
         </Box>
     </>
   );

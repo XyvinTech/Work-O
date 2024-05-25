@@ -99,7 +99,7 @@ function CarouselOne({ images,pic }) {
           ))}
         </Slider>
       </div>
-      <div className="slider-container" style={{ overflow: "hidden", marginTop: "20px" }}>
+      <div className="slider-container" style={{ overflow: "hidden", marginTop: "10px" }}>
         <Slider {...settings2}>
           {pic.map((image, index) => (
             <div key={`slider2-${index}`}>

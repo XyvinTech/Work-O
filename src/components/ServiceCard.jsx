@@ -22,17 +22,23 @@ const CardActionArea = styled.div`
   cursor: pointer;
 `;
 
-const CardMedia = styled.img`
+const CardMediaWrapper = styled.div`
   width: 100%;
   height: 395px;
+  overflow: hidden; /* Ensure the image doesn't overflow its container */
+  @media (max-width: 600px) {
+    width: 140px;
+    height: 190px;
+  }
+`;
+
+const CardMedia = styled.img`
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
   &:hover {
     transform: scale(1.05);
-  }
-  @media (max-width: 600px) {
-    width: 140px;
-    height: 190px;
   }
 `;
 
@@ -47,7 +53,8 @@ const ServiceCard = ({ title, image, description }) => {
   return (
     <Card>
       <CardActionArea>
-        <CardMedia src={image} alt="Service Image"  />
+        <CardMediaWrapper>
+        <CardMedia src={image} alt="Service Image"  /></CardMediaWrapper>
         <CardContent>
           <Typography
             gutterBottom

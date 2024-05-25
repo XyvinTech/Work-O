@@ -39,7 +39,7 @@ function ContactUs() {
         <Box width={{ lg: "55%", sm: "100%" }}>
           <StyledForm />
           <Stack justifyContent={"center"} direction={"row"} py={3}>
-            <Button variant="contained">Submit</Button>
+            <Button variant="navbar">Submit</Button>
           </Stack>
         </Box>
       </Stack>
