@@ -62,7 +62,7 @@ const BookNowCard = ({
     <CardContainer>
       <Content backgroundColor={backgroundColor}>
         <div>
-          <Typography variant="card" sx={{ color: textColor }}>
+          <Typography variant="h4" sx={{ color: textColor }}>
             {title}
           </Typography>
           <DescriptionTypography variant="body1">

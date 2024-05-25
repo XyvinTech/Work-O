@@ -14,7 +14,7 @@ const StyledLabel = styled.span`
 
 const StyledCard = styled.div`
   width: 100%;
-  height: 260px;
+  height: auto;
   background: white;
   border-radius: 0;
   border: 1px solid #e3dccd;

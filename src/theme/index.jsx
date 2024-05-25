@@ -59,6 +59,9 @@ const theme = createTheme({
 
     card: {
       fontSize: "32px",
+      "@media (max-width:600px)": {
+        fontSize: "18px",
+      },
       fontWeight: "600",
       fontFamily: mont.style.fontFamily,
     },
@@ -102,7 +105,7 @@ const theme = createTheme({
       "@media (max-width:600px)": {
         fontSize: "14px",
       },
-      fontWeight: "700",
+      fontWeight: "500",
       fontFamily: mont.style.fontFamily,
     },
     footer_subtitle: {

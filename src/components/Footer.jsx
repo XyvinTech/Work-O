@@ -165,8 +165,8 @@ function Footer() {
             spacing={3}
             width={isMobile ? "50%" : "100%"}
           >
-            <StyledIconButton icon={PlusIcon} buttonText="7-666-666-559"  />
-            <StyledIconButton icon={SMSIcon} buttonText="info@workoindia.com" />
+            <StyledIconButton icon={PlusIcon} buttonText="7-666-666-559"  color={"white"} borderColor={"rgba(255, 255, 255, 0.12)"}/>
+            <StyledIconButton icon={SMSIcon} buttonText="info@workoindia.com" color={"white"} borderColor={"rgba(255, 255, 255, 0.12)"}/>
           </Stack>
         </Stack>
       </Stack>
@@ -183,57 +183,57 @@ function Footer() {
       >
         <Stack spacing={2}>
           <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Kerala
+            Worko in Delhi NCR
           </Typography>
           <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Tamil Nadu
+            Worko in Coming Soon
           </Typography>
           <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Andhra Pradesh
-          </Typography>
-        </Stack>
-        <Stack spacing={2}>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Kerala
-          </Typography>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Tamil Nadu
-          </Typography>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Andhra Pradesh
+            Worko in Coming Soon
           </Typography>
         </Stack>
         <Stack spacing={2}>
           <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Kerala
+            Worko in Lucknow
           </Typography>
           <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Tamil Nadu
+            Worko in Coming Soon
           </Typography>
           <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Andhra Pradesh
-          </Typography>
-        </Stack>
-        <Stack spacing={2}>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Kerala
-          </Typography>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Tamil Nadu
-          </Typography>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Andhra Pradesh
+            Worko in Coming Soon
           </Typography>
         </Stack>
         <Stack spacing={2}>
           <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Kerala
+            Worko in Jaipur
           </Typography>
           <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Tamil Nadu
+            Worko in Coming Soon
           </Typography>
           <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Andhra Pradesh
+            Worko in Coming Soon
+          </Typography>
+        </Stack>
+        <Stack spacing={2}>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Dehradun
+          </Typography>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Coming Soon
+          </Typography>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Coming Soon
+          </Typography>
+        </Stack>
+        <Stack spacing={2}>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Coming Soon
+          </Typography>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Coming Soon
+          </Typography>
+          <Typography variant="h6" color={"#BDBDBD"}>
+            Worko in Coming Soon
           </Typography>
         </Stack>
       </Stack>
@@ -241,7 +241,7 @@ function Footer() {
         direction={isMobile ? "column" : "row"}
         justifyContent={"space-between"}
         bgcolor={"#333333"}
-        p={4}
+        p={4}height={"60px"}
         spacing={2}
       >
         <Typography variant="copyrights">

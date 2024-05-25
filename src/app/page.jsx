@@ -15,6 +15,7 @@ import viewMoreData from "../assets/json/PromiseCardData";
 import FreqenlyAskedQuestion from "@/components/FreqenlyAskedQuestion";
 import Location from "@/components/Location";
 import LocationCard from "@/components/LocationCard";
+import Statistics from "@/components/Statistics";
 function page() {
   const images = [
     "/assets/home/carousel-1/image1.png",
@@ -60,6 +61,7 @@ function page() {
         isHome
       />
       <CarouselOne images={images} pic={pic} />
+      <StyledBox ><Statistics/></StyledBox>
       <StyledBox title={"Our Service"}>
         <StyledTabs />
       </StyledBox>

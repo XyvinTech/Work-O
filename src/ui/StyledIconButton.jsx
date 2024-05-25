@@ -12,7 +12,7 @@ const RoundIcon = styled.div`
   border: 1px solid #fc8229;
 `;
 
-const StyledIconButton = ({ icon: Icon, buttonText }) => {
+const StyledIconButton = ({ icon: Icon, buttonText,color,borderColor }) => {
   return (
     <Button
       startIcon={
@@ -21,11 +21,12 @@ const StyledIconButton = ({ icon: Icon, buttonText }) => {
         </RoundIcon>
       }
       sx={{
-        border: "1px solid #FC8229",
+        border: `1px solid ${borderColor || "#FC8229"}`,
         minWidth: "300px",
         fontWeight: "700",
         fontSize: "16px",
         fontFamily: mont.style.fontFamily,
+        color: color || "#FC8229",
       }}
     >
       {buttonText}

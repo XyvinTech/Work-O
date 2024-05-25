@@ -29,7 +29,7 @@ const Container = styled(Box)`
 `;
 
 const Slide = styled(Box)`
-  padding: 0 10px; // Adjust this value for more or less padding
+  padding: 10px 10px; // Adjust this value for more or less padding
 `;
 
 const BlogData = () => {

@@ -28,7 +28,7 @@ const CardMedia = styled.img`
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
   @media (max-width: 600px) {
     width: 140px;

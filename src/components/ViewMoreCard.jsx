@@ -1,68 +1,77 @@
 import React from "react";
-import {
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@mui/material";
+import { Button, Typography } from "@mui/material";
+import styled from "styled-components";
 
-const ViewMoreCard = ({image,title,description,date}) => {
+const StyledCard = styled.div`
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  gap: 21px;
+  margin: auto;
+  box-shadow: none;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0;
+`;
+
+const StyledCardMedia = styled.div`
+  height: 240px;
+  padding-bottom: 56.25%;
+  background-color: rgba(0, 0, 0, 0.08);
+  background-image: url(${(props) => props.image});
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 15px;
+`;
+
+const StyledCardContent = styled.div`
+  color: black;
+`;
+
+const DateTypography = styled(Typography)`
+  color: #fc8229;
+  text-align: justify;
+  font-weight: 600;
+  margin-top: 15px;
+`;
+
+const TitleTypography = styled(Typography)`
+  text-align: justify;
+  margin-top: 15px;
+`;
+
+const DescriptionTypography = styled(Typography)`
+  margin-top: 15px;
+  margin-bottom: 15px;
+`;
+
+const StyledButton = styled(Button)`
+  padding: 0;
+  border: none;
+  font-weight: 500;
+
+  &:hover {
+    border: none;
+  }
+`;
+
+const ViewMoreCard = ({ image, title, description, date }) => {
   return (
-    <Card
-      sx={{
-        width: "100%",
-        height: "514px",
-        padding: "30px",
-        gap: "21px",
-        margin: "auto",
-        boxShadow: "none",
-        background: "white",
-        border: "1px solid rgba(0, 0, 0, 0.12)",
-        borderRadius: 0,
-      }}
-    >
-      <CardActionArea>
-        <CardMedia
-          image={image}
-          sx={{
-            paddingBottom: "56.25%",
-            backgroundColor: "rgba(0, 0, 0, 0.08)",
-          }}
-        />
-        <CardContent
-          sx={{
-            color: "black",
-          }}
-        >
-          <Typography
-            variant="h7"
-            sx={{ color: "primary.main", textAlign: "justify" ,fontWeight:"600"}}
-          >
-           {date}
-          </Typography>
-          <Typography
-            variant="card"
-            sx={{ textAlign: "justify", marginTop: "15px" }}
-            component="div"
-          >
-            {title}
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              marginTop: "15px",
-              marginBottom: "15px",
-            }}
-          >
-            {description}
-          </Typography>
-          <Typography variant="h7" sx={{ color: "primary.main" }}>
-            View more
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+    <StyledCard>
+      <StyledCardMedia image={image} />
+      <StyledCardContent>
+        <DateTypography variant="h7">{date}</DateTypography>
+        <TitleTypography variant="card" component="div">
+          {title}
+        </TitleTypography>
+        <DescriptionTypography variant="h6">
+          {description}
+        </DescriptionTypography>
+        <StyledButton variant="outlined" color="primary">
+          View more
+        </StyledButton>
+      </StyledCardContent>
+    </StyledCard>
   );
 };
 
