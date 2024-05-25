@@ -43,7 +43,8 @@ function page() {
       <StyledBox title={"Gig Worker Empowerment"}>
         {" "}
         <PromiseCardView viewMoreData={viewMoreData} />
-      </StyledBox><FreqenlyAskedQuestion/>
+      </StyledBox><FreqenlyAskedQuestion showStillHaveQuestions={false} />
+
     </>
   );
 }

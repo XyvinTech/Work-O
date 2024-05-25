@@ -27,7 +27,7 @@ const Container = styled(Box)(() => ({
       zIndex: 2,
     },
   }));
-const FreqenlyAskedQuestion = () => {
+const FreqenlyAskedQuestion = ({ showStillHaveQuestions = true }) => {
   return (
     <Container>
     <Box padding={"10px"} paddingTop={"60px"} marginBottom={"10px"}>
@@ -41,13 +41,14 @@ const FreqenlyAskedQuestion = () => {
           <StyledAccordion question={item.question} answer={item.answer} />
         </Box>
       ))}
+        {showStillHaveQuestions && (
       <Box display="flex" flexDirection="column" paddingTop={5} alignItems="center" gap={"10px"}>
         <Stack spacing={2} justifyContent={"center"} alignItems={"center"}>
         <Typography variant="h7" fontWeight={"500"}>Still have Questions?</Typography>
         <Typography variant="h9">Contact us for further assistance</Typography>
         <Button variant="contained" color="primary"> Contact Us</Button>
         </Stack>
-      </Box>
+      </Box>)}
       </StyledBox>
     </Box>
     </Container>

@@ -94,7 +94,8 @@ function page() {
         {" "}
         <Achievements />
       </StyledBox>
-      <FreqenlyAskedQuestion />
+      <FreqenlyAskedQuestion showStillHaveQuestions={false} />
+
       <ContactUs/>
     </>
   );
