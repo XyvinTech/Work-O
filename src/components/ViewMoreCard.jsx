@@ -46,9 +46,12 @@ const DescriptionTypography = styled(Typography)`
 `;
 
 const StyledButton = styled(Button)`
-  padding: 0;
+  padding: 0px;
+  border: none;
   font-weight: 500;
-
+  &:hover {
+    border: none;
+  }
 `;
 
 const ViewMoreCard = ({ image, title, description, date }) => {
@@ -63,7 +66,7 @@ const ViewMoreCard = ({ image, title, description, date }) => {
         <DescriptionTypography variant="h6">
           {description}
         </DescriptionTypography>
-        <StyledButton variant="outlined" color="primary">
+        <StyledButton variant="outlined" color="primary"  >
           View more
         </StyledButton>
       </StyledCardContent>
