@@ -1,7 +1,7 @@
 import React from "react";
-import { Button, Typography } from "@mui/material";
+import {  Typography } from "@mui/material";
 import styled from "styled-components";
-
+import ArrowForwardIcon from "../assets/icons/ArrowIcon.svg"
 const StyledCard = styled.div`
   width: 100%;
   height: auto;
@@ -44,14 +44,24 @@ const DescriptionTypography = styled(Typography)`
   margin-top: 15px;
   margin-bottom: 15px;
 `;
+const ViewMoreContainer = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 
-const StyledButton = styled(Button)`
-  padding: 0px;
-  border: none;
-  font-weight: 500;
-  &:hover {
-    border: none;
+  &:hover .view-more-icon {
+    visibility: visible;
+    margin-left: 8px;
   }
+`;
+
+const ViewMoreTypography = styled(Typography)`
+  color: ${({ theme }) => theme.palette.primary.main};
+`;
+
+const StyledArrowForwardIcon = styled(ArrowForwardIcon)`
+  visibility: hidden;
+  transition: margin-left 0.3s ease;
 `;
 
 const ViewMoreCard = ({ image, title, description, date }) => {
@@ -66,12 +76,13 @@ const ViewMoreCard = ({ image, title, description, date }) => {
         <DescriptionTypography variant="h6">
           {description}
         </DescriptionTypography>
-        <Typography variant="h7" sx={{ color: "primary.main" }}>
+        <ViewMoreContainer>
+          <Typography variant="h7" sx={{ color: "primary.main" }}>
             View more
           </Typography>
-        {/* <StyledButton variant="outlined" color="primary"  >
-          View more
-        </StyledButton> */}
+          <StyledArrowForwardIcon className="view-more-icon" />
+        </ViewMoreContainer>
+       
       </StyledCardContent>
     </StyledCard>
   );

@@ -125,15 +125,15 @@ function page() {
           }
           gridComponent={service1}
           img={"/images/Service1.png"}
-        />
-        <Service2
+        /></StyledBox>
+<StyledBox>        <Service2
           title={"Home Appliance Services"}
           description={
             "Comprehensive Appliance Repair: We offer repair services for refrigerators, washing machines, ovens, cooktops, and all other major home appliances to restore their optimal functioning."
           }
           gridComponent={service2}
           img={"/images/carpenter.png"}
-        />
+        /></StyledBox><StyledBox>
         <Service
           title={"Beauty and Salon Services"}
           decription={
@@ -141,7 +141,7 @@ function page() {
           }
           gridComponent={service3}
           img={"/images/Beautyservice.png"}
-        />
+        /></StyledBox><StyledBox>
         <Service2
           title={"Technical Services"}
           description={
