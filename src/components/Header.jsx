@@ -75,7 +75,7 @@ function Header({ bgImg, title, subtitle, isHome, isButtons }) {
       )}
       {!(isHome && isMobile) && isButtons && (
         <Stack direction={"row"} spacing={3}>
-          <Button variant="contained">Get the App</Button>
+          <Button variant={"contained"}>Get the App</Button>
           <Button variant="outlined" color={isHome ? "primary" : "secondary"}>
             View services
           </Button>

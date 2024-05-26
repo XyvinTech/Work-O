@@ -46,7 +46,7 @@ const FreqenlyAskedQuestion = ({ showStillHaveQuestions = true }) => {
         <Stack spacing={2} justifyContent={"center"} alignItems={"center"}>
         <Typography variant="h7" fontWeight={"500"}>Still have Questions?</Typography>
         <Typography variant="h9">Contact us for further assistance</Typography>
-        <Button variant="contained" color="primary"> Contact Us</Button>
+        <Button variant="navbar" color="primary"> Contact Us</Button>
         </Stack>
       </Box>)}
       </StyledBox>

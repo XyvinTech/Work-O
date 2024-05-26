@@ -6,7 +6,15 @@ import styled from "styled-components";
 const OurStory = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
+  const ImageContainer = styled.div`
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  `;
+
   const Image = styled.img`
+    width: ${isMobile ? "100%" : "670px"};
+    height: ${isMobile ? "294px" : "520px"};
     object-fit: cover;
     transition: transform 0.3s ease;
     &:hover {
@@ -16,12 +24,10 @@ const OurStory = () => {
 
   return (
     <Box>
-      <Stack direction={isMobile ? "column" : "row"} spacing={isMobile ? 2 : 10}>
-        <Image
-          src="/images/OurStory.png"
-          height={isMobile ? "294px" : "520px"}
-          width={isMobile ? "100%" : "670px"}
-        />
+      <Stack direction={isMobile ? "column" : "row"} spacing={isMobile ? 2 : 6}>
+        <ImageContainer>
+          <Image src="/images/OurStory.png" />
+        </ImageContainer>
         <Stack direction={"column"} spacing={4}>
           <Typography variant="h2">Our story</Typography>
           <Typography variant="h5" textAlign={"justify"} lineHeight={"27px"}>
@@ -38,7 +44,7 @@ const OurStory = () => {
             profession and dreams into reality. Join us at Worko today.
           </Typography>
           <Stack direction={"row"} spacing={2}>
-            <Button variant="contained" color="primary">
+            <Button variant="navbar" color="primary">
               Get App
             </Button>
             <Button variant="outlined" color="primary">

@@ -64,7 +64,7 @@ const ConnectUs = () => {
             Are you Interested in Worko’s Partnership?
           </Typography>
           <Stack direction={"row"} spacing={2}>
-            <Button variant="contained" color="primary">
+            <Button variant="navbar" color="primary">
               Connect With Us
             </Button>
           </Stack>

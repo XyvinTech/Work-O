@@ -136,7 +136,7 @@ const theme = createTheme({
           gap: "8px",
           borderRadius: 4,
           padding: "15px 20px",
-          width:"200px",
+          width: "200px",
           "@media (max-width:600px)": {
             padding: "10px 20px",
           },
@@ -144,21 +144,19 @@ const theme = createTheme({
           color: "#FFFFFF",
           "&:hover": {
             backgroundColor: "#FC8229",
-          
           },
           fontFamily: mont.style.fontFamily,
           fontWeight: "600",
           boxShadow: "none",
-          
         },
         containedPrimary: {
           gap: "8px",
           borderRadius: 4,
           padding: "15px 20px",
-          width:"200px",
+          width: "200px",
           "@media (max-width:600px)": {
-            padding: "10px 20px",
-            width:"127px"
+            padding: "8px 10px",
+            width:"160px"
           },
           backgroundColor: "#FC8229",
           color: "#FFFFFF",
@@ -173,16 +171,15 @@ const theme = createTheme({
                 "url(\"data:image/svg+xml,%3Csvg width='23' height='17' viewBox='0 0 23 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97428 14.5284L21.0261 3.47145M21.0261 3.47145L8.57695 1.22022M21.0261 3.47145L16.8049 15.3975' stroke='%23FBF8F2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
               marginLeft: "8px",
 
-              "@media (max-width:600px)": {
-                width: "3px",
-              height: "1px",
-              }
+              // "@media (max-width:600px)": {
+              //   width: "3px",
+              // height: "1px",
+              // }
             },
           },
           fontFamily: mont.style.fontFamily,
           fontWeight: "600",
           boxShadow: "none",
-          
         },
         containedSecondary: {
           gap: "8px",
@@ -212,7 +209,7 @@ const theme = createTheme({
         outlinedPrimary: {
           gap: "8px",
           borderRadius: 4,
-          width:"200px",
+          width: "230px",
           padding: "10px 20px",
           "@media (max-width:600px)": {
             padding: "10px 20px",
@@ -225,11 +222,12 @@ const theme = createTheme({
             backgroundColor: "#FFFFFF",
             "&::after": {
               content: '""', // Empty content to use background image
-              display: 'inline-block',
-              width: '23px', // Adjust based on your SVG size
-              height: '17px', // Adjust based on your SVG size
-              backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'23\' height=\'17\' viewBox=\'0 0 23 17\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M1.97428 14.5285L21.0261 3.47157M21.0261 3.47157L8.57695 1.22034M21.0261 3.47157L16.8049 15.3976\' stroke=\'%23FC8229\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'/%3E%3C/svg%3E")',
-              marginLeft: '8px',
+              display: "inline-block",
+              width: "23px", // Adjust based on your SVG size
+              height: "17px", // Adjust based on your SVG size
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg width='23' height='17' viewBox='0 0 23 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97428 14.5285L21.0261 3.47157M21.0261 3.47157L8.57695 1.22034M21.0261 3.47157L16.8049 15.3976' stroke='%23FC8229' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
+              marginLeft: "8px",
             },
           },
           fontFamily: mont.style.fontFamily,
@@ -239,9 +237,11 @@ const theme = createTheme({
         outlinedSecondary: {
           gap: "8px",
           borderRadius: 4,
+          width: "230px",
           padding: "8px 40px",
           "@media (max-width:600px)": {
-            padding: "8px 20px",
+            padding: "8px 10px",
+            width:"180px"
           },
           borderColor: "#FFF", // Primary button border color
           color: "#FFF", // Primary button text color

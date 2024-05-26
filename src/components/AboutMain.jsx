@@ -69,7 +69,7 @@ const AboutMain = () => {
             this vision a reality
           </Typography>
           <Stack direction={"row"} spacing={2}>
-            <Button variant="contained" color="primary">
+            <Button variant="navbar" color="primary">
               View Service
             </Button>
           </Stack>
