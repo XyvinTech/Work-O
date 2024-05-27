@@ -17,12 +17,10 @@ const TextWrapper = styled.div`
   opacity: 1;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
   transform: translateY(0);
-  ${({ isAnimating }) =>
-    isAnimating &&
-    `
+  &.animating {
     opacity: 0;
     transform: translateY(-20px); // Adjust as needed
-  `}
+  }
 `;
 
 const NavbarButton = ({
@@ -70,7 +68,7 @@ const NavbarButton = ({
         position: "relative", // Add relative position for TextWrapper
       }}
     >
-      <TextWrapper isAnimating={isAnimating}>
+      <TextWrapper className={isAnimating ? 'animating' : ''}>
         {activeText}
       </TextWrapper>
     </Button>

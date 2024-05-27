@@ -25,19 +25,26 @@ const TextWrapper = styled.div`
   opacity: 1;
 `;
 
-const StyledIconButton = ({ icon: Icon, buttonText, alternateText, color, borderColor, width, hover }) => {
+const StyledIconButton = ({
+  icon: Icon,
+  buttonText,
+  alternateText,
+  color,
+  borderColor,
+  width,
+  hover,
+}) => {
   const [activeText, setActiveText] = useState(buttonText);
-  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     let intervalId;
 
     if (alternateText) {
       intervalId = setInterval(() => {
-        setIsAnimating(true);
         setTimeout(() => {
-          setActiveText((prev) => (prev === buttonText ? alternateText : buttonText));
-          setIsAnimating(false);
+          setActiveText((prev) =>
+            prev === buttonText ? alternateText : buttonText
+          );
         }, 500); // Time for text change in the middle of the animation
       }, 1000); // Change text every 3 seconds
     }
@@ -58,33 +65,31 @@ const StyledIconButton = ({ icon: Icon, buttonText, alternateText, color, border
         fontSize: "16px",
         fontFamily: mont.style.fontFamily,
         color: color || "#FC8229",
-        display: 'flex',
-        justifyContent: 'flex-start', // Align items to the start
-        alignItems: 'center',
-        padding: '8px 16px', // Adjust padding as necessary
-        transition: 'background-color 0.3s, color 0.3s',
+        display: "flex",
+        justifyContent: "flex-start", // Align items to the start
+        alignItems: "center",
+        padding: "8px 16px", // Adjust padding as necessary
+        transition: "background-color 0.3s, color 0.3s",
         ...(hover && {
-          '&:hover': {
+          "&:hover": {
             backgroundColor: "#FC8229",
-            color: '#fff',
-            border: `1px solid ${ "#FC8229"}`,
-            '& .MuiButton-startIcon': {
-              borderColor: '#fff'
+            color: "#fff",
+            border: `1px solid ${"#FC8229"}`,
+            "& .MuiButton-startIcon": {
+              borderColor: "#fff",
             },
-            '& .MuiButton-startIcon > div': {
-              borderColor: '#fff',
-              backgroundColor: '#fff', // Change background color of RoundIcon on hover
+            "& .MuiButton-startIcon > div": {
+              borderColor: "#fff",
+              backgroundColor: "#fff", // Change background color of RoundIcon on hover
               svg: {
-                fill: '#fff'
-              }
-            }
-          }
-        })
+                fill: "#fff",
+              },
+            },
+          },
+        }),
       }}
     >
-      <TextWrapper style={{ opacity: isAnimating ? 0 : 1 }}>
-        {activeText}
-      </TextWrapper>
+      <TextWrapper>{activeText}</TextWrapper>
     </Button>
   );
 };
