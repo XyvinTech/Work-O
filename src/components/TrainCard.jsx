@@ -4,8 +4,7 @@ import styled from "styled-components";
 
 const CardContainer = styled.div`
   width: 100%;
-  height: 559px;
-  border-radius: 0px;
+  height: auto;  border-radius: 0px;
   box-shadow: none;
   transition: box-shadow 0.3s ease-in-out;
 
