@@ -7,16 +7,16 @@ const OurStory = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
   const ImageContainer = styled.div`
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
+    width: ${isMobile ? "100%" : "2300px"};
+    height: ${isMobile ? "294px" : "520px"};
+    overflow:hidden;
   `;
 
   const Image = styled.img`
-    width: ${isMobile ? "100%" : "670px"};
-    height: ${isMobile ? "294px" : "520px"};
+    width:100%;
+    height:100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease-in-out;
     &:hover {
       transform: scale(1.05);
     }

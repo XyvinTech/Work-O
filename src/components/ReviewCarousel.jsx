@@ -4,19 +4,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Box } from "@mui/material";
 import styled from "styled-components";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import carouselData from "../assets/json/ReviewCarouselData";
 import ReviewCard from "./ReviewCard";
 const ButtonBox = styled(Box)`
+  position: absolute;
+  right: 40px;
   display: flex;
-  gap: 7px;
-  justify-content: flex-end;
-  margin-top: 20px;
-  padding-right: 40px;
+  gap: 10px;
+  margin-top:20px;
   @media (max-width: 600px) {
-    margin-top: 30px;
-    gap: 2px;
-    padding-right: 1px;
+    display: none;
   }
 `;
 
@@ -54,14 +52,17 @@ const StyledSlider = styled(Slider)`
   }
 `;
 const ReviewCarousel = () => {
+  const [isPreviousClicked, setIsPreviousClicked] = useState(false);
   let sliderRef = useRef(null);
 
   const next = () => {
     sliderRef.slickNext();
+    setIsPreviousClicked(false);
   };
 
   const previous = () => {
     sliderRef.slickPrev();
+    setIsPreviousClicked(true);
   };
   var settings = {
     dots: true,
@@ -110,24 +111,16 @@ const ReviewCarousel = () => {
           </div>
         ))}
       </StyledSlider>
-      <ButtonBox
-        sx={{
-          position: "absolute",
-
-          right: "40px",
-          display: "flex",
-          gap: "30px",
-        }}
-      >
+      <ButtonBox>
         <img
-          src="/images/Button1.png"
-          style={{ width: "48px", height: "48px", opacity: settings.initialSlide === 0 ? 0.5 : 1 }}
+          src={isPreviousClicked ? "/images/Button2.png" : "/images/Button1.png"}
+          style={{ width: "48px", height: "48px" }}
           onClick={previous}
           alt="Previous"
         />
         <img
-          src="/images/Button.png"
-          style={{ width: "48px", height: "48px", opacity: settings.initialSlide === 1 ? 0.5 : 1 }}
+          src={isPreviousClicked? "/images/Button3.png" : "/images/Button.png"}
+          style={{ width: "48px", height: "48px" }}
           onClick={next}
           alt="Next"
         />

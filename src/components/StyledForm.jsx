@@ -36,7 +36,7 @@ const StyledForm = () => {
     }
   `;
   const StyledToolTipIcon = styled(ToolTipIcon)`
-    margin-left: 8px;
+    margin-left: 6px;
     margin-top: 4px;
     @media (max-width: 600px) {
       margin: 0px;
@@ -82,7 +82,7 @@ const StyledForm = () => {
                   label={
                     <StyledLabel>
                       Business enquiry
-                      <StyledToolTipIcon />
+                      <StyledToolTipIcon  />
                     </StyledLabel>
                   }
                 />
@@ -114,7 +114,7 @@ const StyledForm = () => {
                   label={
                     <StyledLabel>
                       Customer
-                      <ToolTipIcon />{" "}
+                      <StyledToolTipIcon  />
                     </StyledLabel>
                   }
                 />
@@ -147,7 +147,7 @@ const StyledForm = () => {
                   label={
                     <StyledLabel>
                       Service Partner
-                      <ToolTipIcon />{" "}
+                      <StyledToolTipIcon  />
                     </StyledLabel>
                   }
                 />{" "}

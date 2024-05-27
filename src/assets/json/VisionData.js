@@ -3,10 +3,10 @@ const VisionData = [
   
       title: "Vision",
       description: "We envision a society where individuals are empowered to realize their full potential, businesses benefit from a skilled workforce, and communities thrive through economic empowerment.",
-      icon:"/images/Frame.png"
+      icon:"/images/FrameVision.png"
     },
     {
-      icon:"/images/Frame.png",
+      icon:"/images/FrameMission.png",
       title: "Mission",
       description: "We aim to equip individuals with the skills and knowledge necessary to excel in today's job market, nurturing personal development and financial security. ",
     },

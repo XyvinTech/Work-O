@@ -8,7 +8,7 @@ function CarouselOne({ images,pic }) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
     
   const mobileStyle = { width: "90px", height: "104px", objectFit: "cover", padding: "1px" };
-  const desktopStyle = { width: "216px", height: "180px", objectFit: "cover",paddingLeft:"20px",paddingRight:"20px" };
+  const desktopStyle = { width: "216px", height: "180px", objectFit: "cover",paddingLeft:"15px",paddingRight:"15px",borderRadius:"4px" };
   const responsiveCarousel = [
     {
       breakpoint: 2000, // Settings for extra large screens

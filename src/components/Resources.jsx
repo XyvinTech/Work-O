@@ -12,22 +12,21 @@ import { Box, useMediaQuery } from "@mui/material";
 import StyledSelectField from "@/ui/StyledSelect";
 import StyledBox from "./StyledBox";
 
-
 const tabData = [
-  { tabName: "General FAQ's", accordions: generalData },
+  { tabName: "All FAQ's", accordions: generalData },
   { tabName: "Service-specific", accordions: serviceData },
   { tabName: "Skill Development", accordions: skillData },
-  { tabName: "All FAQ's", accordions: allData },
+  { tabName: "General FAQ's", accordions: allData },
 ];
 
 const Container = styled(Box)(({ theme }) => ({
   backgroundImage: `url(${bgImageFooter.src})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
-  padding: "80px",
-  '@media (max-width:600px)': {
-    padding: "20px"
-  },  
+  // padding: "80px",
+  "@media (max-width:600px)": {
+    padding: "20px",
+  },
   color: "white",
   display: "flex",
   flexDirection: "row",
@@ -40,7 +39,7 @@ const Container = styled(Box)(({ theme }) => ({
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: "rgba(0, 0, 0, 0.9)",
+    backgroundColor: "rgba(0, 0, 0, 0.95)",
     zIndex: 1,
   },
   "& > *": {
@@ -54,12 +53,12 @@ const Container = styled(Box)(({ theme }) => ({
 
 const TabSidebar = styled.div`
   width: 317px;
-  background-color: #282828;
-  padding: 20px;
+
+  padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center; /* Center items horizontally */
-  gap: 10px;
+  gap: 30px;
   height: 100vh;
 
   @media (max-width: 768px) {
@@ -75,21 +74,29 @@ const TabButton = styled.button`
   font-weight: 500;
   font-size: 20px;
   text-align: left;
-  background-color: #3e3e3e;
+  background-color: ${({ active }) => (active ? "#FC8229" : "transparent")};
   cursor: pointer;
-  border: none;
+  border: 1px solid #fc8229;
   border-radius: 4px;
-  color: #7a7a7a;
+  color: white;
 
   &:hover {
-    color: white;
+    background-color: #fc8229;
   }
 `;
+const Divider = styled.div`
+  width: 1px;
+  background-color: white;
+  height: 100vh;
+  opacity: 0.5;
 
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
 const TabContent = styled.div`
   flex: 1;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   gap: 20px; // Add space between each accordion
@@ -117,17 +124,19 @@ const Resources = () => {
   return (
     <Container>
       {!isMobile && (
-        <TabSidebar>
-          {tabData.map((tab, index) => (
-            <TabButton
-              key={index}
-              active={activeTab === index}
-              onClick={() => setActiveTab(index)}
-            >
-              {tab.tabName}
-            </TabButton>
-          ))}
-        </TabSidebar>
+        <>
+          <TabSidebar>
+            {tabData.map((tab, index) => (
+              <TabButton
+                key={index}
+                active={activeTab === index}
+                onClick={() => setActiveTab(index)}
+              >
+                {tab.tabName}
+              </TabButton>
+            ))}
+          </TabSidebar><Divider/>
+        </>
       )}
       {isMobile && (
         <MobileContainer>

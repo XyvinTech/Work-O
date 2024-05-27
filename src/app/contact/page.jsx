@@ -6,7 +6,7 @@ import ContactUs from "@/components/ContactUs";
 function page() {
   return (
     <>
-      <Header title={"Contact Us"} bgImg={bgImage.src} />
+      <Header title={"Contact Us"} bgImg={bgImage.src} height={"419px"}/>
       <ContactUs />
     </>
   );

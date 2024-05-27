@@ -19,6 +19,7 @@ const Card = styled.div`
 
 const CardActionArea = styled.div`
   position: relative;
+  
 `;
 
 const FlowerImage = styled.img`
@@ -26,8 +27,8 @@ const FlowerImage = styled.img`
   width: auto;
   position: absolute;
   z-index: 1;
-  top: -50px;
-  left: 190px;
+  top: -10%;
+  left: 50%;
   backgroundcolor: #f4f3f3;
   @media (max-width: 600px) {
     height: 230px;
@@ -53,7 +54,7 @@ const PromiseCard = ({ title, description, icon }) => {
       <CardActionArea>
         <Box
           padding={"10px"}
-          display="flex"gap={isMobile?"10px":0}
+          display="flex"gap={isMobile?"10px":"12px"}
           flexDirection={"column"}
         >
           <FlowerImage src="/images/flower1.png" alt="Flower" />

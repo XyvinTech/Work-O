@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import BookNowCard from "@/ui/BookNowCard";
 import { Box } from "@mui/material";
 import styled from "styled-components";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import carouselData from "../assets/json/BookNowCarouselData";
 
 const ButtonBox = styled(Box)`
@@ -25,17 +25,17 @@ const SlideWrapper = styled(Box)`
 
 const StyledSlider = styled(Slider)`
   .slick-dots {
-    left: 10px; 
-    bottom: -30px; 
+    left: 10px;
+    bottom: -30px;
     text-align: left;
 
     li {
-      margin: 0; 
+      margin: 0;
     }
 
     li button:before {
-      color: orange; 
-      font-size: 8px; 
+      color: orange;
+      font-size: 8px;
     }
 
     li.slick-active button:before {
@@ -46,14 +46,17 @@ const StyledSlider = styled(Slider)`
 `;
 
 const BookNowCarousel = () => {
+  const [isPreviousClicked, setIsPreviousClicked] = useState(false);
   let sliderRef = useRef(null);
 
   const next = () => {
     sliderRef.slickNext();
+    setIsPreviousClicked(false);
   };
 
   const previous = () => {
     sliderRef.slickPrev();
+    setIsPreviousClicked(true);
   };
 
   const settings = {
@@ -67,7 +70,6 @@ const BookNowCarousel = () => {
       {
         breakpoint: 600,
         settings: {
-          
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 1,
@@ -77,7 +79,15 @@ const BookNowCarousel = () => {
   };
 
   return (
-    <div className="slider-container" style={{ overflow: "hidden", height: "515px", alignContent: "center", position: "relative" }}>
+    <div
+      className="slider-container"
+      style={{
+        overflow: "hidden",
+        height: "415px",
+        alignContent: "center",
+        position: "relative",
+      }}
+    >
       <StyledSlider
         ref={(slider) => {
           sliderRef = slider;
@@ -100,13 +110,15 @@ const BookNowCarousel = () => {
       </StyledSlider>
       <ButtonBox>
         <img
-          src="/images/Button1.png"
+          src={
+            isPreviousClicked ? "/images/Button2.png" : "/images/Button1.png"
+          }
           style={{ width: "48px", height: "48px" }}
           onClick={previous}
           alt="Previous"
         />
         <img
-          src="/images/Button.png"
+          src={isPreviousClicked ? "/images/Button3.png" : "/images/Button.png"}
           style={{ width: "48px", height: "48px" }}
           onClick={next}
           alt="Next"
