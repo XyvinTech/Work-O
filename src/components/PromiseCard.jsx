@@ -58,7 +58,7 @@ const PromiseCard = ({ title, description, icon }) => {
         >
           <FlowerImage src="/images/flower1.png" alt="Flower" />
           <FrameImage src={icon} alt="Frame" />
-          <Typography variant={isMobile ? "card" : "h3"}>{title}</Typography>
+          <Typography variant={isMobile ? "card" : "card"} fontSize={"29px"} paddingBottom={"2px"}>{title}</Typography>
           <Typography variant="h6" textAlign={"justify"}>
             {description}
           </Typography>
