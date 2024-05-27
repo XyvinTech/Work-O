@@ -58,7 +58,7 @@ function Footer() {
 
   return (
     <FooterContainer>
-      <StyledBox>
+      {/* <StyledBox> */}
 
       <Stack
         direction={isMobile ? "column" : "row"}
@@ -82,7 +82,7 @@ function Footer() {
         </Box>
         <Stack
           direction={"row"}
-          spacing={isMobile ? 3 : 10}
+          spacing={isMobile ? 3 : 6}
           p={isMobile ? 2 : 4}
         >
           <Stack spacing={2}>
@@ -251,7 +251,7 @@ function Footer() {
           Handcrafted with ❤️ by Acute Angle
         </Typography>
       </Stack>
-      </StyledBox>
+      {/* </StyledBox> */}
 
     </FooterContainer>
   );
