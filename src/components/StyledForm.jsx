@@ -175,10 +175,10 @@ const StyledForm = () => {
             <StyledTextArea placeholder="Add a Description/Enquiry" />
           </Grid>
           <Grid item xs={6}>
-            <StyledSelectField placeholder="Country" />
+            <StyledSelectField placeholder="State" />
           </Grid>
           <Grid item xs={6}>
-            <StyledSelectField placeholder="City" />
+            <StyledSelectField placeholder="District" />
           </Grid>
         </Grid>
       )}
@@ -195,10 +195,10 @@ const StyledForm = () => {
             <StyledPhoneInput />
           </Grid>
           <Grid item xs={6}>
-            <StyledSelectField placeholder="Country" />
+            <StyledSelectField placeholder="State" />
           </Grid>
           <Grid item xs={6}>
-            <StyledSelectField placeholder="City" />
+            <StyledSelectField placeholder="District" />
           </Grid>
           <Grid item xs={12}>
             <StyledTextArea placeholder="Add a Description/Enquiry" />
@@ -219,10 +219,10 @@ const StyledForm = () => {
           </Grid>
 
           <Grid item xs={6}>
-            <StyledSelectField placeholder="Country" />
+            <StyledSelectField placeholder="State" />
           </Grid>
           <Grid item xs={6}>
-            <StyledSelectField placeholder="City" />
+            <StyledSelectField placeholder="District" />
           </Grid>
           <Grid item xs={12}>
             <StyledTextArea placeholder="Add a Description/Enquiry" />
