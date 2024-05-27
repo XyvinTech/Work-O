@@ -99,13 +99,14 @@ const TabContent = styled.div`
   padding: 40px;
   display: flex;
   flex-direction: column;
-  gap: 20px; // Add space between each accordion
+  gap: 20px; 
+ 
 `;
 
 const MobileContainer = styled.div`
   width: 100%;
   padding: 0 20px;
-  margin-bottom: 200px;
+  margin-bottom: 120px;
 `;
 
 const Resources = () => {

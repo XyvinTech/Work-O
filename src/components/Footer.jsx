@@ -165,7 +165,7 @@ function Footer() {
             spacing={3}
             width={isMobile ? "50%" : "100%"}
           >
-            <StyledIconButton hover={true}icon={PlusIcon} buttonText="7-666-666-559" width={"131px"}  color={"white"} borderColor={"rgba(255, 255, 255, 0.12)"}/>
+            <StyledIconButton hover={true}icon={PlusIcon} buttonText="7-666-666-559"  color={"white"} borderColor={"rgba(255, 255, 255, 0.12)"}/>
             <StyledIconButton hover={true}icon={SMSIcon} buttonText="info@workoindia.com" color={"white"} borderColor={"rgba(255, 255, 255, 0.12)"}/>
           </Stack>
         </Stack>
