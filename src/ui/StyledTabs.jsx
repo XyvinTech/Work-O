@@ -1,18 +1,20 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { mont } from "@/theme";
 import ServiceCard from "@/components/ServiceCard";
-import { Box, Typography } from "@mui/material";
+import { Box, Skeleton } from "@mui/material";
 import serviceDetails from "../assets/json/serviceDetails";
+
 const TabsContainer = styled.div`
   width: 100%;
 
   @media (max-width: 600px) {
     max-width: 100%;
-    padding-bottom:50px;
+    padding-bottom: 50px;
   }
 `;
+
 const TabHeader = styled.div`
   padding-bottom: 20px;
   display: flex;
@@ -22,15 +24,15 @@ const TabHeader = styled.div`
 
 const TabButton = styled.button`
   flex: 1;
-  display:flex;
-  justify-content:center;
-  padding: 36px 26px 36px 26px;
+  display: flex;
+  justify-content: center;
+  padding: 36px 26px;
   width: 324px;
   font-family: ${mont.style.fontFamily};
   font-weight: 600;
   font-size: 20px;
   height: 59px;
-  align-items:center;
+  align-items: center;
   text-align: center;
   background-color: white;
   border: 1px solid #e3dccd;
@@ -41,21 +43,18 @@ const TabButton = styled.button`
   &.active {
     border: 0px;
     border-bottom: 3px solid orange;
-
     background-color: #ffe7d5;
   }
 
   @media (max-width: 600px) {
     height: 34px;
-    display:flex;
-    justify-content:center;
+    display: flex;
+    justify-content: center;
     text-align: center;
-    padding: 2px 2px 2px 1px;
+    padding: 2px 2px;
     font-weight: 400;
-    text-align: top;
     font-size: 12px;
     flex-basis: calc(50% - 10px);
-    
   }
 `;
 
@@ -71,19 +70,23 @@ const TabContent = styled.div`
   animation-fill-mode: forwards;
 
   @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-auto-flow: dense;
-    padding:0px;
-    gap:10px;
-    
+    padding: 0px;
+    gap: 10px;
+
     & > :nth-child(3) {
-      margin-top:50px;
+      margin-top: 50px;
       grid-column: 1 / -1;
     }
   }
@@ -92,49 +95,78 @@ const TabContent = styled.div`
 const StyledTabs = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [renderKey, setRenderKey] = useState(0);
+  const [loading, setLoading] = useState(true); // State for loading
   const tabs = serviceDetails.map((detail) => detail.tabName);
+
+  useEffect(() => {
+    // Simulate a loading delay
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleNext = () => {
     setActiveTab((prev) => (prev + 1) % tabs.length);
-    setRenderKey(prevKey => prevKey + 1);
+    setRenderKey((prevKey) => prevKey + 1);
   };
 
   const handlePrevious = () => {
     setActiveTab((prev) => (prev - 1 + tabs.length) % tabs.length);
-    setRenderKey(prevKey => prevKey + 1);
+    setRenderKey((prevKey) => prevKey + 1);
   };
 
   const handleTabClick = (index) => {
     setActiveTab(index);
-    setRenderKey(prevKey => prevKey + 1); // Increment key to re-trigger animation
+    setRenderKey((prevKey) => prevKey + 1); // Increment key to re-trigger animation
   };
+
   return (
     <TabsContainer>
       <TabHeader>
-        {tabs.map((tab, index) => (
-          <TabButton
-            key={index}
-            className={activeTab === index ? "active" : ""}
-            onClick={() => handleTabClick(index)}
-          >
-            {tab}
-          </TabButton>
-        ))}
+        {loading
+          ? tabs.map((_, index) => (
+              <Skeleton
+                key={index}
+                variant="rectangular"
+                width={324}
+                height={59}
+                style={{ borderRadius: 4 }}
+              />
+            ))
+          : tabs.map((tab, index) => (
+              <TabButton
+                key={index}
+                className={activeTab === index ? "active" : ""}
+                onClick={() => handleTabClick(index)}
+              >
+                {tab}
+              </TabButton>
+            ))}
       </TabHeader>
-      <TabContent  key={renderKey}>
-        {serviceDetails[activeTab].services.map((service, index) => (
-          <ServiceCard
-            key={index}
-            title={service.title}
-            image={service.image}
-            description={service.description}
-          />
-        ))}
+      <TabContent key={renderKey}>
+        {loading
+          ? tabs.map((_, index) => (
+              <Skeleton
+                key={index}
+                variant="rectangular"
+                width={210}
+                height={118}
+              />
+            ))
+          : serviceDetails[activeTab].services.map((service, index) => (
+              <ServiceCard
+                key={index}
+                title={service.title}
+                image={service.image}
+                description={service.description}
+              />
+            ))}
       </TabContent>
       <Box
         sx={{
           position: "absolute",
-
           right: "40px",
           display: "flex",
           gap: "10px",
