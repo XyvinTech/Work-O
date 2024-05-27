@@ -53,6 +53,7 @@ function Header({ bgImg, title, subtitle, isHome, isButtons }) {
           src="/assets/home/img/header.png"
           alt="Logo"
           height={isMobile ? "42px" : "84px"}
+         
           style={{ marginTop: "50px" }}
         />
       )}

@@ -58,6 +58,7 @@ const TabSidebar = styled.div`
   padding: 20px;
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center items horizontally */
   gap: 10px;
   height: 100vh;
 
@@ -78,10 +79,10 @@ const TabButton = styled.button`
   cursor: pointer;
   border: none;
   border-radius: 4px;
-  color: white;
+  color: #7a7a7a;
 
   &:hover {
-    color: #7a7a7a;
+    color: white;
   }
 `;
 
