@@ -13,7 +13,6 @@ import {
   Divider,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import PhoneIcon from "@mui/icons-material/Phone";
 import PlusIcon from "../assets/icons/call.svg";
 import { mont } from "@/theme";
 import { usePathname, useRouter } from "next/navigation";

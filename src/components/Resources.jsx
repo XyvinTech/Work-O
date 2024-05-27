@@ -10,7 +10,7 @@ import StyledAccordion from "./StyledAccordion";
 import bgImageFooter from "/public/assets/home/img/footer.png";
 import { Box, useMediaQuery } from "@mui/material";
 import StyledSelectField from "@/ui/StyledSelect";
-import StyledBox from "./StyledBox";
+
 
 const tabData = [
   { tabName: "All FAQ's", accordions: generalData },

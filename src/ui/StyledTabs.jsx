@@ -3,7 +3,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { mont } from "@/theme";
 import ServiceCard from "@/components/ServiceCard";
-import { Box, Typography } from "@mui/material";
+import { Box} from "@mui/material";
 import serviceDetails from "../assets/json/serviceDetails";
 const TabsContainer = styled.div`
   width: 100%;

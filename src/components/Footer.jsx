@@ -14,7 +14,7 @@ import StyledInput from "@/ui/StyledInput";
 import PlusIcon from "../assets/icons/call.svg";
 import SMSIcon from "../assets/icons/sms.svg";
 import StyledIconButton from "@/ui/StyledIconButton";
-import StyledBox from "./StyledBox";
+
 
 const FooterContainer = styled(Box)(() => ({
   backgroundImage: `url(${bgImage.src})`,

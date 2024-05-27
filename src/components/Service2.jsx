@@ -1,6 +1,5 @@
 "use client";
 import { Box, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
-import Repair from "../assets/icons/Repair.svg";
 import { cormo } from "@/theme";
 
 function Service2({ title, description, img, gridComponent }) {
