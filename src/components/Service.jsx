@@ -2,13 +2,14 @@
 import { Box, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
 import { cormo } from "@/theme";
 
-function Service({ title, decription, img, gridComponent }) {
+function Service({ title, description, img, gridComponent }) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  
   return (
     <Stack
       direction={{ lg: "row", sm: "column" }}
       position={"relative"}
-      px={isMobile && 2}
+      px={isMobile && 2} spacing={6}
     >
       {isMobile && (
         <Typography
@@ -21,113 +22,59 @@ function Service({ title, decription, img, gridComponent }) {
         </Typography>
       )}
       <Box
-        width={isMobile ? "100%" : "45%"}
-        display="flex"
-        justifyContent={"flex-start"}
-        alignItems={"flex-start"}
-      >
-        <img src={img} height={isMobile ? "374px " : "638px"} />
+          width={isMobile ? "100%" : "50%"}
+          display="flex"
+          justifyContent={"center"}
+          alignItems={"center"}
+          position="relative" // Ensure the second image can be positioned absolutely within this box
+        >
+          <img 
+            src={img} 
+            height={isMobile ? "280px" : "638px"} 
+            style={{ 
+              zIndex: 1, 
+              position: 'relative', 
+              left:"0px",
+              top: isMobile ? '-10px' : '-45px',
+              transition: 'transform 0.3s', // Add transition for smooth zoom effect
+              "&:hover": {
+                transform: 'scale(1.1)' // Zoom effect on hover
+              } // Adjust the top value as needed to move the image up 
+            }} 
+          />
         <img
-          src="/images/ServiceElli2.png"
-          height={isMobile ? "274px " : "430px"}
+          src="/images/ServiceFrame.png"
+          height={isMobile ? "274px" : "604px"}
           style={{
             position: "absolute",
-            left: isMobile ? "10px" : "0",
-            zIndex: "-1",
-            bottom: !isMobile && "0",
-            top: isMobile && "8.6rem",
+            zIndex: 0,
+            bottom:"-20px"
           }}
         />
-        <img
-          src="/images/ServiceElli.png"
-          height={isMobile ? "374px " : "510px"}
-          style={{
-            position: "absolute",
-            left: isMobile ? "10px" : "0",
-            zIndex: "-3",
-            bottom: !isMobile && "0",
-            top: isMobile && "2.3rem",
-          }}
-        />
-        {!isMobile && (
-          <>
-            <img
-              src="/images/Vector.png"
-              height={"92px"}
-              style={{
-                position: "absolute",
-                left: "20rem",
-                top: "8rem",
-                zIndex: "-1",
-              }}
-            />
-            <img
-              src="/images/Vector.png"
-              height={"92px"}
-              style={{
-                position: "absolute",
-                left: "20rem",
-                top: "8rem",
-                zIndex: "-1",
-              }}
-            />
-            <img
-              src="/images/flwr.png"
-              height={"112px"}
-              style={{
-                position: "absolute",
-                left: "33rem",
-                top: "4.7rem",
-                zIndex: "-1",
-              }}
-            />
-            <img
-              src="/images/FrameEli.png"
-              height={"32px"}
-              style={{
-                position: "absolute",
-                left: "35.5rem",
-                top: "7.2rem",
-                zIndex: "-2",
-              }}
-            />
-            <img
-              src="/images/FrameEli.png"
-              height={"12px"}
-              style={{
-                position: "absolute",
-                left: "19.8rem",
-                top: "13.2rem",
-                zIndex: "-1",
-              }}
-            />
-          </>
-        )}
       </Box>
       <Stack
-        alignItems={"center"}
+        
         justifyContent={"center"}
         width={isMobile ? "100%" : "50%"}
-        pt={5}
       >
         <Box>
           {!isMobile && (
             <Typography
               fontSize={"49px"}
-              fontWeight={"700"}
+              fontWeight={"700"} 
               fontFamily={cormo.style.fontFamily}
             >
               {title}
             </Typography>
           )}
           <Typography variant="h6" color={"#605F5E"}>
-            {decription}
+            {description}
           </Typography>
         </Box>
         <Grid container spacing={5} py={2} paddingTop={"50px"}>
           {gridComponent?.map((item, index) => {
             return (
-              <Grid item xs={12} sm={6} key={index} spacing={3} >
+              <Grid item xs={12} sm={6} key={index} spacing={3}>
                 <Stack>
                   {item.icon}
                   <Typography

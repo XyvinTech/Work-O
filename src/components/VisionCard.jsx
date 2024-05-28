@@ -4,8 +4,8 @@ import styled from "styled-components";
 
 const Card = styled.div`
   width: 100%;
-  height: 394px;
-  padding: 10px;
+  height: auto;
+  padding: 15px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: none;
   background: white;
@@ -43,10 +43,10 @@ const VisionCard = ({title,description,icon}) => {
   return (
     <Card>
       <CardActionArea>
-        <Box padding={"10"}>
+        <Box padding={"10"}display="flex" flexDirection="column" >
           <FlowerImage src="/images/flower.png" alt="Flower" />
           <FrameImage src={icon} alt="Frame" />
-          <Typography variant="h3">{title}</Typography>
+          <Typography variant="cardHead">{title}</Typography>
           <Typography variant="h6" textAlign={"justify"}>{description}
           </Typography>
         </Box>

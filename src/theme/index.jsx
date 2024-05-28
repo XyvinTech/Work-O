@@ -51,6 +51,14 @@ const theme = createTheme({
       fontSize: "40px",
       fontWeight: "bold",
     },
+    cardHead: {
+      fontSize: "32px",
+      fontWeight: "700",
+      fontFamily: cormo.style.fontFamily,
+      "@media (max-width:600px)": {
+        fontSize: "28px",
+      }
+    },
     h4: {
       fontSize: "24px",
       fontWeight: "500",

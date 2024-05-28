@@ -83,7 +83,7 @@ const BookNowCarousel = () => {
       className="slider-container"
       style={{
         overflow: "hidden",
-        height: "415px",
+        height: "340px",
         alignContent: "center",
         position: "relative",
       }}

@@ -71,12 +71,12 @@ const TabButton = styled.button`
   width: 231px;
   height: 56px;
   font-family: ${mont.style.fontFamily};
-  font-weight: 500;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 18px;
   text-align: left;
   background-color: ${({ active }) => (active ? "#FC8229" : "transparent")};
   cursor: pointer;
-  border: 1px solid #fc8229;
+  border: none;
   border-radius: 4px;
   color: white;
 

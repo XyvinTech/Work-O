@@ -190,6 +190,7 @@ const Navbar = () => {
                           : isTransparent
                           ? "#1B1B1B"
                           : "#fff",
+                          borderRadius:"0px",
                       borderBottom:
                         activeTab === label
                           ? `2px solid ${theme.palette.primary.main}`
@@ -198,6 +199,7 @@ const Navbar = () => {
                       fontWeight: 600,
                       "&:hover": {
                         backgroundColor: "transparent",
+                        color:` ${theme.palette.primary.main}`
                       },
                     }}
                   >

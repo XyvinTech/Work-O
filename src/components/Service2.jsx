@@ -8,7 +8,7 @@ function Service2({ title, description, img, gridComponent }) {
     <Stack
       direction={{ lg: "row-reverse", sm: "column" }}
       position={"relative"}
-      px={isMobile && 2}
+      px={isMobile && 2}spacing={6}
     >
       {isMobile && (
         <Typography
@@ -19,85 +19,32 @@ function Service2({ title, description, img, gridComponent }) {
           {title}
         </Typography>
       )}
-      <Box
-        width={isMobile ? "100%" : "60%"}
-        display="flex"
-        justifyContent={"flex-end"}
-        alignItems={"flex-end"}
-      >
-        <img src={img} height={isMobile ? "374px " : "538px"} />
+       <Box
+          width={isMobile ? "100%" : "50%"}
+          display="flex"
+          justifyContent={"center"}
+          alignItems={"center"}
+          position="relative" // Ensure the second image can be positioned absolutely within this box
+        >
+          <img 
+            src={img} 
+            height={isMobile ? "274px" : "638px"} 
+            style={{ 
+              zIndex: 1, 
+              position: 'relative', 
+              left:"0px",
+              top: isMobile ? '-10px' : '-43px',
+            }} 
+          />
         <img
-          src="/images/ServiceElli2.png"
-          height={isMobile ? "274px " : "430px"}
+          src="/images/ServiceFrame.png"
+          height={isMobile ? "274px" : "604px"}
           style={{
             position: "absolute",
-            transform: "scaleX(-1)",
-            right: isMobile ? "10px" : "0",
-            zIndex: "-1",
-            bottom: !isMobile && "0px",
-            top: isMobile && "8.6rem",
+            zIndex: 0,
+            bottom:"-20px"
           }}
         />
-        <img
-          src="/images/ServiceElli.png"
-          height={isMobile ? "374px " : "510px"}
-          style={{
-            transform: "scaleX(-1)",
-            position: "absolute",
-            right: isMobile ? "10px" : "0",
-            zIndex: "-3",
-            bottom: !isMobile && "0px",
-            top: isMobile && "2.3rem",
-          }}
-        />
-        {!isMobile && (
-          <>
-            <img
-              src="/images/Vector.png"
-              height={"92px"}
-              style={{
-                position: "absolute",
-                transform: "scaleX(-1)",
-                right: "20rem",
-                top: "10rem",
-                zIndex: "-1",
-              }}
-            />
-            <img
-              src="/images/flwr.png"
-              height={"112px"}
-              style={{
-                position: "absolute",
-                transform: "scaleX(-1)",
-                right: "33rem",
-                top: "6.6rem",
-                zIndex: "-1",
-              }}
-            />
-            <img
-              src="/images/FrameEli.png"
-              height={"32px"}
-              style={{
-                transform: "scaleX(-1)",
-                position: "absolute",
-                right: "35.5rem",
-                top: "9.1rem",
-                zIndex: "-2",
-              }}
-            />
-            <img
-              src="/images/FrameEli.png"
-              height={"12px"}
-              style={{
-                position: "absolute",
-                transform: "scaleX(-1)",
-                right: "19.9rem",
-                top: "15.1rem",
-                zIndex: "-1",
-              }}
-            />
-          </>
-        )}
       </Box>
       <Stack width={isMobile ? "100%" : "80%"} pt={5} px={3}>
         <Box>

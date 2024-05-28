@@ -1,120 +1,98 @@
 "use client"
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { useMediaQuery } from "@mui/material";
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
 
-function CarouselOne({ images,pic }) {
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
-    
-  const mobileStyle = { width: "90px", height: "104px", objectFit: "cover", padding: "1px" };
-  const desktopStyle = { width: "216px", height: "180px", objectFit: "cover",paddingLeft:"15px",paddingRight:"15px",borderRadius:"4px" };
-  const responsiveCarousel = [
-    {
-      breakpoint: 2000, // Settings for extra large screens
-      settings: {
-        slidesToShow: 8,
-        slidesToScroll: 1,
-        initialSlide: 2
-      }
-    },
-    
-    {
-      breakpoint: 1440, // Typical for MacBook Air
-      settings: {
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        initialSlide: 2
-      }
-    },
-    {
-      breakpoint: 1200, // Settings for normal large screens
-      settings: {
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        initialSlide: 2
-      }
-    },
-    {
-      breakpoint: 900, // Settings for tablets
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        initialSlide: 2
-      }
-    },
-    {
-      breakpoint: 600, // Settings for mobile devices
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        initialSlide: 1
-      }
+const marquee = keyframes`
+    0% {
+        transform: translateX(0);
     }
-  
-  ]
-  
-  const settings1 = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 10,
-    slidesToScroll: 1,
-    autoplay: true,
-    pauseOnHover: false,
-    speed:1500,
-    autoplaySpeed: 1500,
-    easing:'linear',
-    cssEase: "linear",
-    responsive: responsiveCarousel
-  };
+    100% {
+        transform: translateX(-100%);
+    }
+`;
 
-  const settings2 = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 10,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed:800,
-    pauseOnHover: false,
-    autoplaySpeed: 800,
-    cssEase: "linear",
-    easing:'linear',
-    responsive: responsiveCarousel
-  };
+const reverseMarquee = keyframes`
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+`;
 
-  return (
-    <div>
-      <div className="slider-container" style={{ overflow: "hidden",paddingBottom: "5px" }}>
-        <Slider {...settings1}>
-          {images.map((image, index) => (
-            <div key={`slider1-${index}`}>
-              <img
-                src={image}
-                alt={`Slide ${index}`}
-                className="carousel-image"
-                objectFit="cover"
-                style={isMobile ? mobileStyle : desktopStyle}
-              />
-            </div>
-          ))}
-        </Slider>
-      </div>
-      <div className="slider-container" style={{ overflow: "hidden",marginTop:"0px" ,paddingTop:"0px"}}>
-        <Slider {...settings2}>
-          {pic.map((image, index) => (
-            <div key={`slider2-${index}`}>
-              <img
-                src={image}
-                alt={`Slide ${index}`}
-                className="carousel-image"
-                style={isMobile ? mobileStyle : desktopStyle}
-              />
-            </div>
-          ))}
-        </Slider>
-      </div>
-    </div>
-  );
-}
+const StyledContainer = styled.div`
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 5px; /* Space between the two marquees */
+`;
 
-export default CarouselOne;
+const StyledPicContainer = styled.div`
+    display: flex;
+    animation: ${marquee} 20s linear infinite;
+`;
+
+const StyledReversePicContainer = styled.div`
+    display: flex;
+    animation: ${reverseMarquee} 20s linear infinite;
+`;
+
+const StyledPic = styled.div`
+    flex-shrink: 0;
+    width: 216px;
+    margin: 0 5px; /* Gap between images */
+
+    @media (max-width: 768px) {
+        width: 104px;
+        margin:0 2px;
+    }
+`;
+
+const StyledImg = styled.img`
+    width: 216px;
+    height: 180px;
+    object-fit: cover;
+    border: 1px solid rgba(238, 231, 231, 0.9);
+
+    @media (max-width: 768px) {
+        width: 104px;
+        height: 90px;
+    }
+`;
+
+const CarousalOne = ({ images }) => {
+    // Duplicate images to ensure seamless scrolling
+    const allImages = [...images, ...images];
+
+    return (
+        <div>
+            <section id="marquee">
+                <StyledContainer>
+                    <StyledPicContainer>
+                        {allImages.map((imageUrl, index) => (
+                            <StyledPic key={index}>
+                                <StyledImg src={imageUrl} alt={`img${index}`} />
+                            </StyledPic>
+                        ))}
+                    </StyledPicContainer>
+                </StyledContainer>
+            </section>
+            <section id="reverse-marquee">
+                <StyledContainer>
+                    <StyledReversePicContainer>
+                        {allImages.map((imageUrl, index) => (
+                            <StyledPic key={index}>
+                                <StyledImg src={imageUrl} alt={`img${index}`} />
+                            </StyledPic>
+                        ))}
+                    </StyledReversePicContainer>
+                </StyledContainer>
+            </section>
+        </div>
+    );
+};
+
+export default CarousalOne
+
+
+
+

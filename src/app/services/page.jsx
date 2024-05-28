@@ -117,7 +117,7 @@ function page() {
         bgImg={bgImage.src}
       />
 
-      <StyledBox title={"Our Services"}>
+      <StyledBox >
         <Service
           title={"AC Services"}
           decription={
