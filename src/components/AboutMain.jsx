@@ -18,7 +18,7 @@ const AboutMain = () => {
           alignItems={"flex-start"}
         >
           <img
-            src={"/images/Service1.png"}
+            src={"/images/Service.png"}
             height={isMobile ? "374px " : "638px"}
           />
           <img
