@@ -1,13 +1,13 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+
 import StyledInput from "@/ui/StyledInput";
 import StyledPhoneInput from "@/ui/StyledPhoneInput";
-import StyledSelectField from "@/ui/StyledSelect";
+
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import StyledTextArea from "@/ui/StyledTextArea";
 import ToolTipIcon from "../assets/icons/tooltip.svg";
-
 import {
   Grid,
   FormControlLabel,
@@ -17,13 +17,31 @@ import {
 } from "@mui/material";
 import { mont } from "@/theme";
 import StyledRadioButton from "@/ui/StyledRadioButton";
+import { getIndiaState, getIndiaDistrict } from "india-state-district";
+import StyledSelectField from "@/ui/StyledSelect";
 
 const StyledForm = () => {
   const [selectedForm, setSelectedForm] = useState("form1");
+  const [selectedState, setSelectedState] = useState(null);
+  const [districtOptions, setDistrictOptions] = useState([]);
+
+  const states = getIndiaState().map(({ state, code }) => ({
+    value: code,
+    label: state,
+  }));
 
   const handleRadioChange = (event) => {
     setSelectedForm(event.target.value);
   };
+
+  const handleStateChange = (selectedOption) => {
+    setSelectedState(selectedOption);
+    const districts = getIndiaDistrict(selectedOption.value).map(
+      (district) => ({ value: district, label: district })
+    );
+    setDistrictOptions(districts);
+  };
+
   const StyledLabel = styled.span`
     font-family: ${mont.style.fontFamily};
     font-weight: 900;
@@ -36,7 +54,7 @@ const StyledForm = () => {
     }
   `;
   const StyledToolTipIcon = styled(ToolTipIcon)`
-    margin-left: 8px;
+    margin-left: 6px;
     margin-top: 4px;
     @media (max-width: 600px) {
       margin: 0px;
@@ -49,11 +67,11 @@ const StyledForm = () => {
       backgroundColor: "text.secondary",
       color: "white",
       maxWidth: 220,
-
       border: "none",
       borderRadius: "4px",
     },
   }));
+
   return (
     <div>
       <Grid container spacing={2} alignItems="center">
@@ -68,14 +86,12 @@ const StyledForm = () => {
                     <br />
                     <br />
                     <Typography variant="h8">
-                      {" "}
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Suspendisse varius enim in eros elementum tristique
                     </Typography>
                   </>
                 }
               >
-                {" "}
                 <FormControlLabel
                   value="form1"
                   control={<StyledRadioButton />}
@@ -101,7 +117,6 @@ const StyledForm = () => {
                     <br />
                     <br />
                     <Typography variant="h8">
-                      {" "}
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Suspendisse varius enim in eros elementum tristique
                     </Typography>
@@ -114,7 +129,7 @@ const StyledForm = () => {
                   label={
                     <StyledLabel>
                       Customer
-                      <ToolTipIcon />{" "}
+                      <StyledToolTipIcon />
                     </StyledLabel>
                   }
                 />
@@ -133,24 +148,22 @@ const StyledForm = () => {
                     <br />
                     <br />
                     <Typography variant="h8">
-                      {" "}
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Suspendisse varius enim in eros elementum tristique
                     </Typography>
                   </>
                 }
               >
-                {" "}
                 <FormControlLabel
                   value="form3"
                   control={<StyledRadioButton />}
                   label={
                     <StyledLabel>
                       Service Partner
-                      <ToolTipIcon />{" "}
+                      <StyledToolTipIcon />
                     </StyledLabel>
                   }
-                />{" "}
+                />
               </HtmlTooltip>
             </RadioGroup>
           </FormControl>
@@ -171,14 +184,23 @@ const StyledForm = () => {
           <Grid item xs={12}>
             <StyledPhoneInput />
           </Grid>
+          <Grid item xs={6}>
+            <StyledSelectField
+              placeholder="State"
+              options={states}
+              onChange={handleStateChange}
+              value={selectedState}
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <StyledSelectField
+              placeholder="District"
+              options={districtOptions}
+              onChange={(e) => console.log("Selected district:", e)}
+            />
+          </Grid>{" "}
           <Grid item xs={12}>
             <StyledTextArea placeholder="Add a Description/Enquiry" />
-          </Grid>
-          <Grid item xs={6}>
-            <StyledSelectField placeholder="Country" />
-          </Grid>
-          <Grid item xs={6}>
-            <StyledSelectField placeholder="City" />
           </Grid>
         </Grid>
       )}
@@ -195,10 +217,19 @@ const StyledForm = () => {
             <StyledPhoneInput />
           </Grid>
           <Grid item xs={6}>
-            <StyledSelectField placeholder="Country" />
+            <StyledSelectField
+              placeholder="State"
+              options={states}
+              onChange={handleStateChange}
+              value={selectedState}
+            />
           </Grid>
           <Grid item xs={6}>
-            <StyledSelectField placeholder="City" />
+            <StyledSelectField
+              placeholder="District"
+              options={districtOptions}
+              onChange={(e) => console.log("Selected district:", e)}
+            />
           </Grid>
           <Grid item xs={12}>
             <StyledTextArea placeholder="Add a Description/Enquiry" />
@@ -217,12 +248,20 @@ const StyledForm = () => {
           <Grid item xs={12}>
             <StyledPhoneInput />
           </Grid>
-
           <Grid item xs={6}>
-            <StyledSelectField placeholder="Country" />
+            <StyledSelectField
+              placeholder="State"
+              options={states}
+              onChange={handleStateChange}
+              value={selectedState}
+            />
           </Grid>
           <Grid item xs={6}>
-            <StyledSelectField placeholder="City" />
+            <StyledSelectField
+              placeholder="District"
+              options={districtOptions}
+              onChange={(e) => console.log("Selected district:", e)}
+            />
           </Grid>
           <Grid item xs={12}>
             <StyledTextArea placeholder="Add a Description/Enquiry" />

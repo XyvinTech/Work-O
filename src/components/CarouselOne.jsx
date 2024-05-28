@@ -8,7 +8,7 @@ function CarouselOne({ images,pic }) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
     
   const mobileStyle = { width: "90px", height: "104px", objectFit: "cover", padding: "1px" };
-  const desktopStyle = { width: "180px", height: "216px", objectFit: "cover", padding: "1px" };
+  const desktopStyle = { width: "216px", height: "180px", objectFit: "cover",paddingLeft:"15px",paddingRight:"15px",borderRadius:"4px" };
   const responsiveCarousel = [
     {
       breakpoint: 2000, // Settings for extra large screens
@@ -84,7 +84,7 @@ function CarouselOne({ images,pic }) {
 
   return (
     <div>
-      <div className="slider-container" style={{ overflow: "hidden" }}>
+      <div className="slider-container" style={{ overflow: "hidden",paddingBottom: "5px" }}>
         <Slider {...settings1}>
           {images.map((image, index) => (
             <div key={`slider1-${index}`}>
@@ -99,7 +99,7 @@ function CarouselOne({ images,pic }) {
           ))}
         </Slider>
       </div>
-      <div className="slider-container" style={{ overflow: "hidden", marginTop: "10px" }}>
+      <div className="slider-container" style={{ overflow: "hidden",marginTop:"0px" ,paddingTop:"0px"}}>
         <Slider {...settings2}>
           {pic.map((image, index) => (
             <div key={`slider2-${index}`}>

@@ -58,7 +58,7 @@ const theme = createTheme({
     },
 
     card: {
-      fontSize: "32px",
+      fontSize: "25px",
       "@media (max-width:600px)": {
         fontSize: "18px",
       },

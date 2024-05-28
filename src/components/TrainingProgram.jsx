@@ -9,8 +9,8 @@ const ViewMoreContainer = styled(Box)`
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  gap: 20px;
-  overflow-x: auto;
+  gap: 15px;
+  overflow-x: hidden;
 
   @media (max-width: 600px) {
     flex-wrap: wrap;

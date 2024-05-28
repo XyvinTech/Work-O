@@ -22,7 +22,14 @@ const StyledCardMedia = styled.div`
   background-size: cover;
   background-position: center;
   margin-bottom: 15px;
+  transition: transform 0.3s ease; /* Added transition for smooth hover effect */
+  
+  &:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+  }
 `;
+
+
 
 const StyledCardContent = styled.div`
   color: black;

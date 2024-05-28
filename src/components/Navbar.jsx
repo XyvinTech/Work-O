@@ -13,12 +13,12 @@ import {
   Divider,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import PhoneIcon from "@mui/icons-material/Phone";
 import PlusIcon from "../assets/icons/call.svg";
 import { mont } from "@/theme";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import StyledIconButton from "@/ui/StyledIconButton";
+import NavbarButton from "@/ui/NavbarButton";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -87,7 +87,12 @@ const Navbar = () => {
             />
             {!isMobile && (
               <Stack direction={"row"} spacing={4}>
-                <StyledIconButton icon={PlusIcon} buttonText="Customer care" alternateText='7-666-666-559' width={"210px"} />
+                <NavbarButton
+                  icon={PlusIcon}
+                  buttonText="Customer care"
+                  alternateText="7-666-666-559"
+                  width={"210px"}
+                />
                 <Button
                   variant="navbar"
                   color="primary"
@@ -131,6 +136,7 @@ const Navbar = () => {
                             : isTransparent
                             ? "#1B1B1B"
                             : "#fff",
+
                         fontSize: "14px",
                         fontWeight: 600,
                         "&:hover": {
@@ -184,6 +190,10 @@ const Navbar = () => {
                           : isTransparent
                           ? "#1B1B1B"
                           : "#fff",
+                      borderBottom:
+                        activeTab === label
+                          ? `2px solid ${theme.palette.primary.main}`
+                          : "none",
                       fontSize: "14px",
                       fontWeight: 600,
                       "&:hover": {

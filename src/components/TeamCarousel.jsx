@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Box } from "@mui/material";
 import styled from "styled-components";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import carouselData from "../assets/json/TeamData";
 import TeamCard from "@/ui/TeamCard";
 
@@ -52,14 +52,17 @@ const StyledSlider = styled(Slider)`
 `;
 
 const TeamCarousel = () => {
+  const [isPreviousClicked, setIsPreviousClicked] = useState(false);
   let sliderRef = useRef(null);
 
   const next = () => {
     sliderRef.slickNext();
+    setIsPreviousClicked(false);
   };
 
   const previous = () => {
     sliderRef.slickPrev();
+    setIsPreviousClicked(true);
   };
 
   const settings = {
@@ -110,13 +113,13 @@ const TeamCarousel = () => {
       </StyledSlider>
       <ButtonBox>
         <img
-          src="/images/Button1.png"
+          src={isPreviousClicked ? "/images/Button2.png" : "/images/Button1.png"}
           style={{ width: "48px", height: "48px" }}
           onClick={previous}
           alt="Previous"
         />
         <img
-          src="/images/Button.png"
+          src={isPreviousClicked? "/images/Button3.png" : "/images/Button.png"}
           style={{ width: "48px", height: "48px" }}
           onClick={next}
           alt="Next"

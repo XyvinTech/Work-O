@@ -19,7 +19,7 @@ const TeamCard = ({ image, title, description }) => {
         src={image}
         alt="Frame"
         style={{
-          width: isMobile ? "100%" : "367px",
+          width: isMobile ? "100%" :"100%",
           height: "299px",
           objectFit: "cover"
         }}

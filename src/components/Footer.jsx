@@ -14,7 +14,7 @@ import StyledInput from "@/ui/StyledInput";
 import PlusIcon from "../assets/icons/call.svg";
 import SMSIcon from "../assets/icons/sms.svg";
 import StyledIconButton from "@/ui/StyledIconButton";
-import StyledBox from "./StyledBox";
+
 
 const FooterContainer = styled(Box)(() => ({
   backgroundImage: `url(${bgImage.src})`,
@@ -31,7 +31,7 @@ const FooterContainer = styled(Box)(() => ({
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: "rgba(0, 0, 0, 0.9)",
+    backgroundColor: "rgba(0, 0, 0, 0.95)",
     zIndex: 1,
   },
   "& > *": {
@@ -165,8 +165,8 @@ function Footer() {
             spacing={3}
             width={isMobile ? "50%" : "100%"}
           >
-            <StyledIconButton icon={PlusIcon} buttonText="7-666-666-559" width={"131px"}  color={"white"} borderColor={"rgba(255, 255, 255, 0.12)"}/>
-            <StyledIconButton icon={SMSIcon} buttonText="info@workoindia.com" color={"white"} borderColor={"rgba(255, 255, 255, 0.12)"}/>
+            <StyledIconButton hover={true}icon={PlusIcon} buttonText="7-666-666-559"  color={"white"} borderColor={"rgba(255, 255, 255, 0.12)"}/>
+            <StyledIconButton hover={true}icon={SMSIcon} buttonText="info@workoindia.com" color={"white"} borderColor={"rgba(255, 255, 255, 0.12)"}/>
           </Stack>
         </Stack>
       </Stack>

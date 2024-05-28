@@ -23,8 +23,8 @@ const FlowerImage = styled.img`
   width: auto;
   position: absolute;
   z-index: 1;
-  top: -150px;
-  left: 538px;
+  top: -35%; /* Adjusted positioning relative to the card container */
+  left: 70%; /* Centered horizontally */
   backgroundcolor: #f4f3f3;
   @media (max-width: 600px) {
     height: 230px;

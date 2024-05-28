@@ -30,7 +30,7 @@ const TabButton = styled.button`
   width: 324px;
   font-family: ${mont.style.fontFamily};
   font-weight: 600;
-  font-size: 20px;
+  font-size: 16px;
   height: 59px;
   align-items: center;
   text-align: center;
@@ -96,13 +96,14 @@ const StyledTabs = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [renderKey, setRenderKey] = useState(0);
   const [loading, setLoading] = useState(true); // State for loading
+  const [isPreviousClicked, setIsPreviousClicked] = useState(false);
   const tabs = serviceDetails.map((detail) => detail.tabName);
 
   useEffect(() => {
     // Simulate a loading delay
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -110,11 +111,13 @@ const StyledTabs = () => {
   const handleNext = () => {
     setActiveTab((prev) => (prev + 1) % tabs.length);
     setRenderKey((prevKey) => prevKey + 1);
+    setIsPreviousClicked(false);
   };
 
   const handlePrevious = () => {
     setActiveTab((prev) => (prev - 1 + tabs.length) % tabs.length);
     setRenderKey((prevKey) => prevKey + 1);
+    setIsPreviousClicked(true);
   };
 
   const handleTabClick = (index) => {
@@ -176,13 +179,15 @@ const StyledTabs = () => {
         }}
       >
         <img
-          src="/images/Button1.png"
+          src={
+            isPreviousClicked ? "/images/Button2.png" : "/images/Button1.png"
+          }
           style={{ width: "48px", height: "48px" }}
           onClick={handlePrevious}
           alt="Previous"
         />
         <img
-          src="/images/Button.png"
+          src={isPreviousClicked ? "/images/Button3.png" : "/images/Button.png"}
           style={{ width: "48px", height: "48px" }}
           onClick={handleNext}
           alt="Next"

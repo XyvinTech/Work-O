@@ -14,7 +14,6 @@ import OurStory from "@/components/OurStory";
 import viewMoreData from "../assets/json/PromiseCardData";
 import FreqenlyAskedQuestion from "@/components/FreqenlyAskedQuestion";
 import Location from "@/components/Location";
-import LocationCard from "@/components/LocationCard";
 import Statistics from "@/components/Statistics";
 import ContactUs from "@/components/ContactUs";
 function page() {

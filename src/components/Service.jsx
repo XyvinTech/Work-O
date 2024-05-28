@@ -1,6 +1,5 @@
 "use client";
 import { Box, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
-import Repair from "../assets/icons/Repair.svg";
 import { cormo } from "@/theme";
 
 function Service({ title, decription, img, gridComponent }) {
@@ -22,7 +21,7 @@ function Service({ title, decription, img, gridComponent }) {
         </Typography>
       )}
       <Box
-        width={isMobile ? "100%" : "50%"}
+        width={isMobile ? "100%" : "45%"}
         display="flex"
         justifyContent={"flex-start"}
         alignItems={"flex-start"}
@@ -125,10 +124,10 @@ function Service({ title, decription, img, gridComponent }) {
             {decription}
           </Typography>
         </Box>
-        <Grid container spacing={5} py={2}>
+        <Grid container spacing={5} py={2} paddingTop={"50px"}>
           {gridComponent?.map((item, index) => {
             return (
-              <Grid item xs={12} sm={6} key={index} spacing={3} p={4}>
+              <Grid item xs={12} sm={6} key={index} spacing={3} >
                 <Stack>
                   {item.icon}
                   <Typography
