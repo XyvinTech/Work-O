@@ -30,7 +30,7 @@ function Service({ title, description, img, gridComponent }) {
         >
           <img 
             src={img} 
-            height={isMobile ? "280px" : "638px"} 
+            height={isMobile ? "280px" : "538px"} 
             style={{ 
               zIndex: 1, 
               position: 'relative', 
@@ -44,11 +44,11 @@ function Service({ title, description, img, gridComponent }) {
           />
         <img
           src="/images/ServiceFrame.png"
-          height={isMobile ? "274px" : "604px"}
+          height={isMobile ? "274px" : "504px"}
           style={{
             position: "absolute",
             zIndex: 0,
-            bottom:"-20px"
+            bottom:"-10px"
           }}
         />
       </Box>

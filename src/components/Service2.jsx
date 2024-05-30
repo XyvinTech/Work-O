@@ -28,21 +28,21 @@ function Service2({ title, description, img, gridComponent }) {
         >
           <img 
             src={img} 
-            height={isMobile ? "274px" : "638px"} 
+            height={isMobile ? "274px" : "538px"} 
             style={{ 
               zIndex: 1, 
               position: 'relative', 
-              left:"0px",
+              left:"2px",
               top: isMobile ? '-10px' : '-43px',
             }} 
           />
         <img
           src="/images/ServiceFrame.png"
-          height={isMobile ? "274px" : "604px"}
+          height={isMobile ? "274px" : "504px"}
           style={{
             position: "absolute",
             zIndex: 0,
-            bottom:"-20px"
+            bottom:"-5px"
           }}
         />
       </Box>
