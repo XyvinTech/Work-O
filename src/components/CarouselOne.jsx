@@ -28,12 +28,12 @@ const StyledContainer = styled.div`
 
 const StyledPicContainer = styled.div`
     display: flex;
-    animation: ${marquee} 20s linear infinite;
+    animation: ${marquee} 40s linear infinite;
 `;
 
 const StyledReversePicContainer = styled.div`
     display: flex;
-    animation: ${reverseMarquee} 20s linear infinite;
+    animation: ${reverseMarquee} 40s linear infinite;
 `;
 
 const StyledPic = styled.div`
@@ -52,7 +52,7 @@ const StyledImg = styled.img`
     height: 180px;
     object-fit: cover;
     border: 1px solid rgba(238, 231, 231, 0.9);
-
+    border-radius:4px;
     @media (max-width: 768px) {
         width: 104px;
         height: 90px;
