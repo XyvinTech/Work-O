@@ -28,6 +28,7 @@ const StyledCardMedia = styled.div`
 
 const StyledCardContent = styled.div`
   color: black;
+  padding-bottom:20px;
 `;
 
 const DateTypography = styled(Typography)`

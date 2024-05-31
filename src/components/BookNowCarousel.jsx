@@ -34,12 +34,12 @@ const StyledSlider = styled(Slider)`
     }
 
     li button:before {
-      color: orange;
+      color: #FC8229;
       font-size: 8px;
     }
 
     li.slick-active button:before {
-      color: orange;
+      color: #FC8229;
       font-size: 8px;
     }
   }

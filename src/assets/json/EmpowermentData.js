@@ -6,12 +6,12 @@ const EmpowermentData = [
       icon:"/images/Frame.png"
     },
     {
-        icon:"/images/Frame.png",
+        icon:"/images/works3.png",
         title: "Career Growth Opportunities",
         description: "Get career advancement and professional development within the gig economy. From networking events and mentorship programs to access to higher-paying gigs and opportunities for upskilling, these initiatives are designed to help you progress in your career.",
       },
       {
-        icon:"/images/Frame.png",
+        icon:"/images/works2.png",
         title: "Financial Assistance",
         description: "Receive support and guidance in managing your finances effectively as a gig worker. From budgeting advice to accessing financial resources and assistance programs, these initiatives aim to help you stabilize your income and manage expenses.",
       },

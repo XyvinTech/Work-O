@@ -40,7 +40,7 @@ const TabButton = styled.button`
 
   &.active {
     border: 0px;
-    border-bottom: 3px solid orange;
+    border-bottom: 3px solid #FC8229;
 
     background-color: #ffe7d5;
   }
