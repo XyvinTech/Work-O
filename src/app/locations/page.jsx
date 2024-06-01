@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import React from "react";
-import bgImage from "/public/assets/locations/img/header.png";
 
 function page() {
   return (
