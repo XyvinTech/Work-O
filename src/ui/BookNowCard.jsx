@@ -1,6 +1,5 @@
 "use client";
 import { Button, Typography } from "@mui/material";
-import Image from "next/image";
 import styled from "styled-components";
 import { mont } from "@/theme";
 
@@ -78,7 +77,7 @@ const BookNowCard = ({
         </Button>
       </Content>
       <ImageContainer>
-        <Image src={imageSrc} alt={title} layout="fill" objectFit="cover" />
+        <img src={imageSrc} alt={title}  objectFit="cover"/>
       </ImageContainer>
     </CardContainer>
   );

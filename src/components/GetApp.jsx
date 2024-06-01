@@ -19,6 +19,7 @@ function GetApp() {
             src={mobileImage}
             height={isMobile ? 290 : 585}
             width={isMobile ? 350 : 700}
+            alt="image"
           />
           {isMobile && (
             <img
@@ -53,10 +54,10 @@ function GetApp() {
             </Typography>
           </Stack>
           <Stack direction={"row"} spacing={3} alignItems={"center"}>
-            <Image src={QRImage} height={100} width={100} />
+            <Image src={QRImage} height={100} width={100} alt="img" />
             <Stack direction={"column"} spacing={2} justifyContent={"center"}>
-              <Image src={appStore} height={45} width={135} />
-              <Image src={playStore} height={45} width={150} />
+              <Image src={appStore} height={45} width={135} alt="img" />
+              <Image src={playStore} height={45} width={150} alt="img" />
             </Stack>
           </Stack>
         </Stack>

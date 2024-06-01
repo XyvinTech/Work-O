@@ -29,7 +29,8 @@ function Service({ title, description, img, gridComponent }) {
           position="relative" // Ensure the second image can be positioned absolutely within this box
         >
           <img 
-            src={img} 
+            src={img}
+            alt="img" 
             height={isMobile ? "180px" : "538px"} 
             style={{ 
               zIndex: 1, 
@@ -44,6 +45,7 @@ function Service({ title, description, img, gridComponent }) {
           />
         <img
           src="/images/ServiceFrame.png"
+          alt="img"
           height={isMobile ? "174px" : "504px"}
           style={{
             position: "absolute",

@@ -26,7 +26,7 @@ const OurStory = () => {
     <Box>
       <Stack direction={isMobile ? "column" : "row"} spacing={isMobile ? 2 : 6}>
         <ImageContainer>
-          <Image src="/Home/Remaining/OurStory.webp" />
+          <Image src="/Home/Remaining/OurStory.webp" alt="img" />
         </ImageContainer>
         <Stack direction={"column"} spacing={4}>
           <Typography variant="h2">Our story</Typography>

@@ -106,7 +106,7 @@ const TechnicalService = () => {
           </Stack>
         </Stack>
         <Box>
-          <img src="/images/Frame2.png" height={"834"} />
+          <img src="/images/Frame2.png" alt="img" height={"834"} />
         </Box>
       </Stack>
     </Box>
