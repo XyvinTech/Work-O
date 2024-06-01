@@ -3,10 +3,10 @@ const CertificationData = [
   
       title: "Accredited Certifications",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      icon:"/images/Certification1.png"
+      icon:"/AboutUs/Certification1.webp"
     },
     {
-      icon:"/images/Certification2.png",
+      icon:"/AboutUs/Certification2.webp",
       title: "In-House Certifications",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     },

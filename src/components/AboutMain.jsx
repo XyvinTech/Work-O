@@ -8,7 +8,7 @@ const AboutMain = () => {
     <Box>
       <Stack
         direction={isMobile ? "column" : "row"}
-        spacing={isMobile ? 2 : 40}
+        spacing={isMobile ? 2 : 20}
         position={"relative"}
       >
         <Box
@@ -18,10 +18,10 @@ const AboutMain = () => {
           alignItems={"flex-start"}
         >
           <img
-            src={"/images/Service.png"}
+            src={"/AboutUs/About.webp"}alt="About"
             height={isMobile ? "374px " : "638px"}
           />
-          <img
+          {/* <img
             src="/images/ServiceElli2.png"
             height={isMobile ? "274px " : "430px"}
             style={{
@@ -42,7 +42,7 @@ const AboutMain = () => {
               bottom: !isMobile && "0",
               top: isMobile && "0",
             }}
-          />
+          /> */}
         </Box>
         <Stack direction={"column"} spacing={4} paddingTop={"100px"}>
           <Typography variant="h2">Who are we?</Typography>

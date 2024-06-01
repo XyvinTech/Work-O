@@ -57,7 +57,7 @@ const PromiseCard = ({ title, description, icon }) => {
           display="flex"gap={isMobile?"10px":"12px"}
           flexDirection={"column"}
         >
-          <FlowerImage src="/images/flower1.png" alt="Flower" />
+          <FlowerImage src="/Home/Remaining/Flower.webp" alt="Flower" />
           <FrameImage src={icon} alt="Frame" />
           <Typography variant="cardHead"  paddingBottom={"2px"}>{title}</Typography>
           <Typography variant="h6" textAlign={"justify"}>

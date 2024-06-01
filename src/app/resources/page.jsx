@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import React from "react";
-import bgImage from "/public/assets/resources/img/header.png";
+import bgImage from "/public/others/Resource.webp";
 import Resources from "@/components/Resources";
 
 function page() {

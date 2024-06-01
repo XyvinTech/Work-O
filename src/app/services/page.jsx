@@ -1,7 +1,7 @@
 "use client";
 import Header from "@/components/Header";
 import React from "react";
-import bgImage from "/public/assets/services/img/header.png";
+import bgImage from "/public/Services/Main.webp";
 import StyledBox from "@/components/StyledBox";
 import PromiseCardView from "@/components/PromiseCardView";
 import GetApp from "@/components/GetApp";

@@ -1,7 +1,7 @@
 "use client";
 import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
-import mobileImage from "/public/assets/get-the-app/img/mobiles.png";
+import mobileImage from "/public/Home/Remaining/Mobile.webp";
 import QRImage from "/public/assets/get-the-app/img/QR.png";
 import playStore from "/public/assets/get-the-app/img/google-play-badge.png";
 import appStore from "/public/assets/get-the-app/img/app-store-badge.png";

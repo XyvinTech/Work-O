@@ -1,6 +1,6 @@
 const BookNowCarouselData = [
     {
-      imageSrc: "/OurService/BeautyService3.png",
+      imageSrc: "/Home/Add/Add1.webp",
       title: "Spa Services at your Door",
       description: "Beauty Services",
       buttonColor: "contained",
@@ -8,7 +8,7 @@ const BookNowCarouselData = [
       backgroundColor: "white",
     },
     {
-      imageSrc: "/OurService/TechnicalService2.png",
+      imageSrc: "/Home/Add/Add2.webp",
       title: "Safe your home with CCTV",
       description: "Technical Services",
       buttonColor: "contained",
@@ -17,7 +17,7 @@ const BookNowCarouselData = [
       textColor: "white",
     },
     {
-      imageSrc: "/OurService/TechnicalService3.png",
+      imageSrc: "/Home/Add/Add3.webp",
       title: "Discover our skill program",
       description: "Skill Development Program",
       buttonColor: "filled",
@@ -25,7 +25,7 @@ const BookNowCarouselData = [
       backgroundColor: "#FBF8F2",
     },
     {
-      imageSrc: "/OurService/AcImage3.png",
+      imageSrc: "/Home/Add/Add4.webp",
       title: "Save upto 3000₹ on electricity bills",
       description: "AC Servicing",
       buttonColor: "contained",
@@ -33,7 +33,7 @@ const BookNowCarouselData = [
       backgroundColor: "#FBF8F2",
     },
     {
-      imageSrc: "/OurService/BeautyService1.png",
+      imageSrc: "/Home/Add/Add5.webp",
       title: "Elevate your wedding Glow!",
       description: "Beauty Services",
       buttonColor: "filled",
@@ -41,7 +41,7 @@ const BookNowCarouselData = [
       backgroundColor: "white",
     },
     {
-      imageSrc: "/OurService/HomeService2.png",
+      imageSrc: "/Home/Add/Add6.webp",
       title: "Get experts in 2 Hours",
       description: "Home Appliances Services",
       buttonColor: "contained",

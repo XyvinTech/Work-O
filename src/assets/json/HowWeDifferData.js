@@ -3,15 +3,15 @@ const HowWeDifferData = [
   
       title: "Skills First",
       description: "We prioritize the acquisition of in-demand skills to ensure our laborers stay competitive",
-      icon:"/images/Skill1.png"
+      icon:"/AboutUs/Differ1.webp"
     },
     {
-      icon:"/images/Skill2.png",
+      icon:"/AboutUs/Differ2.webp",
       title: "Community Support",
       description: "We foster a supportive community where laborers can connect, learn, and grow together.",
     },
     {
-      icon:"/images/Skill3.png",
+      icon:"/AboutUs/Differ3.webp",
       title: "Sustainability Initiatives",
       description: "Worko prioritizes environmentally sustainable and eco-friendly practices across our operations",
     },

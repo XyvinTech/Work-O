@@ -1,18 +1,18 @@
 const Location=[
 {
-    image:"/images/location1.png",
+    image:"/Home/Location/Lucknow.webp",
     title:"LUCKNOW"
 },
 {
-    image:"/images/location2.png",
+    image:"/Home/Location/Delhi.webp",
     title:"DELHI NCR"
 },
 {
-    image:"/images/location3.png",
+    image:"/Home/Location/Jaipur.webp",
     title:"JAIPUR"
 },
 {
-    image:"/images/location4.png",
+    image:"/Home/Location/Dehradun.webp",
     title:"DEHRADUN"
 }
 ]

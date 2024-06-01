@@ -23,15 +23,31 @@ const ButtonBox = styled(Box)`
 
 const Container = styled(Box)`
   overflow: hidden;
-  @media (max-width: 600px) {
-    margin-top: 300px;
-  }
+  
 `;
 
 const Slide = styled(Box)`
   padding: 10px 10px; // Adjust this value for more or less padding
 `;
+const HeaderContainer = styled(Box)`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`;
+const IconContainer = styled(Box)`
+  display: flex;
+  gap: 15px;
+
+  @media (max-width: 600px) {
+    margin-top: 10px;
+  }
+`;
 const BlogData = () => {
   const sliderRef = useRef(null);
 
@@ -64,7 +80,16 @@ const BlogData = () => {
 
   return (
     <Container className="slider-container">
-      <Typography variant="h4">All Blog Posts</Typography>
+      <HeaderContainer>
+        <Typography variant="h4">All Blog Posts</Typography>
+        <IconContainer>
+        <img src="/Blog/Facebook.webp" style={{ width: "9px", height: "18px" }} alt="Icon 1" />3.7 M
+        <img src="/Blog/Instagram.webp" style={{ width: "18px", height: "18px" }} alt="Icon 1" />2.4 M
+          <img src="/Blog/Twitter.webp" style={{ width: "19px", height: "15px" }} alt="Icon 1" />3.7 M
+          <img src="/Blog/Youtube.webp" style={{ width: "22px", height: "15px" }} alt="Icon 1" />2.4 M
+        
+        </IconContainer>
+      </HeaderContainer>
       <Slider
         ref={sliderRef}
         {...settings}

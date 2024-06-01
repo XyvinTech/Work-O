@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import React from "react";
-import bgImage from "/public/assets/blog/img/header.png";
+import bgImage from "/public/Blog/Main.webp";
 import BlogData from "@/components/BlogData";
 import StyledBox from "@/components/StyledBox";
 

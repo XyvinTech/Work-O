@@ -48,6 +48,7 @@ const ConnectUs = () => {
           height={isMobile ? "294px" : "403px"}
           width={isMobile ? "100%" : "605px"}
           style={{ objectFit: "cover" }}
+          alt="image"
         />
         <Stack
           direction={"column"}

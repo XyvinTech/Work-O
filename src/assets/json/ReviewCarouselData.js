@@ -1,41 +1,41 @@
 const ReviewCarouselData = [
   {
-    image: "/OurService/BeautyService3.png",
+    image: "/AboutUs/Team3.webp",
     title: "John Doe",
     description:
       "The upskilling program has truly transformed my life. I now have the skills and confidence to pursue a fulfilling career in the construction industry.",
     subheader: "Construction Worker, ABC Construction",
   },
   {
-    image: "/OurService/TechnicalService2.png",
+    image: "/AboutUs/Team1.webp",
     title: "John Doe",
     description:
       "The upskilling program has truly transformed my life. I now have the skills and confidence to pursue a fulfilling career in the construction industry.",
     subheader: "Construction Worker, ABC Construction",
   },
   {
-    image: "/OurService/TechnicalService3.png",
+    image: "/images/Training2.jpg",
     title: "John Doe",
     description:
       "The upskilling program has truly transformed my life. I now have the skills and confidence to pursue a fulfilling career in the construction industry.",
     subheader: "Construction Worker, ABC Construction",
   },
   {
-    image: "/OurService/AcImage3.png",
+    image: "/images/Training2.jpg",
     title: "John Doe",
     description:
       "The upskilling program has truly transformed my life. I now have the skills and confidence to pursue a fulfilling career in the construction industry.",
     subheader: "Construction Worker, ABC Construction",
   },
   {
-    image: "/OurService/BeautyService1.png",
+    image: "/AboutUs/Team1.webp",
     title: "John Doe",
     description:
       "The upskilling program has truly transformed my life. I now have the skills and confidence to pursue a fulfilling career in the construction industry.",
     subheader: "Construction Worker, ABC Construction",
   },
   {
-    image: "/OurService/HomeService2.png",
+    image: "/AboutUs/Team3.webp",
     title: "John Doe",
     description:
       "The upskilling program has truly transformed my life. I now have the skills and confidence to pursue a fulfilling career in the construction industry.",

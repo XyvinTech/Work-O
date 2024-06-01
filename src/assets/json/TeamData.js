@@ -1,31 +1,31 @@
 const TeamData = [
   {
-    image: "/images/Member1.jpeg",
+    image: "/AboutUs/Team1.webp",
     title: "John Doe",
     description: "Managing Director",
   },
   {
-    image: "/images/member2.jpeg",
+    image: "/AboutUs/Team2.webp",
     title: "Sara Thompson",
     description: "Marketing specialist",
   },
   {
-    image: "/images/m.jpeg",
+    image: "/AboutUs/Team3.webp",
     title: "John Doe",
     description: "Engineer",
   },
   {
-    image: "/images/m.jpeg",
+    image: "/AboutUs/Team3.webp",
     title: "John Doe",
     description: "Engineer",
   },
   {
-    image: "/images/member2.jpeg",
+    image: "/AboutUs/Team2.webp",
     title: "Sara Thompson",
     description: "Marketing specialist",
   },
     {
-    image: "/images/Member1.jpeg",
+    image: "/AboutUs/Team1.webp",
     title: "John Doe",
     description: "Managing Director",
   },

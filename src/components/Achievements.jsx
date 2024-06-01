@@ -2,14 +2,13 @@
 import { Grid, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 const awards = [
-  { src: "/assets/award/award1.png", alt: "award1" },
-  { src: "/assets/award/award2.png", alt: "award2" },
-  { src: "/assets/award/award3.png", alt: "award3" },
-  { src: "/assets/award/award4.png", alt: "award4" },
-  { src: "/assets/award/award5.png", alt: "award5" },
-  { src: "/assets/award/award2.png", alt: "award2" },
-  { src: "/assets/award/award1.png", alt: "award1" },
-  { src: "/assets/award/award2.png", alt: "award2" },
+  { src: "/Home/Remaining/Award1.webp", alt: "award1" },
+  { src: "/Home/Remaining/Award2.webp", alt: "award2" },
+  { src: "/Home/Remaining/Award3.webp", alt: "award3" },
+  { src: "/Home/Remaining/Award4.webp", alt: "award4" },
+  { src: "/Home/Remaining/Award5.webp", alt: "award5" },
+  { src: "/Home/Remaining/Award2.webp", alt: "award2" },
+  { src: "/Home/Remaining/Award1.webp", alt: "award2" },
 ];
 
 

@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import React from "react";
-import bgImage from "/public/assets/about/img/header.png";
+import bgImage from "/public/AboutUs/Header.webp";
 import VisionCardView from "@/components/VisionCardView";
 import TeamCarousel from "@/components/TeamCarousel";
 import PromiseCardView from "@/components/PromiseCardView";
@@ -14,18 +14,27 @@ import viewMoreData from "../../assets/json/HowWeDifferData";
 import FreqenlyAskedQuestion from "@/components/FreqenlyAskedQuestion";
 
 function page() {
-  const images = [
-    "/assets/home/carousel-1/image1.png",
-    "/assets/home/carousel-1/image2.png",
-    "/assets/home/carousel-1/image3.png",
-    "/assets/home/carousel-1/image4.png",
-    "/assets/home/carousel-1/image5.jpeg",
-    "/assets/home/carousel-1/image6.png",
-    "/assets/home/carousel-1/image7.png",
-    "/assets/home/carousel-1/image8.jpeg",
-    "/assets/home/carousel-1/image9.png",
-    "/assets/home/carousel-1/image10.png",
-  ];
+  const images=[
+    "/Home/Carousal/1.webp",
+    "/Home/Carousal/2.webp",
+    "/Home/Carousal/3.webp",
+    "/Home/Carousal/4.webp",
+    "/Home/Carousal/5.webp",
+    "/Home/Carousal/6.webp",
+    "/Home/Carousal/7.webp",
+    "/Home/Carousal/9.webp",
+    "/Home/Carousal/10.webp",
+    "/Home/Carousal/11.webp",
+    "/Home/Carousal/12.webp",
+    "/Home/Carousal/13.webp",
+    "/Home/Carousal/14.webp",
+    "/Home/Carousal/15.webp",
+    "/Home/Carousal/16.webp",
+    "/Home/Carousal/17.webp",
+    "/Home/Carousal/18.webp",
+    "/Home/Carousal/19.webp",
+    "/Home/Carousal/20.webp",
+   ]
   return (
     <>
       <Header

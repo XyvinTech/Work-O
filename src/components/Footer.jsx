@@ -67,7 +67,7 @@ function Footer() {
       >
         <Box>
           <img
-            src="/main_logo.png"
+            src="/Home/Remaining/Logo.webp"
             alt="Logo"
             width={isMobile ? "165px" : "270px"}
             height={"auto"}

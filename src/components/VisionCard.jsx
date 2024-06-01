@@ -23,13 +23,13 @@ const FlowerImage = styled.img`
   width: auto;
   position: absolute;
   z-index: 1;
-  top: -35%; /* Adjusted positioning relative to the card container */
-  left: 70%; /* Centered horizontally */
+  top: -25%; /* Adjusted positioning relative to the card container */
+  left: 60%; /* Centered horizontally */
   backgroundcolor: #f4f3f3;
   @media (max-width: 600px) {
     height: 230px;
-    top: -90px;
-    left: 160px;
+    top: -60px;
+    left: 120px;
   }
 `;
 
@@ -44,7 +44,7 @@ const VisionCard = ({title,description,icon}) => {
     <Card>
       <CardActionArea>
         <Box padding={"10"}display="flex" flexDirection="column" >
-          <FlowerImage src="/images/flower.png" alt="Flower" />
+          <FlowerImage src="/AboutUs/Flower.webp" alt="Flower" />
           <FrameImage src={icon} alt="Frame" />
           <Typography variant="cardHead">{title}</Typography>
           <Typography variant="h6" textAlign={"justify"}>{description}
