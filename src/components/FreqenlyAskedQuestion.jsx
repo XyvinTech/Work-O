@@ -30,7 +30,7 @@ const Container = styled(Box)(() => ({
 const FreqenlyAskedQuestion = ({ showStillHaveQuestions = true }) => {
   return (
     <Container>
-    <Box padding={"10px"} paddingTop={"60px"} marginBottom={"10px"}>
+    <Box  paddingTop={"60px"} marginBottom={"10px"}>
       <StyledBox>
       <Typography variant="h2" textAlign={"center"} marginBottom={"10px"}>
         {" "}

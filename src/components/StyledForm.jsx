@@ -14,6 +14,8 @@ import {
   FormControl,
   RadioGroup,
   Typography,
+  useTheme,
+  useMediaQuery,
 } from "@mui/material";
 import { mont } from "@/theme";
 import StyledRadioButton from "@/ui/StyledRadioButton";
@@ -24,7 +26,8 @@ const StyledForm = () => {
   const [selectedForm, setSelectedForm] = useState("form1");
   const [selectedState, setSelectedState] = useState(null);
   const [districtOptions, setDistrictOptions] = useState([]);
-
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const states = getIndiaState().map(({ state, code }) => ({
     value: code,
     label: state,
@@ -75,7 +78,7 @@ const StyledForm = () => {
   return (
     <div>
       <Grid container spacing={2} alignItems="center">
-        <Grid item xs={4}>
+        <Grid item xs={isMobile ? 6: 4}>
           <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
               <HtmlTooltip
@@ -106,7 +109,7 @@ const StyledForm = () => {
             </RadioGroup>
           </FormControl>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={isMobile? 6: 4}>
           <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
               <HtmlTooltip
@@ -137,7 +140,7 @@ const StyledForm = () => {
             </RadioGroup>
           </FormControl>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={isMobile? 6: 4}>
           <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
               <HtmlTooltip
@@ -172,10 +175,10 @@ const StyledForm = () => {
 
       {selectedForm === "form1" && (
         <Grid container spacing={2}>
-          <Grid item xs={6}>
+          <Grid item xs={12}>
             <StyledInput placeholder="First Name" />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12}>
             <StyledInput placeholder="Last Name" />
           </Grid>
           <Grid item xs={12}>

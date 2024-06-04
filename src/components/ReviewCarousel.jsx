@@ -28,6 +28,9 @@ const Container = styled(Box)`
 const StyledSlider = styled(Slider)`
 .slick-slide {
   padding: 0 20px; 
+  @media (max-width: 600px) {
+    padding: 0px; 
+  }
 }
   .slick-dots {
     left: 10px;

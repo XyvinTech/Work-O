@@ -19,7 +19,7 @@ const AboutMain = () => {
         >
           <img
             src={"/AboutUs/About.webp"}alt="About"
-            height={isMobile ? "374px " : "638px"}
+            height={isMobile ? "300px " : "638px"}
           />
           {/* <img
             src="/images/ServiceElli2.png"

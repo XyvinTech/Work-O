@@ -70,6 +70,7 @@ const Navbar = () => {
             : isTransparent
             ? "#000"
             : "#fff",
+            height: isMobile ? (mobileMenuOpen ? "auto" : "64px") : "",
       }}
     >
       <Toolbar>

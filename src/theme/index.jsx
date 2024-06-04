@@ -111,7 +111,7 @@ const theme = createTheme({
     footer_title: {
       fontSize: "18px",
       "@media (max-width:600px)": {
-        fontSize: "14px",
+        fontSize: "12px",
       },
       fontWeight: "500",
       fontFamily: mont.style.fontFamily,

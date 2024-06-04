@@ -43,7 +43,7 @@ const CardMedia = styled.img`
 `;
 
 const CardContent = styled.div`
-  padding: 16px;
+  padding-top: 10px;
  
 `;
 

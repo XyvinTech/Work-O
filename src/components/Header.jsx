@@ -69,13 +69,14 @@ function Header({ bgImg, title, subtitle, isHome, isButtons,height }) {
         <Typography
           variant="subtitle1"
           color={isHome ? "#3B3B3B" : "#fff"}
-          textAlign={"center"}
+          textAlign={"left"}
+          padding={2}
         >
           {subtitle}
         </Typography>
       )}
       {!(isHome && isMobile) && isButtons && (
-        <Stack direction={"row"} spacing={3}>
+        <Stack direction={isMobile?"column":"row"} spacing={3} alignItems={"center"}>
           <Button variant={"contained"}>Get the App</Button>
           <Button variant="outlined" color={isHome ? "primary" : "secondary"}>
             View services

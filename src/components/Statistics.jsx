@@ -23,7 +23,7 @@ const Statistics = () => {
   }, []);
 
   if (!data) {
-    return <Typography>Loading...</Typography>;
+    return <Typography>    </Typography>;
   }
 
   const statistics = [

@@ -15,7 +15,6 @@ import PlusIcon from "../assets/icons/call.svg";
 import SMSIcon from "../assets/icons/sms.svg";
 import StyledIconButton from "@/ui/StyledIconButton";
 
-
 const FooterContainer = styled(Box)(() => ({
   backgroundImage: `url(${bgImage.src})`,
   backgroundSize: "cover",
@@ -24,6 +23,7 @@ const FooterContainer = styled(Box)(() => ({
   display: "flex",
   flexDirection: "column",
   position: "relative",
+  overflow: "hidden",
   "&::before": {
     content: '""',
     position: "absolute",
@@ -63,7 +63,7 @@ function Footer() {
       <Stack
         direction={isMobile ? "column" : "row"}
         p={isMobile ? 1 : 4}
-        spacing={isMobile ? 5 : 20}
+        spacing={isMobile ? 3 : 20}
       >
         <Box>
           <img
@@ -82,53 +82,33 @@ function Footer() {
         </Box>
         <Stack
           direction={"row"}
-          spacing={isMobile ? 3 : 6}
+          spacing={isMobile ? 1 : 6}
           p={isMobile ? 2 : 4}
         >
           <Stack spacing={2}>
             <Typography variant="footer_title">Legal</Typography>
-            <Typography fontSize="18px" variant="footer_subtitle">
-              Contact us
-            </Typography>
-            <Typography fontSize="18px" variant="footer_subtitle">
-              Privacy policy
-            </Typography>
-            <Typography fontSize="18px" variant="footer_subtitle">
+            <Typography variant="footer_subtitle">Contact us</Typography>
+            <Typography variant="footer_subtitle">Privacy policy</Typography>
+            <Typography variant="footer_subtitle">
               Terms & conditions
             </Typography>
           </Stack>
           <Stack spacing={2}>
             <Typography variant="footer_title">Resources</Typography>
-            <Typography fontSize="18px" variant="footer_subtitle">
-              Blogs
-            </Typography>
-            <Typography fontSize="18px" variant="footer_subtitle">
-              Location
-            </Typography>
-            <Typography fontSize="18px" variant="footer_subtitle">
-              Help centre
-            </Typography>
+            <Typography variant="footer_subtitle">Blogs</Typography>
+            <Typography variant="footer_subtitle">Location</Typography>
+            <Typography variant="footer_subtitle">Help centre</Typography>
           </Stack>
           <Stack spacing={2}>
             <Typography variant="footer_title">Discover</Typography>
-            <Typography fontSize="18px" variant="footer_subtitle">
-              Services
-            </Typography>
-            <Typography fontSize="18px" variant="footer_subtitle">
-              Skill devlopment
-            </Typography>
+            <Typography variant="footer_subtitle">Services</Typography>
+            <Typography variant="footer_subtitle">Skill devlopment</Typography>
           </Stack>
           <Stack spacing={2}>
             <Typography variant="footer_title">Comapany</Typography>
-            <Typography fontSize="18px" variant="footer_subtitle">
-              About
-            </Typography>
-            <Typography fontSize="18px" variant="footer_subtitle">
-              Join Us
-            </Typography>
-            <Typography fontSize="18px" variant="footer_subtitle">
-              Download App
-            </Typography>
+            <Typography variant="footer_subtitle">About</Typography>
+            <Typography variant="footer_subtitle">Join Us</Typography>
+            <Typography variant="footer_subtitle">Download App</Typography>
           </Stack>
         </Stack>
       </Stack>
@@ -147,7 +127,9 @@ function Footer() {
               placeholder={"Email ID"}
               backgroundColor={"background.paper"}
             />
-            <Button variant="navbar" fullWidth>Submit</Button>
+            <Button variant="navbar" fullWidth>
+              Submit
+            </Button>
           </Stack>
         </Stack>
         <Stack width={isMobile ? "100%" : "55%"} pt={3} spacing={2}>
@@ -165,8 +147,20 @@ function Footer() {
             spacing={3}
             width={isMobile ? "50%" : "100%"}
           >
-            <StyledIconButton hover={true}icon={PlusIcon} buttonText="7-666-666-559"  color={"white"} borderColor={"rgba(255, 255, 255, 0.12)"}/>
-            <StyledIconButton hover={true}icon={SMSIcon} buttonText="info@workoindia.com" color={"white"} borderColor={"rgba(255, 255, 255, 0.12)"}/>
+            <StyledIconButton
+              hover={true}
+              icon={PlusIcon}
+              buttonText="7-666-666-559"
+              color={"white"}
+              borderColor={"rgba(255, 255, 255, 0.12)"}
+            />
+            <StyledIconButton
+              hover={true}
+              icon={SMSIcon}
+              buttonText="info@workoindia.com"
+              color={"white"}
+              borderColor={"rgba(255, 255, 255, 0.12)"}
+            />
           </Stack>
         </Stack>
       </Stack>
@@ -179,54 +173,60 @@ function Footer() {
         direction={isMobile ? "column" : "row"}
         p={isMobile ? 2 : 4}
         px={isMobile ? 4 : 6}
-        justifyContent={"space-between"}
+        spacing={isMobile ? 2 : 18}
+        // justifyContent={"space-between"}
       >
+        <Stack direction={"row"} spacing={isMobile ? 2 : 18}>
+          <Stack spacing={2}>
+            <Typography variant="h6" color={"#BDBDBD"}>
+              Worko in Delhi NCR
+            </Typography>
+            <Typography variant="h6" color={"#BDBDBD"}>
+              Worko in Coming Soon
+            </Typography>
+            <Typography variant="h6" color={"#BDBDBD"}>
+              Worko in Coming Soon
+            </Typography>
+          </Stack>
+          <Stack spacing={2}>
+            <Typography variant="h6" color={"#BDBDBD"}>
+              Worko in Dehradun
+            </Typography>
+            <Typography variant="h6" color={"#BDBDBD"}>
+              Worko in Coming Soon
+            </Typography>
+            <Typography variant="h6" color={"#BDBDBD"}>
+              Worko in Coming Soon
+            </Typography>
+          </Stack>
+        </Stack>{" "}
+        <Stack direction="row" spacing={isMobile ? 2 : 18}>
+          <Stack spacing={2}>
+            <Typography variant="h6" color={"#BDBDBD"}>
+              Worko in Jaipur
+            </Typography>
+            <Typography variant="h6" color={"#BDBDBD"}>
+              Worko in Coming Soon
+            </Typography>
+            <Typography variant="h6" color={"#BDBDBD"}>
+              Worko in Coming Soon
+            </Typography>
+          </Stack>
+
+          <Stack spacing={2}>
+            <Typography variant="h6" color={"#BDBDBD"}>
+              Worko in Lucknow
+            </Typography>
+            <Typography variant="h6" color={"#BDBDBD"}>
+              Worko in Coming Soon
+            </Typography>
+            <Typography variant="h6" color={"#BDBDBD"}>
+              Worko in Coming Soon
+            </Typography>
+          </Stack>
+        </Stack>  <Stack direction="row" spacing={isMobile ? 2 : 18}>
         <Stack spacing={2}>
           <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Delhi NCR
-          </Typography>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Coming Soon
-          </Typography>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Coming Soon
-          </Typography>
-        </Stack>
-        <Stack spacing={2}>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Lucknow
-          </Typography>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Coming Soon
-          </Typography>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Coming Soon
-          </Typography>
-        </Stack>
-        <Stack spacing={2}>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Jaipur
-          </Typography>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Coming Soon
-          </Typography>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Coming Soon
-          </Typography>
-        </Stack>
-        <Stack spacing={2}>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Dehradun
-          </Typography>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Coming Soon
-          </Typography>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Coming Soon
-          </Typography>
-        </Stack>
-        <Stack spacing={2}>
-          <Typography variant="h6" color={"#BDBDBD"}>
             Worko in Coming Soon
           </Typography>
           <Typography variant="h6" color={"#BDBDBD"}>
@@ -235,13 +235,14 @@ function Footer() {
           <Typography variant="h6" color={"#BDBDBD"}>
             Worko in Coming Soon
           </Typography>
-        </Stack>
+        </Stack></Stack>
       </Stack>
       <Stack
         direction={isMobile ? "column" : "row"}
         justifyContent={"space-between"}
         bgcolor={"#333333"}
-        p={4}height={"60px"}
+        p={4}
+        height={"80px"}
         spacing={2}
       >
         <Typography variant="copyrights">
@@ -252,7 +253,6 @@ function Footer() {
         </Typography>
       </Stack>
       {/* </StyledBox> */}
-
     </FooterContainer>
   );
 }
