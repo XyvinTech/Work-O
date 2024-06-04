@@ -224,7 +224,7 @@ function Footer() {
               Worko in Coming Soon
             </Typography>
           </Stack>
-        </Stack>  <Stack direction="row" spacing={isMobile ? 2 : 18}>
+        </Stack>  <Stack direction="row" paddingRight={20} spacing={isMobile ? 2 : 18}>
         <Stack spacing={2}>
           <Typography variant="h6" color={"#BDBDBD"}>
             Worko in Coming Soon
