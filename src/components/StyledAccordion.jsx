@@ -30,7 +30,7 @@ const StyledAccordion = ({ question, answer }) => {
       <AccordionSummary
         aria-controls="panel-content"
         id="panel-header"
-        expandIcon={expanded ? <MinusIcon height={isMobile &&"1px"} width={isMobile &&"7px"}/> : <PlusIcon height={isMobile &&"15px"} width={isMobile &&"15px"} />}
+        expandIcon={expanded ? <MinusIcon /> : <PlusIcon />}
       >
         <Typography variant={isMobile?"h9":"h5"} fontWeight={"600"}>
           {question}
