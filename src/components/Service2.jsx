@@ -35,7 +35,7 @@ function Service2({ title, description, img, gridComponent }) {
               zIndex: 1, 
               position: 'relative', 
               left:"2px",
-              top: isMobile ? '-21px' : '-43px',
+              top: isMobile ? '-21px' : '-30px',
             }} 
           />
         <img
