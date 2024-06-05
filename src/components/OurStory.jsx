@@ -30,13 +30,13 @@ const OurStory = () => {
         </ImageContainer>
         <Stack direction={"column"} spacing={4}>
           <Typography variant="h2">Our story</Typography>
-          <Typography variant={isMobile?"h6":"h5"} lineHeight={"27px"}>
+          <Typography variant={isMobile?"h7":"h5"} lineHeight={"27px"}>
             Welcome to Worko, where we're not just shaping careers; we're
             shaping futures. As a non-profit organization, our mission is to
             empower individuals with the skills and knowledge needed to thrive
             in today's job market.
           </Typography>
-          <Typography variant={isMobile?"h6":"h5"}  lineHeight={"27px"}>
+          <Typography variant={isMobile?"h7":"h5"}  lineHeight={"27px"}>
             At Worko, we understand that the key to success lies in practical,
             job-oriented skills. That's why we offer comprehensive training
             programs designed to equip participants with the expertise demanded
