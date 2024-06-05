@@ -5,6 +5,7 @@ import styled from "styled-components";
 const Card = styled.div`
   width: 100%;
   height: 559px;
+ 
   box-shadow: none;
   border-radius: 0;
   &:hover {
@@ -27,7 +28,7 @@ const CardMediaWrapper = styled.div`
   height: 395px;
   overflow: hidden; /* Ensure the image doesn't overflow its container */
   @media (max-width: 600px) {
-    width: 150px;
+    width: 160px;
     height: 190px;
   }
 `;

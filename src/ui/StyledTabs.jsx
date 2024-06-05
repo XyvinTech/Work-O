@@ -7,7 +7,6 @@ import { Box} from "@mui/material";
 import serviceDetails from "../assets/json/serviceDetails";
 const TabsContainer = styled.div`
   width: 100%;
-
   @media (max-width: 600px) {
     max-width: 100%;
     padding-bottom:50px;

@@ -12,7 +12,7 @@ function GetApp() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
   return (
-    <Box sx={{ position: "relative" }}>
+    <Box sx={{ position: "relative" ,overflow:"hidden"}}>
       <Stack direction={isMobile ? "column" : "row"} alignItems={"center"} spacing={isMobile?1:4}>
         <Box>
           <Image
