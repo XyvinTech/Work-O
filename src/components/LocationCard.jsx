@@ -13,17 +13,18 @@ const Card = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease-in-out;
-  
-  &:hover {
-    transform: scale(1.05); /* Zoom effect */
-  }
+ 
 `;
 
 const FlowerImage = styled.img`
   height: 57px;
   width: 57px;
   margin-bottom: 16px; /* Adjust spacing between image and text */
+   transition: transform 0.3s ease-in-out;
+  
+  &:hover {
+    transform: scale(1.25); /* Zoom effect */
+  }
 `;
 
 const LocationCard = ({ title ,image}) => {

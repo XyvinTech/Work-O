@@ -44,9 +44,7 @@ const OurStory = () => {
             profession and dreams into reality. Join us at Worko today.
           </Typography>
           <Stack direction={"row"} spacing={2}>
-            <Button variant="navbar" color="primary">
-              Get App
-            </Button>
+          <Button variant={"contained"}>Get the App</Button>
             <Button variant="outlined" color="primary">
               View Service
             </Button>

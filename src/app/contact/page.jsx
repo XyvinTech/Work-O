@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import React from "react";
-import bgImage from "/public/assets/contact/img/2.webp";
+import bgImage from "/public/assets/contact/img/2.png";
 import ContactUs from "@/components/ContactUs";
 
 function page() {

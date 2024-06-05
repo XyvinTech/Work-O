@@ -49,7 +49,12 @@ const Navbar = () => {
     const activeMenuItem = menuItems.find((item) => item.href === pathname);
     setActiveTab(activeMenuItem?.label || "");
   }, [pathname]);
-
+  const handleMenuItemClick = (href) => {
+    if (isMobile) {
+      setMobileMenuOpen(false);
+    }
+    router.push(href);
+  };
   return (
     <AppBar
       position="absolute"
@@ -70,7 +75,7 @@ const Navbar = () => {
             : isTransparent
             ? "#000"
             : "#fff",
-            height: isMobile ? (mobileMenuOpen ? "auto" : "64px") : "",
+        height: isMobile ? (mobileMenuOpen ? "auto" : "64px") : "",
       }}
     >
       <Toolbar>
@@ -124,6 +129,7 @@ const Navbar = () => {
                       color="inherit"
                       disableRipple
                       fullWidth
+                      onClick={() => handleMenuItemClick(href)}
                       sx={{
                         fontFamily: mont.style.fontFamily,
                         textTransform: "uppercase",
@@ -191,7 +197,7 @@ const Navbar = () => {
                           : isTransparent
                           ? "#1B1B1B"
                           : "#fff",
-                          borderRadius:"0px",
+                      borderRadius: "0px",
                       borderBottom:
                         activeTab === label
                           ? `2px solid ${theme.palette.primary.main}`
@@ -200,7 +206,7 @@ const Navbar = () => {
                       fontWeight: 600,
                       "&:hover": {
                         backgroundColor: "transparent",
-                        color:` ${theme.palette.primary.main}`
+                        color: ` ${theme.palette.primary.main}`,
                       },
                     }}
                   >
