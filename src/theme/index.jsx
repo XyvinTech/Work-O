@@ -160,82 +160,68 @@ const theme = createTheme({
           boxShadow: "none",
         },
         containedPrimary: {
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
           gap: "8px",
           borderRadius: 4,
           padding: "15px 20px",
-          width: "200px",
+          width: "230px",
           "@media (max-width:600px)": {
-            padding: "10px 16px",
+            padding: "10px 10px",
             width: "210px"
           },
           backgroundColor: "#FC8229",
           color: "#FFFFFF",
+          position: "relative",
           fontFamily: mont.style.fontFamily,
           fontWeight: "600",
           boxShadow: "none",
-          position: "relative",
-          overflow: "hidden",
-          transition: "color 0.5s ease", // Transition for text color
           "&::after": {
             content: '""',
-            position: "absolute",
-            right: "25px", 
-            top: "50%",
-            transform: "translateY(-50%)",
+            display: "inline-block",
             width: "23px",
             height: "17px",
             backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='23' height='17' viewBox='0 0 23 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97428 14.5284L21.0261 3.47145M21.0261 3.47145L8.57695 1.22022M21.0261 3.47145L16.8049 15.3975' stroke='%23FBF8F2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
+            marginLeft: "8px",
             opacity: 0,
-            transition: "opacity 0.5s ease, right 0.5s ease",
-           
+            transition: "opacity 1s ease, margin-left 1s ease",
           },
           "&:hover": {
             backgroundColor: "#FC8229",
-            color: "#FBF8F2", // Change text color on hover
             "&::after": {
               opacity: 1,
+              marginLeft: "16px",
             },
           },
         },
         containedSecondary: {
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
           gap: "8px",
           borderRadius: 4,
           padding: "15px 20px",
           "@media (max-width:600px)": {
-            padding: "10px 20px",
+            padding: "10px 15px",
           },
           backgroundColor: "#FFFFFF",
           color: "#3A3A3A", // Primary button text color
-          fontFamily: mont.style.fontFamily,
-          fontWeight: "700",
-          boxShadow: "none",
           position: "relative",
-          overflow: "hidden",
-          transition: "color 0.5s ease", // Transition for text color
+          fontFamily: mont.style.fontFamily,
+          fontWeight: "600",
+          boxShadow: "none",
           "&::after": {
             content: '""',
-            position: "absolute",
-            right: "15px", 
-            top: "50%",
-            transform: "translateY(-50%)",
+            display: "inline-block",
             width: "23px",
             height: "17px",
             backgroundImage:
               "url(\"data:image/svg+xml,%3Csvg width='23' height='17' viewBox='0 0 23 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97428 14.5284L21.0261 3.47145M21.0261 3.47145L8.57695 1.22022M21.0261 3.47145L16.8049 15.3975' stroke='%233B3B3B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
+              marginLeft: "8px",
               opacity: 0,
-              transition: "opacity 0.5s ease, right 0.5s ease",
+              transition: "opacity 1s ease, margin-left 1s ease",
              
           },
           "&:hover": {
             backgroundColor: "#FFFFFF",
             "&::after": {
               opacity: 1,
+              marginLeft: "16px",
             },
           },
          
@@ -251,24 +237,20 @@ const theme = createTheme({
           },
           borderColor: "#FF7043", // Primary button border color
           color: "#FF7043", // Primary button text color
+          position: "relative",
           fontFamily: mont.style.fontFamily,
           fontWeight: "600",
           boxShadow: "none",
-          position: "relative",
-          overflow: "hidden",
-          transition: "color 0.5s ease", // Transition for text color
           "&::after": {
             content: '""', // Empty content to use background image
-            position: "absolute",
-            right: "30px", 
-            top: "50%",
-            transform: "translateY(-50%)",
+            display: "inline-block",
             width: "23px",
             height: "17px",
             backgroundImage:
               "url(\"data:image/svg+xml,%3Csvg width='23' height='17' viewBox='0 0 23 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97428 14.5285L21.0261 3.47157M21.0261 3.47157L8.57695 1.22034M21.0261 3.47157L16.8049 15.3976' stroke='%23FC8229' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
+              marginLeft: "8px",
               opacity: 0,
-              transition: "opacity 0.5s ease, right 0.5s ease",
+              transition: "opacity 1s ease, margin-left 1s ease",
              
           },
           "&:hover": {
@@ -277,6 +259,8 @@ const theme = createTheme({
             backgroundColor: "#FFFFFF",
             "&::after": {
               opacity: 1,
+              opacity: 1,
+              marginLeft: "16px",
             },
           },
          
@@ -292,29 +276,27 @@ const theme = createTheme({
           },
           borderColor: "#FFF", // Primary button border color
           color: "#FFF", // Primary button text color
+          position: "relative",
           fontFamily: mont.style.fontFamily,
           fontWeight: "600",
           boxShadow: "none",
-          position: "relative",
-          overflow: "hidden",
-          transition: "color 0.5s ease", // Transition for text color
           "&::after": {
+           
             content: '""',
-            position: "absolute",
-            right: "15px", 
-            top: "50%",
-            transform: "translateY(-50%)",
+            display: "inline-block",
             width: "23px",
             height: "17px",
             backgroundImage:
               "url(\"data:image/svg+xml,%3Csvg width='23' height='17' viewBox='0 0 23 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97428 14.5284L21.0261 3.47145M21.0261 3.47145L8.57695 1.22022M21.0261 3.47145L16.8049 15.3975' stroke='%23FBF8F2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
+              marginLeft: "8px",
               opacity: 0,
-              transition: "opacity 0.5s ease, right 0.5s ease",
+              transition: "opacity 1s ease, margin-left 1s ease",
              
           },
           "&:hover": {
             "&::after": {
               opacity: 1,
+              marginLeft: "16px",
             },
           },
          
@@ -332,26 +314,24 @@ const theme = createTheme({
           fontWeight: "700",
           boxShadow: "none",
           position: "relative",
-          overflow: "hidden",
-          transition: "color 0.5s ease", // Transition for text color
+        
           "&::after": {
             content: '""',
-            position: "absolute",
-            right: "15px", 
-            top: "50%",
-            transform: "translateY(-50%)",
+            display: "inline-block",
             width: "23px",
             height: "17px",
             backgroundImage:
               "url(\"data:image/svg+xml,%3Csvg width='23' height='17' viewBox='0 0 23 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97428 14.5284L21.0261 3.47145M21.0261 3.47145L8.57695 1.22022M21.0261 3.47145L16.8049 15.3975' stroke='%23FBF8F2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
+              marginLeft: "8px",
               opacity: 0,
-              transition: "opacity 0.5s ease, right 0.5s ease",
+              transition: "opacity 1s ease, margin-left 1s ease",
               
           },
           "&:hover": {
             backgroundColor: "#3B3B3B",
             "&::after": {
               opacity: 1,
+              marginLeft: "16px",
             },
            
           },

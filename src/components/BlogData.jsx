@@ -1,34 +1,42 @@
 "use client";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { Box, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { Box, Typography, Button, useMediaQuery } from "@mui/material";
 import styled from "styled-components";
-import { useRef } from "react";
 import carouselData from "../assets/json/Blogs";
-import ViewMoreCard from "./ViewMoreCard";
+import ForwardIcon from "../assets/icons/ForwardArrow.svg";
+import BackwardIcon from "../assets/icons/BackwardArrow.svg";
+import BlogCard from "./BlogCard";
+import axios from "axios";
 
 const ButtonBox = styled(Box)`
   display: flex;
   gap: 10px;
-  justify-content: flex-end; 
+  justify-content: space-between; // Align buttons to both ends
   margin-top: 20px;
-  padding-right: 40px;
+  padding: 0 40px; // Add horizontal padding
 
   @media (max-width: 600px) {
     margin-top: 30px;
-    padding-right: 10px;
+    padding: 0 10px; // Adjust padding for mobile view
   }
 `;
 
 const Container = styled(Box)`
   overflow: hidden;
-  
 `;
 
-const Slide = styled(Box)`
-  padding: 10px 10px; // Adjust this value for more or less padding
+const GridContainer = styled(Box)`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+  margin-bottom: 20px;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
+
 const HeaderContainer = styled(Box)`
   display: flex;
   justify-content: space-between;
@@ -38,8 +46,11 @@ const HeaderContainer = styled(Box)`
   @media (max-width: 600px) {
     flex-direction: column;
     align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 30px;
   }
 `;
+
 const IconContainer = styled(Box)`
   display: flex;
   gap: 15px;
@@ -48,76 +59,125 @@ const IconContainer = styled(Box)`
     margin-top: 10px;
   }
 `;
+
 const BlogData = () => {
-  const sliderRef = useRef(null);
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const [posts, setPosts] = useState([]);
+  const fetchData = async () => {
+    const query = `
+    {
+      posts {
+        nodes {
+          id
+          title
+          content
+          featuredImage {
+            node {
+              sourceUrl
+              altText
+            }
+          }
+        }
+      }
+    }
+    `;
 
-  const next = () => {
-    sliderRef.current.slickNext();
+    try {
+      const response = await axios.post("https://blog.workoindia.com/graphql", {
+        query: query,
+      });
+
+      const data = response.data.data.posts.nodes;
+      console.log(data);
+      setPosts(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
-  const previous = () => {
-    sliderRef.current.slickPrev();
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const itemsPerPage = 6;
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handleNext = () => {
+    setCurrentPage((prev) =>
+      Math.min(prev + 1, Math.ceil(posts?.length / itemsPerPage))
+    );
   };
 
-  const settings = {
-    infinite: true,
-    slidesToShow: 3,
-    speed: 500,
-    rows: 2,
-    slidesPerRow: 1,
-    responsive: [
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          slidesPerRow: 1,
-          initialSlide: 1,
-        },
-      },
-    ],
+  const handlePrevious = () => {
+    setCurrentPage((prev) => Math.max(prev - 1, 1));
   };
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentItems = posts?.slice(startIndex, endIndex);
 
   return (
-    <Container className="slider-container">
+    <Container>
       <HeaderContainer>
-        <Typography variant="h4">All Blog Posts</Typography>
+        <Typography variant="cardHead" >
+          All Blog Posts
+        </Typography>
         <IconContainer>
-        <img src="/Blog/Facebook.webp" style={{ width: "9px", height: "18px" }} alt="Icon 1" />3.7 M
-        <img src="/Blog/Instagram.webp" style={{ width: "18px", height: "18px" }} alt="Icon 1" />2.4 M
-          <img src="/Blog/Twitter.webp" style={{ width: "19px", height: "15px" }} alt="Icon 1" />3.7 M
-          <img src="/Blog/Youtube.webp" style={{ width: "22px", height: "15px" }} alt="Icon 1" />2.4 M
-        
+          <img
+            src="/Blog/Facebook.webp"
+            style={{ width: "9px", height: "18px" }}
+            alt="Facebook"
+          />
+          3.7 M
+          <img
+            src="/Blog/Instagram.webp"
+            style={{ width: "18px", height: "18px" }}
+            alt="Instagram"
+          />
+          2.4 M
+          <img
+            src="/Blog/Twitter.webp"
+            style={{ width: "19px", height: "15px" }}
+            alt="Twitter"
+          />
+          3.7 M
+          <img
+            src="/Blog/Youtube.webp"
+            style={{ width: "22px", height: "15px" }}
+            alt="YouTube"
+          />
+          2.4 M
         </IconContainer>
       </HeaderContainer>
-      <Slider
-        ref={sliderRef}
-        {...settings}
-      >
-        {carouselData.map((item, index) => (
-          <Slide key={index}>
-            <ViewMoreCard
-              image={item.image}
-              title={item.title}
-              description={item.description}
-              date={item.date}
-            />
-          </Slide>
+      <GridContainer>
+        {currentItems.map((item, index) => (
+          <BlogCard
+            key={index}
+            image={item.featuredImage.node.sourceUrl}
+            title={item.title}
+            description={item.content}
+            date={item.date}
+          />
         ))}
-      </Slider>
+      </GridContainer>
       <ButtonBox>
-        <img
-          src="/images/Button1.png"
-          style={{ width: "48px", height: "48px" }}
-          onClick={previous}
-          alt="Previous"
-        />
-        <img
-          src="/images/Button.png"
-          style={{ width: "48px", height: "48px" }}
-          onClick={next}
-          alt="Next"
-        />
+        <Button onClick={handlePrevious} disabled={currentPage === 1}>
+          <Typography
+            variant="h7"
+            color={currentPage === 1 ? "#ccc" : "#667085"}
+          >
+            {" "}
+            <BackwardIcon /> previous{" "}
+          </Typography>
+        </Button>
+        <Button onClick={handleNext} disabled={endIndex >= posts?.length}>
+          <Typography
+            variant="h7"
+            color={endIndex >= posts?.length ? "#ccc" : "#667085"}
+          >
+            Next <ForwardIcon />
+          </Typography>
+        </Button>
       </ButtonBox>
     </Container>
   );
