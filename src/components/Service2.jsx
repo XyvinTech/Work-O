@@ -8,13 +8,14 @@ function Service2({ title, description, img, gridComponent }) {
     <Stack
       direction={{ lg: "row-reverse", sm: "column" }}
       position={"relative"}
-      px={isMobile && 2}spacing={6}
+      spacing={isMobile?2:6}
     >
       {isMobile && (
         <Typography
           fontSize={"25px"}
           fontWeight={"700"}
           fontFamily={cormo.style.fontFamily}
+          marginBottom={4}
         >
           {title}
         </Typography>
@@ -29,18 +30,18 @@ function Service2({ title, description, img, gridComponent }) {
           <img 
             src={img} 
             alt="img"
-            height={isMobile ? "180px" : "538px"} 
+            height={isMobile ? "280px" : "538px"} 
             style={{ 
               zIndex: 1, 
               position: 'relative', 
               left:"2px",
-              top: isMobile ? '-10px' : '-43px',
+              top: isMobile ? '-21px' : '-43px',
             }} 
           />
         <img
           src="/images/ServiceFrame.png"
           alt="img"
-          height={isMobile ? "174px" : "504px"}
+          height={isMobile ? "274px" : "504px"}
           style={{
             position: "absolute",
             zIndex: 0,

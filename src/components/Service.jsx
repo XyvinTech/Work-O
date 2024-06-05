@@ -17,6 +17,7 @@ function Service({ title, description, img, gridComponent }) {
           fontWeight={"700"}
           fontFamily={cormo.style.fontFamily}
           order={{ sm: 1, lg: 2 }}
+          marginBottom={5}
         >
           {title}
         </Typography>
@@ -31,12 +32,12 @@ function Service({ title, description, img, gridComponent }) {
           <img 
             src={img}
             alt="img" 
-            height={isMobile ? "180px" : "538px"} 
+            height={isMobile ? "280px" : "538px"} 
             style={{ 
               zIndex: 1, 
               position: 'relative', 
               left:"0px",
-              top: isMobile ? '-10px' : '-45px',
+              top: isMobile ? '-20px' : '-45px',
               transition: 'transform 0.3s', // Add transition for smooth zoom effect
               "&:hover": {
                 transform: 'scale(1.1)' // Zoom effect on hover
@@ -46,7 +47,7 @@ function Service({ title, description, img, gridComponent }) {
         <img
           src="/images/ServiceFrame.png"
           alt="img"
-          height={isMobile ? "174px" : "504px"}
+          height={isMobile ? "294px" : "504px"}
           style={{
             position: "absolute",
             zIndex: 0,
