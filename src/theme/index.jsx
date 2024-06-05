@@ -258,7 +258,7 @@ const theme = createTheme({
           "&::after": {
             content: '""', // Empty content to use background image
             position: "absolute",
-            right: "25px", 
+            right: "30px", 
             top: "50%",
             transform: "translateY(-50%)",
             width: "23px",
