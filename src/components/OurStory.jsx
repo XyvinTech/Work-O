@@ -43,7 +43,7 @@ const OurStory = () => {
             by industries across the board.Let's transform passion into
             profession and dreams into reality. Join us at Worko today.
           </Typography>
-          <Stack direction={"row"} spacing={2}>
+          <Stack direction={isMobile?"column":"row"} spacing={2}>
           <Button variant={"contained"}>Get the App</Button>
             <Button variant="outlined" color="primary">
               View Service

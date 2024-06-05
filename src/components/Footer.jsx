@@ -165,7 +165,7 @@ function Footer() {
         </Stack>
       </Stack>
       <Stack>
-        <Typography variant="footer_title" px={isMobile ? 4 : 6} py={2}>
+        <Typography variant="h6"fontWeight={"400"}  px={isMobile ? 4 : 6} py={2}>
           Worko Locations
         </Typography>
       </Stack>
@@ -202,14 +202,15 @@ function Footer() {
         </Stack>{" "}
         <Stack direction="row" spacing={isMobile ? 2 : 18}>
           <Stack spacing={2}>
+            
+            <Typography variant="h6" color={"#BDBDBD"}>
+              Worko in Coming Soon
+            </Typography>
+            <Typography variant="h6" color={"#BDBDBD"}>
+              Worko in Coming Soon
+            </Typography>
             <Typography variant="h6" color={"#BDBDBD"}>
               Worko in Jaipur
-            </Typography>
-            <Typography variant="h6" color={"#BDBDBD"}>
-              Worko in Coming Soon
-            </Typography>
-            <Typography variant="h6" color={"#BDBDBD"}>
-              Worko in Coming Soon
             </Typography>
           </Stack>
 
@@ -224,18 +225,7 @@ function Footer() {
               Worko in Coming Soon
             </Typography>
           </Stack>
-        </Stack>  <Stack direction="row" paddingRight={isMobile? 20:0} spacing={isMobile ? 2 : 18}>
-        <Stack spacing={2}>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Coming Soon
-          </Typography>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Coming Soon
-          </Typography>
-          <Typography variant="h6" color={"#BDBDBD"}>
-            Worko in Coming Soon
-          </Typography>
-        </Stack></Stack>
+        </Stack>  
       </Stack>
       <Stack
         direction={isMobile ? "column" : "row"}
@@ -248,7 +238,7 @@ function Footer() {
         <Typography variant="copyrights">
           &copy; 2005-2024 Worko Private limited. All Rights Reserved
         </Typography>
-        <Typography variant="copyrights">
+        <Typography variant="copyrights" color={"#908E8E"}>
           Handcrafted with ❤️ by Acute Angle
         </Typography>
       </Stack>

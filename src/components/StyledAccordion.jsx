@@ -32,12 +32,12 @@ const StyledAccordion = ({ question, answer }) => {
         id="panel-header"
         expandIcon={expanded ? <MinusIcon /> : <PlusIcon />}
       >
-        <Typography variant={isMobile?"h9":"h5"} fontWeight={"600"}>
+        <Typography variant={isMobile?"h7":"h5"} fontWeight={"600"}>
           {question}
         </Typography>
       </AccordionSummary>
       <AccordionDetails>
-        <Typography variant={isMobile?"h8":"h5"} sx={{ lineHeight: 2 }}>
+        <Typography variant={isMobile?"h9":"h5"} sx={{ lineHeight: 2 }}>
           {answer}
         </Typography>
       </AccordionDetails>

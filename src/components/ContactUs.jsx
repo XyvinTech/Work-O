@@ -23,7 +23,7 @@ function ContactUs() {
           </Typography>
           <Box>
             <Typography variant="h6"> Contact Us :</Typography>
-            <Typography variant="footer_title">7-666-666-559</Typography>
+            <Typography variant="h6">7-666-666-559</Typography>
           </Box>
           <Box>
             <Typography variant="footer_title">Find us here</Typography>

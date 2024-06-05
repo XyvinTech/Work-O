@@ -13,28 +13,33 @@ const Card = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
- 
 `;
-
+const Carddata = styled.div`
+  transition: transform 0.3s ease-in-out;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &:hover {
+    transform: scale(1.15); /* Zoom effect */
+  }
+`;
 const FlowerImage = styled.img`
   height: 57px;
   width: 57px;
   margin-bottom: 16px; /* Adjust spacing between image and text */
-   transition: transform 0.3s ease-in-out;
-  
-  &:hover {
-    transform: scale(1.25); /* Zoom effect */
-  }
 `;
 
-const LocationCard = ({ title ,image}) => {
+const LocationCard = ({ title, image }) => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   return (
     <Card>
-      <FlowerImage src={image} alt="Flower" />
-      <Typography variant="subtitle1" textAlign={"center"}>
-       {title}
-      </Typography>
+      <Carddata>
+        <FlowerImage src={image} alt="Flower" />
+        <Typography variant="subtitle1" textAlign={"center"}>
+          {title}
+        </Typography>
+      </Carddata>
     </Card>
   );
 };

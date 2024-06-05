@@ -73,8 +73,10 @@ function page() {
       </StyledBox>
       <StyledBox title={"Who is this for?"}>
         <PromiseCardView viewMoreData={viewMoreData} />
-        <GetApp />
+       
       </StyledBox>
+      
+      <GetApp />
       <StyledBox title={"Testimonials"}>
         <ReviewCarousel />
       </StyledBox>

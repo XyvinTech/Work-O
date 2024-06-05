@@ -13,25 +13,25 @@ function GetApp() {
 
   return (
     <Box sx={{ position: "relative" }}>
-      <Stack direction={isMobile ? "column" : "row"} alignItems={"center"} spacing={4}>
+      <Stack direction={isMobile ? "column" : "row"} alignItems={"center"} spacing={isMobile?1:4}>
         <Box>
           <Image
             src={mobileImage}
-            height={isMobile ? 290 : 585}
-            width={isMobile ? 350 : 700}
+            height={isMobile ? 350 : 585}
+            width={isMobile ? 420 : 700}
             alt="image"
           />
           {isMobile && (
             <img
-              style={{ position: "absolute", top: 100, left:0, zIndex: -1 }}
-              height={"201px"}
+              style={{ position: "absolute", top: 170, left:0, zIndex: -1 }}
+              height={"141px"}
               width={"100%"}
               src={"/assets/get-the-app/img/small_polygon.png"}
               alt="shape"
             />
           )}
         </Box>
-        <Stack spacing={6} p={isMobile && 2}>
+        <Stack spacing={isMobile?2:6} p={isMobile && 2}>
           <Stack spacing={1}>
             <Typography
               fontSize={isMobile ? "12px" : "14px"}

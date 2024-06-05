@@ -29,7 +29,7 @@ const StyledSlider = styled(Slider)`
 .slick-slide {
   padding: 0 20px; 
   @media (max-width: 600px) {
-    padding: 0px; 
+    padding: 0px 10px; 
   }
 }
   .slick-dots {

@@ -28,7 +28,7 @@ const FlowerImage = styled.img`
   position: absolute;
   z-index: 1;
   top: -10%;
-  left: 50%;
+  left: 52%;
   backgroundcolor: #f4f3f3;
   @media (max-width: 600px) {
     height: 230px;

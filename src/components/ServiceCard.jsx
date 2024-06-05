@@ -27,7 +27,7 @@ const CardMediaWrapper = styled.div`
   height: 395px;
   overflow: hidden; /* Ensure the image doesn't overflow its container */
   @media (max-width: 600px) {
-    width: 170px;
+    width: 150px;
     height: 190px;
   }
 `;

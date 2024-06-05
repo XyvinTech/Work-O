@@ -162,9 +162,9 @@ function page() {
       <StyledBox title={"How we works"}>
         <PromiseCardView viewMoreData={viewMoreData} />
       </StyledBox>
-      <StyledBox>
+   
         <GetApp />
-      </StyledBox>
+   
       <ConnectUs />
       <FreqenlyAskedQuestion />
     </>

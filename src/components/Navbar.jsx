@@ -49,12 +49,7 @@ const Navbar = () => {
     const activeMenuItem = menuItems.find((item) => item.href === pathname);
     setActiveTab(activeMenuItem?.label || "");
   }, [pathname]);
-  const handleMenuItemClick = (href) => {
-    if (isMobile) {
-      setMobileMenuOpen(false);
-    }
-    router.push(href);
-  };
+ 
   return (
     <AppBar
       position="absolute"
@@ -129,7 +124,7 @@ const Navbar = () => {
                       color="inherit"
                       disableRipple
                       fullWidth
-                      onClick={() => handleMenuItemClick(href)}
+                     
                       sx={{
                         fontFamily: mont.style.fontFamily,
                         textTransform: "uppercase",

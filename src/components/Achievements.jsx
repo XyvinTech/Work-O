@@ -9,6 +9,7 @@ const awards = [
   { src: "/Home/Remaining/Award5.webp", alt: "award5" },
   { src: "/Home/Remaining/Award2.webp", alt: "award2" },
   { src: "/Home/Remaining/Award1.webp", alt: "award2" },
+  { src: "/Home/Remaining/Award3.webp", alt: "award3" },
 ];
 
 
