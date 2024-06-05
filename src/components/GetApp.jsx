@@ -1,7 +1,7 @@
 "use client";
 import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
-import mobileImage from "/public/Home/Remaining/Mobile.webp";
+import mobileImage from "/public/Home/Remaining/Mobile.png";
 import QRImage from "/public/assets/get-the-app/img/QR.png";
 import playStore from "/public/assets/get-the-app/img/google-play-badge.png";
 import appStore from "/public/assets/get-the-app/img/app-store-badge.png";
@@ -23,7 +23,7 @@ function GetApp() {
           />
           {isMobile && (
             <img
-              style={{ position: "absolute", top: 400, left:0, zIndex: -1 }}
+              style={{ position: "absolute", top: 100, left:0, zIndex: -1 }}
               height={"201px"}
               width={"100%"}
               src={"/assets/get-the-app/img/small_polygon.png"}

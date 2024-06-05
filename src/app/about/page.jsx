@@ -65,9 +65,9 @@ function page() {
       <StyledBox title={"Certifications"}>
         <VisionCardView viewMoreData={Certification} />
       </StyledBox>
-      <StyledBox>
+      
         <Achievements />
-      </StyledBox>
+      
       <FreqenlyAskedQuestion/>
     </>
   );

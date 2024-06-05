@@ -17,27 +17,27 @@ import Location from "@/components/Location";
 import Statistics from "@/components/Statistics";
 import ContactUs from "@/components/ContactUs";
 function page() {
- const images=[
-  "/Home/Carousal/1.webp",
-  "/Home/Carousal/2.webp",
-  "/Home/Carousal/3.webp",
-  "/Home/Carousal/4.webp",
-  "/Home/Carousal/5.webp",
-  "/Home/Carousal/6.webp",
-  "/Home/Carousal/7.webp",
-  "/Home/Carousal/9.webp",
-  "/Home/Carousal/10.webp",
-  "/Home/Carousal/11.webp",
-  "/Home/Carousal/12.webp",
-  "/Home/Carousal/13.webp",
-  "/Home/Carousal/14.webp",
-  "/Home/Carousal/15.webp",
-  "/Home/Carousal/16.webp",
-  "/Home/Carousal/17.webp",
-  "/Home/Carousal/18.webp",
-  "/Home/Carousal/19.webp",
-  "/Home/Carousal/20.webp",
- ]
+  const images = [
+    "/Home/Carousal/1.webp",
+    "/Home/Carousal/2.webp",
+    "/Home/Carousal/3.webp",
+    "/Home/Carousal/4.webp",
+    "/Home/Carousal/5.webp",
+    "/Home/Carousal/6.webp",
+    "/Home/Carousal/7.webp",
+    "/Home/Carousal/9.webp",
+    "/Home/Carousal/10.webp",
+    "/Home/Carousal/11.webp",
+    "/Home/Carousal/12.webp",
+    "/Home/Carousal/13.webp",
+    "/Home/Carousal/14.webp",
+    "/Home/Carousal/15.webp",
+    "/Home/Carousal/16.webp",
+    "/Home/Carousal/17.webp",
+    "/Home/Carousal/18.webp",
+    "/Home/Carousal/19.webp",
+    "/Home/Carousal/20.webp",
+  ];
   return (
     <>
       <Header
@@ -51,7 +51,9 @@ function page() {
         isHome
       />
       <CarouselOne images={images} />
-      <StyledBox ><Statistics/></StyledBox>
+      <StyledBox>
+        <Statistics />
+      </StyledBox>
       <StyledBox title={"Our Service"}>
         <StyledTabs />
       </StyledBox>
@@ -78,14 +80,10 @@ function page() {
       </StyledBox>
       <StyledBox title={"Blogs"}>
         <ViewMore />
-      </StyledBox>
-      <StyledBox>
-        {" "}
-        <Achievements />
-      </StyledBox>
+      </StyledBox>{" "}
+      <Achievements />
       <FreqenlyAskedQuestion showStillHaveQuestions={false} />
-
-      <ContactUs/>
+      <ContactUs />
     </>
   );
 }

@@ -17,7 +17,7 @@ const TabHeader = styled.div`
   padding-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
 `;
 
 const TabButton = styled.button`
@@ -80,7 +80,7 @@ const TabContent = styled.div`
     grid-template-rows: auto;
     grid-auto-flow: dense;
     padding:0px;
-    gap:10px;
+    gap:20px;
     
     & > :nth-child(3) {
       margin-top:50px;

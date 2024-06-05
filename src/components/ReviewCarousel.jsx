@@ -12,7 +12,7 @@ const ButtonBox = styled(Box)`
   right: 40px;
   display: flex;
   gap: 10px;
-  margin-top:20px;
+  margin-top: 20px;
   @media (max-width: 600px) {
     display: none;
   }
@@ -22,7 +22,7 @@ const Container = styled(Box)`
   overflow: hidden;
   height: 300px;
   @media (max-width: 600px) {
-    height:350px
+    height: 350px;
   }
 `;
 const StyledSlider = styled(Slider)`
@@ -36,7 +36,10 @@ const StyledSlider = styled(Slider)`
     left: 10px;
     bottom: -30px;
     text-align: left;
-
+    @media (max-width: 600px) {
+      text-align:center;
+      bottom:-30px;
+     }
     li {
       margin: 0;
     }
@@ -116,13 +119,15 @@ const ReviewCarousel = () => {
       </StyledSlider>
       <ButtonBox>
         <img
-          src={isPreviousClicked ? "/images/Button2.png" : "/images/Button1.png"}
+          src={
+            isPreviousClicked ? "/images/Button2.png" : "/images/Button1.png"
+          }
           style={{ width: "48px", height: "48px" }}
           onClick={previous}
           alt="Previous"
         />
         <img
-          src={isPreviousClicked? "/images/Button3.png" : "/images/Button.png"}
+          src={isPreviousClicked ? "/images/Button3.png" : "/images/Button.png"}
           style={{ width: "48px", height: "48px" }}
           onClick={next}
           alt="Next"

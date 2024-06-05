@@ -14,7 +14,7 @@ const ViewMoreContainer = styled(Box)`
   @media (max-width: 600px) {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
     
   }
 `;

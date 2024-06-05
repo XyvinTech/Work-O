@@ -4,6 +4,8 @@ import {
   AccordionDetails,
   AccordionSummary,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import React, { useState } from "react";
 import PlusIcon from "../assets/icons/PlusIcon.svg";
@@ -14,7 +16,8 @@ const StyledAccordion = ({ question, answer }) => {
   const handleChange = () => {
     setExpanded(!expanded);
   };
-
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Accordion
       expanded={expanded}
@@ -27,14 +30,14 @@ const StyledAccordion = ({ question, answer }) => {
       <AccordionSummary
         aria-controls="panel-content"
         id="panel-header"
-        expandIcon={expanded ? <MinusIcon /> : <PlusIcon />}
+        expandIcon={expanded ? <MinusIcon height={isMobile &&"1px"} width={isMobile &&"7px"}/> : <PlusIcon height={isMobile &&"15px"} width={isMobile &&"15px"} />}
       >
-        <Typography variant="h5" fontWeight={"600"}>
+        <Typography variant={isMobile?"h9":"h5"} fontWeight={"600"}>
           {question}
         </Typography>
       </AccordionSummary>
       <AccordionDetails>
-        <Typography variant="h5" sx={{ lineHeight: 2 }}>
+        <Typography variant={isMobile?"h8":"h5"} sx={{ lineHeight: 2 }}>
           {answer}
         </Typography>
       </AccordionDetails>

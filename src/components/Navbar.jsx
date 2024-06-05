@@ -88,7 +88,7 @@ const Navbar = () => {
             <img
               src="/main_logo.png"
               alt="Logo"
-              width={"168px"}
+              width={isMobile?"130px":"168px"}
               height={"auto"}
             />
             {!isMobile && (
@@ -115,7 +115,7 @@ const Navbar = () => {
                 aria-label="menu"
                 onClick={handleMobileMenuToggle}
               >
-                <MenuIcon color="primary" />
+                <MenuIcon color="primary"  />
               </IconButton>
             )}
           </Box>
@@ -156,10 +156,12 @@ const Navbar = () => {
                   </Link>
                 ))}
                 <Stack spacing={2} mt={2} alignItems={"center"}>
-                  <StyledIconButton
-                    icon={PlusIcon}
-                    buttonText="Customer care"
-                  />
+                <NavbarButton
+                  icon={PlusIcon}
+                  buttonText="Customer care"
+                  alternateText="7-666-666-559"
+                  width={"210px"}
+                />
                   <Button
                     variant="contained"
                     color="primary"

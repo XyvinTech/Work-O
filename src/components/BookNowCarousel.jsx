@@ -42,6 +42,10 @@ const StyledSlider = styled(Slider)`
       color: #FC8229;
       font-size: 8px;
     }
+    @media (max-width: 600px) {
+     text-align:center;
+     bottom:0px;
+    }
   }
 `;
 

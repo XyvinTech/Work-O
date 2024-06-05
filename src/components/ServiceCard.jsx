@@ -27,7 +27,7 @@ const CardMediaWrapper = styled.div`
   height: 395px;
   overflow: hidden; /* Ensure the image doesn't overflow its container */
   @media (max-width: 600px) {
-    width: 140px;
+    width: 170px;
     height: 190px;
   }
 `;
@@ -71,7 +71,7 @@ const ServiceCard = ({ title, image, description }) => {
           <Typography
             variant="h6"
             sx={{
-              // textAlign: "justify",
+              textAlign:"match-parent",
               "@media (max-width: 600px)": {
                 fontSize: "12px",
               },

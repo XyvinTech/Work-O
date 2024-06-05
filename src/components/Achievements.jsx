@@ -16,13 +16,13 @@ function Achievements() {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <Stack bgcolor={"#FBF8F2"} p={isMobile ? 2 : 8} spacing={10}>
+    <Stack bgcolor={"#FBF8F2"} p={isMobile ? 2 : 8} spacing={isMobile?2 : 10}>
       <Typography variant="h2" textAlign={"center"}>
         Our Achievements & Awards
       </Typography>
-      <Grid container  justifyContent="space-between" spacing={isMobile && 4}>
+      <Grid container  justifyContent="space-between" spacing={isMobile && 2} >
         {awards.map((award, index) => (
-          <Grid key={index} item xs={6} sm={1} sx={{ height: { xs:100, sm: 120 } }} >
+          <Grid key={index} item xs={3} sm={1} sx={{ height: { xs:60, sm: 120 } }} spacing={isMobile && 10}>
             <img src={award.src} alt="award" height="100%" />
           </Grid>
         ))}
