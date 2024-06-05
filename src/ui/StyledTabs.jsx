@@ -79,7 +79,7 @@ const TabContent = styled.div`
     grid-template-rows: auto;
     grid-auto-flow: dense;
     padding:0px;
-    gap:20px;
+    gap:10px;
     
     & > :nth-child(3) {
       margin-top:50px;
