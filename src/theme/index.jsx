@@ -180,7 +180,7 @@ const theme = createTheme({
           "&::after": {
             content: '""',
             position: "absolute",
-            right: "15px", 
+            right: "25px", 
             top: "50%",
             transform: "translateY(-50%)",
             width: "23px",
