@@ -11,7 +11,6 @@ import bgImageFooter from "/public/assets/home/img/footer.png";
 import { Box, useMediaQuery } from "@mui/material";
 import StyledSelectField from "@/ui/StyledSelect";
 
-
 const tabData = [
   { tabName: "All FAQ's", accordions: generalData },
   { tabName: "Service-specific", accordions: serviceData },
@@ -99,20 +98,18 @@ const TabContent = styled.div`
   padding: 40px;
   display: flex;
   flex-direction: column;
-  gap: 20px; 
- 
+  gap: 20px;
 `;
 
 const MobileContainer = styled.div`
   width: 100%;
   padding: 0 20px;
-  margin-bottom: 120px;
 `;
 
 const Resources = () => {
   const [activeTab, setActiveTab] = useState(0);
   const isMobile = useMediaQuery("(max-width: 768px)");
-
+  
   const handleSelectChange = (selectedOption) => {
     setActiveTab(selectedOption.value);
   };
@@ -136,7 +133,8 @@ const Resources = () => {
                 {tab.tabName}
               </TabButton>
             ))}
-          </TabSidebar><Divider/>
+          </TabSidebar>
+          <Divider />
         </>
       )}
       {isMobile && (

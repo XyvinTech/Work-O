@@ -18,8 +18,8 @@ const StyledSelectField = ({ placeholder,options, onChange,value }) => {
       padding: "8px",
       border: "1px solid var(--White-20, rgba(255, 255, 255, 0.20));",
       borderRadius: "4px",
-      backgroundColor:  "#2F2F2F" ,
-      color: "#FFFFFF",
+      backgroundColor:  "#282828" ,
+      color: "#FC8229",
       boxShadow: state.isFocused ? "0 0 0 2px #fff" : "none",
       cursor: "pointer",
       fontFamily: mont.style.fontFamily,
@@ -30,20 +30,21 @@ const StyledSelectField = ({ placeholder,options, onChange,value }) => {
     }),
     option: (provided, state) => ({
       ...provided,
-      backgroundColor: state.isFocused ? "#FF0000" : " #FF0000",
-      color: state.isFocused ? "#fff" : "#B5B8C5",
+      backgroundColor: state.isFocused ? "transparent" : "transparent",
+      color: state.isFocused ? "#FC8229" : "#ffffff",
       cursor: "pointer",
-      backgroundColor: state.isSelected ? "#242424" : "initial",
+      // backgroundColor: state.isSelected ? "#242424" : "initial",
       fontFamily: mont.style.fontFamily,
       // fontSize:'12px'
       // Add a :active pseudo-class for selected option
       ":active": {
-        backgroundColor: "#242424",
+        backgroundColor: "#282828",
       },
     }),
     menu: (provided) => ({
       ...provided,
-      backgroundColor: "#555555",
+      backgroundColor: "#282828",
+      position:"relative",
       color: "#B5B8C5",
     }),
     singleValue: (provided) => ({
