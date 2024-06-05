@@ -28,7 +28,7 @@ const StyledCardMedia = styled.div`
 
 const StyledCardContent = styled.div`
   color: black;
-  padding-bottom:20px;
+  padding-bottom:15px;
 `;
 
 const DateTypography = styled(Typography)`
@@ -46,6 +46,9 @@ const TitleTypography = styled(Typography)`
 const DescriptionTypography = styled(Typography)`
   margin-top: 15px;
   margin-bottom: 15px;
+  @media (max-width: 600px) {
+    font-size:14px;
+  }
 `;
 const ViewMoreContainer = styled.div`
   display: flex;

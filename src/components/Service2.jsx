@@ -8,14 +8,14 @@ function Service2({ title, description, img, gridComponent }) {
     <Stack
       direction={{ lg: "row-reverse", sm: "column" }}
       position={"relative"}
-      spacing={isMobile?2:6}
+      spacing={isMobile?0:6}
     >
       {isMobile && (
         <Typography
           fontSize={"25px"}
           fontWeight={"700"}
           fontFamily={cormo.style.fontFamily}
-          marginBottom={4}
+          marginBottom={4} textAlign={"center"}
         >
           {title}
         </Typography>
@@ -49,7 +49,7 @@ function Service2({ title, description, img, gridComponent }) {
           }}
         />
       </Box>
-      <Stack width={isMobile ? "100%" : "80%"} pt={5} px={3}>
+      <Stack width={isMobile ? "100%" : "80%"} pt={5} px={isMobile?0:3}>
         <Box>
           {!isMobile && (
             <Typography
@@ -60,7 +60,7 @@ function Service2({ title, description, img, gridComponent }) {
               {title}
             </Typography>
           )}
-          <Typography variant="h6" color={"#605F5E"}>
+          <Typography variant={isMobile?"h7":"h6"} lineHeight={isMobile?"21px":"24px"} color={"#605F5E"}>
             {description}
           </Typography>
         </Box>
@@ -69,16 +69,16 @@ function Service2({ title, description, img, gridComponent }) {
           {gridComponent?.map((item, index) => {
             return (
               <Grid item xs={12} sm={6} key={index} spacing={3}>
-                <Stack>
+                <Stack spacing={1}>
                   {item.icon}
                   <Typography
-                    fontSize={isMobile ? "25px" : "31px"}
+                    fontSize={isMobile ? "18px" : "31px"}
                     variant="subtitle"
                     color={"#FC8229"}
                   >
                     {item.title}
                   </Typography>
-                  <Typography variant="h6" color={"#605F5E"}>
+                  <Typography variant={isMobile?"h7":"h6"} lineHeight={isMobile?"21px":"24px"} color={"#605F5E"}>
                     {item.sub}
                   </Typography>
                 </Stack>

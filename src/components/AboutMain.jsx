@@ -9,7 +9,8 @@ const AboutMain = () => {
       <Stack
         direction={isMobile ? "column" : "row"}
         spacing={isMobile ? 2 : 20}
-        position={"relative"}
+        position={"relative"}marginTop={isMobile && "40px"}
+      
       >
         <Box
           width={isMobile ? "100%" : "50%"}
@@ -44,11 +45,11 @@ const AboutMain = () => {
             }}
           /> */}
         </Box>
-        <Stack direction={"column"} spacing={4} paddingTop={"100px"}>
+        <Stack direction={"column"} spacing={isMobile ?2:4}   padding={isMobile&& 3} paddingTop={isMobile?0:10}>
           <Typography variant="h2">Who are we?</Typography>
           <Typography
-            variant="h5"
-            textAlign={"justify"}
+            variant={isMobile?"h7":"h5"}
+           
             lineHeight={"27px"}
             paddingRight={isMobile ? "0px" : "80px"}
           >
@@ -58,8 +59,8 @@ const AboutMain = () => {
             opportunities in the gig economy.
           </Typography>
           <Typography
-            variant="h5"
-            textAlign={"justify"}
+            variant={isMobile?"h7":"h5"}
+            
             lineHeight={"27px"}
             paddingRight={isMobile ? "0px" : "80px"}
           >

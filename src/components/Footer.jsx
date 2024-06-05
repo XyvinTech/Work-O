@@ -14,6 +14,7 @@ import StyledInput from "@/ui/StyledInput";
 import PlusIcon from "../assets/icons/call.svg";
 import SMSIcon from "../assets/icons/sms.svg";
 import StyledIconButton from "@/ui/StyledIconButton";
+import { useState } from "react";
 
 const FooterContainer = styled(Box)(() => ({
   backgroundImage: `url(${bgImage.src})`,
@@ -42,7 +43,10 @@ const FooterContainer = styled(Box)(() => ({
 function Footer() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
+  const [showMore, setShowMore] = useState(false);
+  const handleViewMoreClick = () => {
+    setShowMore(!showMore);
+  };
   const styles = {
     typography: {
       fontSize: "20px",
@@ -62,7 +66,7 @@ function Footer() {
 
       <Stack
         direction={isMobile ? "column" : "row"}
-        p={isMobile ? 1 : 4}
+        p={isMobile ? 0 : 4}
         spacing={isMobile ? 3 : 20}
       >
         <Box>
@@ -82,7 +86,7 @@ function Footer() {
         </Box>
         <Stack
           direction={"row"}
-          spacing={isMobile ? 1 : 6}
+          spacing={isMobile ? 2 : 6}
           p={isMobile ? 2 : 4}
         >
           <Stack spacing={2}>
@@ -114,11 +118,12 @@ function Footer() {
       </Stack>
       <Stack
         direction={isMobile ? "column" : "row"}
-        px={isMobile ? 3 : 6}
+        px={isMobile ? 1 : 6}
         py={1}
         spacing={isMobile ? 5 : 10}
         alignItems={"center"}
         width={"100%"}
+        marginTop={isMobile ? 6 : 0}
       >
         <Stack spacing={2} width={isMobile ? "100%" : "55%"}>
           <Typography variant="h5">Join our newsletter</Typography>
@@ -145,7 +150,7 @@ function Footer() {
           <Stack
             direction={isMobile ? "column" : "row"}
             spacing={3}
-            width={isMobile ? "50%" : "100%"}
+            // width={isMobile ? "150px" : "100%"}
           >
             <StyledIconButton
               hover={true}
@@ -165,75 +170,92 @@ function Footer() {
         </Stack>
       </Stack>
       <Stack>
-        <Typography variant="h6"fontWeight={"400"}  px={isMobile ? 4 : 6} py={2}>
+        <Typography
+          variant="h6"
+          fontWeight={"400"}
+          px={isMobile ? 2 : 6}
+          py={2}
+        >
           Worko Locations
         </Typography>
       </Stack>
       <Stack
         direction={isMobile ? "column" : "row"}
         p={isMobile ? 2 : 4}
-        px={isMobile ? 4 : 6}
+        px={isMobile ? 2 : 6}
         spacing={isMobile ? 2 : 18}
         // justifyContent={"space-between"}
       >
         <Stack direction={"row"} spacing={isMobile ? 2 : 18}>
           <Stack spacing={2}>
-            <Typography variant="h6" color={"#BDBDBD"}>
+            <Typography variant="h7" color={"#BDBDBD"}>
               Worko in Delhi NCR
             </Typography>
-            <Typography variant="h6" color={"#BDBDBD"}>
+            <Typography variant="h7" color={"#BDBDBD"}>
               Worko in Coming Soon
             </Typography>
-            <Typography variant="h6" color={"#BDBDBD"}>
+            <Typography variant="h7" color={"#BDBDBD"}>
               Worko in Coming Soon
             </Typography>
           </Stack>
           <Stack spacing={2}>
-            <Typography variant="h6" color={"#BDBDBD"}>
+            <Typography variant="h7" color={"#BDBDBD"}>
               Worko in Dehradun
             </Typography>
-            <Typography variant="h6" color={"#BDBDBD"}>
+            <Typography variant="h7" color={"#BDBDBD"}>
               Worko in Coming Soon
             </Typography>
-            <Typography variant="h6" color={"#BDBDBD"}>
+            <Typography variant="h7" color={"#BDBDBD"}>
               Worko in Coming Soon
             </Typography>
           </Stack>
         </Stack>{" "}
-        <Stack direction="row" spacing={isMobile ? 2 : 18}>
-          <Stack spacing={2}>
-            
-            <Typography variant="h6" color={"#BDBDBD"}>
-              Worko in Coming Soon
+        {isMobile && !showMore && (
+          <Box display="flex" justifyContent="flex-end" width="100%">
+            <Typography
+              onClick={handleViewMoreClick}
+              style={{ cursor: "pointer" }}
+              variant="h9" color={"#7E7E7E"}
+            >
+              View More &gt;&gt;
             </Typography>
-            <Typography variant="h6" color={"#BDBDBD"}>
-              Worko in Coming Soon
-            </Typography>
-            <Typography variant="h6" color={"#BDBDBD"}>
-              Worko in Jaipur
-            </Typography>
-          </Stack>
+          </Box>
+        )}
+        {(!isMobile || (isMobile && showMore)) && (
+          <Stack direction="row" spacing={isMobile ? 2 : 18}>
+            <Stack spacing={2}>
+              <Typography variant="h7" color={"#BDBDBD"}>
+                Worko in Coming Soon
+              </Typography>
+              <Typography variant="h7" color={"#BDBDBD"}>
+                Worko in Coming Soon
+              </Typography>
+              <Typography variant="h7" color={"#BDBDBD"}>
+                Worko in Jaipur
+              </Typography>
+            </Stack>
 
-          <Stack spacing={2}>
-            <Typography variant="h6" color={"#BDBDBD"}>
-              Worko in Lucknow
-            </Typography>
-            <Typography variant="h6" color={"#BDBDBD"}>
-              Worko in Coming Soon
-            </Typography>
-            <Typography variant="h6" color={"#BDBDBD"}>
-              Worko in Coming Soon
-            </Typography>
+            <Stack spacing={2}>
+              <Typography variant="h7" color={"#BDBDBD"}>
+                Worko in Lucknow
+              </Typography>
+              <Typography variant="h7" color={"#BDBDBD"}>
+                Worko in Coming Soon
+              </Typography>
+              <Typography variant="h7" color={"#BDBDBD"}>
+                Worko in Coming Soon
+              </Typography>
+            </Stack>
           </Stack>
-        </Stack>  
+        )}
       </Stack>
       <Stack
         direction={isMobile ? "column" : "row"}
-        justifyContent={"space-between"}
+        // justifyContent={"space-between"}
         bgcolor={"#333333"}
-        p={4}
-        height={"80px"}
-        spacing={2}
+        p={2}
+        height={"60px"}
+        spacing={1}
       >
         <Typography variant="copyrights">
           &copy; 2005-2024 Worko Private limited. All Rights Reserved

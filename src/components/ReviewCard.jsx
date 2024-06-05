@@ -1,6 +1,6 @@
 "use client";
 import styled from "styled-components";
-import { Avatar, Rating, Typography } from "@mui/material";
+import { Avatar, Box, Rating, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { mont } from "@/theme";
 
 const StyledLabel = styled.span`
@@ -18,9 +18,6 @@ const StyledCard = styled.div`
   background: white;
   border-radius: 0;
   border: 1px solid #e3dccd;
-  @media (max-width: 600px) {
-    height: 300px;
-  }
 `;
 
 const StyledCardContent = styled.div`
@@ -35,7 +32,7 @@ const StyledCardHeader = styled.div`
 `;
 
 const StyledCardActionArea = styled.div`
-  cursor: cursor;
+  cursor: pointer;
   display: block;
   height: 100%;
 `;
@@ -45,27 +42,29 @@ const StyledAvatar = styled(Avatar)`
 `;
 
 const ReviewCard = ({ image, title, subheader, description }) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <StyledCardActionArea>
       <StyledCard>
         <StyledCardContent>
-          <Rating
-            name="rating"
-            value={5}
-            size="small"
-            sx={{
-              verticalAlign: "text-top",
-            }}
-          />
-          <Typography
-            variant="h6"
-            sx={{
-              marginTop: "15px",
-              marginBottom: "15px",
-            }}
-          >
-            {description}
-          </Typography>
+          <Box>
+            <Rating
+              name="rating"
+              value={5}
+              size="small"
+              sx={{
+                verticalAlign: "text-top"
+              }}
+            />
+          </Box>
+          <Box mt={1.5} mb={1.5}>
+            <Typography
+              variant={isMobile ? "h7" : "h6"}lineHeight={isMobile?"21px":"24px"}
+            >
+              {description}
+            </Typography>
+          </Box>
           <StyledCardHeader>
             <StyledAvatar alt="Cindy Baker" src={image} />
             <div>

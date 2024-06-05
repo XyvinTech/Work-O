@@ -14,7 +14,7 @@ import viewMoreData from "../../assets/json/HowWeDifferData";
 import FreqenlyAskedQuestion from "@/components/FreqenlyAskedQuestion";
 
 function page() {
-  const images=[
+  const images = [
     "/Home/Carousal/1.webp",
     "/Home/Carousal/2.webp",
     "/Home/Carousal/3.webp",
@@ -34,7 +34,7 @@ function page() {
     "/Home/Carousal/18.webp",
     "/Home/Carousal/19.webp",
     "/Home/Carousal/20.webp",
-   ]
+  ];
   return (
     <>
       <Header
@@ -45,9 +45,9 @@ function page() {
         isButtons
         bgImg={bgImage.src}
       />
-      <StyledBox>
-        <AboutMain />
-      </StyledBox>
+
+      <AboutMain />
+
       <StyledBox title={"Our Vision"}>
         <VisionCardView viewMoreData={VisionData} />
       </StyledBox>
@@ -65,10 +65,10 @@ function page() {
       <StyledBox title={"Certifications"}>
         <VisionCardView viewMoreData={Certification} />
       </StyledBox>
-      
-        <Achievements />
-      
-      <FreqenlyAskedQuestion/>
+
+      <Achievements />
+
+      <FreqenlyAskedQuestion />
     </>
   );
 }

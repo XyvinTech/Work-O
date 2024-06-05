@@ -7,7 +7,7 @@ import {
   useTheme,
 } from "@mui/material";
 
-function Header({ bgImg, title, subtitle, isHome, isButtons,height }) {
+function Header({ bgImg, title, subtitle, isHome, isButtons,height,mobile }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -43,7 +43,7 @@ function Header({ bgImg, title, subtitle, isHome, isButtons,height }) {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      height={isMobile ? "510px" :height || "680px"}
+      height={isMobile ? mobile || "510px" :height || "680px"}
       alignItems={"center"}
       justifyContent={"center"}
       spacing={2}
@@ -67,7 +67,7 @@ function Header({ bgImg, title, subtitle, isHome, isButtons,height }) {
       </Typography>
       {(isHome || isMobile) && (
         <Typography
-          variant="subtitle1"
+          variant={isMobile?"h6":"subtitle1"}
           color={isHome ? "#3B3B3B" : "#fff"}
           textAlign={"left"}
           padding={2}

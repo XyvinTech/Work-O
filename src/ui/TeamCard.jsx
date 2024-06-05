@@ -9,7 +9,7 @@ const TeamCard = ({ image, title, description }) => {
     <Box 
       padding={"20px"} 
       border={"1px solid rgba(0, 0, 0, 0.12)"} 
-      height={isMobile ? "416px" : "441px"}
+      // height={isMobile ? "416px" : "441px"}
       display="flex"
       flexDirection="column"
       alignItems="center"

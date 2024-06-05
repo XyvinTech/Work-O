@@ -9,7 +9,7 @@ function Service({ title, description, img, gridComponent }) {
     <Stack
       direction={{ lg: "row", sm: "column" }}
       position={"relative"}
-      px={isMobile && 2} spacing={6}
+      px={isMobile && 0} spacing={6}
     >
       {isMobile && (
         <Typography
@@ -18,6 +18,7 @@ function Service({ title, description, img, gridComponent }) {
           fontFamily={cormo.style.fontFamily}
           order={{ sm: 1, lg: 2 }}
           marginBottom={5}
+          textAlign={"center"}
         >
           {title}
         </Typography>
@@ -78,16 +79,16 @@ function Service({ title, description, img, gridComponent }) {
           {gridComponent?.map((item, index) => {
             return (
               <Grid item xs={12} sm={6} key={index} spacing={3}>
-                <Stack>
+                <Stack spacing={1}>
                   {item.icon}
                   <Typography
-                    fontSize={isMobile ? "25px" : "31px"}
+                    fontSize={isMobile ? "18px" : "31px"}
                     variant="subtitle"
                     color={"#FC8229"}
                   >
                     {item.title}
                   </Typography>
-                  <Typography variant="h6" color={"#605F5E"}>
+                  <Typography variant={isMobile?"h7":"h6"} lineHeight={isMobile?"21px":"24px"} color={"#605F5E"}>
                     {item.sub}
                   </Typography>
                 </Stack>

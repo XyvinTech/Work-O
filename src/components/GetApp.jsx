@@ -12,7 +12,7 @@ function GetApp() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
   return (
-    <Box sx={{ position: "relative" ,overflow:"hidden"}}>
+    <Box sx={{ position: "relative" ,overflow:"hidden"}} marginBottom={"30px"}>
       <Stack direction={isMobile ? "column" : "row"} alignItems={"center"} spacing={isMobile?1:4}>
         <Box>
           <Image
@@ -31,7 +31,7 @@ function GetApp() {
             />
           )}
         </Box>
-        <Stack spacing={isMobile?2:6} p={isMobile && 2}>
+        <Stack spacing={isMobile?1:6} p={isMobile && 2} paddingTop={isMobile && 0}>
           <Stack spacing={1}>
             <Typography
               fontSize={isMobile ? "12px" : "14px"}

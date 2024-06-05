@@ -8,16 +8,14 @@ import { useRef, useState } from "react";
 import carouselData from "../assets/json/TeamData";
 import TeamCard from "@/ui/TeamCard";
 
-
 const ButtonBox = styled(Box)`
   display: flex;
   gap: 10px;
-  justify-content: flex-end; 
+  justify-content: flex-end;
   margin-top: 20px;
   padding-right: 40px;
   @media (max-width: 600px) {
-    margin-top: 30px;
-    padding-right:10px
+    display: none;
   }
 `;
 
@@ -28,30 +26,33 @@ const Container = styled(Box)`
 
 const StyledSlider = styled(Slider)`
   .slick-slide {
-    padding: 0 20px; 
+    padding: 0 20px;
+    @media (max-width: 600px) {
+      padding: 0px 10px;
+    }
   }
   .slick-dots {
-    left: 10px; 
-    bottom: -30px; 
+    left: 10px;
+    bottom: -30px;
     text-align: left;
 
     li {
-      margin: 0; 
+      margin: 0;
     }
 
     li button:before {
-      color: #FC8229; 
-      font-size: 8px; 
+      color: #fc8229;
+      font-size: 8px;
     }
 
     li.slick-active button:before {
-      color: #FC8229;
+      color: #fc8229;
       font-size: 8px;
     }
     @media (max-width: 600px) {
-      text-align:center;
-      bottom:-30px;
-     }
+      text-align: center;
+      bottom: -30px;
+    }
   }
 `;
 
@@ -117,13 +118,15 @@ const TeamCarousel = () => {
       </StyledSlider>
       <ButtonBox>
         <img
-          src={isPreviousClicked ? "/images/Button2.png" : "/images/Button1.png"}
+          src={
+            isPreviousClicked ? "/images/Button2.png" : "/images/Button1.png"
+          }
           style={{ width: "48px", height: "48px" }}
           onClick={previous}
           alt="Previous"
         />
         <img
-          src={isPreviousClicked? "/images/Button3.png" : "/images/Button.png"}
+          src={isPreviousClicked ? "/images/Button3.png" : "/images/Button.png"}
           style={{ width: "48px", height: "48px" }}
           onClick={next}
           alt="Next"

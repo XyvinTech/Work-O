@@ -32,7 +32,7 @@ const CardMedia = styled.img`
 `;
 
 const CardContent = styled.div`
-  padding: 16px;
+  padding-top: 16px;
 `;
 
 const Title = styled.div`
@@ -75,7 +75,7 @@ const TrainCard = ({ title, image, description }) => {
             <Typography
               variant="h6"
               sx={{
-                textAlign: "justify",
+                // textAlign: "justify",
                 "@media (max-width: 600px)": {
                   fontSize: "12px",
                 },

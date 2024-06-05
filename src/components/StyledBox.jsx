@@ -6,7 +6,7 @@ const StyledBox = ({ children, bgcolor, title }) => {
   return (
     <Box bgcolor={bgcolor} padding={isMobile ? "20px" : "80px"}>
       {title && (
-        <Typography margin={isMobile ? "20px" : "40px"} textAlign="center" variant="h2">
+        <Typography margin={isMobile ? "32px" : "40px"} textAlign="center" variant="h2">
           {title}
         </Typography>
       )}

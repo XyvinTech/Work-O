@@ -87,11 +87,13 @@ const theme = createTheme({
       fontSize: "16px",
       fontWeight: "normal",
       fontFamily: mont.style.fontFamily,
+     
     },
     h7: {
       fontSize: "14px",
       fontWeight: "normal",
       fontFamily: mont.style.fontFamily,
+      
     },
     h8: {
       fontSize: "10px",

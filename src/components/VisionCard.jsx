@@ -1,5 +1,5 @@
 "use client";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import styled from "styled-components";
 
 const Card = styled.div`
@@ -40,6 +40,7 @@ const FrameImage = styled.img`
 `;
 
 const VisionCard = ({title,description,icon}) => {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   return (
     <Card>
       <CardActionArea>
@@ -47,7 +48,7 @@ const VisionCard = ({title,description,icon}) => {
           <FlowerImage src="/AboutUs/Flower.webp" alt="Flower" />
           <FrameImage src={icon} alt="Frame" />
           <Typography variant="cardHead">{title}</Typography>
-          <Typography variant="h6" textAlign={"justify"}>{description}
+          <Typography  variant={isMobile?"h7":"h6"} lineHeight={isMobile?"21px":"24px"}>{description}
           </Typography>
         </Box>
       </CardActionArea>

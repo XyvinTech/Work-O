@@ -54,7 +54,7 @@ function AvatarCarousel({images}) {
       
     </div>
     <Stack direction={isMobile?"column":"row"} spacing={isMobile?2:6} marginTop={"20px"}>
-          <Typography variant="h6" textAlign={"justify"}>
+          <Typography variant={isMobile?"h7":"h6"}lineHeight={"27px"} >
             Empowering over 2,000 individuals through our skill-development
             program underscores our steadfast dedication to community
             transformation. At Worko, we firmly believe in the transformative
@@ -63,7 +63,7 @@ function AvatarCarousel({images}) {
             practical skills essential for success in today's competitive job
             market.
           </Typography>
-          <Typography variant="h6" textAlign={"justify"}>
+          <Typography variant={isMobile?"h7":"h6"}lineHeight={"27px"}>
             From technical proficiencies to soft skills refinement, we enable
             our students to explore their potential and pursue rewarding
             careers. With the backing of our committed team and esteemed
