@@ -43,7 +43,7 @@ const VisionCard = ({title,description,icon}) => {
   return (
     <Card>
       <CardActionArea>
-        <Box padding={"10"}display="flex" flexDirection="column" >
+        <Box padding={"10"} gap="10px" display="flex" flexDirection="column" >
           <FlowerImage src="/AboutUs/Flower.webp" alt="Flower" />
           <FrameImage src={icon} alt="Frame" />
           <Typography variant="cardHead">{title}</Typography>
