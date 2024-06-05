@@ -37,7 +37,7 @@ const FreqenlyAskedQuestion = ({ showStillHaveQuestions = true }) => {
         Frequently Asked Questions
       </Typography>
       {accordionData.map((item) => (
-        <Box key={item.id}  paddingBottom={"10px"}>
+        <Box key={item.id}  paddingBottom={"20px"}>
           <StyledAccordion question={item.question} answer={item.answer} />
         </Box>
       ))}
