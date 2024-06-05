@@ -60,7 +60,7 @@ const ReviewCard = ({ image, title, subheader, description }) => {
           </Box>
           <Box mt={1.5} mb={1.5}>
             <Typography
-              variant={isMobile ? "h7" : "h6"}lineHeight={isMobile?"21px":"24px"}
+              variant={isMobile ? "h7" : "h6"}lineHeight={"24px"}
             >
               {description}
             </Typography>

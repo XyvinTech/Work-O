@@ -48,7 +48,7 @@ const VisionCard = ({title,description,icon}) => {
           <FlowerImage src="/AboutUs/Flower.webp" alt="Flower" />
           <FrameImage src={icon} alt="Frame" />
           <Typography variant="cardHead">{title}</Typography>
-          <Typography  variant={isMobile?"h7":"h6"} lineHeight={isMobile?"21px":"24px"}>{description}
+          <Typography  variant={isMobile?"h7":"h6"} lineHeight={"24px"}>{description}
           </Typography>
         </Box>
       </CardActionArea>

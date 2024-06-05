@@ -60,7 +60,7 @@ function Service2({ title, description, img, gridComponent }) {
               {title}
             </Typography>
           )}
-          <Typography variant={isMobile?"h7":"h6"} lineHeight={isMobile?"21px":"24px"} color={"#605F5E"}>
+          <Typography variant={isMobile?"h7":"h6"} lineHeight={"24px"} color={"#605F5E"}>
             {description}
           </Typography>
         </Box>
@@ -78,7 +78,7 @@ function Service2({ title, description, img, gridComponent }) {
                   >
                     {item.title}
                   </Typography>
-                  <Typography variant={isMobile?"h7":"h6"} lineHeight={isMobile?"21px":"24px"} color={"#605F5E"}>
+                  <Typography variant={isMobile?"h7":"h6"} lineHeight={"24px"} color={"#605F5E"}>
                     {item.sub}
                   </Typography>
                 </Stack>

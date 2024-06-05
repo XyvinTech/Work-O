@@ -60,7 +60,7 @@ const PromiseCard = ({ title, description, icon }) => {
           <FlowerImage src="/Home/Remaining/Flower.webp" alt="Flower" />
           <FrameImage src={icon} alt="Frame" />
           <Typography variant="cardHead"  paddingBottom={"2px"}>{title}</Typography>
-          <Typography variant={isMobile?"h7":"h6"} lineHeight={isMobile?"21px":"24px"}>
+          <Typography variant={isMobile?"h7":"h6"} lineHeight={"24px"}>
             {description}
           </Typography>
         </Box>
