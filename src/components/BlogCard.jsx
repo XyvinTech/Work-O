@@ -3,6 +3,9 @@ import {  Typography } from "@mui/material";
 import styled from "styled-components";
 import ArrowForwardIcon from "../assets/icons/ArrowIcon.svg"
 import DOMPurify from "dompurify";
+import Link from "next/link";
+import { format, parseISO } from "date-fns";
+
 const StyledCard = styled.div`
   width: 100%;
   height: 532px;
@@ -78,13 +81,16 @@ const StyledArrowForwardIcon = styled(ArrowForwardIcon)`
   transition: margin-left 0.3s ease;
 `;
 
-const BlogCard = ({ image, title, description, date }) => {
+const BlogCard = ({ image, title, description, date,link }) => {
     const sanitizedDescription = DOMPurify.sanitize(description);
+    const formattedDate = format(parseISO(date), "EEEE, d MMM yyyy");
+
   return (
     <StyledCard>
       <StyledCardMedia image={image} />
       <StyledCardContent>
-        <DateTypography variant="h7">{date}</DateTypography>
+      <DateTypography variant="h7">{formattedDate}</DateTypography>
+
         <TitleTypography variant="card" component="div">
           {title}
         </TitleTypography>
@@ -92,10 +98,11 @@ const BlogCard = ({ image, title, description, date }) => {
           {/* {description} */}
         </DescriptionTypography>
         <ViewMoreContainer>
+        <Link href={link} passHref style={{textDecoration:"none"}}>
           <Typography variant="h7" sx={{ color: "primary.main" }}>
             View more
           </Typography>
-          <StyledArrowForwardIcon className="view-more-icon" />
+          <StyledArrowForwardIcon className="view-more-icon" /></Link>
         </ViewMoreContainer>
        
       </StyledCardContent>

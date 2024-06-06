@@ -2,11 +2,10 @@
 import React, { useEffect, useState } from "react";
 import { Box, Typography, Button, useMediaQuery } from "@mui/material";
 import styled from "styled-components";
-import carouselData from "../assets/json/Blogs";
+import axios from "axios";
+import BlogCard from "./BlogCard";
 import ForwardIcon from "../assets/icons/ForwardArrow.svg";
 import BackwardIcon from "../assets/icons/BackwardArrow.svg";
-import BlogCard from "./BlogCard";
-import axios from "axios";
 
 const ButtonBox = styled(Box)`
   display: flex;
@@ -17,7 +16,7 @@ const ButtonBox = styled(Box)`
 
   @media (max-width: 600px) {
     margin-top: 30px;
-    padding: 0 10px; // Adjust padding for mobile view
+    padding: 0 10px; 
   }
 `;
 
@@ -63,32 +62,11 @@ const IconContainer = styled(Box)`
 const BlogData = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const [posts, setPosts] = useState([]);
+
   const fetchData = async () => {
-    const query = `
-    {
-      posts {
-        nodes {
-          id
-          title
-          content
-          featuredImage {
-            node {
-              sourceUrl
-              altText
-            }
-          }
-        }
-      }
-    }
-    `;
-
     try {
-      const response = await axios.post("https://blog.workoindia.com/graphql", {
-        query: query,
-      });
-
-      const data = response.data.data.posts.nodes;
-      console.log(data);
+      const response = await axios.get("https://blog.workoindia.com/wp-json/wp/v2/posts");
+      const data = response.data;
       setPosts(data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -103,9 +81,7 @@ const BlogData = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const handleNext = () => {
-    setCurrentPage((prev) =>
-      Math.min(prev + 1, Math.ceil(posts?.length / itemsPerPage))
-    );
+    setCurrentPage((prev) => Math.min(prev + 1, Math.ceil(posts?.length / itemsPerPage)));
   };
 
   const handlePrevious = () => {
@@ -119,7 +95,7 @@ const BlogData = () => {
   return (
     <Container>
       <HeaderContainer>
-        <Typography variant="cardHead" >
+        <Typography variant="cardHead">
           All Blog Posts
         </Typography>
         <IconContainer>
@@ -153,10 +129,11 @@ const BlogData = () => {
         {currentItems.map((item, index) => (
           <BlogCard
             key={index}
-            image={item.featuredImage.node.sourceUrl}
-            title={item.title}
-            description={item.content}
+            image={item.jetpack_featured_media_url}
+            title={item.title.rendered}
+            description={item.excerpt.rendered}
             date={item.date}
+            link={item.link}
           />
         ))}
       </GridContainer>
@@ -166,8 +143,7 @@ const BlogData = () => {
             variant="h7"
             color={currentPage === 1 ? "#ccc" : "#667085"}
           >
-            {" "}
-            <BackwardIcon /> previous{" "}
+            <BackwardIcon /> previous
           </Typography>
         </Button>
         <Button onClick={handleNext} disabled={endIndex >= posts?.length}>
