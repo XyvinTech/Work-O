@@ -44,9 +44,9 @@ const HeaderContainer = styled(Box)`
 
   @media (max-width: 600px) {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
 `;
 

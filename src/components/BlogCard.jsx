@@ -8,7 +8,7 @@ import { format, parseISO } from "date-fns";
 
 const StyledCard = styled.div`
   width: 100%;
-  height: 532px;
+  min-height: 530px;
   padding: 20px;
   gap: 21px;
   margin: auto;
@@ -16,6 +16,9 @@ const StyledCard = styled.div`
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 0;
+  @media (max-width: 600px) {
+    min-height: 400px;
+  }
 `;
 
 const StyledCardMedia = styled.div`
@@ -32,7 +35,7 @@ const StyledCardMedia = styled.div`
 
 const StyledCardContent = styled.div`
   color: black;
-  padding-bottom:15px;
+ 
 `;
 
 const DateTypography = styled(Typography)`

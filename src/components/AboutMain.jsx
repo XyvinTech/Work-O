@@ -51,7 +51,7 @@ const AboutMain = () => {
             variant={isMobile?"h7":"h5"}
            
             lineHeight={"27px"}
-            paddingRight={isMobile ? "0px" : "80px"}
+            paddingRight={isMobile ? "0px" : "80px"}textAlign={isMobile && "justify"}
           >
             At Worko, we are passionate about empowering gig workers to reach
             their full potential. Our mission is to provide essential skill
@@ -62,7 +62,7 @@ const AboutMain = () => {
             variant={isMobile?"h7":"h5"}
             
             lineHeight={"27px"}
-            paddingRight={isMobile ? "0px" : "80px"}
+            paddingRight={isMobile ? "0px" : "80px"}textAlign={isMobile && "justify"}
           >
             Through our programs, we bridge the gap between aspirations and
             opportunities. We believe that every individual deserves the chance
@@ -70,7 +70,7 @@ const AboutMain = () => {
             this vision a reality
           </Typography>
           <Stack direction={"row"} spacing={2}>
-            <Button variant="navbar" color="primary">
+            <Button variant="navbar" fullWidth={isMobile} color="primary">
               View Service
             </Button>
           </Stack>

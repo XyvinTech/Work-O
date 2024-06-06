@@ -36,7 +36,7 @@ const theme = createTheme({
       fontSize: "61px",
       "@media (max-width:600px)": {
         textAlign: "center",
-        fontSize: "35px",
+        fontSize: "33px",
       },
       fontWeight: "bold",
     },
@@ -145,10 +145,10 @@ const theme = createTheme({
         navbarPrimary: {
           gap: "8px",
           borderRadius: 4,
-          padding: "15px 20px",
-          width: "200px",
+          padding: "15px 55px",
+          // width: "200px",
           "@media (max-width:600px)": {
-            padding: "10px 20px",
+            padding: "15px 20px",
           },
           backgroundColor: "#FC8229",
           color: "#FFFFFF",
@@ -163,10 +163,10 @@ const theme = createTheme({
           gap: "8px",
           borderRadius: 4,
           padding: "15px 20px",
-          width: "230px",
+          // width: "230px",
           "@media (max-width:600px)": {
             padding: "10px 10px",
-            width: "210px"
+            // width: "500px"
           },
           backgroundColor: "#FC8229",
           color: "#FFFFFF",
@@ -229,11 +229,11 @@ const theme = createTheme({
         outlinedPrimary: {
           gap: "8px",
           borderRadius: 4,
-          width: "230px",
+          // width: "230px",
           padding: "15px 20px",
           "@media (max-width:600px)": {
             padding: "10px 15px",
-            width:"210px"
+            // width:"210px"
           },
           borderColor: "#FF7043", // Primary button border color
           color: "#FF7043", // Primary button text color
@@ -268,11 +268,11 @@ const theme = createTheme({
         outlinedSecondary: {
           gap: "8px",
           borderRadius: 4,
-          width: "230px",
+          // width: "230px",
           padding: "15px 20px",
           "@media (max-width:600px)": {
             padding: "10px 15px",
-            width:"210px"
+            // width:"210px"
           },
           borderColor: "#FFF", // Primary button border color
           color: "#FFF", // Primary button text color

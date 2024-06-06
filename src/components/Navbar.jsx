@@ -155,7 +155,7 @@ const Navbar = () => {
                   icon={PlusIcon}
                   buttonText="Customer care"
                   alternateText="7-666-666-559"
-                  width={"210px"}
+                  width={"100%"}
                 />
                   <Button
                     variant="contained"

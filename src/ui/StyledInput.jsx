@@ -10,7 +10,7 @@ const StyledInput = ({ placeholder, backgroundColor }) => {
         
         sx={{
           width: "100%",
-          padding: "3px",
+          padding: "2px",
           backgroundColor: backgroundColor || "text.background",
           borderRadius: "8px",
           "& .MuiOutlinedInput-notchedOutline": {

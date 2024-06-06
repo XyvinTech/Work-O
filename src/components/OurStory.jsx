@@ -30,24 +30,24 @@ const OurStory = () => {
         </ImageContainer>
         <Stack direction={"column"} spacing={4}>
           <Typography variant="h2">Our story</Typography>
-          <Typography variant={isMobile?"h7":"h5"} lineHeight={"27px"}>
+          <Typography variant={isMobile?"h7":"h5"} textAlign={isMobile && "justify"} lineHeight={"27px"}>
             Welcome to Worko, where we're not just shaping careers; we're
             shaping futures. As a non-profit organization, our mission is to
             empower individuals with the skills and knowledge needed to thrive
             in today's job market.
           </Typography>
-          <Typography variant={isMobile?"h7":"h5"}  lineHeight={"27px"}>
+          <Typography variant={isMobile?"h7":"h5"} textAlign={isMobile && "justify"} lineHeight={"27px"}>
             At Worko, we understand that the key to success lies in practical,
             job-oriented skills. That's why we offer comprehensive training
             programs designed to equip participants with the expertise demanded
             by industries across the board.Let's transform passion into
             profession and dreams into reality. Join us at Worko today.
           </Typography>
-          <Stack direction={isMobile?"column":"row"} spacing={2}>
-          <Button variant={"contained"}>Get the App</Button>
-            <Button variant="outlined" color="primary">
+          <Stack direction={isMobile?"column":"row"} spacing={2} >
+          <Stack width={isMobile?"100%":"230px"} ><Button variant={"contained"} >Get the App</Button></Stack>
+          <Stack width={isMobile?"100%":"230px"} > <Button variant="outlined" color="primary">
               View Service
-            </Button>
+            </Button></Stack>
           </Stack>
         </Stack>
       </Stack>

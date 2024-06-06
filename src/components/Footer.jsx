@@ -85,34 +85,79 @@ function Footer() {
           </Typography>
         </Box>
         <Stack
-          direction={"row"}
+          direction={isMobile ? "column" : "row"}
           spacing={isMobile ? 2 : 6}
           p={isMobile ? 2 : 4}
+          gap={4}
         >
-          <Stack spacing={2}>
-            <Typography variant="footer_title">Legal</Typography>
-            <Typography variant="footer_subtitle">Contact us</Typography>
-            <Typography variant="footer_subtitle">Privacy policy</Typography>
-            <Typography variant="footer_subtitle">
-              Terms & conditions
-            </Typography>
-          </Stack>
-          <Stack spacing={2}>
-            <Typography variant="footer_title">Resources</Typography>
-            <Typography variant="footer_subtitle">Blogs</Typography>
-            <Typography variant="footer_subtitle">Location</Typography>
-            <Typography variant="footer_subtitle">Help centre</Typography>
-          </Stack>
-          <Stack spacing={2}>
-            <Typography variant="footer_title">Discover</Typography>
-            <Typography variant="footer_subtitle">Services</Typography>
-            <Typography variant="footer_subtitle">Skill devlopment</Typography>
-          </Stack>
-          <Stack spacing={2}>
-            <Typography variant="footer_title">Comapany</Typography>
-            <Typography variant="footer_subtitle">About</Typography>
-            <Typography variant="footer_subtitle">Join Us</Typography>
-            <Typography variant="footer_subtitle">Download App</Typography>
+          <Stack direction={"row"} spacing={11}>
+            <Stack spacing={2}>
+              <Typography
+                variant="footer_title"
+                fontWeight={isMobile ? 700 : 500}
+              >
+                Legal
+              </Typography>
+              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                Contact us
+              </Typography>
+              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                Privacy policy
+              </Typography>
+              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                Terms & conditions
+              </Typography>
+            </Stack>
+            <Stack spacing={2}>
+              <Typography
+                variant="footer_title"
+                fontWeight={isMobile ? 700 : 500}
+              >
+                Resources
+              </Typography>
+              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                Blogs
+              </Typography>
+              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                Location
+              </Typography>
+              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                Help centre
+              </Typography>
+            </Stack>
+          </Stack>{" "}
+          <Stack direction={"row"} spacing={13}>
+            <Stack spacing={2}>
+              <Typography
+                variant="footer_title"
+                fontWeight={isMobile ? 700 : 500}
+              >
+                Discover
+              </Typography>
+              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                Services
+              </Typography>
+              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                Skill devlopment
+              </Typography>
+            </Stack>
+            <Stack spacing={2}>
+              <Typography
+                variant="footer_title"
+                fontWeight={isMobile ? 700 : 500}
+              >
+                Company
+              </Typography>
+              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                About
+              </Typography>
+              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                Join Us
+              </Typography>
+              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                Download App
+              </Typography>
+            </Stack>
           </Stack>
         </Stack>
       </Stack>
@@ -123,7 +168,7 @@ function Footer() {
         spacing={isMobile ? 5 : 10}
         alignItems={"center"}
         width={"100%"}
-        marginTop={isMobile ? 6 : 0}
+        marginTop={isMobile ? 2 : 0}
       >
         <Stack spacing={2} width={isMobile ? "100%" : "55%"}>
           <Typography variant="h5">Join our newsletter</Typography>
@@ -131,10 +176,10 @@ function Footer() {
             <StyledInput
               placeholder={"Email ID"}
               backgroundColor={"background.paper"}
-            />
+            /><Stack width={isMobile?"49%":"20%"}> 
             <Button variant="navbar" fullWidth>
               Submit
-            </Button>
+            </Button></Stack>
           </Stack>
         </Stack>
         <Stack width={isMobile ? "100%" : "55%"} pt={3} spacing={2}>
@@ -186,68 +231,58 @@ function Footer() {
         spacing={isMobile ? 2 : 18}
         // justifyContent={"space-between"}
       >
-        <Stack direction={"row"} spacing={isMobile ? 2 : 18}>
-          <Stack spacing={2}>
+        <Stack direction={"row"} spacing={isMobile ? 7 : 18}>
+          <Stack spacing={3}>
             <Typography variant="h7" color={"#BDBDBD"}>
               Worko in Delhi NCR
             </Typography>
             <Typography variant="h7" color={"#BDBDBD"}>
-              Worko in Coming Soon
+              Worko in Chennai
             </Typography>
             <Typography variant="h7" color={"#BDBDBD"}>
-              Worko in Coming Soon
+              Worko in Mumbai
             </Typography>
           </Stack>
-          <Stack spacing={2}>
+          <Stack spacing={3}>
             <Typography variant="h7" color={"#BDBDBD"}>
               Worko in Dehradun
             </Typography>
             <Typography variant="h7" color={"#BDBDBD"}>
-              Worko in Coming Soon
+              Worko in Mumbai
             </Typography>
             <Typography variant="h7" color={"#BDBDBD"}>
-              Worko in Coming Soon
+              Worko in Assam
             </Typography>
           </Stack>
         </Stack>{" "}
-        {isMobile && !showMore && (
-          <Box display="flex" justifyContent="flex-end" width="100%">
-            <Typography
-              onClick={handleViewMoreClick}
-              style={{ cursor: "pointer" }}
-              variant="h9" color={"#7E7E7E"}
-            >
-              View More &gt;&gt;
-            </Typography>
-          </Box>
-        )}
-        {(!isMobile || (isMobile && showMore)) && (
-          <Stack direction="row" spacing={isMobile ? 2 : 18}>
-            <Stack spacing={2}>
+       
+        
+          <Stack direction="row" spacing={isMobile ? 7 : 18}>
+            <Stack spacing={3}>
               <Typography variant="h7" color={"#BDBDBD"}>
-                Worko in Coming Soon
+                Worko in Tirupati
               </Typography>
               <Typography variant="h7" color={"#BDBDBD"}>
-                Worko in Coming Soon
+                Worko in Gujarat
               </Typography>
               <Typography variant="h7" color={"#BDBDBD"}>
-                Worko in Jaipur
+                Worko in Andaman
               </Typography>
             </Stack>
 
-            <Stack spacing={2}>
+            <Stack spacing={3}>
               <Typography variant="h7" color={"#BDBDBD"}>
                 Worko in Lucknow
               </Typography>
               <Typography variant="h7" color={"#BDBDBD"}>
-                Worko in Coming Soon
+                Worko in Kerala
               </Typography>
               <Typography variant="h7" color={"#BDBDBD"}>
-                Worko in Coming Soon
+                Worko in Rajasthan
               </Typography>
             </Stack>
           </Stack>
-        )}
+      
       </Stack>
       <Stack
         direction={isMobile ? "column" : "row"}

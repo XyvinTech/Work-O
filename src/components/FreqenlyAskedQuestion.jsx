@@ -2,10 +2,11 @@
 import StyledAccordion from "./StyledAccordion";
 import accordionData from "../assets/json/FrequentlyAsked";
 import styled from "styled-components";
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography, useMediaQuery } from "@mui/material";
 import bgImageFooter from "/public/assets/home/img/footer.png";
-import StyledBox from "./StyledBox";
+
 const Container = styled(Box)(() => ({
+  
     backgroundImage: `url(${bgImageFooter.src})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
@@ -28,10 +29,11 @@ const Container = styled(Box)(() => ({
     },
   }));
 const FreqenlyAskedQuestion = ({ showStillHaveQuestions = true }) => {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   return (
     <Container>
-    <Box  paddingTop={"60px"} paddingLeft={"0px"} marginBottom={"10px"}>
-      <StyledBox>
+    <Box  paddingTop={"60px"} paddingLeft={isMobile?"0":"40px"} paddingRight={isMobile?"0":"40px"} marginBottom={"10px"}>
+     
       <Typography variant="h2" textAlign={"center"} marginBottom={"20px"}>
         {" "}
         Frequently Asked Questions
@@ -43,15 +45,14 @@ const FreqenlyAskedQuestion = ({ showStillHaveQuestions = true }) => {
       ))}
         {showStillHaveQuestions && (
       <Box display="flex" flexDirection="column" paddingTop={5} alignItems="center" gap={"10px"}>
-        <Stack spacing={2} justifyContent={"center"} alignItems={"center"}>
+        <Stack spacing={2} justifyContent={"center"} alignItems={"center"}paddingBottom={2}>
         <Typography variant="h7" fontWeight={"500"}>Still have Questions?</Typography>
         <Typography variant="h9">Contact us for further assistance</Typography>
-        <Button variant="navbar" color="primary"> Contact Us</Button>
-        </Stack>
+      </Stack>
+      <Button variant="navbar" color="primary" fullWidth={isMobile} > Contact Us</Button>
       </Box>)}
-      </StyledBox>
     </Box>
-    </Container>
+     </Container>
   );
 };
 

@@ -7,7 +7,7 @@ import {
   useTheme,
 } from "@mui/material";
 
-function Header({ bgImg, title, subtitle, isHome, isButtons,height,mobile }) {
+function Header({ bgImg, title, subtitle, isHome, isButtons, height, mobile }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -43,7 +43,7 @@ function Header({ bgImg, title, subtitle, isHome, isButtons,height,mobile }) {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      height={isMobile ? mobile || "510px" :height || "680px"}
+      height={isMobile ? mobile || "510px" : height || "680px"}
       alignItems={"center"}
       justifyContent={"center"}
       spacing={2}
@@ -53,7 +53,6 @@ function Header({ bgImg, title, subtitle, isHome, isButtons,height,mobile }) {
           src="/assets/home/img/header.png"
           alt="Logo"
           height={isMobile ? "42px" : "84px"}
-         
           style={{ marginTop: "50px" }}
         />
       )}
@@ -67,7 +66,7 @@ function Header({ bgImg, title, subtitle, isHome, isButtons,height,mobile }) {
       </Typography>
       {(isHome || isMobile) && (
         <Typography
-          variant={isMobile?"h6":"subtitle1"}
+          variant={isMobile ? "h6" : "subtitle1"}
           color={isHome ? "#3B3B3B" : "#fff"}
           textAlign={"left"}
           padding={2}
@@ -76,11 +75,20 @@ function Header({ bgImg, title, subtitle, isHome, isButtons,height,mobile }) {
         </Typography>
       )}
       {!(isHome && isMobile) && isButtons && (
-        <Stack direction={isMobile?"column":"row"} spacing={3} alignItems={"center"}>
-          <Button variant={"contained"}>Get the App</Button>
-          <Button variant="outlined" color={isHome ? "primary" : "secondary"}>
-            View services
-          </Button>
+        <Stack
+          direction={isMobile ? "column" : "row"}
+          spacing={3}
+          alignItems={"center"}
+        >
+          <Stack width={isMobile?"100%":"230px"}>
+            <Button variant={"contained"} >Get the App</Button>
+          </Stack>
+          <Stack width={"230px"}>
+           
+            <Button variant="outlined" color={isHome ? "primary" : "secondary"}>
+              View services
+            </Button>
+          </Stack>
         </Stack>
       )}
     </Stack>
