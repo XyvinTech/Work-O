@@ -6,9 +6,8 @@ import { Button, Typography, useMediaQuery } from "@mui/material";
 import StyledForm from "@/components/StyledForm";
 import Facebook from "../assets/icons/Facebook.svg";
 import Insta from "../assets/icons/Insta.svg";
-import X from "../assets/icons/X.svg";
 import LinkedIn from "../assets/icons/LinkedIn.svg";
-import YT from "../assets/icons/YT.svg";
+import Link from "next/link";
 function ContactUs() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   return (
@@ -28,18 +27,19 @@ function ContactUs() {
           <Box>
             <Typography variant="footer_title">Find us here</Typography>
             <Stack direction={"row"} spacing={3} py={3}>
-              <Facebook />
-              <X />
-              <Insta />
-              <LinkedIn />
-              <YT />
+            <Link href={"https://www.facebook.com/workoindia/"} passHref style={{textDecoration:"none"}}>  <Facebook /></Link>
+            <Link href={"https://www.instagram.com/workoindia"} passHref style={{textDecoration:"none"}}>
+              <Insta /></Link>
+              <Link href={"https://www.linkedin.com/company/worko-india/"} passHref style={{textDecoration:"none"}}><LinkedIn /></Link>
             </Stack>
           </Box>
         </Stack>
         <Box width={{ lg: "55%", sm: "100%" }}>
           <StyledForm />
           <Stack justifyContent={"center"} direction={"row"} py={3}>
-            <Button fullWidth={isMobile} variant="navbar">Submit</Button>
+            <Button fullWidth={isMobile} variant="navbar">
+              Submit
+            </Button>
           </Stack>
         </Box>
       </Stack>
@@ -55,10 +55,10 @@ const Container = styled(Box)(() => ({
   backgroundPosition: "center",
   color: "white",
   display: "flex",
-    padding: "80px",
-  '@media (max-width:600px)': {
-    padding: "20px"
-  },  
+  padding: "80px",
+  "@media (max-width:600px)": {
+    padding: "20px",
+  },
   flexDirection: "column",
   position: "relative",
   "&::before": {
