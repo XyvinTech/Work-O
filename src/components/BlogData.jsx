@@ -15,8 +15,13 @@ const ButtonBox = styled(Box)`
   padding: 0 40px; // Add horizontal padding
 
   @media (max-width: 600px) {
+    display: flex;
+    gap: 1px;
+    justify-content: flex-end;
     margin-top: 30px;
-    padding: 0 10px; 
+    padding-right: 10px;
+
+  
   }
 `;
 
@@ -65,7 +70,9 @@ const BlogData = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("https://blog.workoindia.com/wp-json/wp/v2/posts");
+      const response = await axios.get(
+        "https://blog.workoindia.com/wp-json/wp/v2/posts"
+      );
       const data = response.data;
       setPosts(data);
     } catch (error) {
@@ -81,7 +88,9 @@ const BlogData = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const handleNext = () => {
-    setCurrentPage((prev) => Math.min(prev + 1, Math.ceil(posts?.length / itemsPerPage)));
+    setCurrentPage((prev) =>
+      Math.min(prev + 1, Math.ceil(posts?.length / itemsPerPage))
+    );
   };
 
   const handlePrevious = () => {
@@ -95,9 +104,7 @@ const BlogData = () => {
   return (
     <Container>
       <HeaderContainer>
-        <Typography variant="cardHead">
-          All Blog Posts
-        </Typography>
+        <Typography variant="cardHead">All Blog Posts</Typography>
         <IconContainer>
           <img
             src="/Blog/Facebook.webp"
@@ -137,24 +144,53 @@ const BlogData = () => {
           />
         ))}
       </GridContainer>
-      <ButtonBox>
-        <Button onClick={handlePrevious} disabled={currentPage === 1}>
-          <Typography
-            variant="h7"
-            color={currentPage === 1 ? "#ccc" : "#667085"}
-          >
-            <BackwardIcon /> previous
-          </Typography>
-        </Button>
-        <Button onClick={handleNext} disabled={endIndex >= posts?.length}>
-          <Typography
-            variant="h7"
-            color={endIndex >= posts?.length ? "#ccc" : "#667085"}
-          >
-            Next <ForwardIcon />
-          </Typography>
-        </Button>
-      </ButtonBox>
+      {!isMobile && (
+        <ButtonBox>
+          <Button onClick={handlePrevious} disabled={currentPage === 1}>
+            <Typography
+              variant="h7"
+              color={currentPage === 1 ? "#ccc" : "#667085"}
+            >
+              <BackwardIcon /> previous
+            </Typography>
+          </Button>
+          <Button onClick={handleNext} disabled={endIndex >= posts?.length}>
+            <Typography
+              variant="h7"
+              color={endIndex >= posts?.length ? "#ccc" : "#667085"}
+            >
+              Next <ForwardIcon />
+            </Typography>
+          </Button>
+        </ButtonBox>
+      )}
+      {isMobile && (
+        <ButtonBox>
+          <Button onClick={handlePrevious} disabled={currentPage === 1}>
+            <img
+              src={
+                currentPage === 1
+                  ? "/images/Button1.png"
+                  : "/images/Button2.png"
+              }
+              style={{ width: "48px", height: "48px" }}
+              // onClick={previous}
+              alt="Previous"
+            />
+          </Button>
+          <Button onClick={handleNext} disabled={endIndex >= posts.length}>
+            <img
+              src={
+                endIndex >= posts.length
+                  ? "/images/Button3.png"
+                  : "/images/Button.png"
+              }
+              style={{ width: "48px", height: "48px" }}
+              alt="Next"
+            />
+          </Button>
+        </ButtonBox>
+      )}
     </Container>
   );
 };
