@@ -99,6 +99,10 @@ const TabContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @media (max-width: 768px) {
+    padding: 4px;
+    padding-top:20px
+  }
 `;
 
 const MobileContainer = styled.div`
