@@ -58,8 +58,8 @@ const BookNowCarouselData = [
       borderColor:"secondary",
       backgroundColor: "#3B3B3B",
       textColor: "white",
-      button:"Enroll Now",
-      link:"/enroll"
+      button:"Book Now",
+      link:"/services"
     },
   ];
   
