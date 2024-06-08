@@ -60,7 +60,7 @@ function page() {
       <StyledBox title={"Our Major Locations"}>
         <Location />
       </StyledBox>
-      <StyledBox bgcolor={"#F2F2F2"}>
+      <StyledBox bgcolor={"#F2F2F2"} padding={"0px"}>
         <BookNowCarousel />
       </StyledBox>
       <StyledBox>
