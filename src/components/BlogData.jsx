@@ -10,8 +10,6 @@ import {
 import styled from "styled-components";
 import axios from "axios";
 import BlogCard from "./BlogCard";
-import ForwardIcon from "../assets/icons/ForwardArrow.svg";
-import BackwardIcon from "../assets/icons/BackwardArrow.svg";
 
 const ButtonBox = styled(Box)`
   display: flex;
@@ -148,7 +146,7 @@ const BlogData = () => {
             title={item.title.rendered}
             description={item.excerpt.rendered}
             date={item.date}
-            link={item.link}
+            link={item.id}
           />
         ))}
       </GridContainer>

@@ -43,7 +43,8 @@ const Navbar = () => {
   const pathname = usePathname();
   const router = useRouter();
 
-  const isTransparent = pathname === "/" || pathname === "/blog/1" ;
+  const isTransparent = pathname === "/" || pathname.startsWith("/blog/");
+
 
   useEffect(() => {
     const activeMenuItem = menuItems.find((item) => item.href === pathname);

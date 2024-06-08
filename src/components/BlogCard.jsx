@@ -96,7 +96,7 @@ const BlogCard = ({ image, title, description, date, link }) => {
           ></DescriptionTypography>
         </div>
         <ViewMoreContainer>
-          <Link href={link} passHref style={{ textDecoration: "none" }}>
+          <Link href={`/blog/${link}`} passHref style={{ textDecoration: "none" }}>
             <Typography variant="h7" sx={{ color: "primary.main" }}>
               View more
             </Typography>

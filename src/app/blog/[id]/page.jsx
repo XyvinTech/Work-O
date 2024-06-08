@@ -1,14 +1,39 @@
-
+"use client";
 import ViewMoreCard from "@/components/ViewMoreCard";
 import StyledInput from "@/ui/StyledInput";
-import { Box, Button, Grid, Stack, Typography } from "@mui/material";
+import { Box, Button, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
+import axios from "axios";
+import DOMPurify from "dompurify";
+import { useParams, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 function page() {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const { id } = useParams();
+  const [post, setPost] = useState(null);
+  useEffect(() => {
+    if (id) {
+      const fetchPost = async () => {
+        try {
+          const response = await axios.get(
+            `https://blog.workoindia.com/wp-json/wp/v2/posts/${id}`
+          );
+          console.log(response);
+          setPost(response.data);
+        } catch (error) {
+          console.error("Error fetching post:", error);
+        }
+      };
+
+      fetchPost();
+    }
+  }, [id]);
+  console.log(post);
   
   return (
-    <Box marginTop={20} padding={4}>
+    <Box marginTop={isMobile?10:20} padding={4}>
       <Typography variant="h1" textTransform="uppercase">
-        THE TRANSFORMATION OF A GULLY BOY
+      {post && post.title && post.title.rendered}
       </Typography>
       <Typography variant="cardHead" fontWeight={"400"}>
         Lorem ipsum dolor sit amet consectetur. A enim nun{" "}
@@ -20,10 +45,10 @@ function page() {
         <Typography></Typography>
       </Stack>
 
-      <img src="/Blog/Blog.png" width={"100%"} height={"641px"} alt="img" />
+      <img src={post &&post.jetpack_featured_media_url}  style={{ objectFit: 'cover' }}width={isMobile?"300px":"100%"} height={isMobile?"300px":"641px"} alt="img" />
 
       <Grid container spacing={6} paddingTop={6}>
-        <Grid item xs={2}>
+        <Grid item xs={isMobile?12:2}>
           <Typography variant="h5" fontWeight={"700"}>
             Table of Contents
           </Typography>
@@ -48,7 +73,7 @@ function page() {
             </Typography>
           </Stack>
         </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={isMobile?12:8}>
           <Stack spacing={2}>
             <Typography variant="h2">Lorem ipsum dolor sit am ?</Typography>
             <Typography variant="h6">
@@ -125,9 +150,16 @@ function page() {
               pellentesque sit amet consecteturdiam velit commodo fames
               consequat rnare{" "}
             </Typography>
+             {/* {post && post.content && (
+        <div
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(post.content.rendered),
+          }}
+        />
+      )} */}
           </Stack>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={isMobile?12:2}>
           <Stack spacing={2}>
             <Typography variant="h5">Join Our NewsLetter</Typography>
             <StyledInput
@@ -145,9 +177,9 @@ function page() {
           </Stack>
         </Grid>
       </Grid>
-      <Typography variant="h4">You May Also Like</Typography>
+      <Typography variant="h4" marginTop={isMobile && 5}>You May Also Like</Typography>
       <Grid container spacing={2} paddingTop={2}>
-        <Grid item xs={4}>
+        <Grid item xs={isMobile?12:4}>
           <ViewMoreCard
             image="/blog/Blog.png"
             title="The transformation of a Gully Boy"
@@ -155,7 +187,7 @@ function page() {
             date="Sunday , 1 Jan 2024"
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={isMobile?12:4}>
           <ViewMoreCard
             image="/blog/Blog.png"
             title="The transformation of a Gully Boy"
@@ -163,7 +195,7 @@ function page() {
             date="Sunday , 1 Jan 2024"
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={isMobile?12:4}>
           <ViewMoreCard
             image="/blog/Blog.png"
             title="The transformation of a Gully Boy"
@@ -172,7 +204,6 @@ function page() {
           />
         </Grid>
       </Grid>
-
     </Box>
   );
 }
