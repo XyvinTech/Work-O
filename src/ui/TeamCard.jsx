@@ -62,12 +62,22 @@ const TeamCard = ({ image, title, description, hoverDescription }) => {
         <>
           <Box
             position="absolute"
-            bottom={hover ? isMobile?"80%":"75%" : "0%"}
+            bottom={hover ? (isMobile ? "80%" : "75%") : "0%"}
             left="0"
             width="100%"
             padding="10px"
-            style={{
-              transition: "bottom 1.2s ease",
+            sx={{
+              animation: hover
+                ? "moveUp 1.2s ease forwards"
+                : "moveDown 1.2s ease forwards",
+              "@keyframes moveUp": {
+                from: { bottom: "0%" },
+                to: { bottom: isMobile ? "80%" : "75%" },
+              },
+              "@keyframes moveDown": {
+                from: { bottom: isMobile ? "80%" : "75%" },
+                to: { bottom: "0%" },
+              },
             }}
           >
             <Typography
