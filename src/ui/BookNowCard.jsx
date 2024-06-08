@@ -17,7 +17,7 @@ const CardContainer = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   @media (max-width: 600px) {
     
-    height: auto;
+    height: 220px;
   }
 `;
 
@@ -36,7 +36,7 @@ const ImageContainer = styled.div`
   height: 100%;
   @media (max-width: 600px) {
     width: 70%;
-    height: 200px;
+    height: 220px;
   }
 `;
 
