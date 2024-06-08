@@ -1,9 +1,11 @@
 "use client";
 import { Box, Button, Stack, useMediaQuery } from "@mui/material";
 import { Typography } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 const AboutMain = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const router = useRouter();
   return (
     <Box>
       <Stack
@@ -70,7 +72,7 @@ const AboutMain = () => {
             this vision a reality
           </Typography>
           <Stack direction={"row"} spacing={2}>
-            <Button variant="navbar" fullWidth={isMobile} color="primary">
+            <Button variant="navbar" fullWidth={isMobile} color="primary" onClick={() => router.push("/services")}>
               View Service
             </Button>
           </Stack>

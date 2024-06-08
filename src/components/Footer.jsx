@@ -15,6 +15,7 @@ import PlusIcon from "../assets/icons/call.svg";
 import SMSIcon from "../assets/icons/sms.svg";
 import StyledIconButton from "@/ui/StyledIconButton";
 import { useState } from "react";
+import Link from "next/link";
 
 const FooterContainer = styled(Box)(() => ({
   backgroundImage: `url(${bgImage.src})`,
@@ -98,9 +99,10 @@ function Footer() {
               >
                 Legal
               </Typography>
+              <Link href={"/contact"}  passHref style={{textDecoration:"none",color:"white"}}>
               <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
                 Contact us
-              </Typography>
+              </Typography></Link>
               <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
                 Privacy policy
               </Typography>
@@ -109,18 +111,21 @@ function Footer() {
               </Typography>
             </Stack>
             <Stack spacing={2}>
+              
               <Typography
                 variant="footer_title"
                 fontWeight={isMobile ? 700 : 500}
               >
                 Resources
               </Typography>
+              <Link href={"/blog"}  passHref style={{textDecoration:"none",color:"white"}}>
               <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
                 Blogs
-              </Typography>
+              </Typography></Link>
+              <Link href={"/enroll"}  passHref style={{textDecoration:"none",color:"white"}}>
               <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
-                Location
-              </Typography>
+               Enroll Now
+              </Typography></Link>
               <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
                 Help centre
               </Typography>
@@ -134,12 +139,14 @@ function Footer() {
               >
                 Discover
               </Typography>
+              <Link href={"/services"}  passHref style={{textDecoration:"none",color:"white"}}> 
               <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
                 Services
-              </Typography>
+              </Typography></Link>
+              <Link href={"/skill"}  passHref style={{textDecoration:"none",color:"white"}}> 
               <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
                 Skill devlopment
-              </Typography>
+              </Typography></Link>
             </Stack>
             <Stack spacing={2}>
               <Typography
@@ -148,15 +155,17 @@ function Footer() {
               >
                 Company
               </Typography>
+              <Link href={"/about"}  passHref style={{textDecoration:"none",color:"white"}}> 
               <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
                 About
-              </Typography>
+              </Typography></Link>
               <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
                 Join Us
               </Typography>
+              <Link href={"/get-the-app"}  passHref style={{textDecoration:"none",color:"white"}}> 
               <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
                 Download App
-              </Typography>
+              </Typography></Link>
             </Stack>
           </Stack>
         </Stack>
@@ -286,7 +295,7 @@ function Footer() {
       </Stack>
       <Stack
         direction={isMobile ? "column" : "row"}
-        // justifyContent={"space-between"}
+        justifyContent={isMobile?"left":"space-between"}
         bgcolor={"#333333"}
         p={2}
         height={"60px"}

@@ -1,29 +1,29 @@
-import React from "react";
-import {  Typography } from "@mui/material";
+"use client";
+import { Typography } from "@mui/material";
 import styled from "styled-components";
-import ArrowForwardIcon from "../assets/icons/ArrowIcon.svg"
+import ArrowForwardIcon from "../assets/icons/ArrowIcon.svg";
 import DOMPurify from "dompurify";
 import Link from "next/link";
 import { format, parseISO } from "date-fns";
 
 const StyledCard = styled.div`
   width: 100%;
-  min-height: 530px;
+  height: 630px;
   padding: 20px;
-  gap: 21px;
   margin: auto;
   box-shadow: none;
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 0;
+  display: flex;
+  flex-direction: column;
   @media (max-width: 600px) {
-    min-height: 400px;
+    height: 550px;
   }
 `;
 
 const StyledCardMedia = styled.div`
   height: 240px;
-  padding-bottom: 56.25%;
   background-color: rgba(0, 0, 0, 0.08);
   background-image: url(${(props) => props.image});
   background-size: cover;
@@ -31,11 +31,12 @@ const StyledCardMedia = styled.div`
   margin-bottom: 15px;
 `;
 
-
-
 const StyledCardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
   color: black;
- 
 `;
 
 const DateTypography = styled(Typography)`
@@ -53,12 +54,7 @@ const TitleTypography = styled(Typography)`
 const DescriptionTypography = styled(Typography)`
   margin-top: 15px;
   margin-bottom: 15px;
-  max-height: 80%; 
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; 
-  -webkit-box-orient: vertical;
+  flex-grow: 1;
   @media (max-width: 600px) {
     font-size: 14px;
   }
@@ -68,6 +64,7 @@ const ViewMoreContainer = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
+  margin-top: auto;
 
   &:hover .view-more-icon {
     visibility: visible;
@@ -75,39 +72,37 @@ const ViewMoreContainer = styled.div`
   }
 `;
 
-const ViewMoreTypography = styled(Typography)`
-  color: ${({ theme }) => theme.palette.primary.main};
-`;
-
 const StyledArrowForwardIcon = styled(ArrowForwardIcon)`
   visibility: hidden;
   transition: margin-left 0.3s ease;
 `;
 
-const BlogCard = ({ image, title, description, date,link }) => {
-    const sanitizedDescription = DOMPurify.sanitize(description);
-    const formattedDate = format(parseISO(date), "EEEE, d MMM yyyy");
+const BlogCard = ({ image, title, description, date, link }) => {
+  const sanitizedDescription = DOMPurify.sanitize(description);
+  const formattedDate = format(parseISO(date), "EEEE, d MMM yyyy");
 
   return (
     <StyledCard>
       <StyledCardMedia image={image} />
       <StyledCardContent>
-      <DateTypography variant="h7">{formattedDate}</DateTypography>
-
-        <TitleTypography variant="card" component="div">
-          {title}
-        </TitleTypography>
-        <DescriptionTypography variant="h6" dangerouslySetInnerHTML={{ __html: sanitizedDescription }}>
-          {/* {description} */}
-        </DescriptionTypography>
+        <div>
+          <DateTypography variant="h7">{formattedDate}</DateTypography>
+          <TitleTypography variant="card" component="div">
+            {title}
+          </TitleTypography>
+          <DescriptionTypography
+            variant="h6"
+            dangerouslySetInnerHTML={{ __html: sanitizedDescription }}
+          ></DescriptionTypography>
+        </div>
         <ViewMoreContainer>
-        <Link href={link} passHref style={{textDecoration:"none"}}>
-          <Typography variant="h7" sx={{ color: "primary.main" }}>
-            View more
-          </Typography>
-          <StyledArrowForwardIcon className="view-more-icon" /></Link>
+          <Link href={link} passHref style={{ textDecoration: "none" }}>
+            <Typography variant="h7" sx={{ color: "primary.main" }}>
+              View more
+            </Typography>
+            <StyledArrowForwardIcon className="view-more-icon" />
+          </Link>
         </ViewMoreContainer>
-       
       </StyledCardContent>
     </StyledCard>
   );

@@ -2,10 +2,11 @@
 import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import mobileImage from "/public/Home/Remaining/Mobile.png";
-import QRImage from "/public/assets/get-the-app/img/QR.png";
+import QRImage from "/public/assets/get-the-app/img/QR_img.jpg";
 import playStore from "/public/assets/get-the-app/img/google-play-badge.png";
 import appStore from "/public/assets/get-the-app/img/app-store-badge.png";
 import { mont } from "@/theme";
+import Link from "next/link";
 
 function GetApp() {
   
@@ -56,8 +57,8 @@ function GetApp() {
           <Stack direction={"row"} spacing={3} alignItems={"center"}>
             <Image src={QRImage} height={100} width={100} alt="img" />
             <Stack direction={"column"} spacing={2} justifyContent={"center"}>
-              <Image src={appStore} height={45} width={135} alt="img" />
-              <Image src={playStore} height={45} width={150} alt="img" />
+             <Link href="https://apps.apple.com/in/app/worko-user/id1670080837" passHref style={{textDecoration:"none"}}> <Image src={appStore} height={45} width={135} alt="img" /></Link>
+             <Link href="https://play.google.com/store/apps/details?id=com.worko" passHref style={{textDecoration:"none"}}> <Image src={playStore} height={45} width={150} alt="img" /></Link>
             </Stack>
           </Stack>
         </Stack>

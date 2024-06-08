@@ -3,8 +3,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Avatar, Box, Button, Stack, Typography, useMediaQuery } from "@mui/material";
+import { useRouter } from "next/navigation";
 function AvatarCarousel({images}) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const router = useRouter();
   const mobileStyle = { width: "56px", height: "56px"};
   const desktopStyle = { width: "100px", height: "100px" };
   const settings = {
@@ -73,7 +75,7 @@ function AvatarCarousel({images}) {
           </Typography>
         </Stack>
         <Box display="flex" alignItems="center"justifyContent="center" marginTop="20px">
-          <Button variant="navbar" fullWidth={isMobile} color="primary">Enroll Now</Button>
+          <Button variant="navbar" fullWidth={isMobile} color="primary" onClick={() => router.push("/enroll")}>Enroll Now</Button>
         </Box>
     </>
   );

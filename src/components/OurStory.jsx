@@ -1,11 +1,12 @@
 "use client";
 import { Box, Button, Stack, useMediaQuery } from "@mui/material";
 import { Typography } from "@mui/material";
+import { useRouter } from "next/navigation";
 import styled from "styled-components";
 
 const OurStory = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
-
+  const router = useRouter();
   const ImageContainer = styled.div`
     width: ${isMobile ? "100%" : "2300px"};
     height: ${isMobile ? "294px" : "520px"};
@@ -44,8 +45,8 @@ const OurStory = () => {
             profession and dreams into reality. Join us at Worko today.
           </Typography>
           <Stack direction={isMobile?"column":"row"} spacing={2} >
-          <Stack width={isMobile?"100%":"230px"} ><Button variant={"contained"} >Get the App</Button></Stack>
-          <Stack width={isMobile?"100%":"230px"} > <Button variant="outlined" color="primary">
+          <Stack width={isMobile?"100%":"230px"} ><Button variant={"contained"}  onClick={() => router.push("/get-the-app")}>Get the App</Button></Stack>
+          <Stack width={isMobile?"100%":"230px"} > <Button variant="outlined"onClick={() => router.push("/services")} color="primary">
               View Service
             </Button></Stack>
           </Stack>

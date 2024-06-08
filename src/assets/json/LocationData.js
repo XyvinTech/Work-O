@@ -1,19 +1,23 @@
 const Location=[
 {
-    image:"/Home/Location/Lucknow.webp",
+    image:"/Home/Location/Lucknow.png",
     title:"LUCKNOW"
 },
 {
-    image:"/Home/Location/Delhi.webp",
+    image:"/Home/Location/Delhi.png",
     title:"DELHI NCR"
 },
 {
-    image:"/Home/Location/Jaipur.webp",
+    image:"/Home/Location/Jaipur.png",
     title:"JAIPUR"
 },
 {
-    image:"/Home/Location/Dehradun.webp",
+    image:"/Home/Location/Dehradun.png",
     title:"DEHRADUN"
+},
+{
+    image:"/Home/Location/Indiagate.png",
+    title:"CHANDIGARH"
 }
 ]
 export default Location

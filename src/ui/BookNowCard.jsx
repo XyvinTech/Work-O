@@ -3,21 +3,21 @@ import { Button, Typography } from "@mui/material";
 import Image from "next/image";
 import styled from "styled-components";
 import { mont } from "@/theme";
+import Link from "next/link";
 
 const CardContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 202px;
+  height: 220px;
   margin: 20px auto;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   @media (max-width: 600px) {
-    flex-direction: row; /* Keep row direction */
-    width: 100%; /* Ensure the card takes full width */
-    height: auto; /* Allow height to adjust */
+    
+    height: auto;
   }
 `;
 
@@ -32,12 +32,18 @@ const Content = styled.div`
 
 const ImageContainer = styled.div`
   position: relative;
-  width: 37%;
-  height: 199px;
+  width: 50%;
+  height: 100%;
   @media (max-width: 600px) {
-    width: 50%; /* Use 50% width on mobile for equal split */
-    height: auto; /* Allow height to adjust */
+    width: 70%;
+    height: 200px;
   }
+`;
+
+const StyledImage = styled(Image)`
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 `;
 
 const DescriptionTypography = styled(Typography)`
@@ -49,6 +55,16 @@ const DescriptionTypography = styled(Typography)`
   padding-bottom: 2px;
 `;
 
+const ButtonContainer = styled.div`
+  display: flex;
+  align-items: flex-end;
+  height: 50px; /* Adjust as necessary to ensure consistent height */
+  @media (max-width: 600px) {
+    height: auto;
+    align-items: flex-start;
+  }
+`;
+
 const BookNowCard = ({
   imageSrc,
   title,
@@ -57,9 +73,12 @@ const BookNowCard = ({
   backgroundColor,
   textColor,
   borderColor,
+  button,
+  link,
 }) => {
   return (
     <CardContainer>
+      
       <Content backgroundColor={backgroundColor}>
         <div>
           <Typography variant="h4" sx={{ color: textColor }}>
@@ -69,16 +88,25 @@ const BookNowCard = ({
             {description}
           </DescriptionTypography>
         </div>
-        <Button
-          variant={buttonColor}
-          color={borderColor}
-          sx={{ fontWeight: "700",width:"180px", fontSize: "16px",padding:"10px 20px" }}
-        >
-          <Typography fontFamily={mont.style.fontFamily}>Book Now</Typography>
-        </Button>
+        <ButtonContainer>
+          <Link href={link} passHref style={{ textDecoration: "none" }}>
+            <Button
+              variant={buttonColor}
+              color={borderColor}
+              sx={{
+                fontWeight: "700",
+                width: "180px",
+                fontSize: "16px",
+                padding: "10px 20px",
+              }}
+            >
+              <Typography fontFamily={mont.style.fontFamily}>{button}</Typography>
+            </Button>
+          </Link>
+        </ButtonContainer>
       </Content>
       <ImageContainer>
-        <Image src={imageSrc} alt={title} layout="fill" objectFit="cover" />
+        <StyledImage src={imageSrc} alt={title} layout="fill" />
       </ImageContainer>
     </CardContainer>
   );

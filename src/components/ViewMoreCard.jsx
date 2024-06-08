@@ -1,4 +1,4 @@
-import React from "react";
+"use client"
 import {  Typography } from "@mui/material";
 import styled from "styled-components";
 import ArrowForwardIcon from "../assets/icons/ArrowIcon.svg"

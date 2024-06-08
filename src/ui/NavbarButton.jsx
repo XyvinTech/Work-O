@@ -2,6 +2,7 @@ import { Button } from "@mui/material";
 import styled from "styled-components";
 import { mont } from "@/theme";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const RoundIcon = styled.div`
   display: inline-flex;
@@ -52,6 +53,7 @@ const NavbarButton = ({
   }, [buttonText, alternateText]);
 
   return (
+   
     <Button
       startIcon={<RoundIcon><Icon /></RoundIcon>}
       sx={{
@@ -64,7 +66,7 @@ const NavbarButton = ({
         display: "flex",
         justifyContent: "flex-start",
         alignItems: "center",
-        padding: "8px 16px",
+        padding: "10px 16px",
         position: "relative", // Add relative position for TextWrapper
       }}
     >

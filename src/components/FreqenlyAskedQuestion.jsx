@@ -4,6 +4,7 @@ import accordionData from "../assets/json/FrequentlyAsked";
 import styled from "styled-components";
 import { Box, Button, Stack, Typography, useMediaQuery } from "@mui/material";
 import bgImageFooter from "/public/assets/home/img/footer.png";
+import { useRouter } from "next/navigation";
 
 const Container = styled(Box)(() => ({
   
@@ -30,6 +31,7 @@ const Container = styled(Box)(() => ({
   }));
 const FreqenlyAskedQuestion = ({ showStillHaveQuestions = true }) => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const router = useRouter();
   return (
     <Container>
     <Box  paddingTop={"60px"} paddingLeft={isMobile?"0":"40px"} paddingRight={isMobile?"0":"40px"} marginBottom={"10px"}>
@@ -49,7 +51,7 @@ const FreqenlyAskedQuestion = ({ showStillHaveQuestions = true }) => {
         <Typography variant="h7" fontWeight={"500"}>Still have Questions?</Typography>
         <Typography variant="h9">Contact us for further assistance</Typography>
       </Stack>
-      <Button variant="navbar" color="primary" fullWidth={isMobile} > Contact Us</Button>
+      <Button variant="navbar" color="primary" fullWidth={isMobile}onClick={() => router.push("/contact")} > Contact Us</Button>
       </Box>)}
     </Box>
      </Container>

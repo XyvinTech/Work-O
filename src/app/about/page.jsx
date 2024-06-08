@@ -58,7 +58,7 @@ function page() {
         <PromiseCardView viewMoreData={viewMoreData} />
       </StyledBox>
       <StyledBox
-        title={"Upgrading 2,000+ Lives Through Skill-Development Program"}
+        title={"Upgrading 2,0000+ Lives Through Skill-Development Program"}
       >
         <AvatarCarousel images={images} />
       </StyledBox>

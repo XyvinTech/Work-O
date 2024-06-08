@@ -1,6 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Box, Typography, Button, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Button,
+  useMediaQuery,
+  Pagination,
+} from "@mui/material";
 import styled from "styled-components";
 import axios from "axios";
 import BlogCard from "./BlogCard";
@@ -20,8 +26,6 @@ const ButtonBox = styled(Box)`
     justify-content: flex-end;
     margin-top: 30px;
     padding-right: 10px;
-
-  
   }
 `;
 
@@ -97,6 +101,10 @@ const BlogData = () => {
     setCurrentPage((prev) => Math.max(prev - 1, 1));
   };
 
+  const handlePageChange = (event, value) => {
+    setCurrentPage(value);
+  };
+
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentItems = posts?.slice(startIndex, endIndex);
@@ -145,13 +153,22 @@ const BlogData = () => {
         ))}
       </GridContainer>
       {!isMobile && (
+        <Pagination
+          count={Math.ceil(posts?.length / itemsPerPage)}
+          page={currentPage}
+          onChange={handlePageChange}
+          color="primary"
+          sx={{ display: "flex", justifyContent: "center", mt: 4, mb: 2 }}
+        />
+      )}
+      {!isMobile && (
         <ButtonBox>
           <Button onClick={handlePrevious} disabled={currentPage === 1}>
             <Typography
               variant="h7"
               color={currentPage === 1 ? "#ccc" : "#667085"}
             >
-              <BackwardIcon /> previous
+              &lt;&lt; previous
             </Typography>
           </Button>
           <Button onClick={handleNext} disabled={endIndex >= posts?.length}>
@@ -159,7 +176,7 @@ const BlogData = () => {
               variant="h7"
               color={endIndex >= posts?.length ? "#ccc" : "#667085"}
             >
-              Next <ForwardIcon />
+              Next &gt;&gt;
             </Typography>
           </Button>
         </ButtonBox>

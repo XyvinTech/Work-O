@@ -35,7 +35,7 @@ const theme = createTheme({
     h1: {
       fontSize: "61px",
       "@media (max-width:600px)": {
-        textAlign: "center",
+        // textAlign: "center",
         fontSize: "33px",
       },
       fontWeight: "bold",

@@ -44,7 +44,7 @@ const StyledSlider = styled(Slider)`
     }
     @media (max-width: 600px) {
      text-align:center;
-     bottom:0px;
+     bottom:-29px;
     }
   }
 `;
@@ -87,7 +87,7 @@ const BookNowCarousel = () => {
       className="slider-container"
       style={{
         overflow: "hidden",
-        height: "340px",
+        height: "360px",
         alignContent: "center",
         position: "relative",
       }}
@@ -108,6 +108,8 @@ const BookNowCarousel = () => {
               backgroundColor={item.backgroundColor}
               textColor={item.textColor}
               borderColor={item.borderColor}
+              button={item.button}
+              link={item.link}
             />
           </SlideWrapper>
         ))}

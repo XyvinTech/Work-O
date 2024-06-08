@@ -8,7 +8,8 @@ import Facebook from "../assets/icons/Facebook.svg";
 import Insta from "../assets/icons/Insta.svg";
 import LinkedIn from "../assets/icons/LinkedIn.svg";
 import Link from "next/link";
-function ContactUs() {
+import EnrollNow from "./EnrollNow";
+function ContactUs({enroll}) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   return (
     <Container py={isMobile ? 4 : 10} px={isMobile ? 3 : 5}>
@@ -23,22 +24,23 @@ function ContactUs() {
           <Box>
             <Typography variant="h6"> Contact Us :</Typography>
             <Typography variant="h6">7-666-666-559</Typography>
+            <Typography variant="h6">info@workoindia.com</Typography>
           </Box>
           <Box>
             <Typography variant="footer_title">Find us here</Typography>
             <Stack direction={"row"} spacing={3} py={3}>
-            <Link href={"https://www.facebook.com/workoindia/"} passHref style={{textDecoration:"none"}}>  <Facebook /></Link>
-            <Link href={"https://www.instagram.com/workoindia"} passHref style={{textDecoration:"none"}}>
+            <Link href={"https://www.facebook.com/workoindia/"} target="_blank" passHref style={{textDecoration:"none"}}>  <Facebook /></Link>
+            <Link href={"https://www.instagram.com/workoindia"}  target="_blank"passHref style={{textDecoration:"none"}}>
               <Insta /></Link>
-              <Link href={"https://www.linkedin.com/company/worko-india/"} passHref style={{textDecoration:"none"}}><LinkedIn /></Link>
+              <Link href={"https://www.linkedin.com/company/worko-india/"} target="_blank" passHref style={{textDecoration:"none"}}><LinkedIn /></Link>
             </Stack>
           </Box>
         </Stack>
         <Box width={{ lg: "55%", sm: "100%" }}>
-          <StyledForm />
+        {enroll ? <EnrollNow /> : <StyledForm />}
           <Stack justifyContent={"center"} direction={"row"} py={3}>
             <Button fullWidth={isMobile} variant="navbar">
-              Submit
+            {enroll ? "Enroll Now": "Submit"}
             </Button>
           </Stack>
         </Box>

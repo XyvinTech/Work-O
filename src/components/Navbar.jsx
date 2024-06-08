@@ -43,7 +43,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const router = useRouter();
 
-  const isTransparent = pathname === "/" || pathname === "/blogs";
+  const isTransparent = pathname === "/" || pathname === "/blog/1" ;
 
   useEffect(() => {
     const activeMenuItem = menuItems.find((item) => item.href === pathname);
@@ -87,20 +87,22 @@ const Navbar = () => {
               height={"auto"}
             />
             {!isMobile && (
-              <Stack direction={"row"} spacing={4}>
+              <Stack direction={"row"} spacing={2}>
+                 <Link href={`tel:${7-666-666-559}`} passHref target="_blank" style={{textDecorationLine:"none"}} >
                 <NavbarButton
                   icon={PlusIcon}
                   buttonText="Customer care"
                   alternateText="7-666-666-559"
                   width={"210px"}
-                />
+                /></Link>
+                <Link href={"/get-the-app"} passHref  style={{textDecorationLine:"none"}} >
                 <Button
                   variant="navbar"
                   color="primary"
-                  onClick={() => router.push("/get-the-app")}
+                  // onClick={() => router.push("/get-the-app")}
                 >
                   Get the App
-                </Button>
+                </Button></Link>
               </Stack>
             )}
 
@@ -150,13 +152,15 @@ const Navbar = () => {
                     </Button>
                   </Link>
                 ))}
-                <Stack spacing={2} mt={2} alignItems={"center"}>
+                <Stack spacing={2} mt={2} alignItems={"center"} width={"100%"}>
+                <Link href={`tel:${7-666-666-559}`} passHref target="_blank" style={{textDecorationLine:"none",width:"100%"}} >
                 <NavbarButton
                   icon={PlusIcon}
                   buttonText="Customer care"
                   alternateText="7-666-666-559"
                   width={"100%"}
-                />
+
+                /></Link>
                   <Button
                     variant="contained"
                     color="primary"

@@ -3,6 +3,7 @@ import { Box, Button, Stack, useMediaQuery } from "@mui/material";
 import styled from "styled-components";
 import { Typography } from "@mui/material";
 import bgImageFooter from "/public/assets/home/img/footer.png";
+import { useRouter } from "next/navigation";
 
 const Container = styled(Box)(() => ({
   backgroundImage: `url(${bgImageFooter.src})`,
@@ -32,7 +33,7 @@ const Container = styled(Box)(() => ({
 
 const ConnectUs = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
-
+  const router = useRouter();
   return (
     <Container>
       <Stack
@@ -65,7 +66,7 @@ const ConnectUs = () => {
             Are you Interested in Worko’s Partnership?
           </Typography>
           <Stack direction={"row"} spacing={2} width={"100%"}>
-            <Button variant="navbar" fullWidth={isMobile} color="primary">
+            <Button variant="navbar" fullWidth={isMobile} color="primary"onClick={() => router.push("/contact")} >
               Connect With Us
             </Button>
           </Stack>

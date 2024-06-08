@@ -78,7 +78,7 @@ const StyledForm = () => {
   return (
     <div>
       <Grid container spacing={2} alignItems="center">
-        <Grid item xs={isMobile ? 6: 4}>
+        <Grid item xs={isMobile ? 6 : 4}>
           <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
               <HtmlTooltip
@@ -109,7 +109,7 @@ const StyledForm = () => {
             </RadioGroup>
           </FormControl>
         </Grid>
-        <Grid item xs={isMobile? 6: 4}>
+        <Grid item xs={isMobile ? 6 : 4}>
           <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
               <HtmlTooltip
@@ -140,7 +140,7 @@ const StyledForm = () => {
             </RadioGroup>
           </FormControl>
         </Grid>
-        <Grid item xs={isMobile? 6: 4}>
+        <Grid item xs={isMobile ? 6 : 4}>
           <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
               <HtmlTooltip
@@ -175,10 +175,10 @@ const StyledForm = () => {
 
       {selectedForm === "form1" && (
         <Grid container spacing={2} marginTop={1}>
-          <Grid item xs={12}>
+          <Grid item xs={isMobile ? 12 : 6}>
             <StyledInput placeholder="First Name" />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={isMobile ? 12 : 6}>
             <StyledInput placeholder="Last Name" />
           </Grid>
           <Grid item xs={12}>
@@ -186,6 +186,9 @@ const StyledForm = () => {
           </Grid>
           <Grid item xs={12}>
             <StyledPhoneInput />
+          </Grid>
+          <Grid item xs={12}>
+            <StyledTextArea placeholder="Add a Description/Enquiry" />
           </Grid>
           <Grid item xs={6}>
             <StyledSelectField
@@ -202,14 +205,11 @@ const StyledForm = () => {
               onChange={(e) => console.log("Selected district:", e)}
             />
           </Grid>{" "}
-          <Grid item xs={12}>
-            <StyledTextArea placeholder="Add a Description/Enquiry" />
-          </Grid>
         </Grid>
       )}
 
       {selectedForm === "form2" && (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} marginTop={1}>
           <Grid item xs={12}>
             <StyledInput placeholder="Full Name" />
           </Grid>
@@ -219,6 +219,9 @@ const StyledForm = () => {
           <Grid item xs={12}>
             <StyledPhoneInput />
           </Grid>
+          <Grid item xs={12}>
+            <StyledTextArea placeholder="Add a Description/Enquiry" />
+          </Grid>
           <Grid item xs={6}>
             <StyledSelectField
               placeholder="State"
@@ -234,14 +237,11 @@ const StyledForm = () => {
               onChange={(e) => console.log("Selected district:", e)}
             />
           </Grid>
-          <Grid item xs={12}>
-            <StyledTextArea placeholder="Add a Description/Enquiry" />
-          </Grid>
         </Grid>
       )}
 
       {selectedForm === "form3" && (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} marginTop={1}>
           <Grid item xs={12}>
             <StyledInput placeholder="Partner Name" />
           </Grid>
@@ -251,6 +251,9 @@ const StyledForm = () => {
           <Grid item xs={12}>
             <StyledPhoneInput />
           </Grid>
+          <Grid item xs={12}>
+            <StyledTextArea placeholder="Add a Description/Enquiry" />
+          </Grid>
           <Grid item xs={6}>
             <StyledSelectField
               placeholder="State"
@@ -265,9 +268,6 @@ const StyledForm = () => {
               options={districtOptions}
               onChange={(e) => console.log("Selected district:", e)}
             />
-          </Grid>
-          <Grid item xs={12}>
-            <StyledTextArea placeholder="Add a Description/Enquiry" />
           </Grid>
         </Grid>
       )}
