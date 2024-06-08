@@ -9,7 +9,7 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-function Header({ bgImg, title, subtitle, isHome, isButtons, height, mobile }) {
+function Header({ bgImg, title, subtitle, isHome, isButtons, height, mobile,top }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const router = useRouter();
@@ -62,6 +62,7 @@ function Header({ bgImg, title, subtitle, isHome, isButtons, height, mobile }) {
         variant="h1"
         color={isHome ? "#000" : "#fff"}
         textAlign={isMobile?"left":"center"}
+        paddingTop={top}
         px={isMobile ? 2 : 20}
       >
         {title}

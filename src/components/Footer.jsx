@@ -159,9 +159,7 @@ function Footer() {
               <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
                 About
               </Typography></Link>
-              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
-                Join Us
-              </Typography>
+              
               <Link href={"/get-the-app"}  passHref style={{textDecoration:"none",color:"white"}}> 
               <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
                 Download App

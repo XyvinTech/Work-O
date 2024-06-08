@@ -2,6 +2,7 @@
 import {  Typography } from "@mui/material";
 import styled from "styled-components";
 import ArrowForwardIcon from "../assets/icons/ArrowIcon.svg"
+import Link from "next/link";
 const StyledCard = styled.div`
   width: 100%;
   height: auto;
@@ -82,13 +83,14 @@ const ViewMoreCard = ({ image, title, description, date }) => {
         <DescriptionTypography variant="h6">
           {description}
         </DescriptionTypography>
+        <Link href={"/blog"}  passHref style={{textDecoration:"none"}}> 
         <ViewMoreContainer>
           <Typography variant="h7" sx={{ color: "primary.main" }}>
             View more
           </Typography>
           <StyledArrowForwardIcon className="view-more-icon" />
         </ViewMoreContainer>
-       
+       </Link>
       </StyledCardContent>
     </StyledCard>
   );

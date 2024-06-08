@@ -34,7 +34,7 @@ const TeamCard = ({ image, title, description, hoverDescription }) => {
           transition: "opacity 1s ease",
         }}
       />
-      <Box padding={"15px"} width="100%">
+      <Box paddingTop={"10px"} width="100%">
         <Typography
           fontFamily={cormo.style.fontFamily}
           fontWeight={"700"}
@@ -65,7 +65,7 @@ const TeamCard = ({ image, title, description, hoverDescription }) => {
             bottom={hover ? (isMobile ? "80%" : "75%") : "0%"}
             left="0"
             width="100%"
-            padding="10px"
+            padding="20px"
             sx={{
               animation: hover
                 ? "moveUp 1.2s ease forwards"
@@ -94,9 +94,9 @@ const TeamCard = ({ image, title, description, hoverDescription }) => {
           </Box>
           <Box
             width="100%"
-            padding="10px"
+            padding="20px"
             position="absolute"
-            bottom={hover ? (isMobile ? "-0px" : "30px") : "-50px"}
+            bottom={hover ? (isMobile ? "-0px" : "20px") : "-50px"}
             style={{
               opacity: hover ? 1 : 0,
               transition: "opacity 0.5s ease",
