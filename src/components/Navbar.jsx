@@ -88,7 +88,7 @@ const Navbar = () => {
             />
             {!isMobile && (
               <Stack direction={"row"} spacing={2}>
-                 <Link href={`tel:${7-666-666-559}`} passHref target="_blank" style={{textDecorationLine:"none"}} >
+                 <Link href={`tel:${7666666559}`} passHref target="_blank" style={{textDecorationLine:"none"}} >
                 <NavbarButton
                   icon={PlusIcon}
                   buttonText="Customer care"
@@ -153,7 +153,7 @@ const Navbar = () => {
                   </Link>
                 ))}
                 <Stack spacing={2} mt={2} alignItems={"center"} width={"100%"}>
-                <Link href={`tel:${7-666-666-559}`} passHref target="_blank" style={{textDecorationLine:"none",width:"100%"}} >
+                <Link href={`tel:${7666666559}`} passHref target="_blank" style={{textDecorationLine:"none",width:"100%"}} >
                 <NavbarButton
                   icon={PlusIcon}
                   buttonText="Customer care"
