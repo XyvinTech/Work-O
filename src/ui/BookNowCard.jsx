@@ -22,9 +22,7 @@ const CardContainer = styled.div`
 
 const Content = styled.div`
   flex: 1;
-  padding-left: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
