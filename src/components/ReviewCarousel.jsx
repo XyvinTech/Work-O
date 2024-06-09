@@ -20,7 +20,6 @@ const ButtonBox = styled(Box)`
 
 const Container = styled(Box)`
   overflow: hidden;
-  height: 300px;
   @media (max-width: 600px) {
     height: 350px;
   }

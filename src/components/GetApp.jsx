@@ -14,7 +14,7 @@ function GetApp() {
 
   return (
     <Box sx={{ position: "relative" ,overflow:"hidden"}} marginBottom={"30px"}>
-      <Stack direction={isMobile ? "column" : "row"} alignItems={"center"} spacing={isMobile?1:4}>
+      <Stack direction={isMobile ? "column" : "row"} alignItems={"center"} spacing={isMobile?1:2}>
         <Box>
           <Image
             src={mobileImage}
@@ -32,7 +32,7 @@ function GetApp() {
             />
           )}
         </Box>
-        <Stack spacing={isMobile?1:6} p={isMobile && 2} paddingTop={isMobile && 0}>
+        <Stack spacing={isMobile?1:4} p={isMobile && 2} paddingTop={isMobile && 0}>
           <Stack spacing={1}>
             <Typography
               fontSize={isMobile ? "12px" : "14px"}
@@ -54,7 +54,7 @@ function GetApp() {
               Download our Worko App on
             </Typography>
           </Stack>
-          <Stack direction={"row"} spacing={3} alignItems={"center"}>
+          <Stack direction={"row"} spacing={2} alignItems={"center"}>
             <Image src={QRImage} height={100} width={100} alt="img" />
             <Stack direction={"column"} spacing={2} justifyContent={"center"}>
              <Link href="https://apps.apple.com/in/app/worko-user/id1670080837" passHref style={{textDecoration:"none"}}> <Image src={appStore} height={45} width={135} alt="img" /></Link>
