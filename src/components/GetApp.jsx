@@ -14,7 +14,7 @@ function GetApp() {
 
   return (
     <Box sx={{ position: "relative" ,overflow:"hidden"}} marginBottom={"30px"}>
-      <Stack direction={isMobile ? "column" : "row"} alignItems={"center"} spacing={isMobile?1:2}>
+      <Stack direction={isMobile ? "column" : "row"} alignItems={"center"} spacing={isMobile?1:0}>
         <Box>
           <Image
             src={mobileImage}

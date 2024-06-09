@@ -16,14 +16,15 @@ const CardContainer = styled.div`
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   @media (max-width: 600px) {
-    
     height: 220px;
   }
 `;
 
 const Content = styled.div`
   flex: 1;
-  padding: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -32,7 +33,7 @@ const Content = styled.div`
 
 const ImageContainer = styled.div`
   position: relative;
-  width: 50%;
+  width: 55%;
   height: 100%;
   @media (max-width: 600px) {
     width: 50%;
@@ -78,7 +79,6 @@ const BookNowCard = ({
 }) => {
   return (
     <CardContainer>
-      
       <Content backgroundColor={backgroundColor}>
         <div>
           <Typography variant="h4" sx={{ color: textColor }}>
@@ -100,7 +100,9 @@ const BookNowCard = ({
                 padding: "10px 20px",
               }}
             >
-              <Typography fontFamily={mont.style.fontFamily}>{button}</Typography>
+              <Typography fontFamily={mont.style.fontFamily}>
+                {button}
+              </Typography>
             </Button>
           </Link>
         </ButtonContainer>

@@ -138,8 +138,8 @@ const StyledTabs = () => {
         sx={{
           position: "absolute",
 
-          marginTop:"20px",
-          right: "40px",
+          marginTop:"25px",
+          right: "60px",
           display: "flex",
           gap: "10px",
           "@media (max-width: 600px)": {
