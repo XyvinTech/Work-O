@@ -1,17 +1,27 @@
 "use client";
-import "../wordpress-styles.css"
+import "../wordpress-styles.css";
 import ViewMoreCard from "@/components/ViewMoreCard";
 import StyledInput from "@/ui/StyledInput";
-import { Box, Button, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import axios from "axios";
-import DOMPurify from "dompurify";
+import DOMPurify, { version } from "dompurify";
+import Link from "next/link";
 import { useParams } from "next/navigation";
+import ViewIcon from "../../../assets/icons/views.svg";
 import { useEffect, useState } from "react";
 
 function Page() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const { id } = useParams();
   const [post, setPost] = useState(null);
+  const [author, setAuthor] = useState(null);
 
   useEffect(() => {
     if (id) {
@@ -20,8 +30,12 @@ function Page() {
           const response = await axios.get(
             `https://blog.workoindia.com/wp-json/wp/v2/posts/${id}`
           );
-          console.log(response);
-          setPost(response.data);
+          const postData = response.data;
+          setPost(postData);
+          const authorResponse = await axios.get(
+            `https://blog.workoindia.com/wp-json/wp/v2/users/${postData.author}`
+          );
+          setAuthor(authorResponse.data);
         } catch (error) {
           console.error("Error fetching post:", error);
         }
@@ -39,29 +53,56 @@ function Page() {
 
   return (
     <Box marginTop={isMobile ? 10 : 20} padding={4}>
-      <Typography variant="h1" textTransform="uppercase">
+      <Typography variant="h6">
+        Home &gt; Blog &gt;{" "}
+        <Link
+          href={"/blog"}
+          style={{
+            textDecoration: "underline",
+            color: "#FC8229",
+            textDecorationColor: "#FC8229",
+          }}
+        >
+          {post && post.title && post.title.rendered}
+        </Link>
+      </Typography>
+      <Typography variant="h1" marginTop={2} textTransform="uppercase">
         {post && post.title && post.title.rendered}
       </Typography>
       <Typography variant="cardHead" fontWeight={"400"}>
         Lorem ipsum dolor sit amet consectetur. A enim nun{" "}
       </Typography>
-      <Stack justifyContent={"space-between"} marginTop={2} marginBottom={2}>
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        marginTop={2}
+        marginBottom={2}
+      >
         <Typography variant="h5" fontWeight={"700"}>
-          by John Doe
+          by {author && author.name}
         </Typography>
-        <Typography></Typography>
+        <Box display="flex" alignItems="center">
+          <ViewIcon />
+          <Typography variant="h6" marginLeft={1}>
+            {post &&
+              post._links["version-history"] &&
+              post._links["version-history"][0].count}
+            views
+          </Typography>
+        </Box>
       </Stack>
 
       <img
         src={post && post.jetpack_featured_media_url}
-        style={{ objectFit: 'cover' }}
+        style={{ objectFit: "cover" }}
         width={isMobile ? "300px" : "100%"}
         height={isMobile ? "300px" : "641px"}
         alt="img"
       />
 
       <Grid container spacing={6} paddingTop={6}>
-        <Grid item xs={isMobile ? 12 : 2}>
+        <Grid item xs={isMobile ? 12 : 2} marginTop={isMobile ? "0px" : "10px"}>
           <Typography variant="h5" fontWeight={"700"}>
             Table of Contents
           </Typography>
@@ -87,7 +128,7 @@ function Page() {
           </Stack>
         </Grid>
         <Grid item xs={isMobile ? 12 : 8}>
-          <Stack spacing={2}>
+          <Stack spacing={0}>
             {post && post.content && (
               <div
                 dangerouslySetInnerHTML={createMarkup(post.content.rendered)}
@@ -115,7 +156,9 @@ function Page() {
           </Stack>
         </Grid>
       </Grid>
-      <Typography variant="h4" marginTop={5}>You May Also Like</Typography>
+      <Typography variant="h4" marginTop={5}>
+        You May Also Like
+      </Typography>
       <Grid container spacing={2} paddingTop={2} paddingBottom={15}>
         <Grid item xs={isMobile ? 12 : 4}>
           <ViewMoreCard
