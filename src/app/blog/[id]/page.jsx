@@ -1,16 +1,18 @@
 "use client";
+import "../wordpress-styles.css"
 import ViewMoreCard from "@/components/ViewMoreCard";
 import StyledInput from "@/ui/StyledInput";
 import { Box, Button, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
 import axios from "axios";
 import DOMPurify from "dompurify";
-import { useParams, useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-function page() {
+function Page() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const { id } = useParams();
   const [post, setPost] = useState(null);
+
   useEffect(() => {
     if (id) {
       const fetchPost = async () => {
@@ -28,12 +30,17 @@ function page() {
       fetchPost();
     }
   }, [id]);
-  console.log(post?.content?.rendered);
-  
+
+  const createMarkup = (html) => {
+    return {
+      __html: DOMPurify.sanitize(html),
+    };
+  };
+
   return (
-    <Box marginTop={isMobile?10:20} padding={4}>
+    <Box marginTop={isMobile ? 10 : 20} padding={4}>
       <Typography variant="h1" textTransform="uppercase">
-      {post && post.title && post.title.rendered}
+        {post && post.title && post.title.rendered}
       </Typography>
       <Typography variant="cardHead" fontWeight={"400"}>
         Lorem ipsum dolor sit amet consectetur. A enim nun{" "}
@@ -45,10 +52,16 @@ function page() {
         <Typography></Typography>
       </Stack>
 
-      <img src={post &&post.jetpack_featured_media_url}  style={{ objectFit: 'cover' }}width={isMobile?"300px":"100%"} height={isMobile?"300px":"641px"} alt="img" />
+      <img
+        src={post && post.jetpack_featured_media_url}
+        style={{ objectFit: 'cover' }}
+        width={isMobile ? "300px" : "100%"}
+        height={isMobile ? "300px" : "641px"}
+        alt="img"
+      />
 
       <Grid container spacing={6} paddingTop={6}>
-        <Grid item xs={isMobile?12:2}>
+        <Grid item xs={isMobile ? 12 : 2}>
           <Typography variant="h5" fontWeight={"700"}>
             Table of Contents
           </Typography>
@@ -73,95 +86,18 @@ function page() {
             </Typography>
           </Stack>
         </Grid>
-        <Grid item xs={isMobile?12:8}>
+        <Grid item xs={isMobile ? 12 : 8}>
           <Stack spacing={2}>
-            <Typography variant="h2">Lorem ipsum dolor sit am ?</Typography>
-            <Typography variant="h6">
-              Lorem ipsum dolor sit amet consectetur. Rhoncus in nulla amet
-              fames eget donec ante consequat sed. Vel pellentesque nulla sem ac
-              vestibulum non vulputate massa. Vitae cras sed sapien interdum at.
-              Eget pellentesque nisl ultricies pellentesque. Maecenas cras
-              pellentesque diam velit commodo fames consequat rnare tibulum non
-              vulputate massa. Vitae cras sed sapien interdum at. Eget
-              pellentesque nisl ultricies pellentesque. Maecenas cras
-              pellentesque diam velit commodo fames consequat rnare tibulum non
-              vulputate massa. Vitae cras sed sapien interdum at. Eget
-              pellentesque nisl ultricies pellentesque. Maecenas cras
-              pellentesque sit amet consecteturdiam velit commodo fames
-              consequat rnare{" "}
-            </Typography>
-            <Typography variant="h2">Lorem ipsum dolor sit am ?</Typography>
-            <Typography variant="h6">
-              Lorem ipsum dolor sit amet consectetur. Rhoncus in nulla amet
-              fames eget donec ante consequat sed. Vel pellentesque nulla sem ac
-              vestibulum non vulputate massa. Vitae cras sed sapien interdum at.
-              Eget pellentesque nisl ultricies pellentesque. Maecenas cras
-              pellentesque diam velit commodo fames consequat rnare tibulum non
-              vulputate massa. Vitae cras sed sapien interdum at. Eget
-              pellentesque nisl ultricies pellentesque. Maecenas cras
-              pellentesque diam velit commodo fames consequat rnare tibulum non
-              vulputate massa. Vitae cras sed sapien interdum at. Eget
-              pellentesque nisl ultricies pellentesque. Maecenas cras
-              pellentesque sit amet consecteturdiam velit commodo fames
-              consequat rnare{" "}
-            </Typography>
-            <Typography variant="h2">Lorem ipsum dolor sit am ?</Typography>
-            <Typography variant="h6">
-              Lorem ipsum dolor sit amet consectetur. Rhoncus in nulla amet
-              fames eget donec ante consequat sed. Vel pellentesque nulla sem ac
-              vestibulum non vulputate massa. Vitae cras sed sapien interdum at.
-              Eget pellentesque nisl ultricies pellentesque. Maecenas cras
-              pellentesque diam velit commodo fames consequat rnare tibulum non
-              vulputate massa. Vitae cras sed sapien interdum at. Eget
-              pellentesque nisl ultricies pellentesque. Maecenas cras
-              pellentesque diam velit commodo fames consequat rnare tibulum non
-              vulputate massa. Vitae cras sed sapien interdum at. Eget
-              pellentesque nisl ultricies pellentesque. Maecenas cras
-              pellentesque sit amet consecteturdiam velit commodo fames
-              consequat rnare{" "}
-            </Typography>
-            <Typography variant="h2">Lorem ipsum dolor sit am ?</Typography>
-            <Typography variant="h6">
-              Lorem ipsum dolor sit amet consectetur. Rhoncus in nulla amet
-              fames eget donec ante consequat sed. Vel pellentesque nulla sem ac
-              vestibulum non vulputate massa. Vitae cras sed sapien interdum at.
-              Eget pellentesque nisl ultricies pellentesque. Maecenas cras
-              pellentesque diam velit commodo fames consequat rnare tibulum non
-              vulputate massa. Vitae cras sed sapien interdum at. Eget
-              pellentesque nisl ultricies pellentesque. Maecenas cras
-              pellentesque diam velit commodo fames consequat rnare tibulum non
-              vulputate massa. Vitae cras sed sapien interdum at. Eget
-              pellentesque nisl ultricies pellentesque. Maecenas cras
-              pellentesque sit amet consecteturdiam velit commodo fames
-              consequat rnare{" "}
-            </Typography>
-            <Typography variant="h2">Lorem ipsum dolor sit am ?</Typography>
-            <Typography variant="h6">
-              Lorem ipsum dolor sit amet consectetur. Rhoncus in nulla amet
-              fames eget donec ante consequat sed. Vel pellentesque nulla sem ac
-              vestibulum non vulputate massa. Vitae cras sed sapien interdum at.
-              Eget pellentesque nisl ultricies pellentesque. Maecenas cras
-              pellentesque diam velit commodo fames consequat rnare tibulum non
-              vulputate massa. Vitae cras sed sapien interdum at. Eget
-              pellentesque nisl ultricies pellentesque. Maecenas cras
-              pellentesque diam velit commodo fames consequat rnare tibulum non
-              vulputate massa. Vitae cras sed sapien interdum at. Eget
-              pellentesque nisl ultricies pellentesque. Maecenas cras
-              pellentesque sit amet consecteturdiam velit commodo fames
-              consequat rnare{" "}
-            </Typography>
-             {/* {post && post.content && (
-        <div
-          dangerouslySetInnerHTML={{
-            __html: DOMPurify.sanitize(post.content.rendered),
-          }}
-        />
-      )} */}
+            {post && post.content && (
+              <div
+                dangerouslySetInnerHTML={createMarkup(post.content.rendered)}
+              />
+            )}
           </Stack>
         </Grid>
-        <Grid item xs={isMobile?12:2}>
+        <Grid item xs={isMobile ? 12 : 2}>
           <Stack spacing={2}>
-            <Typography variant="h5">Join Our NewsLetter</Typography>
+            <Typography variant="h5">Join Our Newsletter</Typography>
             <StyledInput
               placeholder={"Enter Your Email"}
               backgroundColor={"background.paper"}
@@ -171,16 +107,17 @@ function page() {
             </Button>
 
             <Typography variant="h9">
-              <input type="checkbox" style={{marginRight:"3px"}}/>By checking this box, you confirm that you have read and are
+              <input type="checkbox" style={{ marginRight: "3px" }} />
+              By checking this box, you confirm that you have read and are
               agreeing to our terms of use regarding the storage of the data
               submitted through this form.
             </Typography>
           </Stack>
         </Grid>
       </Grid>
-      <Typography variant="h4" marginTop={ 5}>You May Also Like</Typography>
+      <Typography variant="h4" marginTop={5}>You May Also Like</Typography>
       <Grid container spacing={2} paddingTop={2} paddingBottom={15}>
-        <Grid item xs={isMobile?12:4}>
+        <Grid item xs={isMobile ? 12 : 4}>
           <ViewMoreCard
             image="/blog/Blog.png"
             title="The transformation of a Gully Boy"
@@ -188,7 +125,7 @@ function page() {
             date="Sunday , 1 Jan 2024"
           />
         </Grid>
-        <Grid item xs={isMobile?12:4}>
+        <Grid item xs={isMobile ? 12 : 4}>
           <ViewMoreCard
             image="/blog/Blog.png"
             title="The transformation of a Gully Boy"
@@ -196,7 +133,7 @@ function page() {
             date="Sunday , 1 Jan 2024"
           />
         </Grid>
-        <Grid item xs={isMobile?12:4}>
+        <Grid item xs={isMobile ? 12 : 4}>
           <ViewMoreCard
             image="/blog/Blog.png"
             title="The transformation of a Gully Boy"
@@ -208,4 +145,5 @@ function page() {
     </Box>
   );
 }
-export default page;
+
+export default Page;
