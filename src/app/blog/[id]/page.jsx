@@ -16,13 +16,17 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import ViewIcon from "../../../assets/icons/views.svg";
 import { useEffect, useState } from "react";
+import { firestore } from '../../../../firebaseConfig';
+import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
 
 function Page() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const { id } = useParams();
   const [post, setPost] = useState(null);
   const [author, setAuthor] = useState(null);
-
+  const [views, setViews] = useState(0);
+  const [shares, setShares] = useState(0);
+  const [headings, setHeadings] = useState([]);
   useEffect(() => {
     if (id) {
       const fetchPost = async () => {
@@ -36,6 +40,30 @@ function Page() {
             `https://blog.workoindia.com/wp-json/wp/v2/users/${postData.author}`
           );
           setAuthor(authorResponse.data);
+          console.log(response);
+          setPost(response.data);
+
+          const docRef = doc(firestore, "posts", id);
+          const docSnap = await getDoc(docRef);
+
+          if (docSnap.exists()) {
+            setViews(docSnap.data().views);
+            setShares(docSnap.data().shares);
+            await updateDoc(docRef, { views: docSnap.data().views + 1 });
+          } else {
+            await setDoc(docRef, { views: 1, shares: 0 });
+            setViews(1);
+          }
+          const parser = new DOMParser();
+          const contentDoc = parser.parseFromString(postData.content.rendered, 'text/html');
+          const headingElements = contentDoc.querySelectorAll('h1, h2, h3, h4, h5, h6');
+          const extractedHeadings = Array.from(headingElements).map((heading) => ({
+            id: heading.id || heading.textContent.replace(/\s+/g, '-').toLowerCase(),
+            text: heading.textContent,
+            level: heading.tagName,
+          }));
+          setHeadings(extractedHeadings);
+
         } catch (error) {
           console.error("Error fetching post:", error);
         }
@@ -69,9 +97,7 @@ function Page() {
       <Typography variant="h1" marginTop={2} textTransform="uppercase">
         {post && post.title && post.title.rendered}
       </Typography>
-      <Typography variant="cardHead" fontWeight={"400"}>
-        Lorem ipsum dolor sit amet consectetur. A enim nun{" "}
-      </Typography>
+     
       <Stack
         direction="row"
         justifyContent="space-between"
@@ -85,10 +111,7 @@ function Page() {
         <Box display="flex" alignItems="center">
           <ViewIcon />
           <Typography variant="h6" marginLeft={1}>
-            {post &&
-              post._links["version-history"] &&
-              post._links["version-history"][0].count}
-            views
+             {views} views
           </Typography>
         </Box>
       </Stack>
@@ -107,24 +130,11 @@ function Page() {
             Table of Contents
           </Typography>
           <Stack spacing={2} paddingTop={2}>
-            <Typography variant="h6">
-              Lorem ipsum dolor sit amet cons?
-            </Typography>
-            <Typography variant="h6">
-              Lorem ipsum dolorsLorem ipsum dolorsLorem ipsum dolors?
-            </Typography>
-            <Typography variant="h6">
-              Lorem ipsum ipsum dolorsLorem ipsum dolors?
-            </Typography>
-            <Typography variant="h6">
-              Lorem ipsum dolor sit amet cons?
-            </Typography>
-            <Typography variant="h6">
-              Lorem ipsum dolorsLorem ipsum dolorsLorem ipsum dolors?
-            </Typography>
-            <Typography variant="h6">
-              Lorem ipsum ipsum dolorsLorem ipsum dolors?
-            </Typography>
+          {headings.map((heading) => (
+              <Typography key={heading.id} variant="h6" component="a" href={`#${heading.id}`}  style={{ textDecoration: 'none', color: 'inherit' }}>
+                {heading.text}
+              </Typography>
+            ))}
           </Stack>
         </Grid>
         <Grid item xs={isMobile ? 12 : 8}>
@@ -185,6 +195,7 @@ function Page() {
           />
         </Grid>
       </Grid>
+  
     </Box>
   );
 }
