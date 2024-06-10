@@ -18,7 +18,7 @@ const StyledCard = styled.div`
   display: flex;
   flex-direction: column;
   @media (max-width: 600px) {
-    height: 750px;
+    height: 650px;
   }
 `;
 
