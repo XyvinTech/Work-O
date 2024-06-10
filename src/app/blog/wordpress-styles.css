@@ -29,3 +29,29 @@ p {
 width: 300px !important;
 }
 }
+.wp-block-quote {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 20px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="41" height="38" viewBox="0 0 41 38" fill="none"><path d="M28.6047 38L25.1085 34.5021C26.8036 31.5342 28.2868 28.5662 29.5581 25.5983C30.8295 22.7364 31.5711 19.9275 31.7829 17.1715L23.8372 15.4226V0H41L41 11.1297C41 17.7015 39.7287 23.0014 37.186 27.0293C34.5375 31.1632 31.677 34.8201 28.6047 38ZM4.76744 38L1.27132 34.5021C2.96641 31.5342 4.44961 28.5662 5.72093 25.5983C6.99224 22.7364 7.73385 19.9275 7.94574 17.1715L0 15.4226L0 0L17.1628 0V11.1297C17.1628 17.7015 15.8915 23.0014 13.3488 27.0293C10.7003 31.1632 7.83979 34.8201 4.76744 38Z" fill="%23FF9C00"/></svg>') no-repeat left top;
+  background-size: 40px;
+  background-position: top 40px; /* Adjusted position */
+}
+
+.wp-block-quote p {
+  margin-bottom: 10px;
+  font-size: 20px !important;
+  font-style: italic;
+  line-height: 25px;
+  font-weight: 500;
+}
+
+.wp-block-quote cite {
+  font-style: italic;
+  font-size: 16px;
+  color: #333;
+  align-self: flex-end; /* Aligns the cite element to the right end */
+}

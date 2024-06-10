@@ -18,6 +18,7 @@ import ViewIcon from "../../../assets/icons/views.svg";
 import { useEffect, useState } from "react";
 import { firestore } from "../../../../firebaseConfig";
 import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
+import BlogCard from "@/components/BlogCard";
 
 function Page() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
@@ -203,11 +204,12 @@ function Page() {
       <Grid container spacing={2} paddingTop={2} paddingBottom={15}>
         {filteredPosts?.slice(0, 3).map((item, index) => (
           <Grid item xs={isMobile ? 12 : 4} key={index}>
-            <ViewMoreCard
+            <BlogCard
               image={item.jetpack_featured_media_url}
               title={item.title.rendered}
               description={item.excerpt.rendered}
               date={item.date}
+              link={item.id}
             />
           </Grid>
         ))}
