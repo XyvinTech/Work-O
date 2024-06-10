@@ -202,7 +202,7 @@ function Footer() {
           <Stack
             direction={isMobile ? "column" : "row"}
             spacing={3}
-            // width={isMobile ? "150px" : "100%"}
+            
           >
             <StyledIconButton
               hover={true}

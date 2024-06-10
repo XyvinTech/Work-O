@@ -60,7 +60,7 @@ const StyledIconButton = ({
       }
       sx={{
         border: `1px solid ${borderColor || "#FC8229"}`,
-        minWidth: width || "300px",
+        // minWidth: width || "300px",
         fontWeight: "700",
         fontSize: "16px",
         fontFamily: mont.style.fontFamily,

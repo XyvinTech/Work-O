@@ -17,7 +17,6 @@ import PlusIcon from "../assets/icons/call.svg";
 import { mont } from "@/theme";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import StyledIconButton from "@/ui/StyledIconButton";
 import NavbarButton from "@/ui/NavbarButton";
 
 const Navbar = () => {

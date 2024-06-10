@@ -162,7 +162,7 @@ const theme = createTheme({
         containedPrimary: {
           gap: "8px",
           borderRadius: 4,
-          padding: "15px 20px",
+          padding: "15px 20px 15px 57px ",
           // width: "230px",
           "@media (max-width:600px)": {
             padding: "10px 10px",
@@ -195,7 +195,7 @@ const theme = createTheme({
         containedSecondary: {
           gap: "8px",
           borderRadius: 4,
-          padding: "15px 20px",
+          padding: "15px 20px 15px 57px",
           "@media (max-width:600px)": {
             padding: "10px 15px",
           },
@@ -230,7 +230,7 @@ const theme = createTheme({
           gap: "8px",
           borderRadius: 4,
           // width: "230px",
-          padding: "15px 20px",
+          padding: "15px 20px 15px 57px",
           "@media (max-width:600px)": {
             padding: "10px 15px",
             // width:"210px"
@@ -269,7 +269,7 @@ const theme = createTheme({
           gap: "8px",
           borderRadius: 4,
           // width: "230px",
-          padding: "15px 20px",
+          padding: "15px 20px 15px 57px",
           "@media (max-width:600px)": {
             padding: "10px 15px",
             // width:"210px"
@@ -304,7 +304,7 @@ const theme = createTheme({
         filledPrimary: {
           gap: "8px",
           borderRadius: 4,
-          padding: "15px 20px",
+          padding: "15px 20px 15px 57px",
           "@media (max-width:600px)": {
             padding: "10px 20px",
           },

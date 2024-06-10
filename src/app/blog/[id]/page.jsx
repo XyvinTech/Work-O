@@ -28,7 +28,7 @@ function page() {
       fetchPost();
     }
   }, [id]);
-  console.log(post);
+  console.log(post?.content?.rendered);
   
   return (
     <Box marginTop={isMobile?10:20} padding={4}>
@@ -169,16 +169,17 @@ function page() {
             <Button variant="navbar" fullWidth>
               Submit
             </Button>
+
             <Typography variant="h9">
-              By checking this box, you confirm that you have read and are
+              <input type="checkbox" style={{marginRight:"3px"}}/>By checking this box, you confirm that you have read and are
               agreeing to our terms of use regarding the storage of the data
               submitted through this form.
             </Typography>
           </Stack>
         </Grid>
       </Grid>
-      <Typography variant="h4" marginTop={isMobile && 5}>You May Also Like</Typography>
-      <Grid container spacing={2} paddingTop={2}>
+      <Typography variant="h4" marginTop={ 5}>You May Also Like</Typography>
+      <Grid container spacing={2} paddingTop={2} paddingBottom={15}>
         <Grid item xs={isMobile?12:4}>
           <ViewMoreCard
             image="/blog/Blog.png"
