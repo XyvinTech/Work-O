@@ -165,7 +165,7 @@ const theme = createTheme({
           padding: "15px 20px 15px 57px ",
           // width: "230px",
           "@media (max-width:600px)": {
-            padding: "10px 10px",
+            padding: "10px 15px 10px 40px",
             // width: "500px"
           },
           backgroundColor: "#FC8229",
@@ -232,7 +232,7 @@ const theme = createTheme({
           // width: "230px",
           padding: "15px 20px 15px 57px",
           "@media (max-width:600px)": {
-            padding: "10px 15px",
+            padding: "10px 15px 10px 40px",
             // width:"210px"
           },
           borderColor: "#FF7043", // Primary button border color
