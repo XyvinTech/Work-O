@@ -22,4 +22,10 @@ p {
   height: 223px;
   padding-bottom: 10px;
   object-fit: cover;
+
+}
+@media (max-width: 600px) {
+.wp-block-image.size-large img{
+width: 300px !important;
+}
 }
