@@ -1,16 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .wp-block-heading {
-  font-size: 24px;
+  font-size: 49px;
   font-weight: 600;
-  margin: 20px 0;
+  /* margin: 20px 0; */
+  padding: 0;
   font-family: "Montserrat", sans-serif;
+  line-height: 68.6px;
 }
 
 p {
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 28px;
   margin: 10px 0;
+  padding-bottom: 10px;
   font-family: "Montserrat", sans-serif;
+}
+.wp-block-image.size-large img {
+  width: 95%;
+  height: 223px;
+  padding-bottom: 10px;
+  object-fit: cover;
 }

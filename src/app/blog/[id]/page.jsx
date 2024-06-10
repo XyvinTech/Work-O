@@ -11,8 +11,10 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import axios from "axios";
-import DOMPurify from "dompurify";
+import DOMPurify, { version } from "dompurify";
+import Link from "next/link";
 import { useParams } from "next/navigation";
+import ViewIcon from "../../../assets/icons/views.svg";
 import { useEffect, useState } from "react";
 import { firestore } from "../../../../firebaseConfig";
 import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
@@ -21,11 +23,12 @@ function Page() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const { id } = useParams();
   const [post, setPost] = useState(null);
+  const [author, setAuthor] = useState(null);
   const [views, setViews] = useState(0);
   const [shares, setShares] = useState(0);
   const [posts, setPosts] = useState([]);
 
-  const filteredPosts = posts?.filter((post) => post.id !== id);
+  const filteredPosts = posts?.filter((post) => post.id != id);
 
   const fetchData = async () => {
     try {
@@ -39,6 +42,7 @@ function Page() {
     }
   };
 
+  const [headings, setHeadings] = useState([]);
   useEffect(() => {
     if (id) {
       const fetchPost = async () => {
@@ -46,6 +50,13 @@ function Page() {
           const response = await axios.get(
             `https://blog.workoindia.com/wp-json/wp/v2/posts/${id}`
           );
+          const postData = response.data;
+          setPost(postData);
+          const authorResponse = await axios.get(
+            `https://blog.workoindia.com/wp-json/wp/v2/users/${postData.author}`
+          );
+          setAuthor(authorResponse.data);
+          console.log(response);
           setPost(response.data);
 
           const docRef = doc(firestore, "posts", id);
@@ -59,6 +70,24 @@ function Page() {
             await setDoc(docRef, { views: 1, shares: 0 });
             setViews(1);
           }
+          const parser = new DOMParser();
+          const contentDoc = parser.parseFromString(
+            postData.content.rendered,
+            "text/html"
+          );
+          const headingElements = contentDoc.querySelectorAll(
+            "h1, h2, h3, h4, h5, h6"
+          );
+          const extractedHeadings = Array.from(headingElements).map(
+            (heading) => ({
+              id:
+                heading.id ||
+                heading.textContent.replace(/\s+/g, "-").toLowerCase(),
+              text: heading.textContent,
+              level: heading.tagName,
+            })
+          );
+          setHeadings(extractedHeadings);
         } catch (error) {
           console.error("Error fetching post:", error);
         }
@@ -77,17 +106,39 @@ function Page() {
 
   return (
     <Box marginTop={isMobile ? 10 : 20} padding={4}>
-      <Typography variant="h1" textTransform="uppercase">
+      <Typography variant="h6">
+        Home &gt; Blog &gt;{" "}
+        <Link
+          href={"/blog"}
+          style={{
+            textDecoration: "underline",
+            color: "#FC8229",
+            textDecorationColor: "#FC8229",
+          }}
+        >
+          {post && post.title && post.title.rendered}
+        </Link>
+      </Typography>
+      <Typography variant="h1" marginTop={2} textTransform="uppercase">
         {post && post.title && post.title.rendered}
       </Typography>
-      <Typography variant="cardHead" fontWeight={"400"}>
-        Lorem ipsum dolor sit amet consectetur. A enim nun{" "}
-      </Typography>
-      <Stack justifyContent={"space-between"} marginTop={2} marginBottom={2}>
+
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        marginTop={2}
+        marginBottom={2}
+      >
         <Typography variant="h5" fontWeight={"700"}>
-          by John Doe
+          by {author && author.name}
         </Typography>
-        <Typography></Typography>
+        <Box display="flex" alignItems="center">
+          <ViewIcon />
+          <Typography variant="h6" marginLeft={1}>
+            {views} views
+          </Typography>
+        </Box>
       </Stack>
 
       <img
@@ -99,33 +150,26 @@ function Page() {
       />
 
       <Grid container spacing={6} paddingTop={6}>
-        <Grid item xs={isMobile ? 12 : 2}>
+        <Grid item xs={isMobile ? 12 : 2} marginTop={isMobile ? "0px" : "10px"}>
           <Typography variant="h5" fontWeight={"700"}>
             Table of Contents
           </Typography>
           <Stack spacing={2} paddingTop={2}>
-            <Typography variant="h6">
-              Lorem ipsum dolor sit amet cons?
-            </Typography>
-            <Typography variant="h6">
-              Lorem ipsum dolorsLorem ipsum dolorsLorem ipsum dolors?
-            </Typography>
-            <Typography variant="h6">
-              Lorem ipsum ipsum dolorsLorem ipsum dolors?
-            </Typography>
-            <Typography variant="h6">
-              Lorem ipsum dolor sit amet cons?
-            </Typography>
-            <Typography variant="h6">
-              Lorem ipsum dolorsLorem ipsum dolorsLorem ipsum dolors?
-            </Typography>
-            <Typography variant="h6">
-              Lorem ipsum ipsum dolorsLorem ipsum dolors?
-            </Typography>
+            {headings.map((heading) => (
+              <Typography
+                key={heading.id}
+                variant="h6"
+                component="a"
+                href={`#${heading.id}`}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                {heading.text}
+              </Typography>
+            ))}
           </Stack>
         </Grid>
         <Grid item xs={isMobile ? 12 : 8}>
-          <Stack spacing={2}>
+          <Stack spacing={0}>
             {post && post.content && (
               <div
                 dangerouslySetInnerHTML={createMarkup(post.content.rendered)}
@@ -157,39 +201,17 @@ function Page() {
         You May Also Like
       </Typography>
       <Grid container spacing={2} paddingTop={2} paddingBottom={15}>
-        <Grid item xs={isMobile ? 12 : 4}>
-          <ViewMoreCard
-            image="/blog/Blog.png"
-            title="The transformation of a Gully Boy"
-            description="Lorem ipsum dolor sit amet consectetur. A enim nunc elit ac consectetur suscipit pharetra"
-            date="Sunday , 1 Jan 2024"
-          />
-        </Grid>
-        <Grid item xs={isMobile ? 12 : 4}>
-          <ViewMoreCard
-            image="/blog/Blog.png"
-            title="The transformation of a Gully Boy"
-            description="Lorem ipsum dolor sit amet consectetur. A enim nunc elit ac consectetur suscipit pharetra"
-            date="Sunday , 1 Jan 2024"
-          />
-        </Grid>
-        <Grid item xs={isMobile ? 12 : 4}>
-          <ViewMoreCard
-            image="/blog/Blog.png"
-            title="The transformation of a Gully Boy"
-            description="Lorem ipsum dolor sit amet consectetur. A enim nunc elit ac consectetur suscipit pharetra"
-            date="Sunday , 1 Jan 2024"
-          />
-        </Grid>
+        {filteredPosts?.slice(0, 3).map((item, index) => (
+          <Grid item xs={isMobile ? 12 : 4} key={index}>
+            <ViewMoreCard
+              image={item.jetpack_featured_media_url}
+              title={item.title.rendered}
+              description={item.excerpt.rendered}
+              date={item.date}
+            />
+          </Grid>
+        ))}
       </Grid>
-
-      <Box marginTop={2}>
-        <Typography variant="h6">Page Views: {views}</Typography>
-        {/* <Button onClick={handleShare} variant="contained" color="primary">
-          Share
-        </Button> */}
-        <Typography variant="h6">Shares: {shares}</Typography>
-      </Box>
     </Box>
   );
 }
