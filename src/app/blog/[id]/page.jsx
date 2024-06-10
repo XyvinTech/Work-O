@@ -1,13 +1,20 @@
 "use client";
-import "../wordpress-styles.css"
+import "../wordpress-styles.css";
 import ViewMoreCard from "@/components/ViewMoreCard";
 import StyledInput from "@/ui/StyledInput";
-import { Box, Button, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import axios from "axios";
 import DOMPurify from "dompurify";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { firestore } from '../../../../firebaseConfig';
+import { firestore } from "../../../../firebaseConfig";
 import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
 
 function Page() {
@@ -16,6 +23,21 @@ function Page() {
   const [post, setPost] = useState(null);
   const [views, setViews] = useState(0);
   const [shares, setShares] = useState(0);
+  const [posts, setPosts] = useState([]);
+
+  const filteredPosts = posts?.filter((post) => post.id !== id);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        "https://blog.workoindia.com/wp-json/wp/v2/posts"
+      );
+      const data = response.data;
+      setPosts(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
   useEffect(() => {
     if (id) {
@@ -24,7 +46,6 @@ function Page() {
           const response = await axios.get(
             `https://blog.workoindia.com/wp-json/wp/v2/posts/${id}`
           );
-          console.log(response);
           setPost(response.data);
 
           const docRef = doc(firestore, "posts", id);
@@ -38,8 +59,6 @@ function Page() {
             await setDoc(docRef, { views: 1, shares: 0 });
             setViews(1);
           }
-
-
         } catch (error) {
           console.error("Error fetching post:", error);
         }
@@ -47,6 +66,7 @@ function Page() {
 
       fetchPost();
     }
+    fetchData();
   }, [id]);
 
   const createMarkup = (html) => {
@@ -72,7 +92,7 @@ function Page() {
 
       <img
         src={post && post.jetpack_featured_media_url}
-        style={{ objectFit: 'cover' }}
+        style={{ objectFit: "cover" }}
         width={isMobile ? "300px" : "100%"}
         height={isMobile ? "300px" : "641px"}
         alt="img"
@@ -133,7 +153,9 @@ function Page() {
           </Stack>
         </Grid>
       </Grid>
-      <Typography variant="h4" marginTop={5}>You May Also Like</Typography>
+      <Typography variant="h4" marginTop={5}>
+        You May Also Like
+      </Typography>
       <Grid container spacing={2} paddingTop={2} paddingBottom={15}>
         <Grid item xs={isMobile ? 12 : 4}>
           <ViewMoreCard
