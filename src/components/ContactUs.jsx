@@ -18,6 +18,10 @@ function ContactUs({enroll}) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const router = useRouter();
+  const handleBackToHome = () => {
+    handleClose();
+    router.push("/");
+  };
   return (
 
     <Container py={isMobile ? 4 : 10} px={isMobile ? 3 : 5}>
@@ -59,7 +63,7 @@ function ContactUs({enroll}) {
           <Typography variant="h6" fontWeight={"600"} color={"#ffffff"}>Your Submission Has Been Successfull</Typography>
           <img src="/Home/Remaining/Tick.png" alt="Tick"/>
           <Typography variant="h7" color={"#B2B0B0"}>Our team will call you shortly</Typography>
-          <Button variant="navbar"onClick={() => router.push("/")}>Back to Home</Button>
+          <Button variant="navbar"onClick={handleBackToHome}>Back to Home</Button>
         </ModalContent>
       </Modal>
     </Container>
