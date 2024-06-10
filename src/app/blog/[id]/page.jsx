@@ -7,11 +7,15 @@ import axios from "axios";
 import DOMPurify from "dompurify";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { firestore } from '../../../../firebaseConfig';
+import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
 
 function Page() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const { id } = useParams();
   const [post, setPost] = useState(null);
+  const [views, setViews] = useState(0);
+  const [shares, setShares] = useState(0);
 
   useEffect(() => {
     if (id) {
@@ -22,6 +26,20 @@ function Page() {
           );
           console.log(response);
           setPost(response.data);
+
+          const docRef = doc(firestore, "posts", id);
+          const docSnap = await getDoc(docRef);
+
+          if (docSnap.exists()) {
+            setViews(docSnap.data().views);
+            setShares(docSnap.data().shares);
+            await updateDoc(docRef, { views: docSnap.data().views + 1 });
+          } else {
+            await setDoc(docRef, { views: 1, shares: 0 });
+            setViews(1);
+          }
+
+
         } catch (error) {
           console.error("Error fetching post:", error);
         }
@@ -142,6 +160,14 @@ function Page() {
           />
         </Grid>
       </Grid>
+
+      <Box marginTop={2}>
+        <Typography variant="h6">Page Views: {views}</Typography>
+        {/* <Button onClick={handleShare} variant="contained" color="primary">
+          Share
+        </Button> */}
+        <Typography variant="h6">Shares: {shares}</Typography>
+      </Box>
     </Box>
   );
 }
