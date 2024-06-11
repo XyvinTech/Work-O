@@ -9,7 +9,7 @@ const SelectContainer = styled.div`
   width: 100%; /* Adjust width as needed */
 `;
 
-const StyledSelectField = ({ placeholder,options, onChange,value }) => {
+const StyledSelectField = ({ placeholder,options, onChange,value,color }) => {
 
   const customStyles = {
     control: (provided, state) => ({
@@ -19,7 +19,7 @@ const StyledSelectField = ({ placeholder,options, onChange,value }) => {
       border: "1px solid var(--White-20, rgba(255, 255, 255, 0.20));",
       borderRadius: "4px",
       backgroundColor:  "#282828" ,
-      color: "#FC8229",
+      color: color || "#FFFFFF",
       boxShadow: state.isFocused ? "0 0 0 2px #fff" : "none",
       cursor: "pointer",
       fontFamily: mont.style.fontFamily,

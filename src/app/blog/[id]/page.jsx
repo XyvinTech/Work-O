@@ -29,7 +29,7 @@ function Page() {
   const [shares, setShares] = useState(0);
   const [posts, setPosts] = useState([]);
 
-  const filteredPosts = posts?.filter((post) => post.id != id);
+  const filteredPosts = posts?.filter((post) => post.slug != id);
 
   const fetchData = async () => {
     try {
@@ -49,16 +49,16 @@ function Page() {
       const fetchPost = async () => {
         try {
           const response = await axios.get(
-            `https://blog.workoindia.com/wp-json/wp/v2/posts/${id}`
+            `https://blog.workoindia.com/wp-json/wp/v2/posts?slug=${id}`
           );
-          const postData = response.data;
+          const postData = response.data[0];
           setPost(postData);
           const authorResponse = await axios.get(
             `https://blog.workoindia.com/wp-json/wp/v2/users/${postData.author}`
           );
           setAuthor(authorResponse.data);
           console.log(response);
-          setPost(response.data);
+          setPost(response.data[0]);
 
           const docRef = doc(firestore, "posts", id);
           const docSnap = await getDoc(docRef);
@@ -209,7 +209,7 @@ function Page() {
               title={item.title.rendered}
               description={item.excerpt.rendered}
               date={item.date}
-              link={item.id}
+              link={item.slug}
             />
           </Grid>
         ))}

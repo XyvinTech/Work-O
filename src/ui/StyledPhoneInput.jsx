@@ -54,13 +54,21 @@ const DropIconContainer = styled.div`
 
 const StyledPhoneInput = ({ onChange }) => {
   const [countryCode, setCountryCode] = useState("+91");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const handleCountryCodeChange = (event) => {
     setCountryCode(event.target.value);
+    if (onChange) {
+      onChange(`${event.target.value}${phoneNumber}`);
+    }
   };
 
   const handleChange = (event) => {
-    const phoneNumber = event.target.value;
+    const newPhoneNumber = event.target.value;
+    setPhoneNumber(newPhoneNumber);
+    if (onChange) {
+      onChange(`${countryCode}${newPhoneNumber}`);
+    }
   };
 
   return (

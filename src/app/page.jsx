@@ -44,8 +44,7 @@ function page() {
     "/Home/Carousal/20.webp",
   ];
 
-  useEffect(() => {
-    
+  useEffect(() => {   
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);

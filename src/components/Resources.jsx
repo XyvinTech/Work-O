@@ -146,6 +146,7 @@ const Resources = () => {
           <StyledSelectField
             placeholder="Select a tab"
             options={options}
+            color={"#FC8229"}
             onChange={handleSelectChange}
             value={options[activeTab]}
           />

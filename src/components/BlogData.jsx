@@ -146,7 +146,7 @@ const BlogData = () => {
             title={item.title.rendered}
             description={item.excerpt.rendered}
             date={item.date}
-            link={item.id}
+            link={item.slug}
           />
         ))}
       </GridContainer>

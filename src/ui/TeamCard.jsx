@@ -1,11 +1,22 @@
 "use client";
+
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { cormo } from "@/theme";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const TeamCard = ({ image, title, description, hoverDescription }) => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const [hover, setHover] = useState(false);
+  const [cardHeight, setCardHeight] = useState("auto");
+  const hoverDescRef = useRef(null);
+
+  useEffect(() => {
+    if (hover && hoverDescRef.current) {
+      setCardHeight(`${hoverDescRef.current.scrollHeight + (isMobile ? 100 : 0)}px`);
+    } else {
+      setCardHeight("auto");
+    }
+  }, [hover]);
 
   return (
     <Box
@@ -15,11 +26,13 @@ const TeamCard = ({ image, title, description, hoverDescription }) => {
       flexDirection="column"
       alignItems="center"
       position="relative"
+      width="100%"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       style={{
         backgroundColor: hover ? "white" : "transparent",
-        transition: "background-color 0.3s ease",
+        transition: "background-color 0.3s ease, height 0.5s ease",
+        height: isMobile ? (hover ? cardHeight : "auto") : "auto",
       }}
     >
       <Box
@@ -28,7 +41,6 @@ const TeamCard = ({ image, title, description, hoverDescription }) => {
         alt="Frame"
         style={{
           width: "100%",
-          height: "299px",
           objectFit: "cover",
           opacity: hover ? 0 : 1,
           transition: "opacity 1s ease",
@@ -96,7 +108,9 @@ const TeamCard = ({ image, title, description, hoverDescription }) => {
             width="100%"
             padding="20px"
             position="absolute"
-            bottom={hover ? (isMobile ? "-0px" : "20px") : "-50px"}
+            top={isMobile?"90px":"100px"}
+            // bottom={isMobile ? "-80px" : "10px"}
+            ref={hoverDescRef}
             style={{
               opacity: hover ? 1 : 0,
               transition: "opacity 0.5s ease",

@@ -1,6 +1,5 @@
 "use client";
 import Header from "@/components/Header";
-import React from "react";
 import bgImage from "/public/Services/Main.webp";
 import StyledBox from "@/components/StyledBox";
 import PromiseCardView from "@/components/PromiseCardView";
@@ -22,6 +21,8 @@ import Spa from "../../assets/icons/Spa.svg";
 import Networking from "../../assets/icons/Networking.svg";
 import CCTV from "../../assets/icons/cctv.svg";
 import Laptop from "../../assets/icons/Laptop.svg";
+import { useEffect, useState } from "react";
+import StyledLoader from "@/components/StyledLoader";
 
 const service1 = [
   {
@@ -106,67 +107,79 @@ const service4 = [
 ];
 
 function page() {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
   return (
     <>
-      <Header
-        title={"How our services help the community?"}
-        subtitle={
-          "At Worko, we connect businesses and consumers with India's first all-in-one service marketplace."
-        }
-        isButtons
-        bgImg={bgImage.src}
-      />
+      {isLoading ? (
+        <StyledLoader />
+      ) : (
+        <>
+          <Header
+            title={"How our services help the community?"}
+            subtitle={
+              "At Worko, we connect businesses and consumers with India's first all-in-one service marketplace."
+            }
+            isButtons
+            bgImg={bgImage.src}
+          />
 
-      <StyledBox >
-        <Service
-          title={"AC Services"}
-          decription={
-            "We offer complete AC solutions, including maintenance, installation, and repair for both residential and commercial systems, ensuring optimal performance with skilled and certified technicians."
-          }
-          gridComponent={service1}
-          img={"/images/Service1.png"}
-        />
-      </StyledBox>
-      <StyledBox>
-        {" "}
-        <Service2
-          title={"Home Appliance Services"}
-          description={
-            "Comprehensive Appliance Repair: We offer repair services for refrigerators, washing machines, ovens, cooktops, and all other major home appliances to restore their optimal functioning."
-          }
-          gridComponent={service2}
-          img={"/images/carpenter.png"}
-        />
-      </StyledBox>
-      <StyledBox>
-        <Service
-          title={"Beauty and Salon Services"}
-          decription={
-            "We offer a range of beauty and salon services, including haircuts, coloring, styling, hair treatments, makeup (bridal, party, and lessons), massages, facials, waxing, and body treatments"
-          }
-          gridComponent={service3}
-          img={"/images/Beautyservice.png"}
-        />
-      </StyledBox>
-      <StyledBox>
-        <Service2
-          title={"Technical Services"}
-          description={
-            "We provide technical services including networking installation, maintenance, and troubleshooting, as well as CCTV installation, maintenance, and monitoring."
-          }
-          gridComponent={service4}
-          img={"/images/delivery.png"}
-        />
-      </StyledBox>
+          <StyledBox>
+            <Service
+              title={"AC Services"}
+              decription={
+                "We offer complete AC solutions, including maintenance, installation, and repair for both residential and commercial systems, ensuring optimal performance with skilled and certified technicians."
+              }
+              gridComponent={service1}
+              img={"/images/Service1.png"}
+            />
+          </StyledBox>
+          <StyledBox>
+            {" "}
+            <Service2
+              title={"Home Appliance Services"}
+              description={
+                "Comprehensive Appliance Repair: We offer repair services for refrigerators, washing machines, ovens, cooktops, and all other major home appliances to restore their optimal functioning."
+              }
+              gridComponent={service2}
+              img={"/images/carpenter.png"}
+            />
+          </StyledBox>
+          <StyledBox>
+            <Service
+              title={"Beauty and Salon Services"}
+              decription={
+                "We offer a range of beauty and salon services, including haircuts, coloring, styling, hair treatments, makeup (bridal, party, and lessons), massages, facials, waxing, and body treatments"
+              }
+              gridComponent={service3}
+              img={"/images/Beautyservice.png"}
+            />
+          </StyledBox>
+          <StyledBox>
+            <Service2
+              title={"Technical Services"}
+              description={
+                "We provide technical services including networking installation, maintenance, and troubleshooting, as well as CCTV installation, maintenance, and monitoring."
+              }
+              gridComponent={service4}
+              img={"/images/delivery.png"}
+            />
+          </StyledBox>
 
-      <StyledBox title={"How we works"}>
-        <PromiseCardView viewMoreData={viewMoreData} />
-      </StyledBox>
-   
-        <GetApp />
-   
-      <ConnectUs />
-      <FreqenlyAskedQuestion />
+          <StyledBox title={"How we works"}>
+            <PromiseCardView viewMoreData={viewMoreData} />
+          </StyledBox>
+
+          <GetApp />
+
+          <ConnectUs />
+          <FreqenlyAskedQuestion />
+        </>
+      )}
     </>
   );
 }

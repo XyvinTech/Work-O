@@ -1,5 +1,5 @@
+"use client"
 import Header from "@/components/Header";
-import React from "react";
 import bgImage from "/public/AboutUs/Header.webp";
 import VisionCardView from "@/components/VisionCardView";
 import TeamCarousel from "@/components/TeamCarousel";
@@ -12,8 +12,11 @@ import VisionData from "../../assets/json/VisionData";
 import Certification from "../../assets/json/CertificationData";
 import viewMoreData from "../../assets/json/HowWeDifferData";
 import FreqenlyAskedQuestion from "@/components/FreqenlyAskedQuestion";
+import { useEffect, useState } from "react";
+import StyledLoader from "@/components/StyledLoader";
 
 function page() {
+  const [isLoading, setIsLoading] = useState(true);
   const images = [
     "/Home/Carousal/1.webp",
     "/Home/Carousal/2.webp",
@@ -35,8 +38,17 @@ function page() {
     "/Home/Carousal/19.webp",
     "/Home/Carousal/20.webp",
   ];
+  useEffect(() => {   
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
   return (
     <>
+      {isLoading ? (
+        <StyledLoader />
+      ) : (
+        <>
       <Header
         title={"Worko: What Makes Us Different?"}
         subtitle={
@@ -69,6 +81,8 @@ function page() {
       <Achievements />
 
       <FreqenlyAskedQuestion />
+      </>
+      )}
     </>
   );
 }
