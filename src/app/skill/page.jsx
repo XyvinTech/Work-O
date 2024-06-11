@@ -40,10 +40,7 @@ function page() {
   }, []);
   return (
     <>
-      {isLoading ? (
-        <StyledLoader />
-      ) : (
-        <>
+     
           <Header
             title={"Our Skill Development Program"}
             subtitle={
@@ -51,7 +48,10 @@ function page() {
             }
             isButtons
             bgImg={bgImage.src}
-          />
+          /> {isLoading ? (
+            <StyledLoader />
+          ) : (
+            <>
           <StyledBox
             title={"Upgrading 20,000+ Lives Through Skill-Development Program"}
           >

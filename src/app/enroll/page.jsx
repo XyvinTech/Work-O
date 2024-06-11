@@ -14,11 +14,12 @@ function page() {
   }, []);
   return (
     <>
-    {isLoading ? (
+  
+      <Header title={"Enroll Now"} top={15}bgImg={bgImage.src}  mobile={"280px"}height={"400px"}/>
+      {isLoading ? (
         <StyledLoader />
       ) : (
         <>
-      <Header title={"Enroll Now"} top={15}bgImg={bgImage.src}  mobile={"280px"}height={"400px"}/>
       <ContactUs enroll />
     </>
      )}

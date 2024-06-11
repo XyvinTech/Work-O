@@ -17,11 +17,12 @@ function page() {
   }, []);
   return (
     <>
-      {isLoading ? (
+     
+          <Header title={"Download our Worko App"} bgImg={bgImage.src} />
+          {isLoading ? (
         <StyledLoader />
       ) : (
         <>
-          <Header title={"Download our Worko App"} bgImg={bgImage.src} />
           <GetApp />
           <StyledBox>
             <Statistics />

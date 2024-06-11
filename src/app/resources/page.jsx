@@ -14,10 +14,7 @@ function page() {
   }, []);
   return (
     <>
-      {isLoading ? (
-        <StyledLoader />
-      ) : (
-        <>
+     
           <Header
             title={"Want to know more about us ?"}
             subtitle={
@@ -26,7 +23,10 @@ function page() {
             isButtons
             bgImg={bgImage.src}
           />
-
+ {isLoading ? (
+        <StyledLoader />
+      ) : (
+        <>
           <Resources />
         </>
       )}

@@ -15,10 +15,7 @@ function page() {
   }, []);
   return (
     <>
-      {isLoading ? (
-        <StyledLoader />
-      ) : (
-        <>
+      
       <Header
         title={"Get Inspired: Check Out Our Blog!"}
         subtitle={
@@ -26,7 +23,10 @@ function page() {
         }
         isButtons
         bgImg={bgImage.src}
-      />
+      />{isLoading ? (
+        <StyledLoader />
+      ) : (
+        <>
       <StyledBox> <BlogData/></StyledBox>
      
     </>

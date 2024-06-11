@@ -45,10 +45,7 @@ function page() {
   }, []);
   return (
     <>
-      {isLoading ? (
-        <StyledLoader />
-      ) : (
-        <>
+     
       <Header
         title={"Worko: What Makes Us Different?"}
         subtitle={
@@ -57,7 +54,10 @@ function page() {
         isButtons
         bgImg={bgImage.src}
       />
-
+ {isLoading ? (
+        <StyledLoader />
+      ) : (
+        <>
       <AboutMain />
 
       <StyledBox title={"Our Vision"}>

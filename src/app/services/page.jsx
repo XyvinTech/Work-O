@@ -115,10 +115,7 @@ function page() {
   }, []);
   return (
     <>
-      {isLoading ? (
-        <StyledLoader />
-      ) : (
-        <>
+     
           <Header
             title={"How our services help the community?"}
             subtitle={
@@ -127,7 +124,10 @@ function page() {
             isButtons
             bgImg={bgImage.src}
           />
-
+ {isLoading ? (
+        <StyledLoader />
+      ) : (
+        <>
           <StyledBox>
             <Service
               title={"AC Services"}
