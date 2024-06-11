@@ -37,7 +37,7 @@ const StyledSlider = styled(Slider)`
     text-align: left;
     @media (max-width: 600px) {
       text-align:center;
-      bottom:-30px;
+      bottom:-50px;
      }
     li {
       margin: 0;

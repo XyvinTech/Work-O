@@ -17,7 +17,7 @@ function Achievements() {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <Stack bgcolor={"#FBF8F2"} p={isMobile ? 2 : 8} marginTop={isMobile?10:15} paddingTop={12} paddingBottom={ 12} spacing={isMobile?2 : 10}>
+    <Stack bgcolor={"#FBF8F2"} p={isMobile ? 2 : 8} marginTop={isMobile?5:5} paddingTop={isMobile?6:12} paddingBottom={ isMobile?6:12}  spacing={isMobile?2 : 10}>
       <Typography variant="h2" textAlign={"center"}>
         Our Achievements & Awards
       </Typography>

@@ -9,7 +9,16 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-function Header({ bgImg, title, subtitle, isHome, isButtons, height, mobile,top }) {
+function Header({
+  bgImg,
+  title,
+  subtitle,
+  isHome,
+  isButtons,
+  height,
+  mobile,
+  top,
+}) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const router = useRouter();
@@ -55,13 +64,13 @@ function Header({ bgImg, title, subtitle, isHome, isButtons, height, mobile,top 
           src="/assets/home/img/header.png"
           alt="Logo"
           height={isMobile ? "42px" : "84px"}
-          style={{ marginTop: "50px" }}
+          style={{ marginTop: isMobile ? "80px" : "90px" }}
         />
       )}
       <Typography
         variant="h1"
         color={isHome ? "#000" : "#fff"}
-        textAlign={isMobile?"left":"center"}
+        textAlign={isMobile ? "left" : "center"}
         paddingTop={top}
         px={isMobile ? 2 : 20}
       >
@@ -83,13 +92,21 @@ function Header({ bgImg, title, subtitle, isHome, isButtons, height, mobile,top 
           spacing={3}
           alignItems={"center"}
         >
-          <Stack width={isMobile?"100%":"230px"}>
-          {/* <Link href={"/get-the-app"} passHref target="_blank"style={{textDecoration:"none"}}> */}
-            <Button variant={"contained"} onClick={() => router.push("/get-the-app")} >Get the App</Button>
+          <Stack width={isMobile ? "100%" : "230px"}>
+            {/* <Link href={"/get-the-app"} passHref target="_blank"style={{textDecoration:"none"}}> */}
+            <Button
+              variant={"contained"}
+              onClick={() => router.push("/get-the-app")}
+            >
+              Get the App
+            </Button>
           </Stack>
           <Stack width={"230px"}>
-           
-            <Button variant="outlined" onClick={() => router.push("/services")}color={isHome ? "primary" : "secondary"}>
+            <Button
+              variant="outlined"
+              onClick={() => router.push("/services")}
+              color={isHome ? "primary" : "secondary"}
+            >
               View services
             </Button>
           </Stack>

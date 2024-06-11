@@ -26,7 +26,7 @@ const BookNowCarouselData = [
       description: "Skill Development Program",
       buttonColor: "filled",
       borderColor:"primary",
-      backgroundColor: "#FBF8F2",
+      backgroundColor: "#FFFFFF",
       button:"Enroll Now",
       link:"/enroll"
     },
@@ -36,17 +36,7 @@ const BookNowCarouselData = [
       description: "AC Servicing",
       buttonColor: "contained",
       borderColor:"primary",
-      backgroundColor: "#FBF8F2",
-      button:"Book Now",
-      link:"/services"
-    },
-    {
-      imageSrc: "/Home/Add/Add5.webp",
-      title: "Elevate your wedding Glow!",
-      description: "Beauty Services",
-      buttonColor: "filled",
-      borderColor:"primary",
-      backgroundColor: "white",
+      backgroundColor: "#FFFFFF",
       button:"Book Now",
       link:"/services"
     },
@@ -61,6 +51,17 @@ const BookNowCarouselData = [
       button:"Book Now",
       link:"/services"
     },
+    {
+      imageSrc: "/Home/Add/Add5.webp",
+      title: "Elevate your wedding Glow!",
+      description: "Beauty Services",
+      buttonColor: "filled",
+      borderColor:"primary",
+      backgroundColor: "white",
+      button:"Book Now",
+      link:"/services"
+    },
+   
   ];
   
   export default BookNowCarouselData;

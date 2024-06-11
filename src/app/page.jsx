@@ -63,7 +63,7 @@ function page() {
           "At Worko, we connect businesses and consumers with India's first all-in-one service marketplace."
         }
         isButtons
-        isHome
+        isHome mobile={"420px"}
       />{" "}
      
           <CarouselOne images={images} />

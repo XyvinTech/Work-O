@@ -25,11 +25,11 @@ const OurStory = () => {
 
   return (
     <Box>
-      <Stack direction={isMobile ? "column" : "row"} spacing={isMobile ? 2 : 6}>
+      <Stack direction={isMobile ? "column" : "row"} spacing={isMobile ? 2 : 8}>
         <ImageContainer>
           <Image src="/Home/Remaining/OurStory.png" alt="img" />
         </ImageContainer>
-        <Stack direction={"column"} spacing={4}>
+        <Stack direction={"column"} spacing={isMobile?2:4} paddingTop={isMobile?2:5}>
           <Typography variant="h2">Our story</Typography>
           <Typography variant={isMobile?"h7":"h5"} textAlign={isMobile && "justify"} lineHeight={"27px"}>
             Welcome to Worko, where we're not just shaping careers; we're
