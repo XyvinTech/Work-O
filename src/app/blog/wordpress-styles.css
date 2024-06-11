@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .wp-block-heading {
-  font-size: 49px;
+  font-size: 40px;
   font-weight: 600;
   /* margin: 20px 0; */
   padding: 0;
@@ -45,7 +45,7 @@ width: 300px !important;
   margin-bottom: 10px;
   font-size: 20px !important;
   font-style: italic;
-  line-height: 25px;
+  line-height: 31px;
   font-weight: 500;
 }
 
