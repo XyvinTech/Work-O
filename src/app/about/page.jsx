@@ -63,7 +63,7 @@ function page() {
       <StyledBox title={"Our Vision"}>
         <VisionCardView viewMoreData={VisionData} />
       </StyledBox>
-      <StyledBox title={"Meet our team"}>
+      <StyledBox title={"Leadership"}>
         <TeamCarousel />
       </StyledBox>
       <StyledBox title={"How We Differ?"}>

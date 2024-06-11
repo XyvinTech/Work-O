@@ -263,6 +263,7 @@ const StyledForm = () => {
                 name="phoneNumber"
                 control={control}
                 defaultValue=""
+                rules={{ required: "Phone Number is required" }}
                 render={({ field }) => (
                   <div>
                     <StyledPhoneInput {...field} />{" "}
@@ -396,6 +397,7 @@ const StyledForm = () => {
                 name="phoneNumber"
                 control={control}
                 defaultValue=""
+                rules={{ required: "Phone Number is required" }}
                 render={({ field }) => (
                   <div>
                     <StyledPhoneInput {...field} />{" "}
@@ -528,6 +530,7 @@ const StyledForm = () => {
               name="phoneNumber"
               control={control}
               defaultValue=""
+              rules={{ required: "Phone Number is required" }}
               render={({ field }) => (
                 <div>
                   <StyledPhoneInput {...field} />{" "}

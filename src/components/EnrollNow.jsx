@@ -114,6 +114,7 @@ const EnrollNow = () => {
               name="phoneNumber"
               control={control}
               defaultValue=""
+              rules={{ required: "Phone Number is required" }}
               render={({ field }) => (
                 <div>
                   <StyledPhoneInput {...field} />{" "}
