@@ -8,7 +8,7 @@ const TeamCarousel = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const router = useRouter();
   const ImageContainer = styled.div`
-    width: ${isMobile ? "100%" : "3800px"};
+    width: ${isMobile ? "100%" : "5500px"};
     height: ${isMobile ? "294px" : "520px"};
     overflow: hidden;
   `;
@@ -24,7 +24,11 @@ const TeamCarousel = () => {
   `;
 
   return (
-    <Box marginTop={"60px"} padding={4} border={"1px solid rgba(0, 0, 0, 0.12)"}>
+    <Box
+      marginTop={"60px"}
+      padding={4}
+      border={"1px solid rgba(0, 0, 0, 0.12)"}
+    >
       <Stack direction={isMobile ? "column" : "row"} spacing={isMobile ? 2 : 8}>
         <ImageContainer>
           <Image src="/AboutUs/Avneesh.png" alt="img" />
@@ -42,17 +46,23 @@ const TeamCarousel = () => {
             lineHeight={"27px"}
             paddingTop={"30px"}
           >
-            Before helming Worko, Avneesh worked with multinationals like Tech
-            Mahindra, Times Of India, Airtel, Reliance, Mymobiforce, etc. There
-            he built his expertise in Sales, Accounts, Management, Operations
-            thereafter embarking on his serial entrepreneurship building
-            journey. He loves travelling and foodie or taking long strolls at
-            beaches when he is not brainstorming on professional fronts. Also
-            Avneesh manages one of the toughest jobs in-house - onboarding
-            freelancers and vendors from across the nation. From making the
-            first call to running background checks on their expertise, it’s his
-            job to ensure that only the best of the best make the cut and join
-            our field workforce
+            Avneesh is a seasoned professional with a strong background in
+            sales, accounts, management, and operations. Before helming Worko,
+            he worked with multinational companies like Tech Mahindra, Times Of
+            India, Airtel, Reliance, Mymobiforce, and others where he built his
+            expertise across various domains. He holds a graduate degree from
+            Delhi University and a postgraduate MBA in Sales & Operations from
+            CCS University. This educational foundation coupled with his
+            extensive corporate experience has equipped him with a well-rounded
+            skill set. At Worko, Avneesh dons multiple hats. One of his crucial
+            responsibilities is onboarding freelancers and vendors from across
+            the nation. From making the first call to running thorough
+            background checks on their expertise, he ensures that only the best
+            talents make the cut and join Worko's field workforce. When not
+            strategizing on professional fronts, Avneesh loves traveling,
+            exploring new cuisines as a foodie, and taking long strolls at
+            beaches to unwind. His passion for his work and a keen eye for
+            talent make him an invaluable asset to the organization.
           </Typography>
         </Stack>
       </Stack>
