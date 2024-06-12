@@ -14,6 +14,7 @@ import viewMoreData from "../../assets/json/HowWeDifferData";
 import FreqenlyAskedQuestion from "@/components/FreqenlyAskedQuestion";
 import { useEffect, useState } from "react";
 import StyledLoader from "@/components/StyledLoader";
+import Gallery from "@/components/Gallery";
 
 function page() {
   const [isLoading, setIsLoading] = useState(true);
@@ -66,6 +67,7 @@ function page() {
       <StyledBox title={"Leadership"}>
         <TeamCarousel />
       </StyledBox>
+      <StyledBox title={"Gallery"}><Gallery/></StyledBox>
       <StyledBox title={"How We Differ?"}>
         <PromiseCardView viewMoreData={viewMoreData} />
       </StyledBox>
