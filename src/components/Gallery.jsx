@@ -83,6 +83,14 @@ const settings = {
           arrows: false, // Hide arrows on mobile
         },
       },
+      {
+        breakpoint: 920,
+        settings: {
+          slidesToShow: 1,
+          dots: true, // Show dots on mobile
+          arrows: false, // Hide arrows on mobile
+        },
+      },
     ],
   };
 

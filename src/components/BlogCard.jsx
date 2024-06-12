@@ -20,6 +20,9 @@ const StyledCard = styled.div`
   @media (max-width: 600px) {
     height: 650px;
   }
+    @media (max-width: 768px) {
+    height: 850px;
+  }
 `;
 
 const StyledCardMedia = styled.div`

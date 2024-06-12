@@ -30,7 +30,12 @@ const CardMediaWrapper = styled.div`
   @media (max-width: 600px) {
     width: 160px;
     height: 190px;
+  };
+  @media (max-width: 768px) {
+    width: 160px;
+    height: 190px;
   }
+
 `;
 
 const CardMedia = styled.img`

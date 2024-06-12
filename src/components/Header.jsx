@@ -21,6 +21,7 @@ function Header({
 }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
   const router = useRouter();
   return (
     <Stack
@@ -54,7 +55,7 @@ function Header({
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      height={isMobile ? mobile || "510px" : height || "680px"}
+      height={isMobile ? mobile || "510px" : isTablet ? "900px" : height || "680px"}
       alignItems={"center"}
       justifyContent={"center"}
       spacing={2}
@@ -64,7 +65,7 @@ function Header({
           src="/assets/home/img/header.png"
           alt="Logo"
           height={isMobile ? "42px" : "84px"}
-          style={{ marginTop: isMobile ? "80px" : "90px" }}
+          style={{ marginTop: isMobile ? "80px"  :isTablet?"160px": "90px" }}
         />
       )}
       <Typography
@@ -78,7 +79,7 @@ function Header({
       </Typography>
       {(isHome || isMobile) && (
         <Typography
-          variant={isMobile ? "h6" : "subtitle1"}
+          variant={isMobile ? "h6" : isTablet ? "h5":"subtitle1"}
           color={isHome ? "#3B3B3B" : "#fff"}
           textAlign={"left"}
           padding={2}

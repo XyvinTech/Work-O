@@ -7,6 +7,7 @@ import axios from "axios";
 const Statistics = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -38,7 +39,7 @@ const Statistics = () => {
       {statistics.map((stat, index) => (
         <Grid item xs={isMobile ? 6 : 3} textAlign="center" key={index}>
           <Typography
-            fontSize={isMobile ? "32px" : "72px"}
+            fontSize={isMobile ? "32px" :isTablet?"40px": "72px"}
             fontWeight={"700"}
             color={"#FC8229"}
             fontFamily={mont.style.fontFamily}
@@ -47,7 +48,7 @@ const Statistics = () => {
           </Typography>
           <Typography
             fontWeight={"500"}
-            fontSize={isMobile ? "12px" : "20px"}
+            fontSize={isMobile ? "12px" :isTablet?"10px": "20px"}
             fontFamily={mont.style.fontFamily}
           >
             {stat.label}

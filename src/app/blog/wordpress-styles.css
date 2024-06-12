@@ -29,6 +29,11 @@ p {
 width: 300px !important;
 }
 }
+@media (max-width: 768px) {
+  .wp-block-image.size-large img{
+  width:700px !important;
+  }
+  }
 .wp-block-quote {
   display: flex;
   flex-direction: column;

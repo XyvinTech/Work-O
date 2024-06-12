@@ -6,9 +6,10 @@ import styled from "styled-components";
 
 const TeamCarousel = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) =>theme.breakpoints.between("sm", "md"));
   const router = useRouter();
   const ImageContainer = styled.div`
-    width: ${isMobile ? "100%" : "5500px"};
+    width: ${isMobile ? "100%" :isTablet?"600px": "5500px"};
     height: ${isMobile ? "294px" : "520px"};
     overflow: hidden;
   `;
@@ -29,7 +30,7 @@ const TeamCarousel = () => {
       padding={4}
       border={"1px solid rgba(0, 0, 0, 0.12)"}
     >
-      <Stack direction={isMobile ? "column" : "row"} spacing={isMobile ? 2 : 8} alignItems={"center"}>
+      <Stack direction={isMobile ? "column" :isTablet ? "column": "row"} spacing={isMobile ? 2 :isTablet ? 2: 8} alignItems={"center"}>
         <ImageContainer>
           <Image src="/AboutUs/Avneesh.png" alt="img" />
         </ImageContainer>

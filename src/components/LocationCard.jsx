@@ -13,6 +13,9 @@ const Card = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+   @media (max-width: 768px) {
+     height: 180px;
+  }
 `;
 const Carddata = styled.div`
   transition: transform 0.3s ease-in-out;

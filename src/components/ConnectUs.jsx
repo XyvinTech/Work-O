@@ -33,11 +33,12 @@ const Container = styled(Box)(() => ({
 
 const ConnectUs = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) =>theme.breakpoints.between("sm", "md"));
   const router = useRouter();
   return (
     <Container>
       <Stack
-        direction={isMobile ? "column" : "row"}
+        direction={isMobile ? "column" :isTablet ? "column": "row"}
         marginTop={"50px"}
         padding={isMobile ? "0px" : "30px"}
         spacing={isMobile ? 2 : 20}

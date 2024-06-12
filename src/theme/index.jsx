@@ -63,12 +63,18 @@ const theme = createTheme({
       fontSize: "24px",
       fontWeight: "500",
       fontFamily: mont.style.fontFamily,
+      "@media (max-width:768px)": {
+        fontSize: "18px",
+      },
     },
 
     card: {
       fontSize: "25px",
       "@media (max-width:600px)": {
         fontSize: "18px",
+      },
+      "@media (max-width:768px)": {
+        fontSize: "20px",
       },
       fontWeight: "600",
       fontFamily: mont.style.fontFamily,
@@ -77,6 +83,9 @@ const theme = createTheme({
       fontSize: "18px",
       fontWeight: "normal",
       fontFamily: mont.style.fontFamily,
+      "@media (max-width:768px)": {
+        fontSize: "12px",
+      },
     },
     h5: {
       fontSize: "18px",
@@ -168,6 +177,7 @@ const theme = createTheme({
             padding: "10px 15px 10px 40px",
             // width: "500px"
           },
+        
           backgroundColor: "#FC8229",
           color: "#FFFFFF",
           position: "relative",

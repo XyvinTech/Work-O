@@ -4,6 +4,7 @@ import { cormo } from "@/theme";
 
 function Service2({ title, description, img, gridComponent }) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) =>theme.breakpoints.between("sm", "md"));
   return (
     <Stack
       direction={{ lg: "row-reverse", sm: "column" }}
@@ -21,7 +22,7 @@ function Service2({ title, description, img, gridComponent }) {
         </Typography>
       )}
        <Box
-          width={isMobile ? "100%" : "50%"}
+          width={isMobile ? "100%" : isTablet?"100%":"50%"}
           display="flex"
           justifyContent={"center"}
           alignItems={"center"}
@@ -35,7 +36,7 @@ function Service2({ title, description, img, gridComponent }) {
               zIndex: 1, 
               position: 'relative', 
               left:"2px",
-              top: isMobile ? '-21px' : '-30px',
+              top: isMobile ? '-21px' :isTablet?"-50px": '-30px',
             }} 
           />
         <img
@@ -49,7 +50,7 @@ function Service2({ title, description, img, gridComponent }) {
           }}
         />
       </Box>
-      <Stack width={isMobile ? "100%" : "80%"} pt={5} px={isMobile?0:3}>
+      <Stack width={isMobile ? "100%" :isTablet?"100%": "80%"} pt={5} px={isMobile?0:3}>
         <Box>
           {!isMobile && (
             <Typography

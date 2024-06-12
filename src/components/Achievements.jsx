@@ -16,6 +16,7 @@ const awards = [
 function Achievements() {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+    const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
   return (
     <Stack bgcolor={"#FBF8F2"} p={isMobile ? 2 : 8} marginTop={isMobile?5:5} paddingTop={isMobile?6:12} paddingBottom={ isMobile?6:12}  spacing={isMobile?2 : 10}>
       <Typography variant="h2" textAlign={"center"}>
@@ -23,7 +24,9 @@ function Achievements() {
       </Typography>
       <Grid container  justifyContent="space-between" spacing={isMobile && 2} >
         {awards.map((award, index) => (
-          <Grid key={index} item xs={3} sm={1} sx={{ height: { xs:80, sm: 120 } }} paddingBottom={isMobile && 3}> 
+          <Grid key={index} item xs={3} sm={1} sx={{
+            height: isMobile ? 80 : isTablet ? 70 : 120,
+          }} paddingBottom={isMobile && 3}> 
             <img src={award.src} alt="award" height="100%" />
           </Grid>
         ))}

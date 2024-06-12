@@ -26,6 +26,9 @@ const Container = styled(Box)(({ theme }) => ({
   "@media (max-width:600px)": {
     padding: "20px",
   },
+  "@media (max-width:768px)": {
+    padding: "20px",
+  },
   color: "white",
   display: "flex",
   flexDirection: "row",

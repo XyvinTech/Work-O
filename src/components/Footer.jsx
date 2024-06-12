@@ -44,6 +44,7 @@ const FooterContainer = styled(Box)(() => ({
 function Footer() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
   const [showMore, setShowMore] = useState(false);
   const handleViewMoreClick = () => {
     setShowMore(!showMore);
@@ -68,7 +69,7 @@ function Footer() {
       <Stack
         direction={isMobile ? "column" : "row"}
         p={isMobile ? 0 : 4}
-        spacing={isMobile ? 3 : 20}
+        spacing={isMobile ? 3 : isTablet?0:20}
       >
         <Box>
           <img
@@ -86,12 +87,12 @@ function Footer() {
           </Typography>
         </Box>
         <Stack
-          direction={isMobile ? "column" : "row"}
+          direction={isMobile ? "column" :isTablet?"column": "row"}
           spacing={isMobile ? 2 : 6}
           p={isMobile ? 2 : 4}
           gap={4}
         >
-          <Stack direction={"row"} spacing={11}>
+          <Stack direction={"row"} spacing= {isTablet?4:11}>
             <Stack spacing={2}>
               <Typography
                 variant="footer_title"
@@ -131,7 +132,7 @@ function Footer() {
               </Typography>
             </Stack>
           </Stack>{" "}
-          <Stack direction={"row"} spacing={13}>
+          <Stack direction={"row"} spacing={isTablet?4:13}>
             <Stack spacing={2}>
               <Typography
                 variant="footer_title"
@@ -200,7 +201,7 @@ function Footer() {
             Reach out to us
           </Typography>
           <Stack
-            direction={isMobile ? "column" : "row"}
+            direction={isMobile ? "column" :isTablet?"column": "row"}
             spacing={3}
             
           >
@@ -235,10 +236,10 @@ function Footer() {
         direction={isMobile ? "column" : "row"}
         p={isMobile ? 2 : 4}
         px={isMobile ? 2 : 6}
-        spacing={isMobile ? 2 : 18}
+        spacing={isMobile ? 2 :isTablet?4: 18}
         // justifyContent={"space-between"}
       >
-        <Stack direction={"row"} spacing={isMobile ? 7 : 18}>
+        <Stack direction={"row"} spacing={isMobile ? 7 :isTablet?4: 18}>
           <Stack spacing={3}>
             <Typography variant="h7" color={"#BDBDBD"}>
               Worko in Delhi NCR
@@ -264,7 +265,7 @@ function Footer() {
         </Stack>{" "}
        
         
-          <Stack direction="row" spacing={isMobile ? 7 : 18}>
+          <Stack direction="row" spacing={isMobile ? 7 :isTablet?4: 18}>
             <Stack spacing={3}>
               <Typography variant="h7" color={"#BDBDBD"}>
                 Worko in Tirupati

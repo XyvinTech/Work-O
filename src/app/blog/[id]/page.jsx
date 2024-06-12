@@ -22,6 +22,7 @@ import BlogCard from "@/components/BlogCard";
 
 function Page() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) =>theme.breakpoints.between("sm", "md"));
   const { id } = useParams();
   const [post, setPost] = useState(null);
   const [author, setAuthor] = useState(null);
@@ -106,7 +107,7 @@ function Page() {
   };
 
   return (
-    <Box marginTop={isMobile ? 10 : 20} padding={4}>
+    <Box marginTop={isMobile ? 10 : isTablet ? 25:20} padding={4}>
       <Typography variant="h6">
         Home &gt; Blog &gt;{" "}
         <Link
@@ -151,7 +152,7 @@ function Page() {
       />
 
       <Grid container spacing={6} paddingTop={6}>
-        <Grid item xs={isMobile ? 12 : 2} marginTop={isMobile ? "0px" : "10px"}>
+        <Grid item xs={isMobile ? 12 :isTablet ? 12: 2} marginTop={isMobile ? "0px" : "10px"}>
           <Typography variant="h5" fontWeight={"700"}>
             Table of Contents
           </Typography>
@@ -169,7 +170,7 @@ function Page() {
             ))}
           </Stack>
         </Grid>
-        <Grid item xs={isMobile ? 12 : 8}>
+        <Grid item xs={isMobile ? 12:isTablet ? 12 : 8}>
           <Stack spacing={0}>
             {post && post.content && (
               <div
@@ -178,7 +179,7 @@ function Page() {
             )}
           </Stack>
         </Grid>
-        <Grid item xs={isMobile ? 12 : 2}>
+        <Grid item xs={isMobile ? 12 :isTablet ? 12: 2}>
           <Stack spacing={2}>
             <Typography variant="h5">Join Our Newsletter</Typography>
             <StyledInput

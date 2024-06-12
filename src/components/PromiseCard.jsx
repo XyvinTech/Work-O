@@ -32,9 +32,10 @@ const FlowerImage = styled.img`
   backgroundcolor: #f4f3f3;
   @media (max-width: 600px) {
     height: 230px;
-    top: -60px;
-    left: 60px;
-  }
+    top: -8%;
+    left:20%;
+  },
+
 `;
 
 const FrameImage = styled.img`
@@ -49,6 +50,7 @@ const FrameImage = styled.img`
 
 const PromiseCard = ({ title, description, icon }) => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) => theme.breakpoints.between("sm", "md"));
   return (
     <Card>
       <CardActionArea>

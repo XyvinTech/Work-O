@@ -1,14 +1,16 @@
 "use client";
-import { Box, Button, Stack, useMediaQuery } from "@mui/material";
+import { Box, Button, Stack, useMediaQuery, useTheme } from "@mui/material";
 import { Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
 import styled from "styled-components";
 
 const OurStory = () => {
+  const theme = useTheme();
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
   const router = useRouter();
   const ImageContainer = styled.div`
-    width: ${isMobile ? "100%" : "2300px"};
+    width: ${isMobile ? "100%" :isTablet?"700px": "2300px"};
     height: ${isMobile ? "294px" : "520px"};
     overflow:hidden;
   `;
@@ -25,11 +27,11 @@ const OurStory = () => {
 
   return (
     <Box>
-      <Stack direction={isMobile ? "column" : "row"} spacing={isMobile ? 2 : 8}>
+      <Stack direction={isMobile ? "column" :isTablet?"column": "row"}paddingTop={isTablet&&6} spacing={isMobile ? 2 :8}alignItems={"center"}>
         <ImageContainer>
           <Image src="/Home/Remaining/OurStory.png" alt="img" />
         </ImageContainer>
-        <Stack direction={"column"} spacing={isMobile?2:4} paddingTop={isMobile?2:5}>
+        <Stack direction={"column"} spacing={isMobile?2:4} paddingTop={isMobile?2:isTablet?2:5}>
           <Typography variant="h2">Our story</Typography>
           <Typography variant={isMobile?"h7":"h5"} textAlign={isMobile && "justify"} lineHeight={"27px"}>
             Welcome to Worko, where we're not just shaping careers; we're

@@ -79,6 +79,14 @@ const BookNowCarousel = () => {
           initialSlide: 1,
         },
       },
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
     ],
   };
 
@@ -87,7 +95,7 @@ const BookNowCarousel = () => {
       className="slider-container"
       style={{
         overflow: "hidden",
-        height: "360px",
+        height: "390px",
         alignContent: "center",
         position: "relative",
       }}

@@ -145,6 +145,8 @@ const StyledTabs = () => {
           "@media (max-width: 600px)": {
             display: "none",
           },
+          "@media (max-width: 768px)": {
+            marginTop:"0px"}
         }}
       >
         <img

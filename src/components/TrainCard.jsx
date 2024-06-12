@@ -15,6 +15,7 @@ const CardContainer = styled.div`
   @media (max-width: 600px) {
     height: 302px;
   }
+ 
 `;
 
 const CardActionArea = styled.div`
@@ -28,6 +29,9 @@ const CardMedia = styled.img`
 
   @media (max-width: 600px) {
     height: 190px;
+  }
+     @media (max-width: 768px) {
+    height: 210px;
   }
 `;
 

@@ -24,9 +24,14 @@ const Content = styled.div`
   flex: 1;
   padding: 20px;
   display: flex;
+ 
   flex-direction: column;
   justify-content: space-between;
   background-color: ${(props) => props.backgroundColor};
+   @media (max-width: 768px) {
+    width: 50%;
+   
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -36,6 +41,9 @@ const ImageContainer = styled.div`
   @media (max-width: 600px) {
     width: 50%;
     height: 220px;
+  },
+   @media (max-width: 768px) {
+    width: 40%;
   }
 `;
 
@@ -96,6 +104,9 @@ const BookNowCard = ({
                 width: "180px",
                 fontSize: "16px",
                 padding: "10px 20px",
+                "@media (max-width: 768px)": {
+                  width: "150px",
+                  fontSize: "6px",}
               }}
             >
               <Typography fontFamily={mont.style.fontFamily}>

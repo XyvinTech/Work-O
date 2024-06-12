@@ -11,10 +11,11 @@ import Link from "next/link";
 function GetApp() {
   
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) =>theme.breakpoints.between("sm", "md"));
 
   return (
     <Box sx={{ position: "relative" ,overflow:"hidden"}} marginBottom={"30px"}>
-      <Stack direction={isMobile ? "column" : "row"} alignItems={"center"} spacing={isMobile?1:0}>
+      <Stack direction={isMobile ? "column" : isTablet?"column":"row"} alignItems={"center"} spacing={isMobile?1:isTablet?4:0}>
         <Box>
           <Image
             src={mobileImage}
@@ -31,8 +32,9 @@ function GetApp() {
               alt="shape"
             />
           )}
+        
         </Box>
-        <Stack spacing={isMobile?1:4} p={isMobile && 2} paddingTop={isMobile && 0}>
+        <Stack spacing={isMobile?1:4} p={isMobile? 2:isTablet?7:0} paddingTop={isMobile && 0}>
           <Stack spacing={1}>
             <Typography
               fontSize={isMobile ? "12px" : "14px"}
@@ -63,7 +65,7 @@ function GetApp() {
           </Stack>
         </Stack>
       </Stack>
-      {!isMobile && (
+      {!isMobile  && !isTablet &&(
         <img
           style={{ position: "absolute", bottom: -10, zIndex: -1 }}
           height={"204px"}

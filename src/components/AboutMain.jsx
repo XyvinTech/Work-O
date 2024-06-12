@@ -5,12 +5,13 @@ import { useRouter } from "next/navigation";
 
 const AboutMain = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) =>theme.breakpoints.between("sm", "md"));
   const router = useRouter();
   return (
     <Box>
       <Stack
-        direction={isMobile ? "column" : "row"}
-        spacing={isMobile ? 2 : 20}
+        direction={isMobile ? "column" :isTablet ? "column":  "row"}
+        spacing={isMobile ? 2 :isTablet ? 2: 20}
         position={"relative"}marginTop={isMobile && "40px"}
       
       >
@@ -47,7 +48,7 @@ const AboutMain = () => {
             }}
           /> */}
         </Box>
-        <Stack direction={"column"} spacing={isMobile ?2:4}   padding={isMobile&& 3} paddingTop={isMobile?0:10}>
+        <Stack direction={"column"} spacing={isMobile ?2:4}   padding={isMobile?3:isTablet?3:0} paddingTop={isMobile?0:10}>
           <Typography variant="h2">Who are we?</Typography>
           <Typography
             variant={isMobile?"h7":"h5"}
