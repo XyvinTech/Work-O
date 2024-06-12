@@ -24,7 +24,7 @@ const TeamCarousel = () => {
   `;
 
   return (
-    <Box marginTop={"60px"}>
+    <Box marginTop={"60px"} padding={4} border={"1px solid rgba(0, 0, 0, 0.12)"}>
       <Stack direction={isMobile ? "column" : "row"} spacing={isMobile ? 2 : 8}>
         <ImageContainer>
           <Image src="/AboutUs/Avneesh.png" alt="img" />
