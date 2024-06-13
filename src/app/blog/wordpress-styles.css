@@ -8,7 +8,12 @@
   font-family: "Montserrat", sans-serif;
   line-height: 68.6px;
 }
-
+@media (max-width: 600px) {
+  .wp-block-heading {
+    font-size: 25px !important;
+    line-height:  29px;
+  }
+  }
 p {
   font-size: 16px;
   font-weight: 400;
