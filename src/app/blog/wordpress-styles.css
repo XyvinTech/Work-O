@@ -27,12 +27,12 @@ p {
 }
 @media (max-width: 600px) {
 .wp-block-image.size-large img{
-width: 300px !important;
+width: 95% !important;
 }
 }
 @media (max-width: 768px) {
   .wp-block-image.size-large img{
-  width:700px !important;
+  width:95% !important;
   }
   }
 .wp-block-quote {
