@@ -37,7 +37,7 @@ const TeamCarousel = () => {
         <Stack
           direction={"column"}
           spacing={isMobile ? 2 : 0}
-          paddingTop={isMobile ? 2 : 10}
+          paddingTop={isMobile ? 2 : 2}
         >
           <Typography variant="h2">Avneesh Chaudhary</Typography>
           <Typography variant="h4">CEO</Typography>

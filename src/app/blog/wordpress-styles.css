@@ -18,10 +18,11 @@ p {
   font-family: "Montserrat", sans-serif;
 }
 .wp-block-image.size-large img {
-  width: 95%;
+  width: 95% !important;
   height: 223px;
   padding-bottom: 10px;
   object-fit: cover;
+  overflow: hidden;
 
 }
 @media (max-width: 600px) {

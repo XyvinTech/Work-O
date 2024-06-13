@@ -119,7 +119,7 @@ const Navbar = () => {
           {!isMobile && <Divider sx={{ m: 2 }} />}
           {isMobile ? (
             <Collapse in={mobileMenuOpen} timeout="auto" unmountOnExit>
-              <Box mt={2} width="100%">
+              <Box mt={2} width="100%" display="flex" alignItems={"center"}justifyContent={"center"} flexDirection={"column"}>
                 {menuItems.map(({ label, href }) => (
                   <Link href={href} key={label}>
                     <Button
@@ -152,7 +152,7 @@ const Navbar = () => {
                     </Button>
                   </Link>
                 ))}
-                <Stack spacing={2} mt={2} alignItems={"center"} width={"100%"}>
+                <Stack spacing={2} mt={2} width={"230px"} >
                 <Link href={`tel:${7666666559}`} passHref target="_blank" style={{textDecorationLine:"none",width:"100%"}} >
                 <NavbarButton
                   icon={PlusIcon}

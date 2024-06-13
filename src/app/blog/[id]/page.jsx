@@ -171,7 +171,7 @@ function Page() {
           </Stack>
         </Grid>
         <Grid item xs={isMobile ? 12:isTablet ? 12 : 8}>
-          <Stack spacing={0}>
+          <Stack spacing={2}>
             {post && post.content && (
               <div
                 dangerouslySetInnerHTML={createMarkup(post.content.rendered)}
