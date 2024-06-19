@@ -53,7 +53,7 @@ const theme = createTheme({
     },
     h12: {
       fontSize: "32px",
-      fontWeight: "bold",
+      fontWeight: "700",
     },
     cardHead: {
       fontSize: "32px",
