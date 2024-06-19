@@ -34,6 +34,7 @@ const Navbar = () => {
     { label: "About Us", href: "/about" },
     { label: "Skill Development", href: "/skill" },
     { label: "Services", href: "/services" },
+    { label: "Our Platform", href: "/our-platform" },
     { label: "Blog", href: "/blog" },
     { label: "Resources", href: "/resources" },
     { label: "Contact Us", href: "/contact" },
