@@ -14,21 +14,28 @@ const ServicePlatform = () => {
         paddingTop={isTablet && 6}
         spacing={isMobile ? 2 : 12}
         alignItems="center"
-      >
+      >{!isMobile &&
         <img
           src="/platform/service.png"
           alt="img"
           width={isMobile ? "100%" : isTablet ? "700px" : "681px"}
           height={isMobile ? "294px" : "455px"}
-        />
+        />}
         <Stack
           direction="column"
           spacing={isMobile ? 2 : 2}
           paddingTop={isMobile ? 2 : isTablet ? 2 : 5}
         >
-          <Typography variant="h2">
+          <Typography variant="h2" textAlign={isMobile &&"center"}>
             Service 360 – Deliver service on every channel
           </Typography>
+          {isMobile &&
+        <img
+          src="/platform/service.png"
+          alt="img"
+          width={isMobile ? "100%" : isTablet ? "700px" : "681px"}
+          height={isMobile ? "294px" : "455px"}
+        />}
           <Stack
             direction="row"
             spacing={2}
@@ -38,12 +45,12 @@ const ServicePlatform = () => {
             <img
               src="/platform/Icon1.png"
               alt="icon"
-              width={"57px"}
-              height={"57px"}
+              width={isMobile?"41px":"57px"}
+              height={isMobile?"41px":"57px"}
             />
             <Stack direction="column" spacing={1}>
-              <Typography variant="h10">Omni channel Engagement</Typography>
-              <Typography variant="h6">
+              <Typography variant={isMobile ? "h5" : "h10"} fontWeight={"500"}>Omni channel Engagement</Typography>
+              <Typography variant={isMobile ? "h7" : "h6"} lineHeight={isMobile && "19px"}>
                 Communicate across traditional and modern channels.
               </Typography>
             </Stack>
@@ -57,14 +64,14 @@ const ServicePlatform = () => {
             <img
               src="/platform/Icon5.png"
               alt="icon"
-              width={"57px"}
-              height={"57px"}
+              width={isMobile?"41px":"57px"}
+              height={isMobile?"41px":"57px"}
             />
             <Stack direction="column" spacing={1}>
-              <Typography variant="h10">
+              <Typography variant={isMobile ? "h5" : "h10"} fontWeight={"500"}>
                 Real time support with live chat/audio/video
               </Typography>
-              <Typography variant="h6">
+              <Typography variant={isMobile ? "h7" : "h6"} lineHeight={isMobile && "19px"}>
                 Chat/video 1 on 1 instantly or groups on any device.
               </Typography>
             </Stack>
@@ -78,14 +85,14 @@ const ServicePlatform = () => {
             <img
               src="/platform/Icon2.png"
               alt="icon"
-              width={"57px"}
-              height={"57px"}
+              width={isMobile?"41px":"57px"}
+              height={isMobile?"41px":"57px"}
             />
             <Stack direction="column" spacing={1}>
-              <Typography variant="h10">
+              <Typography variant={isMobile ? "h5" : "h10"} fontWeight={"500"}>
                 Deeper engagement with Whatsapp channel
               </Typography>
-              <Typography variant="h6">
+              <Typography variant={isMobile ? "h7" : "h6"} lineHeight={isMobile && "19px"}>
                 Send all transactional alerts/notifications instantly.
               </Typography>
             </Stack>
@@ -100,14 +107,14 @@ const ServicePlatform = () => {
             <img
               src="/platform/Icon3.png"
               alt="icon"
-              width={"57px"}
-              height={"57px"}
+              width={isMobile?"41px":"57px"}
+              height={isMobile?"41px":"57px"}
             />
             <Stack direction="column" spacing={1}>
-              <Typography variant="h10">
+              <Typography variant={isMobile ? "h5" : "h10"} fontWeight={"500"}>
                 Automated BOTs for customer service
               </Typography>
-              <Typography variant="h6">
+              <Typography variant={isMobile ? "h7" : "h6"} lineHeight={isMobile && "19px"}>
                 Enable customers to engage in messaging conversations in
                 response to outbound messages via Whatsapp/Web integrations.
               </Typography>
@@ -122,14 +129,14 @@ const ServicePlatform = () => {
             <img
               src="/platform/Icon4.png"
               alt="icon"
-              width={"57px"}
-              height={"57px"}
+              width={isMobile?"41px":"57px"}
+              height={isMobile?"41px":"57px"}
             />
             <Stack direction="column" spacing={1}>
-              <Typography variant="h10">
+              <Typography variant={isMobile ? "h5" : "h10"} fontWeight={"500"}>
                 Improve customer support with Service Task 360.
               </Typography>
-              <Typography variant="h6">
+              <Typography variant={isMobile ? "h7" : "h6"} lineHeight={isMobile && "19px"}>
                 Track every customer interaction, attach proofs of service,
                 audio, video, and chat conversations, and gather valuable
                 customer ratings.

@@ -1,5 +1,5 @@
 "use client";
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import styled from "styled-components";
 
 const Card = styled.div`
@@ -83,13 +83,15 @@ const NormalContent = styled.div`
   }
 `;
 const PlatformCard = ({ title, icon, number }) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Card>
       <CardActionArea>
         <NumberBox>{number}</NumberBox>
         <NormalContent> <Box display="flex" flexDirection="column" alignItems="flex-start" marginTop={10} width={"70%"}>
           <FrameImage src={icon} alt="Frame" />
-          <Typography variant="h3" component="div" paddingBottom={"2px"}>
+          <Typography variant={isMobile?"h12":"h3"} component="div" paddingBottom={"2px"}>
             {title}
           </Typography>
         </Box></NormalContent> <HoverContent>
