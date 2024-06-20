@@ -31,12 +31,14 @@ const Navbar = () => {
 
   const menuItems = [
     { label: "Home", href: "/" },
-    { label: "About Us", href: "/about" },
-    { label: "Skill Development", href: "/skill" },
     { label: "Services", href: "/services" },
     { label: "Our Platform", href: "/our-platform" },
-    { label: "Blog", href: "/blog" },
+    { label: "About Us", href: "/about" },
+    { label: "Skill Development", href: "/skill" },
+
     { label: "Resources", href: "/resources" },
+    { label: "Blog", href: "/blog" },
+
     { label: "Contact Us", href: "/contact" },
   ];
 
@@ -45,12 +47,11 @@ const Navbar = () => {
 
   const isTransparent = pathname === "/" || pathname.startsWith("/blog/");
 
-
   useEffect(() => {
     const activeMenuItem = menuItems.find((item) => item.href === pathname);
     setActiveTab(activeMenuItem?.label || "");
   }, [pathname]);
- 
+
   return (
     <AppBar
       position="absolute"
@@ -84,26 +85,37 @@ const Navbar = () => {
             <img
               src="/main_logo.png"
               alt="Logo"
-              width={isMobile?"130px":"168px"}
+              width={isMobile ? "130px" : "168px"}
               height={"auto"}
             />
             {!isMobile && (
               <Stack direction={"row"} spacing={2}>
-                 <Link href={`tel:${7666666559}`} passHref target="_blank" style={{textDecorationLine:"none"}} >
-                <NavbarButton
-                  icon={PlusIcon}
-                  buttonText="Customer care"
-                  alternateText="7-666-666-559"
-                  width={"210px"}
-                /></Link>
-                <Link href={"/get-the-app"} passHref  style={{textDecorationLine:"none"}} >
-                <Button
-                  variant="navbar"
-                  color="primary"
-                  // onClick={() => router.push("/get-the-app")}
+                <Link
+                  href={`tel:${7666666559}`}
+                  passHref
+                  target="_blank"
+                  style={{ textDecorationLine: "none" }}
                 >
-                  Get the App
-                </Button></Link>
+                  <NavbarButton
+                    icon={PlusIcon}
+                    buttonText="Customer care"
+                    alternateText="7-666-666-559"
+                    width={"210px"}
+                  />
+                </Link>
+                <Link
+                  href={"/get-the-app"}
+                  passHref
+                  style={{ textDecorationLine: "none" }}
+                >
+                  <Button
+                    variant="navbar"
+                    color="primary"
+                    // onClick={() => router.push("/get-the-app")}
+                  >
+                    Get the App
+                  </Button>
+                </Link>
               </Stack>
             )}
 
@@ -113,21 +125,27 @@ const Navbar = () => {
                 aria-label="menu"
                 onClick={handleMobileMenuToggle}
               >
-                <MenuIcon color="primary"  />
+                <MenuIcon color="primary" />
               </IconButton>
             )}
           </Box>
           {!isMobile && <Divider sx={{ m: 2 }} />}
           {isMobile ? (
             <Collapse in={mobileMenuOpen} timeout="auto" unmountOnExit>
-              <Box mt={2} width="100%" display="flex" alignItems={"center"}justifyContent={"center"} flexDirection={"column"}>
+              <Box
+                mt={2}
+                width="100%"
+                display="flex"
+                alignItems={"center"}
+                justifyContent={"center"}
+                flexDirection={"column"}
+              >
                 {menuItems.map(({ label, href }) => (
                   <Link href={href} key={label}>
                     <Button
                       color="inherit"
                       disableRipple
                       fullWidth
-                     
                       sx={{
                         fontFamily: mont.style.fontFamily,
                         textTransform: "uppercase",
@@ -153,15 +171,20 @@ const Navbar = () => {
                     </Button>
                   </Link>
                 ))}
-                <Stack spacing={2} mt={2} width={"230px"} >
-                <Link href={`tel:${7666666559}`} passHref target="_blank" style={{textDecorationLine:"none",width:"100%"}} >
-                <NavbarButton
-                  icon={PlusIcon}
-                  buttonText="Customer care"
-                  alternateText="7-666-666-559"
-                  width={"100%"}
-
-                /></Link>
+                <Stack spacing={2} mt={2} width={"230px"}>
+                  <Link
+                    href={`tel:${7666666559}`}
+                    passHref
+                    target="_blank"
+                    style={{ textDecorationLine: "none", width: "100%" }}
+                  >
+                    <NavbarButton
+                      icon={PlusIcon}
+                      buttonText="Customer care"
+                      alternateText="7-666-666-559"
+                      width={"100%"}
+                    />
+                  </Link>
                   <Button
                     variant="contained"
                     color="primary"

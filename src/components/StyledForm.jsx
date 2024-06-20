@@ -78,7 +78,7 @@ const StyledForm = () => {
   const StyledLabel = styled.span`
     font-family: ${mont.style.fontFamily};
     font-weight: 900;
-    font-size: 16px;
+    font-size: 15px;
     display: flex;
     align-items: center;
     @media (max-width: 600px) {
@@ -107,8 +107,12 @@ const StyledForm = () => {
 
   return (
     <div>
-      <Grid container spacing={2} alignItems="center">
-        <Grid item xs={isMobile ? 6 : 4}>
+      <Stack
+        direction={isMobile ? "column" : "row"}
+        spacing={2}
+        // alignItems="center"
+      >
+        <Stack direction={"row"} spacing={2} justifyContent={"space-between"}>
           <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
               <HtmlTooltip
@@ -127,6 +131,7 @@ const StyledForm = () => {
               >
                 <FormControlLabel
                   value="form1"
+                 
                   control={<StyledRadioButton />}
                   label={
                     <StyledLabel>
@@ -137,41 +142,7 @@ const StyledForm = () => {
                 />
               </HtmlTooltip>
             </RadioGroup>
-          </FormControl>
-        </Grid>
-        <Grid item xs={isMobile ? 6 : 4}>
-          <FormControl component="fieldset">
-            <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
-              <HtmlTooltip
-                placement="bottom"
-                title={
-                  <>
-                    <Typography variant="h7">Customer</Typography>
-                    <br />
-                    <br />
-                    <Typography variant="h8">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Suspendisse varius enim in eros elementum tristique
-                    </Typography>
-                  </>
-                }
-              >
-                <FormControlLabel
-                  value="form2"
-                  control={<StyledRadioButton />}
-                  label={
-                    <StyledLabel>
-                      Customer
-                      <StyledToolTipIcon />
-                    </StyledLabel>
-                  }
-                />
-              </HtmlTooltip>
-            </RadioGroup>
-          </FormControl>
-        </Grid>
-        <Grid item xs={isMobile ? 6 : 4}>
-          <FormControl component="fieldset">
+          </FormControl> <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
               <HtmlTooltip
                 placement="bottom"
@@ -200,8 +171,71 @@ const StyledForm = () => {
               </HtmlTooltip>
             </RadioGroup>
           </FormControl>
-        </Grid>
-      </Grid>
+         
+        </Stack>
+        <Stack direction={"row"}justifyContent={"space-between"}>
+        <FormControl component="fieldset">
+            <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
+              <HtmlTooltip
+                placement="bottom"
+                title={
+                  <>
+                    <Typography variant="h7">Customer</Typography>
+                    <br />
+                    <br />
+                    <Typography variant="h8">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Suspendisse varius enim in eros elementum tristique
+                    </Typography>
+                  </>
+                }
+              >
+                <FormControlLabel
+                  value="form2"
+                  control={<StyledRadioButton />}
+                  label={
+                    <StyledLabel>
+                      Customer
+                      <StyledToolTipIcon />
+                    </StyledLabel>
+                  }
+                />
+              </HtmlTooltip>
+            </RadioGroup>
+          </FormControl>
+          <FormControl component="fieldset">
+            <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
+              <HtmlTooltip
+                placement="bottom"
+                title={
+                  <>
+                    <Typography variant="h7">
+                      Candidates For Training
+                    </Typography>
+                    <br />
+                    <br />
+                    <Typography variant="h8">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Suspendisse varius enim in eros elementum tristique
+                    </Typography>
+                  </>
+                }
+              >
+                <FormControlLabel
+                  value="form4"
+                  control={<StyledRadioButton />}
+                  label={
+                    <StyledLabel>
+                      Candidates For Training
+                      <StyledToolTipIcon />
+                    </StyledLabel>
+                  }
+                />
+              </HtmlTooltip>
+            </RadioGroup>
+          </FormControl>
+        </Stack>
+      </Stack>
 
       {selectedForm === "form1" && (
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -307,7 +341,6 @@ const StyledForm = () => {
                       {...field}
                       placeholder="State"
                       options={states}
-                      
                       onChange={(value) => {
                         field.onChange(value);
                         handleStateChange(value);
@@ -489,137 +522,268 @@ const StyledForm = () => {
 
       {selectedForm === "form3" && (
         <form onSubmit={handleSubmit(onSubmit)}>
-        <Grid container spacing={2} marginTop={1}>
-          <Grid item xs={12}>
-            <Controller
-              name="partnerName"
-              control={control}
-              defaultValue=""
-              rules={{ required: "Partner Name is required" }}
-              render={({ field }) => (
-                <div>
-                  <StyledInput {...field} placeholder="Partner Name" />
-                  {errors.partnerName && (
-                    <Typography color="error">
-                      {errors.partnerName.message}
-                    </Typography>
-                  )}
-                </div>
-              )}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <Controller
-              name="email"
-              control={control}
-              defaultValue=""
-              render={({ field }) => (
-                <div>
-                  <StyledInput {...field} placeholder="Company ID" />
-                  {errors.email && (
-                    <Typography color="error">
-                      {errors.email.message}
-                    </Typography>
-                  )}
-                </div>
-              )}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <Controller
-              name="phoneNumber"
-              control={control}
-              defaultValue=""
-              rules={{ required: "Phone Number is required" }}
-              render={({ field }) => (
-                <div>
-                  <StyledPhoneInput {...field} />{" "}
-                  {errors.phoneNumber && (
-                    <Typography color="error">
-                      {errors.phoneNumber.message}
-                    </Typography>
-                  )}
-                </div>
-              )}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <Controller
-              name="description"
-              control={control}
-              defaultValue=""
-              render={({ field }) => (
-                <div>
-                  <StyledTextArea
-                    {...field}
-                    placeholder="Add a Description/Enquiry"
-                  />{" "}
-                  {errors.description && (
-                    <Typography color="error">
-                      {errors.description.message}
-                    </Typography>
-                  )}
-                </div>
-              )}
-            />
-          </Grid>
-          <Grid item xs={6}>
-            <Controller
-              name="state"
-              control={control}
-              rules={{ required: "State is required" }}
-              render={({ field }) => (
-                <div>
-                  <StyledSelectField
-                    {...field}
-                    placeholder="State"
-                    options={states}
-                    onChange={(value) => {
-                      field.onChange(value);
-                      handleStateChange(value);
-                    }}
-                    value={selectedState}
-                  />
-                  {errors.state && (
-                    <Typography color="error">
-                      {errors.state.message}
-                    </Typography>
-                  )}
-                </div>
-              )}
-            />
-          </Grid>
-          <Grid item xs={6}>
-            <Controller
-              name="district"
-              control={control}
-              rules={{ required: "District is required" }}
-              render={({ field }) => (
-                <div>
-                  <StyledSelectField
-                    {...field}
-                    placeholder="District"
-                    options={districtOptions}
-                    onChange={(e) => field.onChange(e)}
-                  />
-                  {errors.district && (
-                    <Typography color="error">
-                      {errors.district.message}
-                    </Typography>
-                  )}
-                </div>
-              )}
-            />
-          </Grid>
-        </Grid>{" "}
-        <Stack justifyContent={"center"} direction={"row"} py={3}>
-          <Button fullWidth={isMobile} variant="navbar" type="submit">
-            Submit
-          </Button>
-        </Stack>
-      </form>
+          <Grid container spacing={2} marginTop={1}>
+            <Grid item xs={12}>
+              <Controller
+                name="partnerName"
+                control={control}
+                defaultValue=""
+                rules={{ required: "Partner Name is required" }}
+                render={({ field }) => (
+                  <div>
+                    <StyledInput {...field} placeholder="Partner Name" />
+                    {errors.partnerName && (
+                      <Typography color="error">
+                        {errors.partnerName.message}
+                      </Typography>
+                    )}
+                  </div>
+                )}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Controller
+                name="email"
+                control={control}
+                defaultValue=""
+                render={({ field }) => (
+                  <div>
+                    <StyledInput {...field} placeholder="Company ID" />
+                    {errors.email && (
+                      <Typography color="error">
+                        {errors.email.message}
+                      </Typography>
+                    )}
+                  </div>
+                )}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Controller
+                name="phoneNumber"
+                control={control}
+                defaultValue=""
+                rules={{ required: "Phone Number is required" }}
+                render={({ field }) => (
+                  <div>
+                    <StyledPhoneInput {...field} />{" "}
+                    {errors.phoneNumber && (
+                      <Typography color="error">
+                        {errors.phoneNumber.message}
+                      </Typography>
+                    )}
+                  </div>
+                )}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Controller
+                name="description"
+                control={control}
+                defaultValue=""
+                render={({ field }) => (
+                  <div>
+                    <StyledTextArea
+                      {...field}
+                      placeholder="Add a Description/Enquiry"
+                    />{" "}
+                    {errors.description && (
+                      <Typography color="error">
+                        {errors.description.message}
+                      </Typography>
+                    )}
+                  </div>
+                )}
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <Controller
+                name="state"
+                control={control}
+                rules={{ required: "State is required" }}
+                render={({ field }) => (
+                  <div>
+                    <StyledSelectField
+                      {...field}
+                      placeholder="State"
+                      options={states}
+                      onChange={(value) => {
+                        field.onChange(value);
+                        handleStateChange(value);
+                      }}
+                      value={selectedState}
+                    />
+                    {errors.state && (
+                      <Typography color="error">
+                        {errors.state.message}
+                      </Typography>
+                    )}
+                  </div>
+                )}
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <Controller
+                name="district"
+                control={control}
+                rules={{ required: "District is required" }}
+                render={({ field }) => (
+                  <div>
+                    <StyledSelectField
+                      {...field}
+                      placeholder="District"
+                      options={districtOptions}
+                      onChange={(e) => field.onChange(e)}
+                    />
+                    {errors.district && (
+                      <Typography color="error">
+                        {errors.district.message}
+                      </Typography>
+                    )}
+                  </div>
+                )}
+              />
+            </Grid>
+          </Grid>{" "}
+          <Stack justifyContent={"center"} direction={"row"} py={3}>
+            <Button fullWidth={isMobile} variant="navbar" type="submit">
+              Submit
+            </Button>
+          </Stack>
+        </form>
       )}
-
+      {selectedForm === "form4" && (
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Grid container spacing={2} marginTop={1}>
+            <Grid item xs={12}>
+              <Controller
+                name="fullName"
+                control={control}
+                defaultValue=""
+                rules={{ required: "Full Name is required" }}
+                render={({ field }) => (
+                  <div>
+                    <StyledInput {...field} placeholder="Full Name" />
+                    {errors.fullName && (
+                      <Typography color="error">
+                        {errors.fullName.message}
+                      </Typography>
+                    )}
+                  </div>
+                )}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Controller
+                name="email"
+                control={control}
+                defaultValue=""
+                render={({ field }) => (
+                  <div>
+                    <StyledInput {...field} placeholder="Email ID" />
+                    {errors.email && (
+                      <Typography color="error">
+                        {errors.email.message}
+                      </Typography>
+                    )}
+                  </div>
+                )}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Controller
+                name="phoneNumber"
+                control={control}
+                defaultValue=""
+                rules={{ required: "Phone Number is required" }}
+                render={({ field }) => (
+                  <div>
+                    <StyledPhoneInput {...field} />{" "}
+                    {errors.phoneNumber && (
+                      <Typography color="error">
+                        {errors.phoneNumber.message}
+                      </Typography>
+                    )}
+                  </div>
+                )}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Controller
+                name="description"
+                control={control}
+                defaultValue=""
+                render={({ field }) => (
+                  <div>
+                    <StyledTextArea
+                      {...field}
+                      placeholder="Add a Description/Enquiry"
+                    />{" "}
+                    {errors.description && (
+                      <Typography color="error">
+                        {errors.description.message}
+                      </Typography>
+                    )}
+                  </div>
+                )}
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <Controller
+                name="state"
+                control={control}
+                rules={{ required: "State is required" }}
+                render={({ field }) => (
+                  <div>
+                    <StyledSelectField
+                      {...field}
+                      placeholder="State"
+                      options={states}
+                      onChange={(value) => {
+                        field.onChange(value);
+                        handleStateChange(value);
+                      }}
+                      value={selectedState}
+                    />
+                    {errors.state && (
+                      <Typography color="error">
+                        {errors.state.message}
+                      </Typography>
+                    )}
+                  </div>
+                )}
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <Controller
+                name="district"
+                control={control}
+                rules={{ required: "District is required" }}
+                render={({ field }) => (
+                  <div>
+                    <StyledSelectField
+                      {...field}
+                      placeholder="District"
+                      options={districtOptions}
+                      onChange={(e) => field.onChange(e)}
+                    />
+                    {errors.district && (
+                      <Typography color="error">
+                        {errors.district.message}
+                      </Typography>
+                    )}
+                  </div>
+                )}
+              />
+            </Grid>
+          </Grid>{" "}
+          <Stack justifyContent={"center"} direction={"row"} py={3}>
+            <Button fullWidth={isMobile} variant="navbar" type="submit">
+              Submit
+            </Button>
+          </Stack>
+        </form>
+      )}
       <Modal open={open} onClose={handleClose}>
         <ModalContent>
           <Typography variant="h6" fontWeight={"600"} color={"#ffffff"}>
