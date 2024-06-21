@@ -79,7 +79,7 @@ const StyledForm = () => {
   const StyledLabel = styled.span`
     font-family: ${mont.style.fontFamily};
     font-weight: 900;
-    font-size: 14px;
+    font-size: 13px;
     display: flex;
     align-items: center;
     @media (max-width: 600px) {
@@ -113,7 +113,7 @@ const StyledForm = () => {
         spacing={2}
         // alignItems="center"
       >
-        <Stack direction={"row"} spacing={2} justifyContent={isTablet?"flex-start":"space-between"}>
+        <Stack direction={"row"} spacing={0} justifyContent={isTablet?"flex-start":"space-between"}>
           <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
               <HtmlTooltip

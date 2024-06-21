@@ -58,7 +58,7 @@ function ContactUs({ enroll }) {
             </Stack>
           </Box>
         </Stack>
-        <Box width={{ lg: "55%", sm: "100%" }}>
+        <Box width={{ lg: "60%", sm: "100%" }}>
           {enroll ? <EnrollNow /> : <StyledForm />}
         </Box>
       </Stack>
