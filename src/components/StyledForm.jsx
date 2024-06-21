@@ -40,6 +40,7 @@ const StyledForm = () => {
   const [districtOptions, setDistrictOptions] = useState([]);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) =>theme.breakpoints.between("sm", "md"));
   const states = getIndiaState().map(({ state, code }) => ({
     value: code,
     label: state,
@@ -78,7 +79,7 @@ const StyledForm = () => {
   const StyledLabel = styled.span`
     font-family: ${mont.style.fontFamily};
     font-weight: 900;
-    font-size: 15px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     @media (max-width: 600px) {
@@ -108,11 +109,11 @@ const StyledForm = () => {
   return (
     <div>
       <Stack
-        direction={isMobile ? "column" : "row"}
+        direction={isMobile ? "column" :isTablet?"column": "row"}
         spacing={2}
         // alignItems="center"
       >
-        <Stack direction={"row"} spacing={2} justifyContent={"space-between"}>
+        <Stack direction={"row"} spacing={2} justifyContent={isTablet?"flex-start":"space-between"}>
           <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
               <HtmlTooltip
@@ -173,7 +174,7 @@ const StyledForm = () => {
           </FormControl>
          
         </Stack>
-        <Stack direction={"row"}justifyContent={"space-between"}>
+        <Stack direction={"row"}justifyContent={isTablet?"flex-start":"space-between"}spacing={2}>
         <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
               <HtmlTooltip

@@ -28,7 +28,12 @@ function Service2({ title, description, img, gridComponent }) {
           alignItems={"center"}
           position="relative" // Ensure the second image can be positioned absolutely within this box
         >
-          <img 
+           <img 
+            src={img} 
+            alt="img"
+            height={isMobile ? "280px" : "538px"} 
+          />
+          {/* <img 
             src={img} 
             alt="img"
             height={isMobile ? "280px" : "538px"} 
@@ -38,8 +43,8 @@ function Service2({ title, description, img, gridComponent }) {
               left:"2px",
               top: isMobile ? '-21px' :isTablet?"-50px": '-30px',
             }} 
-          />
-        <img
+          /> */}
+        {/* <img
           src="/images/ServiceFrame.png"
           alt="img"
           height={isMobile ? "274px" : "504px"}
@@ -48,7 +53,7 @@ function Service2({ title, description, img, gridComponent }) {
             zIndex: 0,
             bottom:isMobile?'-8px':'-5px'
           }}
-        />
+        /> */}
       </Box>
       <Stack width={isMobile ? "100%" :isTablet?"100%": "80%"} pt={5} px={isMobile?0:3}>
         <Box>

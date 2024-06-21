@@ -146,7 +146,7 @@ function page() {
                 "Comprehensive Appliance Repair: We offer repair services for refrigerators, washing machines, ovens, cooktops, and all other major home appliances to restore their optimal functioning."
               }
               gridComponent={service2}
-              img={"/images/carpenter.png"}
+              img={"/Services/Service2.png"}
             />
           </StyledBox>
           <StyledBox>
@@ -166,7 +166,7 @@ function page() {
                 "We provide technical services including networking installation, maintenance, and troubleshooting, as well as CCTV installation, maintenance, and monitoring."
               }
               gridComponent={service4}
-              img={"/images/delivery.png"}
+              img={"/Services/Service4.png"}
             />
           </StyledBox>
 
