@@ -70,7 +70,7 @@ function page() {
           <StyledBox>
             <Statistics />
           </StyledBox>
-          <StyledBox title={"Our Service"}>
+          <StyledBox title={"Our Service"} padding={"10px"}>
             <StyledTabs />
           </StyledBox>
           <StyledBox title={"Our Major Locations"}>

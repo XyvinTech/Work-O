@@ -15,6 +15,7 @@ const ViewMoreContainer = styled(Box)`
   @media (max-width: 600px) {
     flex-wrap: wrap;
     flex-direction: row;
+    overflow-x: hidden;
   }
 `;
 
