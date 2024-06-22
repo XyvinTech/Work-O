@@ -9,6 +9,11 @@ import viewMoreData from "../../assets/json/EmpowermentData";
 import FreqenlyAskedQuestion from "@/components/FreqenlyAskedQuestion";
 import { useEffect, useState } from "react";
 import StyledLoader from "@/components/StyledLoader";
+import CardView from "@/components/CardView";
+import TrainingCard from "@/components/TrainingCard";
+import ProvidedTraining from "@/components/ProvidedTraining";
+import { Style } from "@mui/icons-material";
+import Location from "@/components/Location";
 
 function page() {
   const [isLoading, setIsLoading] = useState(true);
@@ -57,12 +62,21 @@ function page() {
           >
             <AvatarCarousel images={images} />
           </StyledBox>
+          <StyledBox>
+            <CardView/>
+          </StyledBox>
           <StyledBox title={"Training Program"}>
             <TrainingProgram />
           </StyledBox>
           <StyledBox title={"Gig Worker Empowerment"}>
             {" "}
             <PromiseCardView viewMoreData={viewMoreData} />
+          </StyledBox>
+          <StyledBox title={"Training we are providing"} >
+            {" "}
+      <ProvidedTraining/>
+          </StyledBox> <StyledBox title={"Our Major Locations"}>
+            <Location />
           </StyledBox>
           <FreqenlyAskedQuestion showStillHaveQuestions={false} />
         </>

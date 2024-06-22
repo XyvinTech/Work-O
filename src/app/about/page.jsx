@@ -59,8 +59,8 @@ function page() {
         <StyledLoader />
       ) : (
         <>
-      <AboutMain />
-
+      
+<StyledBox><AboutMain /></StyledBox>
       <StyledBox title={"Our Vision"}>
         <VisionCardView viewMoreData={VisionData} />
       </StyledBox>

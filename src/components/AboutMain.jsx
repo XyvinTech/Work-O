@@ -18,11 +18,11 @@ const AboutMain = () => {
         <Box
           width={isMobile ? "100%" : "50%"}
           display="flex"
-          justifyContent={"flex-start"}
-          alignItems={"flex-start"}
+          justifyContent={"center"}
+          alignItems={"center"}
         >
           <img
-            src={"/AboutUs/About.webp"}alt="About"
+            src={"/AboutUs/About.png"}alt="About"
             height={isMobile ? "300px " : "638px"}
           />
           {/* <img
