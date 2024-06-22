@@ -36,6 +36,9 @@ const ProvidedTraining = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    cssEase: "linear",
+    centerMode: true,
+    centerPadding: "5px",
   };
 
   return (

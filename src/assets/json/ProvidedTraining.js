@@ -27,7 +27,7 @@ const ProvidedTraining = [
       },
       {
         head: "GST Accounts Assistant & Tally",
-        img: "/SkillDevelopment/img8.png",
+        img: "/SkillDevelopment/img4.png",
         audience: "Male/Female",
         eligibility: "12th Commerce",
         duration:"2 Months ( 52 Days )",
@@ -36,7 +36,7 @@ const ProvidedTraining = [
       },
       {
         head: "Cutting & Tailoring",
-        img: "/SkillDevelopment/img7.png",
+        img: "/SkillDevelopment/img5.png",
         audience: "Female",
         eligibility: "8th Standard",
         duration:"3 Months ( 66 Days )",

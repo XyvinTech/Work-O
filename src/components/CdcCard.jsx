@@ -67,7 +67,7 @@ const CdcCard = ({ title, icon, number,description }) => {
           display="flex"
           flexDirection="column"
           alignItems="flex-start"
-          marginTop={isMobile?3:5}
+          marginTop={isMobile?1:5}
         >
           <FrameImage src={icon} alt="Frame" />
           <Typography
