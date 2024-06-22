@@ -29,6 +29,9 @@ const CardActionArea = styled.div`
   align-items: flex-start;
   text-align: left;
   padding: 20px;
+   ${Card}:hover & {
+    color: white;
+  }
 `;
 
 
