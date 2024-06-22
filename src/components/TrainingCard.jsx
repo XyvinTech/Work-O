@@ -44,7 +44,7 @@ const TrainingCard = ({
     <Box
       marginTop={"60px"}
       padding={isMobile?2:4}
-      boxShadow={"1px 1px 10px 0px rgba(0, 0, 0, 0.25)"}
+      boxShadow={isMobile?"0.92px 0.92px 9.18px 0px rgba(0, 0, 0, 0.25)":"1px 1px 10px 0px rgba(0, 0, 0, 0.25)"}
       height={isMobile ? "800px" : "auto"} 
     >
       <Stack
