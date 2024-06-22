@@ -205,8 +205,7 @@ const TrainingCard = ({
             )}
           </Grid>
           <Box paddingTop={2} width="100%" display="flex" justifyContent="start">
-            <Button
-              variant="contained"
+           <Button variant="navbar"
               color="primary"
               onClick={() => router.push("/enroll")}
             >
