@@ -29,6 +29,9 @@ const StyledSlider = styled(Slider)`
   padding: 0 20px; 
   @media (max-width: 600px) {
     padding: 0px 10px; 
+  };
+   @media (max-width: 768px) {
+    padding: 0px 10px; 
   }
 }
   .slick-dots {
@@ -91,6 +94,14 @@ const ReviewCarousel = () => {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
           slidesToScroll: 1,
           initialSlide: 1,
         },
