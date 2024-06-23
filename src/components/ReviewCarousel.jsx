@@ -21,7 +21,7 @@ const ButtonBox = styled(Box)`
 const Container = styled(Box)`
   overflow: hidden;
   @media (max-width: 600px) {
-    height: 350px;
+    height: 400px;
   }
 `;
 const StyledSlider = styled(Slider)`

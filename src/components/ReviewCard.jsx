@@ -1,6 +1,6 @@
 "use client";
 import styled from "styled-components";
-import { Avatar, Box, Rating, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Avatar, Box, Rating, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { mont } from "@/theme";
 
 const StyledLabel = styled.span`
@@ -14,26 +14,16 @@ const StyledLabel = styled.span`
 
 const StyledCard = styled.div`
   width: 100%;
-  height: auto;
+  height: 350px;
   background: white;
   border-radius: 0;
   border: 1px solid #e3dccd;
 `;
 
-const StyledCardContent = styled.div`
-  color: black;
-  padding: 20px;
-`;
-
-const StyledCardHeader = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 30px;
-`;
-
 const StyledCardActionArea = styled.div`
   cursor: pointer;
-  display: block;
+  display: flex;
+  flex-direction: column;
   height: 100%;
 `;
 
@@ -44,28 +34,25 @@ const StyledAvatar = styled(Avatar)`
 const ReviewCard = ({ image, title, subheader, description }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  
   return (
     <StyledCardActionArea>
       <StyledCard>
-        <StyledCardContent>
+        <Stack spacing={2} height="100%" padding={2}>
           <Box>
             <Rating
               name="rating"
               value={5}
               size="small"
-              sx={{
-                verticalAlign: "text-top"
-              }}
+              sx={{ verticalAlign: "text-top" }}
             />
           </Box>
-          <Box mt={1.5} mb={1.5}>
-            <Typography
-              variant={isMobile ? "h7" : "h6"}lineHeight={"24px"}
-            >
+          <Box flexGrow={1}>
+            <Typography variant={isMobile ? "h7" : "h6"} lineHeight={"24px"}>
               {description}
             </Typography>
           </Box>
-          <StyledCardHeader>
+          <Stack direction="row" alignItems="center" spacing={1}>
             <StyledAvatar alt="Cindy Baker" src={image} />
             <div>
               <Typography variant="h6" fontWeight={"600"}>
@@ -73,8 +60,8 @@ const ReviewCard = ({ image, title, subheader, description }) => {
               </Typography>
               <StyledLabel>{subheader}</StyledLabel>
             </div>
-          </StyledCardHeader>
-        </StyledCardContent>
+          </Stack>
+        </Stack>
       </StyledCard>
     </StyledCardActionArea>
   );
