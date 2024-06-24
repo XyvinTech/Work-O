@@ -62,16 +62,39 @@ const StyledForm = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const router = useRouter();
-  const onSubmit = (data) => {
-    const formattedData = {
-      ...data,
-      state: data.state.label,
-      district: data.district.label,
-    };
-    console.log(formattedData);
+
+  const onSubmit = async (data) => {
+    const formData = new FormData();
+    formData.append('name', data.firstName + ' ' + data.lastName);
+    formData.append('email', data.email);
+    formData.append('phoneNumber', data.phoneNumber);
+    formData.append('message', data.description);
+    formData.append('state', data.state.label);
+    formData.append('district', data.district.label);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        console.log("falling over");
+        throw new Error(`response status: ${response.status}`);
+      }
+
+      const responseData = await response.json();
+      console.log(responseData.message);
+      alert('Message successfully sent');
+    } catch (err) {
+      console.error(err);
+      alert("Error, please try resubmitting the form");
+    }
+
     handleOpen();
     reset();
   };
+
   const handleBackToHome = () => {
     handleClose();
     router.push("/");
