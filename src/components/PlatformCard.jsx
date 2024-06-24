@@ -15,6 +15,9 @@ const Card = styled.div`
   &:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
      background: #FC8229;
+  };
+   &:hover img {
+    opacity: 0.1;
   }
 `;
 
@@ -36,6 +39,7 @@ const FlowerImage = styled.img`
   bottom: -3%;
   right: -2%;
    backgroundcolor: #f4f3f3;
+     transition: opacity 0.3s ease;
   @media (max-width: 600px) {
     height: 230px;
     bottom: -3%;
