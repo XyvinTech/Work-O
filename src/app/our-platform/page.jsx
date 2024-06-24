@@ -1,6 +1,6 @@
 "use client";
 import Header from "@/components/Header";
-import bgImage from "/public/platform/home.png";
+import bgImage from "/public/platform/home.webp";
 import { useEffect, useState } from "react";
 import StyledLoader from "@/components/StyledLoader";
 import PlatformMain from "@/components/PlatformMain";
