@@ -39,6 +39,15 @@ function page() {
     "/Home/Carousal/19.webp",
     "/Home/Carousal/20.webp",
   ];
+  const awards = [
+    "/Home/Remaining/Client1.png",
+    "/Home/Remaining/Client2.png",
+    "/Home/Remaining/Client3.png",
+    "/Home/Remaining/Client4.png",
+    "/Home/Remaining/Client5.png",
+    "/Home/Remaining/Client6.png",
+    "/Home/Remaining/Client7.png",
+  ];
   useEffect(() => {   
     setTimeout(() => {
       setIsLoading(false);
@@ -80,7 +89,7 @@ function page() {
         <VisionCardView viewMoreData={Certification} />
       </StyledBox>
 
-      <Achievements />
+      <Achievements images={awards} />
 
       <FreqenlyAskedQuestion />
       </>
