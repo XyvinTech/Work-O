@@ -2,14 +2,12 @@
 import { Grid, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 const awards = [
-  { src: "/Home/Remaining/Award1.webp", alt: "award1" },
-  { src: "/Home/Remaining/Award2.webp", alt: "award2" },
-  { src: "/Home/Remaining/Award3.webp", alt: "award3" },
-  { src: "/Home/Remaining/Award4.webp", alt: "award4" },
-  { src: "/Home/Remaining/Award5.webp", alt: "award5" },
-  { src: "/Home/Remaining/Award2.webp", alt: "award2" },
-  { src: "/Home/Remaining/Award1.webp", alt: "award2" },
-  { src: "/Home/Remaining/Award2.webp", alt: "award3" },
+  { src: "/Home/Remaining/Client1.png", alt: "client" },
+  { src: "/Home/Remaining/Client2.png", alt: "client" },
+  { src: "/Home/Remaining/Client3.png", alt: "client" },
+  { src: "/Home/Remaining/Client4.png", alt: "client" },
+  { src: "/Home/Remaining/Client5.png", alt: "client" },
+  { src: "/Home/Remaining/Client6.png", alt: "client" },
 ];
 
 
@@ -20,14 +18,16 @@ function Achievements() {
   return (
     <Stack bgcolor={"#FBF8F2"} p={isMobile ? 2 : 8} marginTop={isMobile?5:5} paddingTop={isMobile?6:12} paddingBottom={ isMobile?6:12}  spacing={isMobile?2 : 10}>
       <Typography variant="h2" textAlign={"center"}>
-        Our Achievements & Awards
+        Our Clients
       </Typography>
-      <Grid container  justifyContent="space-between" spacing={isMobile && 2} >
+      <Grid container  justifyContent="space-between" >
         {awards.map((award, index) => (
-          <Grid key={index} item xs={3} sm={1} sx={{
-            height: isMobile ? 80 : isTablet ? 70 : 120,
-          }} paddingBottom={isMobile && 3}> 
-            <img src={award.src} alt="award" height="100%" />
+          <Grid key={index} item xs={4} sm={1} md={2} 
+          // sx={{
+          //   height: isMobile ? 80 : isTablet ? 70 : 120,
+          // }} paddingBottom={isMobile && 3}
+          > 
+            <img src={award.src} alt="award" height="100%" width={isMobile?"100px":"210px"} />
           </Grid>
         ))}
       </Grid>

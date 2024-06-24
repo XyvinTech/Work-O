@@ -53,7 +53,7 @@ const ReviewCard = ({ image, title, subheader, description }) => {
             </Typography>
           </Box>
           <Stack direction="row" alignItems="center" spacing={1}>
-            <StyledAvatar alt="Cindy Baker" src={image} />
+          
             <div>
               <Typography variant="h6" fontWeight={"600"}>
                 {title}
