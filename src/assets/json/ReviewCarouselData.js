@@ -31,7 +31,7 @@ const ReviewCarouselData = [
     image: "/AboutUs/Team1.webp",
     title: "Bhumika",
     description:
-      "This aap is timely visit and provide services",
+      "This app is timely visit and provide services",
     subheader: "May 1, 2024",
   },
   {
