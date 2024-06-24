@@ -1,6 +1,27 @@
 const ReviewCarouselData = [
   {
     image: "/AboutUs/Team3.webp",
+    title: "Ashu Sehgal",
+    description:
+      "I requested a AC checkup at my address and a person name Shiva Kumar came and he did everything so professionally and fluently that I was amazed. Also, the charges are so minimal that I swear to god you will be shocked. Most recommended to everyone👍 Thank you Worko",
+    subheader: "July 6, 2023",
+  },
+  {
+    image: "/AboutUs/Team3.webp",
+    title: "Ravi Ji",
+    description:
+      "Most cheapest price all home appliances and ac service And timely visit Partner behaviour good Jai shree Ram",
+    subheader: "January 6, 2024",
+  },
+  {
+    image: "/AboutUs/Team1.webp",
+    title: "Pankaj Chaudhary",
+    description:
+      "Super home service aap Worko se ac service affordable cost me hui Good partner Timely visit No over charge",
+    subheader: "January 6, 2024",
+  },
+  {
+    image: "/AboutUs/Team3.webp",
     title: "Vijay Panchal",
     description:
       "Outstanding services and Unmatchable prices with high security !",
@@ -27,13 +48,7 @@ const ReviewCarouselData = [
       "Very good service Timely visit Affordable price",
     subheader: "January 6, 2024",
   },
-  {
-    image: "/AboutUs/Team1.webp",
-    title: "Pankaj Chaudhary",
-    description:
-      "Super home service aap Worko se ac service affordable cost me hui Good partner Timely visit No over charge",
-    subheader: "January 6, 2024",
-  },
+ 
   {
     image: "/AboutUs/Team3.webp",
     title: "Abhay gupta",
@@ -55,20 +70,7 @@ const ReviewCarouselData = [
       "Good experience Fast service Cheep prices Best bheviour Goods product",
     subheader: "October 31, 2023",
   },
-  {
-    image: "/AboutUs/Team3.webp",
-    title: "Ashu Sehgal",
-    description:
-      "I requested a AC checkup at my address and a person name Shiva Kumar came and he did everything so professionally and fluently that I was amazed. Also, the charges are so minimal that I swear to god you will be shocked. Most recommended to everyone👍 Thank you Worko",
-    subheader: "July 6, 2023",
-  },
-  {
-    image: "/AboutUs/Team3.webp",
-    title: "Ravi Ji",
-    description:
-      "Most cheapest price all home appliances and ac service And timely visit Partner behaviour good Jai shree Ram",
-    subheader: "January 6, 2024",
-  },
+ 
 ];
 
 export default ReviewCarouselData;

@@ -22,7 +22,7 @@ function Achievements() {
       </Typography>
       <Grid container  justifyContent="space-between" >
         {awards.map((award, index) => (
-          <Grid key={index} item xs={4} sm={1} md={2} 
+          <Grid key={index} item xs={4} sm={1} md={2}  paddingBottom={2}
           // sx={{
           //   height: isMobile ? 80 : isTablet ? 70 : 120,
           // }} paddingBottom={isMobile && 3}
