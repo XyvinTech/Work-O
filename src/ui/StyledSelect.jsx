@@ -42,12 +42,15 @@ const StyledSelectField = ({ placeholder, options, onChange, value, color }) => 
       ...provided,
       backgroundColor: "#282828",
       color: "#B5B8C5",
-      zIndex: 10,  // Ensure the menu appears above other elements
+      zIndex: 10,
+       '@media (max-width: 600px)': { // Adjust max height for mobile devices
+        position: "relative",
+      }  // Ensure the menu appears above other elements
     }),
     menuList: (provided) => ({
       ...provided,
       maxHeight: "200px", // Set a fixed height for the menu
-      overflowY: "auto",  // Enable vertical scrolling
+      overflowY: "auto",
     }),
     singleValue: (provided) => ({
       ...provided,
