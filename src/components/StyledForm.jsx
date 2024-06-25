@@ -35,8 +35,9 @@ const StyledForm = () => {
     formState: { errors },
     reset,
   } = useForm();
-  const [selectedForm, setSelectedForm] = useState("form1");
+  const [selectedForm, setSelectedForm] = useState("Business enquiry");
   const [selectedState, setSelectedState] = useState(null);
+  const [selectedCourse, setSelectedCourse] = useState(null); 
   const [districtOptions, setDistrictOptions] = useState([]);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -45,7 +46,16 @@ const StyledForm = () => {
     value: code,
     label: state,
   }));
-
+  const courses = [
+    { value: "Assistant Electrician", label: "Assistant Electrician" },
+    { value: "DTH & CCTV Installation Technician", label: "DTH & CCTV Installation Technician" },
+    { value: "Home Appliance Technician", label: "Home Appliance Technician" },
+    { value: "GST Accounts Assistant & Tally", label: "GST Accounts Assistant & Tally" },
+    { value: "Cutting & Tailoring", label: "Cutting & Tailoring" },
+    { value: "Mobile Repairing", label: "Mobile Repairing" },
+    { value: "AC / Refrigerator Repair", label: "AC / Refrigerator Repair" },
+    { value: "Beautician", label: "Beautician" },
+  ];
   const handleRadioChange = (event) => {
     setSelectedForm(event.target.value);
   };
@@ -65,13 +75,19 @@ const StyledForm = () => {
 
   const onSubmit = async (data) => {
     const formData = new FormData();
+    formData.append('selectedForm', selectedForm);
     formData.append('name', data.firstName + ' ' + data.lastName);
     formData.append('email', data.email);
     formData.append('phoneNumber', data.phoneNumber);
     formData.append('message', data.description);
     formData.append('state', data.state.label);
     formData.append('district', data.district.label);
-
+    if (selectedCourse) {
+      formData.append("course", selectedCourse.label); 
+    }
+    for (let [key, value] of formData.entries()) {
+      console.log(`${key}: ${value}`);
+    }
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -154,7 +170,7 @@ const StyledForm = () => {
                 }
               >
                 <FormControlLabel
-                  value="form1"
+                  value="Business enquiry"
                  
                   control={<StyledRadioButton />}
                   label={
@@ -183,7 +199,7 @@ const StyledForm = () => {
                 }
               >
                 <FormControlLabel
-                  value="form3"
+                  value="Service Partner"
                   control={<StyledRadioButton />}
                   label={
                     <StyledLabel>
@@ -215,7 +231,7 @@ const StyledForm = () => {
                 }
               >
                 <FormControlLabel
-                  value="form2"
+                  value="Customer"
                   control={<StyledRadioButton />}
                   label={
                     <StyledLabel>
@@ -246,7 +262,7 @@ const StyledForm = () => {
                 }
               >
                 <FormControlLabel
-                  value="form4"
+                  value="Candidates For Training"
                   control={<StyledRadioButton />}
                   label={
                     <StyledLabel>
@@ -261,7 +277,7 @@ const StyledForm = () => {
         </Stack>
       </Stack>
 
-      {selectedForm === "form1" && (
+      {selectedForm === "Business enquiry" && (
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={2} marginTop={1}>
             <Grid item xs={isMobile ? 12 : 6}>
@@ -411,7 +427,7 @@ const StyledForm = () => {
         </form>
       )}
 
-      {selectedForm === "form2" && (
+      {selectedForm === "Customer" && (
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={2} marginTop={1}>
             <Grid item xs={12}>
@@ -467,6 +483,7 @@ const StyledForm = () => {
                 )}
               />
             </Grid>
+            
             <Grid item xs={12}>
               <Controller
                 name="description"
@@ -544,7 +561,7 @@ const StyledForm = () => {
         </form>
       )}
 
-      {selectedForm === "form3" && (
+      {selectedForm === "Service Partner" && (
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={2} marginTop={1}>
             <Grid item xs={12}>
@@ -676,7 +693,7 @@ const StyledForm = () => {
           </Stack>
         </form>
       )}
-      {selectedForm === "form4" && (
+      {selectedForm === "Candidates For Training" && (
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={2} marginTop={1}>
             <Grid item xs={12}>
@@ -711,6 +728,27 @@ const StyledForm = () => {
                       </Typography>
                     )}
                   </div>
+                )}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Controller
+                name="course"
+                control={control}
+                defaultValue={null}
+                render={({ field }) => (
+                  <StyledSelectField
+                    label="Course"
+                    options={courses}
+                    placeholder={'Course'}
+                    value={selectedCourse}
+                    onChange={(selectedOption) => {
+                      setSelectedCourse(selectedOption);
+                      field.onChange(selectedOption);
+                    }}
+                    isClearable
+                    isSearchable
+                  />
                 )}
               />
             </Grid>

@@ -45,6 +45,7 @@ const StyledSelectField = ({ placeholder,options, onChange,value,color }) => {
       ...provided,
       backgroundColor: "#282828",
       position:"relative",
+      
       color: "#B5B8C5",
     }),
     singleValue: (provided) => ({
