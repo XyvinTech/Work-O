@@ -16,7 +16,7 @@ const AboutMain = () => {
       
       >
         <Box
-          width={isMobile ? "100%" : "50%"}
+          width={isMobile ? "100%" : isTablet?"100%":"50%"}
           display="flex"
           justifyContent={"center"}
           alignItems={"center"}
