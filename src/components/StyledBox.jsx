@@ -10,7 +10,7 @@ const StyledBox = ({ children, bgcolor, title, padding }) => {
   const tabletPadding = padding || "40px";
 
   return (
-    <Box bgcolor={bgcolor} padding={isMobile ? mobilePadding : isTablet ? tabletPadding : "70px"}>
+    <Box bgcolor={bgcolor} padding={isMobile ? mobilePadding : isTablet ? tabletPadding : "60px"}>
       {title && (
         <Typography margin={isMobile ? "32px" : isTablet ? "36px" : "40px"} textAlign="center" variant="h2">
           {title}
