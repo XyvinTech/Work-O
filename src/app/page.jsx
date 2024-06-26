@@ -19,6 +19,7 @@ import Location from "@/components/Location";
 import Statistics from "@/components/Statistics";
 import ContactUs from "@/components/ContactUs";
 import StyledLoader from "@/components/StyledLoader";
+import { Box } from "@mui/material";
 function page() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -84,9 +85,9 @@ function page() {
           <StyledBox title={"Our Major Locations"}>
             <Location />
           </StyledBox>
-          <StyledBox bgcolor={"#F2F2F2"} padding={"0px"}>
+          <Box bgcolor={"#F2F2F2"} padding={"5px"}>
             <BookNowCarousel />
-          </StyledBox>
+          </Box>
           <StyledBox>
             <OurStory />
           </StyledBox>
