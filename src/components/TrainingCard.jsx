@@ -49,7 +49,7 @@ const TrainingCard = ({
     >
       <Stack
         direction={isMobile || isTablet ? "column" : "row"}
-        spacing={isMobile || isTablet ? 2 : 8}
+        spacing={isMobile || isTablet ? 2 : 4}
         alignItems={isMobile ? "left" : "center"}
         justifyContent="space-between" 
         height="100%"
