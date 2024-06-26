@@ -12,7 +12,7 @@ const ServicePlatform = () => {
       <Stack
         direction={isMobile ? "column" : isTablet ? "column" : "row"}
         paddingTop={isTablet && 6}
-        spacing={isMobile ? 2 : 12}
+        spacing={isMobile ? 2 : 4}
         alignItems="center"
       >{!isMobile &&
         <img

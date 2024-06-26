@@ -13,17 +13,17 @@ const PlatformMain = () => {
       <Stack
         direction={isMobile ? "column" : isTablet ? "column" : "row"}
         paddingTop={isTablet && 6}
-        spacing={isMobile ? 2 : 18}
+        spacing={isMobile ? 2 :4}
         alignItems={"center"}
       >
-        {/* {!isMobile && ( */}
+        {!isMobile && (
           <img
             src="/platform/Main.png"
             alt="img"
             width={isMobile ? "255px" : "450px"}
             height={isMobile ? "291px" : "510px"}
           />
-        {/* )} */}
+        )}
         <Stack
           direction="column"
           spacing={isMobile ? 2 : 2}
@@ -34,14 +34,14 @@ const PlatformMain = () => {
           <Typography variant={isMobile ? "h7" : "h10"} lineHeight={isMobile && "19px"}>
             Worko App is a powerful tool equipped with features like:
           </Typography>
-          {/* {isMobile && (
+          {isMobile && (
             <img
               src="/platform/Main.png"
               alt="img"
               width={isMobile ? "255px" : isTablet ? "700px" : "450px"}
               height={isMobile ? "291px" : "510px"}
             />
-          )} */}
+          )}
           <Box
             display="grid"
             gridTemplateColumns={isMobile ? "1fr 1fr" : "1fr 1fr 1fr"}
