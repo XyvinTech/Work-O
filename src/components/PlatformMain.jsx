@@ -1,5 +1,5 @@
 "use client";
-import { Box, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Grid, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 import TickIcon from "../assets/icons/Tick.svg";
 
 const PlatformMain = () => {
@@ -8,13 +8,15 @@ const PlatformMain = () => {
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
 
   return (
-    <Box>
+    <>
+    <Grid container>
       <Stack
         direction={isMobile ? "column" : isTablet ? "column" : "row"}
         paddingTop={isTablet && 6}
         spacing={isMobile ? 2 : 18}
         alignItems={"center"}
       >
+        <Grid item xs={12} md={6}>
         {!isMobile && (
           <img
             src="/platform/Main.png"
@@ -22,7 +24,7 @@ const PlatformMain = () => {
             width={isMobile ? "255px" : "450px"}
             height={isMobile ? "291px" : "510px"}
           />
-        )}
+        )}</Grid>
         <Stack
           direction="column"
           spacing={isMobile ? 2 : 2}
@@ -97,8 +99,8 @@ const PlatformMain = () => {
             </Stack>
           </Box>
         </Stack>
-      </Stack>
-    </Box>
+      </Stack></Grid>
+    </>
   );
 };
 
