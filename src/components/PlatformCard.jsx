@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const Card = styled.div`
   width: 100%;
-  height:454px;
+  height:500px;
   padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: none;
@@ -93,7 +93,7 @@ const PlatformCard = ({ title, icon, number }) => {
     <Card>
       <CardActionArea>
         <NumberBox>{number}</NumberBox>
-        <NormalContent> <Box display="flex" flexDirection="column" alignItems="flex-start" marginTop={10} width={"70%"}>
+        <NormalContent> <Box display="flex" flexDirection="column" alignItems="flex-start" marginTop={10} width={"90%"}>
           <FrameImage src={icon} alt="Frame" />
           <Typography variant={isMobile?"h12":"h3"} component="div" paddingBottom={"2px"}>
             {title}
