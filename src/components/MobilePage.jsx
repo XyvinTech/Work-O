@@ -99,7 +99,7 @@ const MobilePage = () => {
         <img
           src="/platform/Mobile.png"
           alt="img"
-          width={isMobile ? "100%" : isTablet ? "700px" : "598px"}
+          width={isMobile ? "100%"  : "598px"}
           height={isMobile ? "294px" : "399px"}
         />}
       </Stack>

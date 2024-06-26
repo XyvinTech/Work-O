@@ -18,7 +18,7 @@ const ServicePlatform = () => {
         <img
           src="/platform/service.png"
           alt="img"
-          width={isMobile ? "100%" : isTablet ? "700px" : "681px"}
+          width={isMobile ? "100%" : "681px"}
           height={isMobile ? "294px" : "455px"}
         />}
         <Stack
@@ -33,7 +33,7 @@ const ServicePlatform = () => {
         <img
           src="/platform/service.png"
           alt="img"
-          width={isMobile ? "100%" : isTablet ? "700px" : "681px"}
+          width={isMobile ? "100%" : "681px"}
           height={isMobile ? "294px" : "455px"}
         />}
           <Stack
