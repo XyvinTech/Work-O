@@ -8,7 +8,7 @@ import { format, parseISO } from "date-fns";
 
 const StyledCard = styled.div`
   width: 100%;
-  height: 630px;
+  height: 680px;
   padding: 20px;
   margin: auto;
   box-shadow: none;
