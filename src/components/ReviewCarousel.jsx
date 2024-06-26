@@ -26,7 +26,7 @@ const Container = styled(Box)`
 `;
 const StyledSlider = styled(Slider)`
 .slick-slide {
-  padding: 0 20px; 
+  padding: 0 15px; 
   @media (max-width: 600px) {
     padding: 0px 10px; 
   };
