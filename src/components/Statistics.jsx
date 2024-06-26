@@ -39,7 +39,7 @@ const Statistics = () => {
       {statistics.map((stat, index) => (
         <Grid item xs={isMobile ? 6 : 3} textAlign="center" key={index}>
           <Typography
-            fontSize={isMobile ? "32px" :isTablet?"40px": "72px"}
+            fontSize={isMobile ? "32px" :isTablet?"40px": "62px"}
             fontWeight={"700"}
             color={"#FC8229"}
             fontFamily={mont.style.fontFamily}
