@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Header from "@/components/Header";
 import bgImage from "/public/SkillDevelopment/Main.webp";
 import StyledBox from "@/components/StyledBox";
@@ -14,6 +14,7 @@ import TrainingCard from "@/components/TrainingCard";
 import ProvidedTraining from "@/components/ProvidedTraining";
 import { Style } from "@mui/icons-material";
 import Location from "@/components/Location";
+import OurTrainingPartner from "@/components/OurTrainingPartner";
 
 function page() {
   const [isLoading, setIsLoading] = useState(true);
@@ -45,37 +46,41 @@ function page() {
   }, []);
   return (
     <>
-     
-          <Header
-            title={"Our Skill Development Program"}
-            subtitle={
-              "At Worko, we connect businesses and consumers with India's first all-in-one service marketplace."
-            }
-            isButtons
-            bgImg={bgImage.src}
-          /> {isLoading ? (
-            <StyledLoader />
-          ) : (
-            <>
+      <Header
+        title={"Our Skill Development Program"}
+        subtitle={
+          "At Worko, we connect businesses and consumers with India's first all-in-one service marketplace."
+        }
+        isButtons
+        bgImg={bgImage.src}
+      />{" "}
+      {isLoading ? (
+        <StyledLoader />
+      ) : (
+        <>
           <StyledBox
             title={"Upgrading 20,000+ Lives Through Skill-Development Program"}
           >
             <AvatarCarousel images={images} />
           </StyledBox>
           <StyledBox>
-            <CardView/>
+            <CardView />
           </StyledBox>
           <StyledBox title={"Training Program"}>
             <TrainingProgram />
+          </StyledBox>
+          <StyledBox bgcolor={"#FEEFE4"} title={"Our Training Partner"}>
+            <OurTrainingPartner />
           </StyledBox>
           <StyledBox title={"Gig Worker Empowerment"}>
             {" "}
             <PromiseCardView viewMoreData={viewMoreData} />
           </StyledBox>
-          <StyledBox title={"Training we are providing"} >
+          <StyledBox title={"Training we are providing"}>
             {" "}
-      <ProvidedTraining/>
-          </StyledBox> <StyledBox title={"Our Major Locations"}>
+            <ProvidedTraining />
+          </StyledBox>{" "}
+          <StyledBox title={"Our Major Locations"}>
             <Location />
           </StyledBox>
           <FreqenlyAskedQuestion showStillHaveQuestions={false} />

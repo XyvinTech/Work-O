@@ -103,9 +103,9 @@ function page() {
           <StyledBox title={"Testimonials"}>
             <ReviewCarousel />
           </StyledBox>
-          <StyledBox title={"Blogs"}>
+          {/* <StyledBox title={"Blogs"}>
             <ViewMore />
-          </StyledBox>{" "}
+          </StyledBox>{" "} */}
           <Achievements  images={awards}/>
           <FreqenlyAskedQuestion showStillHaveQuestions={false} />
           <ContactUs />

@@ -33,6 +33,10 @@ function Service({ title, description, img, gridComponent }) {
           <img 
             src={img}
             alt="img" 
+            height={isMobile ? "280px" : "538px"} />
+          {/* <img 
+            src={img}
+            alt="img" 
             height={isMobile ? "280px" : "538px"} 
             style={{ 
               zIndex: 1, 
@@ -54,7 +58,7 @@ function Service({ title, description, img, gridComponent }) {
             zIndex: 0,
             bottom:"-10px"
           }}
-        />
+        /> */}
       </Box>
       <Stack
         

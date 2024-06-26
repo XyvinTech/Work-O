@@ -37,7 +37,7 @@ const Navbar = () => {
     { label: "Skill Development", href: "/skill" },
 
     { label: "Resources", href: "/resources" },
-    { label: "Blog", href: "/blog" },
+    // { label: "Blog", href: "/blog" },
 
     { label: "Contact Us", href: "/contact" },
   ];
