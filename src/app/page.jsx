@@ -23,7 +23,7 @@ import { Box } from "@mui/material";
 function page() {
   const [isLoading, setIsLoading] = useState(true);
 
-  const images = [
+  const images1 = [
     "/Home/Carousal/1.webp",
     "/Home/Carousal/2.webp",
     "/Home/Carousal/3.webp",
@@ -36,6 +36,9 @@ function page() {
     "/Home/Carousal/11.webp",
     "/Home/Carousal/12.webp",
     "/Home/Carousal/13.webp",
+  ];
+  const images2 = [
+    
     "/Home/Carousal/14.webp",
     "/Home/Carousal/15.webp",
     "/Home/Carousal/16.webp",
@@ -46,7 +49,7 @@ function page() {
     "/Home/Carousal/21.webp",
     "/Home/Carousal/22.webp",
     "/Home/Carousal/23.webp",
-    "/Home/Carousal/23.webp",
+    "/Home/Carousal/24.webp",
     "/Home/Carousal/25.webp",
     "/Home/Carousal/26.webp",
   ];
@@ -81,7 +84,7 @@ function page() {
             isHome
             mobile={"420px"}
           />{" "}
-          <CarouselOne images={images} />
+          <CarouselOne images1={images1} images2={images2}  />
           <StyledBox>
             <Statistics />
           </StyledBox>
@@ -100,7 +103,7 @@ function page() {
           <StyledBox
             title={"Upgrading 20,000+ Lives Through Skill-Development Program"}
           >
-            <AvatarCarousel images={images} />
+            <AvatarCarousel images={images1} />
           </StyledBox>
           <StyledBox title={"Who is this for?"}>
             <PromiseCardView viewMoreData={viewMoreData} />

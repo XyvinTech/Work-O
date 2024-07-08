@@ -59,9 +59,10 @@ const StyledImg = styled.img`
     }
 `;
 
-const CarousalOne = ({ images }) => {
+const CarousalOne = ({ images1,images2 }) => {
     // Duplicate images to ensure seamless scrolling
-    const allImages = [...images, ...images];
+    const allImages = [...images1, ...images1];
+    const all = [...images2, ...images2];
 
     return (
         <div>
@@ -79,9 +80,9 @@ const CarousalOne = ({ images }) => {
             <section id="reverse-marquee">
                 <StyledContainer>
                     <StyledReversePicContainer>
-                        {allImages.map((imageUrl, index) => (
-                            <StyledPic key={index}>
-                                <StyledImg src={imageUrl} alt={`img${index}`} />
+                        {all.map((image, i) => (
+                            <StyledPic key={i}>
+                                <StyledImg src={image} alt={`img${i}`} />
                             </StyledPic>
                         ))}
                     </StyledReversePicContainer>
