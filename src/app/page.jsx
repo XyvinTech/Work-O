@@ -43,6 +43,12 @@ function page() {
     "/Home/Carousal/18.webp",
     "/Home/Carousal/19.webp",
     "/Home/Carousal/20.webp",
+    "/Home/Carousal/21.webp",
+    "/Home/Carousal/22.webp",
+    "/Home/Carousal/23.webp",
+    "/Home/Carousal/23.webp",
+    "/Home/Carousal/25.webp",
+    "/Home/Carousal/26.webp",
   ];
   const awards = [
     "/Home/Remaining/Client1.png",
