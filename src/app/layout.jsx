@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/logo.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logo.png" type="image/png" />
         {/* Google Tag Manager */}
+        <meta name="google-site-verification" content="M0JA93C5fbtkgRdM7T79B30hKzLPx_8vv85bK947VP0" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
