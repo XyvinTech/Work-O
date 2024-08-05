@@ -80,6 +80,7 @@ const TabContent = styled.div`
     grid-auto-flow: dense;
     padding:0px;
     gap:8px;
+     min-height: ${(props) => (props.activeTab === 0 ? "0px" : "950px")};
     
     & > :nth-child(3) {
       margin-top:50px;
@@ -124,7 +125,7 @@ const StyledTabs = () => {
           </TabButton>
         ))}
       </TabHeader>
-      <TabContent  key={renderKey}>
+      <TabContent  key={renderKey}activeTab={activeTab}>
         {serviceDetails[activeTab].services.map((service, index) => (
           <ServiceCard
             key={index}

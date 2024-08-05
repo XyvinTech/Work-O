@@ -1,33 +1,32 @@
 const FrequentlyAsked = [
   {
-    question: "How can I apply?",
+    question: "How do I book a service on Workoindia?",
+    answer: `
+      To book a service on Workoindia, simply visit our website, select your required service, 
+      provide your location details, and choose a suitable time slot.
+      <li style="margin-bottom: 10px;"><strong>Mobile App:</strong>
+      Download the Workoindia app for a seamless booking experience. You can search for services, 
+      schedule appointments, and manage your bookings all in one place.</li>
+      <li style="margin-bottom: 10px;"><strong>Customer Care Number:</strong>
+      Call us at 766-666-6559 to book a service directly with our customer care representative.</li>
+    `,
+  }
+  ,
+  {
+    question: "How do I pay for the service?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur. Nibh sagittis morbi suscipit gravida elementum et rhoncus posuere. In laoreet ornare arcu elementum in massa eu. Sapien dictum aliquet augue amet felis varius facilisi aliquam elementum. Consequat mauris lacus diam  acilisi aliquam elementum. Consequat mauris lacus diam",
+      "You can pay for your service on Workoindia through online payment or cash.",
   },
   {
-    question: "What are the requirements?",
+    question: "What happens if I am not satisfied with the service? ",
     answer:
-      "Lorem ipsum dolor sit amet consectetur. Nibh sagittis morbi suscipit gravida elementum et rhoncus posuere. In laoreet ornare arcu elementum in massa eu. Sapien dictum aliquet augue amet felis varius facilisi aliquam elementum. Consequat mauris lacus diam  acilisi aliquam elementum. Consequat mauris lacus diam",
+      "If you are not satisfied with the service, please contact our customer support within [timeframe] at 766-666-6559 or by filling out the contact form on our website. Workoindia has a strict quality assurance policy, and we will take the necessary steps to resolve the issue.",
   },
   {
-    question: "Do you provide job placement?",
+    question: " How do I rate a service provider? ",
     answer:
-      "Lorem ipsum dolor sit amet consectetur. Nibh sagittis morbi suscipit gravida elementum et rhoncus posuere. In laoreet ornare arcu elementum in massa eu. Sapien dictum aliquet augue amet felis varius facilisi aliquam elementum. Consequat mauris lacus diam  acilisi aliquam elementum. Consequat mauris lacus diam",
+      "Once the service is completed, you will receive a notification to rate the service provider on Workoindia. Your feedback is valuable in maintaining high service standards and helping other customers make informed decisions.",
   },
-  {
-    question: "What are the recent updates and enhancements in AlignUI?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur. Nibh sagittis morbi suscipit gravida elementum et rhoncus posuere. In laoreet ornare arcu elementum in massa eu. Sapien dictum aliquet augue amet felis varius facilisi aliquam elementum. Consequat mauris lacus diam  acilisi aliquam elementum. Consequat mauris lacus diam",
-  },
-  {
-    question: "How long is the program?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur. Nibh sagittis morbi suscipit gravida elementum et rhoncus posuere. In laoreet ornare arcu elementum in massa eu. Sapien dictum aliquet augue amet felis varius facilisi aliquam elementum. Consequat mauris lacus diam  acilisi aliquam elementum. Consequat mauris lacus diam",
-  },
-  {
-    question: "Is financial aid available?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur. Nibh sagittis morbi suscipit gravida elementum et rhoncus posuere. In laoreet ornare arcu elementum in massa eu. Sapien dictum aliquet augue amet felis varius facilisi aliquam elementum. Consequat mauris lacus diam  acilisi aliquam elementum. Consequat mauris lacus diam",
-  },
+
 ];
 export default FrequentlyAsked;

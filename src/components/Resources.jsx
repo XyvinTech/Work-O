@@ -12,10 +12,9 @@ import { Box, useMediaQuery } from "@mui/material";
 import StyledSelectField from "@/ui/StyledSelect";
 
 const tabData = [
-  { tabName: "All FAQ's", accordions: generalData },
-  { tabName: "Service-specific", accordions: serviceData },
-  { tabName: "Skill Development", accordions: skillData },
-  { tabName: "General FAQ's", accordions: allData },
+  { tabName: "For Customers", accordions: generalData },
+  { tabName: "For Service Providers (Partners)", accordions: serviceData },
+  { tabName: "For Businesses", accordions: skillData },
 ];
 
 const Container = styled(Box)(({ theme }) => ({
