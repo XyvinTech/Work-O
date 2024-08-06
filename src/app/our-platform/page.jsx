@@ -40,13 +40,22 @@ function page() {
           </StyledBox>
           <StyledBox>
             <Statistics />
-          </StyledBox><StyledBox></StyledBox>
-          <StyledBox padding={"0px"}title={"Deliver Customer Delight with power of Fixed + Gig workforce"}><PlatformCardView/></StyledBox>
-          <Achievements  images={awards}/>
-        <StyledBox bgcolor={"#FEEFE4"}><MobilePage/>
-        </StyledBox>
-        <StyledBox>
-          <ServicePlatform/>
+          </StyledBox>
+          <StyledBox></StyledBox>
+          <StyledBox
+            padding={"0px"}
+            title={
+              "Deliver Customer Delight with power of Fixed + Gig workforce"
+            }
+          >
+            <PlatformCardView />
+          </StyledBox>
+          <Achievements images={awards} />
+          <StyledBox bgcolor={"#FEEFE4"}>
+            <MobilePage />
+          </StyledBox>
+          <StyledBox>
+            <ServicePlatform />
           </StyledBox>
           <StyledBox></StyledBox>
         </>
