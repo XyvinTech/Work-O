@@ -9,7 +9,10 @@ export async function POST(request) {
   const name = formData.get("name");
   const email = formData.get("email");
   const message = formData.get("message");
-
+  const selectedForm = formData.get("selectedForm");
+  const state = formData.get("state");
+  const district = formData.get("district");
+  const phoneNumber = formData.get("phoneNumber");
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -27,12 +30,19 @@ export async function POST(request) {
         <p>Name: ${name}</p>
         <p>Email: ${email}</p>
         <p>Message: ${message}</p>
+        <p>Selected Form: ${selectedForm}</p>
+        <p>State: ${state}</p>
+        <p>District: ${district}</p>
+        <p>Phone Number: ${phoneNumber}</p>
       `,
     });
 
     return NextResponse.json({ message: "Success: email was sent" });
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ message: "COULD NOT SEND MESSAGE" }, { status: 500 });
+    return NextResponse.json(
+      { message: "COULD NOT SEND MESSAGE" },
+      { status: 500 }
+    );
   }
 }
