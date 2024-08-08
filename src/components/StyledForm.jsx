@@ -85,9 +85,7 @@ const StyledForm = () => {
     if (selectedCourse) {
       formData.append("course", selectedCourse.label); 
     }
-    for (let [key, value] of formData.entries()) {
-      console.log(`${key}: ${value}`);
-    }
+ 
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',

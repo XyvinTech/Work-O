@@ -12,6 +12,7 @@ import { Box, useMediaQuery } from "@mui/material";
 import StyledSelectField from "@/ui/StyledSelect";
 
 const tabData = [
+  { tabName: "All FAQ's", accordions: allData },
   { tabName: "For Customers", accordions: generalData },
   { tabName: "For Service Providers (Partners)", accordions: serviceData },
   { tabName: "For Businesses", accordions: skillData },
@@ -88,7 +89,7 @@ const TabButton = styled.button`
 const Divider = styled.div`
   width: 1px;
   background-color: white;
-  height: 100vh;
+  height: 140vh;
   opacity: 0.5;
 
   @media (max-width: 768px) {
@@ -103,7 +104,7 @@ const TabContent = styled.div`
   gap: 20px;
   @media (max-width: 768px) {
     padding: 4px;
-    padding-top:20px
+    padding-top: 20px;
   }
 `;
 
@@ -115,7 +116,7 @@ const MobileContainer = styled.div`
 const Resources = () => {
   const [activeTab, setActiveTab] = useState(0);
   const isMobile = useMediaQuery("(max-width: 768px)");
-  
+
   const handleSelectChange = (selectedOption) => {
     setActiveTab(selectedOption.value);
   };
