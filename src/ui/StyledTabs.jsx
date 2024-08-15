@@ -140,7 +140,7 @@ const StyledTabs = () => {
           />
         ))}
       </TabContent>
-      <Box
+      {/* <Box
         sx={{
           position: "absolute",
           
@@ -170,7 +170,7 @@ const StyledTabs = () => {
           onClick={handleNext}
           alt="Next"
         />
-      </Box>
+      </Box> */}
     </TabsContainer>
   );
 };
