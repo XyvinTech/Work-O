@@ -17,7 +17,7 @@ export async function POST(request) {
   const courses = formData.getAll("courses[]");
   const partnerName = formData.get("partnerName");
   const companyId = formData.get("companyId");
-  const service = formData.get("service");
+  // const service = formData.get("service");
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -37,7 +37,6 @@ export async function POST(request) {
   ${courses ? `<p>Courses: ${courses}</p>` : ""}
   ${partnerName ? `<p>Partner Name: ${partnerName}</p>` : ""}
   ${companyId ? `<p>CompanyId: ${companyId}</p>` : ""}
-   ${service ? `<p>Service: ${service}</p>` : ""}
 `;
   try {
     await transporter.sendMail({
