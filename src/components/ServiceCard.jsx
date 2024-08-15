@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
+import { useServiceStore } from "@/Store/ServiceStore";
 const Card = styled.div`
   width: 100%;
   height: 559px;
@@ -65,8 +66,13 @@ const ContentWrapper = styled.div`
 `;
 
 const ServiceCard = ({ title, image, description, activeTab }) => {
+  const setSelectedService = useServiceStore(
+    (state) => state.setSelectedService
+  );
 
-
+  const handleBookNow = () => {
+    setSelectedService(title);
+  };
   return (
     <Card>
       <CardActionArea>
@@ -102,7 +108,7 @@ const ServiceCard = ({ title, image, description, activeTab }) => {
           </ContentWrapper>
           <Link
             href={"/contact"}
-            // onClick={handleBookNow}
+            onClick={handleBookNow}
             passHref
             style={{ textDecoration: "none", color: "white" }}
           >

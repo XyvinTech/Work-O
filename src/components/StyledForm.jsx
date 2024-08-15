@@ -27,6 +27,7 @@ import { getIndiaState, getIndiaDistrict } from "india-state-district";
 import StyledSelectField from "@/ui/StyledSelect";
 import { useRouter } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
+import { useServiceStore } from "@/Store/ServiceStore";
 
 const StyledForm = () => {
   const {
@@ -35,9 +36,11 @@ const StyledForm = () => {
     formState: { errors },
     reset,
   } = useForm();
+  const { selectedService } = useServiceStore();
   const [selectedForm, setSelectedForm] = useState("Business enquiry");
   const [selectedState, setSelectedState] = useState(null);
   const [selectedCourse, setSelectedCourse] = useState(null);
+  const [service, setService] = useState(selectedService);
   const [districtOptions, setDistrictOptions] = useState([]);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -87,7 +90,8 @@ const StyledForm = () => {
     { value: "AC / Refrigerator Repair", label: "AC / Refrigerator Repair" },
     { value: "Beautician", label: "Beautician" },
   ];
-
+  useEffect(() => {
+  }, [service, services]);
   const handleRadioChange = (event) => {
     setSelectedForm(event.target.value);
   };
@@ -797,7 +801,7 @@ const StyledForm = () => {
                 )}
               />
             </Grid>
-            {/* <Grid item xs={12}>
+            <Grid item xs={12}>
               <Controller
                 name="service"
                 control={control}
@@ -817,7 +821,7 @@ const StyledForm = () => {
                   />
                 )}
               />
-            </Grid> */}
+            </Grid>
             <Grid item xs={12}>
               <Controller
                 name="phoneNumber"
