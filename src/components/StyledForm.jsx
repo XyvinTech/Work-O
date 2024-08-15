@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import StyledInput from "@/ui/StyledInput";
@@ -27,6 +27,7 @@ import { getIndiaState, getIndiaDistrict } from "india-state-district";
 import StyledSelectField from "@/ui/StyledSelect";
 import { useRouter } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
+import { useServiceStore } from "@/Store/ServiceStore";
 
 const StyledForm = () => {
   const {
@@ -35,27 +36,62 @@ const StyledForm = () => {
     formState: { errors },
     reset,
   } = useForm();
+  const { selectedService } = useServiceStore();
   const [selectedForm, setSelectedForm] = useState("Business enquiry");
   const [selectedState, setSelectedState] = useState(null);
-  const [selectedCourse, setSelectedCourse] = useState(null); 
+  const [selectedCourse, setSelectedCourse] = useState(null);
+  const [service, setService] = useState(selectedService);
   const [districtOptions, setDistrictOptions] = useState([]);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const isTablet = useMediaQuery((theme) =>theme.breakpoints.between("sm", "md"));
+  const isTablet = useMediaQuery((theme) =>
+    theme.breakpoints.between("sm", "md")
+  );
   const states = getIndiaState().map(({ state, code }) => ({
     value: code,
     label: state,
   }));
+
+  
+  
+  const services = [
+    { value: "AC Repair", label: "AC Repair" },
+    {
+      value: "AC Installation",
+      label: "AC Installation",
+    },
+    { value: "AC Maintenance", label: "AC Maintenance" },
+    {
+      value: "Washing Machine Repair",
+      label: "Washing Machine Repair",
+    },
+    { value: "Appliances Repair", label: "Appliances Repair" },
+    { value: "Maintenance", label: "Maintenance" },
+    { value: "Hair Services", label: "Hair Services" },
+    { value: "Makeup Services", label: "Makeup Services" },
+    { value: "Spa Services", label: "Spa Services" },
+    { value: "Networking Solutions", label: "Networking Solutions" },
+    { value: "CCTV Installation", label: "CCTV Installation" },
+    { value: "CCTV Monitoring", label: "CCTV Monitoring" },
+  ];
   const courses = [
     { value: "Assistant Electrician", label: "Assistant Electrician" },
-    { value: "DTH & CCTV Installation Technician", label: "DTH & CCTV Installation Technician" },
+    {
+      value: "DTH & CCTV Installation Technician",
+      label: "DTH & CCTV Installation Technician",
+    },
     { value: "Home Appliance Technician", label: "Home Appliance Technician" },
-    { value: "GST Accounts Assistant & Tally", label: "GST Accounts Assistant & Tally" },
+    {
+      value: "GST Accounts Assistant & Tally",
+      label: "GST Accounts Assistant & Tally",
+    },
     { value: "Cutting & Tailoring", label: "Cutting & Tailoring" },
     { value: "Mobile Repairing", label: "Mobile Repairing" },
     { value: "AC / Refrigerator Repair", label: "AC / Refrigerator Repair" },
     { value: "Beautician", label: "Beautician" },
   ];
+  useEffect(() => {
+  }, [service, services]);
   const handleRadioChange = (event) => {
     setSelectedForm(event.target.value);
   };
@@ -75,25 +111,34 @@ const StyledForm = () => {
 
   const onSubmit = async (data) => {
     const formData = new FormData();
-    formData.append('selectedForm', selectedForm);
-    formData.append('name', data.firstName + ' ' + data.lastName);
-    formData.append('email', data.email);
-    formData.append('phoneNumber', data.phoneNumber);
-    formData.append('message', data.description);
-    formData.append('state', data.state.label);
-    formData.append('district', data.district.label);
-    if (selectedCourse) {
-      formData.append("course", selectedCourse.label); 
+    formData.append("selectedForm", selectedForm);
+    formData.append("name", `${data?.firstName} ${data?.lastName}`);
+    formData.append("fullname", data?.fullName);
+
+    formData.append("email", data?.email);
+    formData.append("phoneNumber", data?.phoneNumber);
+    formData.append("message", data?.description);
+    formData.append("state", data?.state?.label);
+    formData.append("district", data?.district?.label);
+    formData.append("partner Name", data?.partnerName);
+    formData.append("companyId", data?.companyId);
+
+    if (selectedCourse && selectedCourse.length > 0) {
+      selectedCourse.forEach((course) => {
+        formData.append("courses[]", course.label); 
+      });
+    } if (service) {
+      formData.append("service", service);
     }
- 
+
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         body: formData,
       });
 
       if (!response.ok) {
-        console.log("falling over");
+        // console.log("falling over");
         throw new Error(`response status: ${response.status}`);
       }
 
@@ -108,7 +153,6 @@ const StyledForm = () => {
     handleOpen();
     reset();
   };
-
   const handleBackToHome = () => {
     handleClose();
     router.push("/");
@@ -142,15 +186,18 @@ const StyledForm = () => {
       borderRadius: "4px",
     },
   }));
-
   return (
     <div>
       <Stack
-        direction={isMobile ? "column" :isTablet?"column": "row"}
+        direction={isMobile ? "column" : isTablet ? "column" : "row"}
         spacing={2}
         // alignItems="center"
       >
-        <Stack direction={"row"} spacing={0} justifyContent={isTablet?"flex-start":"space-between"}>
+        <Stack
+          direction={"row"}
+          spacing={0}
+          justifyContent={isTablet ? "flex-start" : "space-between"}
+        >
           <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
               <HtmlTooltip
@@ -169,7 +216,6 @@ const StyledForm = () => {
               >
                 <FormControlLabel
                   value="Business enquiry"
-                 
                   control={<StyledRadioButton />}
                   label={
                     <StyledLabel>
@@ -180,7 +226,8 @@ const StyledForm = () => {
                 />
               </HtmlTooltip>
             </RadioGroup>
-          </FormControl> <FormControl component="fieldset">
+          </FormControl>{" "}
+          <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
               <HtmlTooltip
                 placement="bottom"
@@ -209,10 +256,13 @@ const StyledForm = () => {
               </HtmlTooltip>
             </RadioGroup>
           </FormControl>
-         
         </Stack>
-        <Stack direction={"row"}justifyContent={isTablet?"flex-start":"space-between"}spacing={2}>
-        <FormControl component="fieldset">
+        <Stack
+          direction={"row"}
+          justifyContent={isTablet ? "flex-start" : "space-between"}
+          spacing={2}
+        >
+          <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
               <HtmlTooltip
                 placement="bottom"
@@ -481,7 +531,7 @@ const StyledForm = () => {
                 )}
               />
             </Grid>
-            
+
             <Grid item xs={12}>
               <Controller
                 name="description"
@@ -582,15 +632,15 @@ const StyledForm = () => {
             </Grid>
             <Grid item xs={12}>
               <Controller
-                name="email"
+                name="companyId"
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
                   <div>
                     <StyledInput {...field} placeholder="Company ID" />
-                    {errors.email && (
+                    {errors.companyId && (
                       <Typography color="error">
-                        {errors.email.message}
+                        {errors.companyId.message}
                       </Typography>
                     )}
                   </div>
@@ -736,12 +786,33 @@ const StyledForm = () => {
                 defaultValue={null}
                 render={({ field }) => (
                   <StyledSelectField
-                    label="Course"
+                    label="Course" isMulti
                     options={courses}
-                    placeholder={'Course'}
+                    placeholder={"Course"}
                     value={selectedCourse}
                     onChange={(selectedOption) => {
                       setSelectedCourse(selectedOption);
+                      field.onChange(selectedOption);
+                    }}
+                    isClearable
+                    isSearchable
+                  />
+                )}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Controller
+                name="service"
+                control={control}
+                defaultValue={null}
+                render={({ field }) => (
+                  <StyledSelectField
+                    label="Service"
+                    options={services}
+                    placeholder={"Service"}
+                    value={services.find(option => option.value === service)}
+                    onChange={(selectedOption) => {
+                      setService(selectedOption);
                       field.onChange(selectedOption);
                     }}
                     isClearable

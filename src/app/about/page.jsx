@@ -47,6 +47,7 @@ function page() {
     "/Home/Remaining/Client5.png",
     "/Home/Remaining/Client6.png",
     "/Home/Remaining/Client7.png",
+    "/Home/Remaining/Client8.png",
   ];
   useEffect(() => {   
     setTimeout(() => {

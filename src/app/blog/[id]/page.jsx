@@ -58,7 +58,7 @@ function Page() {
             `https://blog.workoindia.com/wp-json/wp/v2/users/${postData.author}`
           );
           setAuthor(authorResponse.data);
-          console.log(response);
+          // console.log(response);
           setPost(response.data[0]);
 
           const docRef = doc(firestore, "posts", id);

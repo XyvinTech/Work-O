@@ -1,42 +1,44 @@
 import { Typography } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 const CardContainer = styled.div`
-  width: 100%;
-  height: auto;  border-radius: 0px;
-  box-shadow: none;
-  transition: box-shadow 0.3s ease-in-out;
-
-  &:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
+  width: 395px;
+  height: auto;
+  border-radius: 0px;
+  overflow: hidden;
 
   @media (max-width: 600px) {
-    height: 302px;
+    height: 352px;
   }
- 
 `;
 
 const CardActionArea = styled.div`
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 `;
 
 const CardMedia = styled.img`
   width: 100%;
-  height: 395px;
+  height: auto;
 
   @media (max-width: 600px) {
-    height: 190px;
+    height: 390px;
+   
   }
-     @media (max-width: 768px) {
+  @media (max-width: 768px) {
     height: 210px;
   }
 `;
 
 const CardContent = styled.div`
-  padding-top: 16px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 `;
 
 const Title = styled.div`
@@ -57,37 +59,57 @@ const Description = styled.div`
     font-size: 12px;
   }
 `;
-
 const TrainCard = ({ title, image, description }) => {
   return (
     <CardContainer>
       <CardActionArea>
         <CardMedia src={image} alt={title} />
         <CardContent>
-        <Typography
-              gutterBottom
-              variant="card"
-              component="div"
-              sx={{
-                "@media (max-width: 600px)": {
-                  fontSize: "14px",
-                },
-              }}
-            >
-              {title}
-            </Typography>
+          <Typography
+            gutterBottom
+            variant="card"
+            component="div"
+            sx={{
+              "@media (max-width: 600px)": {
+                fontSize: "14px",
+              },
+            }}
+          >
+            {title}
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              textAlign: "left",
+              "@media (max-width: 600px)": {
+                fontSize: "12px",
+              },
+            }}
+            color="text.secondary"
+          >
+            {description}
+          </Typography>{" "}
+          <Link
+            href={"/enroll"}
+            passHref
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            {" "}
             <Typography
               variant="h6"
+              fontWeight={700}
               sx={{
-                // textAlign: "justify",
+                marginTop: "auto",
+                textAlign: "match-parent",
                 "@media (max-width: 600px)": {
                   fontSize: "12px",
                 },
               }}
-              color="text.secondary"
+              color="#3B3B3B"
             >
-              {description}
+              Enroll Now
             </Typography>
+          </Link>
         </CardContent>
       </CardActionArea>
     </CardContainer>

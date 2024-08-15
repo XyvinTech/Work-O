@@ -120,9 +120,9 @@ function Footer() {
                 Resources
               </Typography>
               {/* <Link href={"/blog"}  passHref style={{textDecoration:"none",color:"white"}}> */}
-              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+              {/* <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
                 Blogs
-              </Typography>
+              </Typography> */}
               {/* </Link> */}
               <Link href={"/enroll"}  passHref style={{textDecoration:"none",color:"white"}}>
               <Typography variant={isMobile ? "h7" : "footer_subtitle"}>

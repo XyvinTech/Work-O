@@ -114,7 +114,7 @@ const StyledTabs = () => {
 
   const handleTabClick = (index) => {
     setActiveTab(index);
-    setRenderKey((prevKey) => prevKey + 1); // Increment key to re-trigger animation
+    setRenderKey((prevKey) => prevKey + 1); 
   };
   return (
     <TabsContainer>
@@ -136,6 +136,7 @@ const StyledTabs = () => {
             title={service.title}
             image={service.image}
             description={service.description}
+            activeTab={activeTab}
           />
         ))}
       </TabContent>

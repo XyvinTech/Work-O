@@ -14,7 +14,7 @@ const Statistics = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get("https://theworko.in/admin/tcapi_v1/website_dummy_data.php");
-        console.log("response", response.data.data);
+        // console.log("response", response.data.data);
         setData(response.data.data);
       } catch (error) {
         console.error(error);

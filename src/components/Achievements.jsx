@@ -62,7 +62,7 @@ const Achievements = ({ images }) => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
     return (
-        <Box paddingTop={isMobile?5:10} bgcolor={'#FEEFE4'} paddingBottom={10}>
+        <Box paddingTop={isMobile?5:10}marginTop={isMobile?5:10} bgcolor={'#FEEFE4'} paddingBottom={10}>
           <Typography variant='h2' paddingBottom={5} textAlign={"center"}> Our Client</Typography>
             <section id="marquee">
                 <StyledContainer>

@@ -7,7 +7,7 @@ const BookNowCarouselData = [
       borderColor:"primary",
       backgroundColor: "white",
       button:"Book Now",
-      link:"/services"
+      link:"/contact"
     },
     {
       imageSrc: "/Home/Add/Add2.webp",
@@ -18,7 +18,7 @@ const BookNowCarouselData = [
       backgroundColor: "#3B3B3B",
       textColor: "white",
       button:"Book Now",
-      link:"/services"
+      link:"/contact"
     },
     {
       imageSrc: "/Home/Add/Add3.webp",
@@ -38,7 +38,7 @@ const BookNowCarouselData = [
       borderColor:"primary",
       backgroundColor: "#FFFFFF",
       button:"Book Now",
-      link:"/services"
+      link:"/contact"
     },
     {
       imageSrc: "/Home/Add/Add6.webp",
@@ -49,7 +49,7 @@ const BookNowCarouselData = [
       backgroundColor: "#3B3B3B",
       textColor: "white",
       button:"Book Now",
-      link:"/services"
+      link:"/contact"
     },
     {
       imageSrc: "/Home/Add/Add5.webp",
@@ -59,7 +59,7 @@ const BookNowCarouselData = [
       borderColor:"primary",
       backgroundColor: "white",
       button:"Book Now",
-      link:"/services"
+      link:"/contact"
     },
    
   ];

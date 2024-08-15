@@ -26,7 +26,23 @@ const EnrollNow = () => {
     formState: { errors },
     reset,
   } = useForm();
-
+  const [selectedCourse, setSelectedCourse] = useState(null);
+  const courses = [
+    { value: "Assistant Electrician", label: "Assistant Electrician" },
+    {
+      value: "DTH & CCTV Installation Technician",
+      label: "DTH & CCTV Installation Technician",
+    },
+    { value: "Home Appliance Technician", label: "Home Appliance Technician" },
+    {
+      value: "GST Accounts Assistant & Tally",
+      label: "GST Accounts Assistant & Tally",
+    },
+    { value: "Cutting & Tailoring", label: "Cutting & Tailoring" },
+    { value: "Mobile Repairing", label: "Mobile Repairing" },
+    { value: "AC / Refrigerator Repair", label: "AC / Refrigerator Repair" },
+    { value: "Beautician", label: "Beautician" },
+  ];
   const [selectedState, setSelectedState] = useState(null);
   const [districtOptions, setDistrictOptions] = useState([]);
   const theme = useTheme();
@@ -50,17 +66,22 @@ const EnrollNow = () => {
   const router = useRouter();
   const onSubmit = async (data) => {
     const formData = new FormData();
-    formData.append('selectedForm', "Enroll Now");
-    formData.append("name", data.firstName + " " + data.lastName);
-    formData.append("email", data.email);
-    formData.append("phoneNumber", data.phoneNumber);
-    formData.append("message", data.description);
-    formData.append("state", data.state.label);
-    formData.append("district", data.district.label);
-
-    for (let [key, value] of formData.entries()) {
-      console.log(`${key}: ${value}`);
+    formData.append("selectedForm", "Enroll Now");
+    formData.append("name", data?.firstName + " " + data?.lastName);
+    formData.append("email", data?.email);
+    formData.append("phoneNumber", data?.phoneNumber);
+    formData.append("message", data?.description);
+    formData.append("state", data?.state?.label);
+    formData.append("district", data?.district?.label);
+    if (selectedCourse && selectedCourse.length > 0) {
+      selectedCourse.forEach((course) => {
+        formData.append("courses[]", course.label); 
+      });
+    } else {
+      console.error("No courses selected.");
     }
+
+  
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -68,7 +89,7 @@ const EnrollNow = () => {
       });
 
       if (!response.ok) {
-        console.log("falling over");
+        // console.log("falling over");
         throw new Error(`response status: ${response.status}`);
       }
 
@@ -158,6 +179,28 @@ const EnrollNow = () => {
                     </Typography>
                   )}
                 </div>
+              )}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <Controller
+              name="course"
+              control={control}
+              defaultValue={null}
+              render={({ field }) => (
+                <StyledSelectField
+                  isMulti
+                  label="Course"
+                  options={courses}
+                  placeholder={"Course"}
+                  value={selectedCourse}
+                  onChange={(selectedOption) => {
+                    setSelectedCourse(selectedOption);
+                    field.onChange(selectedOption);
+                  }}
+                  isClearable
+                  isSearchable
+                />
               )}
             />
           </Grid>

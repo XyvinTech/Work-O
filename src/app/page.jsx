@@ -38,7 +38,6 @@ function page() {
     "/Home/Carousal/13.webp",
   ];
   const images2 = [
-    
     "/Home/Carousal/14.webp",
     "/Home/Carousal/15.webp",
     "/Home/Carousal/16.webp",
@@ -61,6 +60,7 @@ function page() {
     "/Home/Remaining/Client5.png",
     "/Home/Remaining/Client6.png",
     "/Home/Remaining/Client7.png",
+    "/Home/Remaining/Client8.png",
   ];
   useEffect(() => {
     setTimeout(() => {
@@ -84,7 +84,7 @@ function page() {
             isHome
             mobile={"420px"}
           />{" "}
-          <CarouselOne images1={images1} images2={images2}  />
+          <CarouselOne images1={images1} images2={images2} />
           <StyledBox>
             <Statistics />
           </StyledBox>
@@ -115,7 +115,7 @@ function page() {
           {/* <StyledBox title={"Blogs"}>
             <ViewMore />
           </StyledBox>{" "} */}
-          <Achievements  images={awards}/>
+          <Achievements images={awards} />
           <FreqenlyAskedQuestion showStillHaveQuestions={false} />
           <ContactUs />
         </>

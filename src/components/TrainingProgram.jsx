@@ -8,7 +8,7 @@ const TrainingProgram = () => {
   return (
     <Grid container spacing={2}>
       {viewMoreData.map((item, index) => (
-        <Grid key={index} item md={4} xs={12}>
+        <Grid key={index} item md={4} xs={12}display={'flex'}justifyContent={'center'}>
         <TrainCard
           key={index}
           image={item.image}
