@@ -69,7 +69,7 @@ function Footer() {
       <Stack
         direction={isMobile ? "column" : "row"}
         p={isMobile ? 0 : 4}
-        spacing={isMobile ? 3 : isTablet?0:20}
+        spacing={isMobile ? 3 : isTablet ? 0 : 20}
       >
         <Box>
           <img
@@ -87,12 +87,12 @@ function Footer() {
           </Typography>
         </Box>
         <Stack
-          direction={isMobile ? "column" :isTablet?"column": "row"}
+          direction={isMobile ? "column" : isTablet ? "column" : "row"}
           spacing={isMobile ? 2 : 6}
           p={isMobile ? 2 : 4}
           gap={4}
         >
-          <Stack direction={"row"} spacing= {isTablet?4:11}>
+          <Stack direction={"row"} spacing={isTablet ? 4 : 11}>
             <Stack spacing={2}>
               <Typography
                 variant="footer_title"
@@ -100,19 +100,35 @@ function Footer() {
               >
                 Legal
               </Typography>
-              <Link href={"/contact"}  passHref style={{textDecoration:"none",color:"white"}}>
-              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
-                Contact us
-              </Typography></Link>
-              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
-                Privacy policy
-              </Typography>
-              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
-                Terms & conditions
-              </Typography>
+              <Link
+                href={"/contact"}
+                passHref
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                  Contact us
+                </Typography>
+              </Link>
+              <Link
+                href={"/privacy"}
+                passHref
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                  Privacy policy
+                </Typography>
+              </Link>{" "}
+              <Link
+                href={"/terms"}
+                passHref
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                  Terms & conditions
+                </Typography>
+              </Link>
             </Stack>
             <Stack spacing={2}>
-              
               <Typography
                 variant="footer_title"
                 fontWeight={isMobile ? 700 : 500}
@@ -124,16 +140,21 @@ function Footer() {
                 Blogs
               </Typography> */}
               {/* </Link> */}
-              <Link href={"/enroll"}  passHref style={{textDecoration:"none",color:"white"}}>
-              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
-               Enroll Now
-              </Typography></Link>
+              <Link
+                href={"/enroll"}
+                passHref
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                  Enroll Now
+                </Typography>
+              </Link>
               <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
                 Help centre
               </Typography>
             </Stack>
           </Stack>{" "}
-          <Stack direction={"row"} spacing={isTablet?4:13}>
+          <Stack direction={"row"} spacing={isTablet ? 4 : 13}>
             <Stack spacing={2}>
               <Typography
                 variant="footer_title"
@@ -141,14 +162,24 @@ function Footer() {
               >
                 Discover
               </Typography>
-              <Link href={"/services"}  passHref style={{textDecoration:"none",color:"white"}}> 
-              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
-                Services
-              </Typography></Link>
-              <Link href={"/skill"}  passHref style={{textDecoration:"none",color:"white"}}> 
-              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
-                Skill devlopment
-              </Typography></Link>
+              <Link
+                href={"/services"}
+                passHref
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                  Services
+                </Typography>
+              </Link>
+              <Link
+                href={"/skill"}
+                passHref
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                  Skill devlopment
+                </Typography>
+              </Link>
             </Stack>
             <Stack spacing={2}>
               <Typography
@@ -157,15 +188,25 @@ function Footer() {
               >
                 Company
               </Typography>
-              <Link href={"/about"}  passHref style={{textDecoration:"none",color:"white"}}> 
-              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
-                About
-              </Typography></Link>
-              
-              <Link href={"/get-the-app"}  passHref style={{textDecoration:"none",color:"white"}}> 
-              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
-                Download App
-              </Typography></Link>
+              <Link
+                href={"/about"}
+                passHref
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                  About
+                </Typography>
+              </Link>
+
+              <Link
+                href={"/get-the-app"}
+                passHref
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+                  Download App
+                </Typography>
+              </Link>
             </Stack>
           </Stack>
         </Stack>
@@ -185,10 +226,12 @@ function Footer() {
             <StyledInput
               placeholder={"Email ID"}
               backgroundColor={"background.paper"}
-            /><Stack width={isMobile?"49%":"20%"}> 
-            <Button variant="navbar" fullWidth>
-              Submit
-            </Button></Stack>
+            />
+            <Stack width={isMobile ? "49%" : "20%"}>
+              <Button variant="navbar" fullWidth>
+                Submit
+              </Button>
+            </Stack>
           </Stack>
         </Stack>
         <Stack width={isMobile ? "100%" : "55%"} pt={3} spacing={2}>
@@ -202,9 +245,8 @@ function Footer() {
             Reach out to us
           </Typography>
           <Stack
-            direction={isMobile ? "column" :isTablet?"column": "row"}
+            direction={isMobile ? "column" : isTablet ? "column" : "row"}
             spacing={3}
-            
           >
             <StyledIconButton
               hover={true}
@@ -237,10 +279,10 @@ function Footer() {
         direction={isMobile ? "column" : "row"}
         p={isMobile ? 2 : 4}
         px={isMobile ? 2 : 6}
-        spacing={isMobile ? 2 :isTablet?4: 18}
+        spacing={isMobile ? 2 : isTablet ? 4 : 18}
         // justifyContent={"space-between"}
       >
-        <Stack direction={"row"} spacing={isMobile ? 7 :isTablet?4: 18}>
+        <Stack direction={"row"} spacing={isMobile ? 7 : isTablet ? 4 : 18}>
           <Stack spacing={3}>
             <Typography variant="h7" color={"#BDBDBD"}>
               Worko in Delhi NCR
@@ -264,38 +306,35 @@ function Footer() {
             </Typography>
           </Stack>
         </Stack>{" "}
-       
-        
-          <Stack direction="row" spacing={isMobile ? 7 :isTablet?4: 18}>
-            <Stack spacing={3}>
-              <Typography variant="h7" color={"#BDBDBD"}>
-                Worko in Tirupati
-              </Typography>
-              <Typography variant="h7" color={"#BDBDBD"}>
-                Worko in Gujarat
-              </Typography>
-              <Typography variant="h7" color={"#BDBDBD"}>
-                Worko in Andaman
-              </Typography>
-            </Stack>
-
-            <Stack spacing={3}>
-              <Typography variant="h7" color={"#BDBDBD"}>
-                Worko in Lucknow
-              </Typography>
-              <Typography variant="h7" color={"#BDBDBD"}>
-                Worko in Kerala
-              </Typography>
-              <Typography variant="h7" color={"#BDBDBD"}>
-                Worko in Rajasthan
-              </Typography>
-            </Stack>
+        <Stack direction="row" spacing={isMobile ? 7 : isTablet ? 4 : 18}>
+          <Stack spacing={3}>
+            <Typography variant="h7" color={"#BDBDBD"}>
+              Worko in Tirupati
+            </Typography>
+            <Typography variant="h7" color={"#BDBDBD"}>
+              Worko in Gujarat
+            </Typography>
+            <Typography variant="h7" color={"#BDBDBD"}>
+              Worko in Andaman
+            </Typography>
           </Stack>
-      
+
+          <Stack spacing={3}>
+            <Typography variant="h7" color={"#BDBDBD"}>
+              Worko in Lucknow
+            </Typography>
+            <Typography variant="h7" color={"#BDBDBD"}>
+              Worko in Kerala
+            </Typography>
+            <Typography variant="h7" color={"#BDBDBD"}>
+              Worko in Rajasthan
+            </Typography>
+          </Stack>
+        </Stack>
       </Stack>
       <Stack
         direction={isMobile ? "column" : "row"}
-        justifyContent={isMobile?"left":"space-between"}
+        justifyContent={isMobile ? "left" : "space-between"}
         bgcolor={"#333333"}
         p={2}
         height={"60px"}
