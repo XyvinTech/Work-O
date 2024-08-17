@@ -38,9 +38,9 @@ function page() {
                   paddingLeft: isMobile ? "20px" : "40px",
                 }}
               >
-               <li style={{ marginTop: "10px" }}>
+                <li style={{ marginTop: "10px" }}>
                   {" "}
-                  <Typography variant={isMobile ? "h7" : "h6"}  fontWeight={700}>
+                  <Typography variant={isMobile ? "h7" : "h6"} fontWeight={700}>
                     Acceptance of Terms:
                   </Typography>{" "}
                 </li>
@@ -65,7 +65,8 @@ function page() {
                   create a user account. You are responsible for maintaining the
                   confidentiality of your account credentials.
                 </Typography>
-                <li style={{ marginTop: "10px" }}>   {" "}
+                <li style={{ marginTop: "10px" }}>
+                  {" "}
                   <Typography variant={isMobile ? "h7" : "h6"} fontWeight={700}>
                     Services:
                   </Typography>{" "}
@@ -161,7 +162,7 @@ function page() {
                   paddingLeft: isMobile ? "20px" : "40px",
                 }}
               >
-                 <li style={{ marginTop: "10px" }}>
+                <li style={{ marginTop: "10px" }}>
                   {" "}
                   <Typography variant={isMobile ? "h7" : "h6"} fontWeight={700}>
                     Licence Grant
@@ -225,34 +226,34 @@ function page() {
                 <ul style={{ paddingLeft: isMobile ? "20px" : "40px" }}>
                   <li style={{ paddingBottom: "8px" }}>
                     <Typography variant={isMobile ? "h7" : "h6"}>
-                      Use the Platform for any illegal or unauthorised purpose;
+                      Use the Platform for any illegal or unauthorised purpose
                     </Typography>
                   </li>
                   <li style={{ paddingBottom: "8px" }}>
                     <Typography variant={isMobile ? "h7" : "h6"}>
-                      Violate any applicable laws or regulations;
+                      Violate any applicable laws or regulations
                     </Typography>
                   </li>
                   <li style={{ paddingBottom: "8px" }}>
                     <Typography variant={isMobile ? "h7" : "h6"}>
                       Infringe on the intellectual property rights of Worko or
-                      any third party;
+                      any third party
                     </Typography>
                   </li>
                   <li style={{ paddingBottom: "8px" }}>
                     <Typography variant={isMobile ? "h7" : "h6"}>
-                      Transmit any viruses, malware, or other harmful code;
+                      Transmit any viruses, malware, or other harmful code
                     </Typography>
                   </li>
                   <li style={{ paddingBottom: "8px" }}>
                     <Typography variant={isMobile ? "h7" : "h6"}>
                       Interfere with or disrupt the Platform or any other user's
-                      use of the Platform;
+                      use of the Platform
                     </Typography>
                   </li>
                   <li style={{ paddingBottom: "8px" }}>
                     <Typography variant={isMobile ? "h7" : "h6"}>
-                      Collect or harvest any personal data of other users; or
+                      Collect or harvest any personal data of other users  or
                     </Typography>
                   </li>
                   <li style={{ paddingBottom: "8px" }}>
