@@ -203,17 +203,7 @@ const StyledForm = () => {
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
               <HtmlTooltip
                 placement="bottom"
-                title={
-                  <>
-                    <Typography variant="h7">Business enquiry</Typography>
-                    <br />
-                    <br />
-                    <Typography variant="h8">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Suspendisse varius enim in eros elementum tristique
-                    </Typography>
-                  </>
-                }
+               
               >
                 <FormControlLabel
                   value="Business enquiry"
@@ -232,17 +222,7 @@ const StyledForm = () => {
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
               <HtmlTooltip
                 placement="bottom"
-                title={
-                  <>
-                    <Typography variant="h7">Service Partner</Typography>
-                    <br />
-                    <br />
-                    <Typography variant="h8">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Suspendisse varius enim in eros elementum tristique
-                    </Typography>
-                  </>
-                }
+                
               >
                 <FormControlLabel
                   value="Service Partner"
@@ -267,17 +247,7 @@ const StyledForm = () => {
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
               <HtmlTooltip
                 placement="bottom"
-                title={
-                  <>
-                    <Typography variant="h7">Customer</Typography>
-                    <br />
-                    <br />
-                    <Typography variant="h8">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Suspendisse varius enim in eros elementum tristique
-                    </Typography>
-                  </>
-                }
+               
               >
                 <FormControlLabel
                   value="Customer"
@@ -296,19 +266,7 @@ const StyledForm = () => {
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
               <HtmlTooltip
                 placement="bottom"
-                title={
-                  <>
-                    <Typography variant="h7">
-                      Candidates For Training
-                    </Typography>
-                    <br />
-                    <br />
-                    <Typography variant="h8">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Suspendisse varius enim in eros elementum tristique
-                    </Typography>
-                  </>
-                }
+                
               >
                 <FormControlLabel
                   value="Candidates For Training"
