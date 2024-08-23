@@ -128,9 +128,9 @@ const StyledForm = () => {
         formData.append("courses[]", course.label); 
       });
     }
-    //  if (service) {
-    //   formData.append("service", service);
-    // }
+     if (service) {
+      formData.append("service", service);
+    }
 
     try {
       const response = await fetch("/api/contact", {
