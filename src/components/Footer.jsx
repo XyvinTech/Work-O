@@ -251,7 +251,7 @@ function Footer() {
             <StyledIconButton
               hover={true}
               icon={PlusIcon}
-              buttonText="7-666-666-559"
+              buttonText="+91 7-666-666-559"
               color={"white"}
               borderColor={"rgba(255, 255, 255, 0.12)"}
             />

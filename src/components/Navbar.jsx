@@ -98,8 +98,7 @@ const Navbar = () => {
                 >
                   <NavbarButton
                     icon={PlusIcon}
-                    buttonText="Customer care"
-                    alternateText="7-666-666-559"
+                     buttonText="+91 7-666-666-559"
                     width={"210px"}
                   />
                 </Link>
@@ -180,8 +179,7 @@ const Navbar = () => {
                   >
                     <NavbarButton
                       icon={PlusIcon}
-                      buttonText="Customer care"
-                      alternateText="7-666-666-559"
+                      buttonText="+91 7-666-666-559"
                       width={"100%"}
                     />
                   </Link>

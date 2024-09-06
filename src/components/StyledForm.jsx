@@ -120,7 +120,7 @@ const StyledForm = () => {
     formData.append("message", data?.description);
     formData.append("state", data?.state?.label);
     formData.append("district", data?.district?.label);
-    formData.append("partner Name", data?.partnerName);
+    formData.append("partnerName", data?.partnerName);
     formData.append("companyId", data?.companyId);
 
     if (selectedCourse && selectedCourse.length > 0) {

@@ -24,7 +24,7 @@ function ContactUs({ enroll }) {
           </Typography>
           <Box>
             <Typography variant="h6"> Contact Us :</Typography>
-            <Typography variant="h6">7-666-666-559</Typography>
+            <Typography variant="h6">+91 7-666-666-559</Typography>
             <Typography variant="h6">info@workoindia.com</Typography>
           </Box>
           <Box>
