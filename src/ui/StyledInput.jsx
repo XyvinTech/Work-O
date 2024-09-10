@@ -14,13 +14,13 @@ const StyledInput = ({ placeholder, backgroundColor,onChange }) => {
           backgroundColor: backgroundColor || "text.background",
           borderRadius: "8px",
           "& .MuiOutlinedInput-notchedOutline": {
-            borderColor: "1px solid #2F2F2F",
+            border: "1px solid var(--White-20, rgba(255, 255, 255, 0.20))",
           },
           "&:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: "text.background",
+            border: "1px solid var(--White-20, rgba(255, 255, 255, 0.20))",
           },
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#2F2F2F",
+            border: "1px solid var(--White-20, rgba(255, 255, 255, 0.20))",
           },
           "& .MuiInputBase-input": {
             color: backgroundColor ? "#000" : "background.paper",

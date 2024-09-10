@@ -20,6 +20,7 @@ import Statistics from "@/components/Statistics";
 import ContactUs from "@/components/ContactUs";
 import StyledLoader from "@/components/StyledLoader";
 import { Box } from "@mui/material";
+import HomeHeader from "@/components/HomeHeader";
 function page() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -73,7 +74,7 @@ function page() {
         <StyledLoader />
       ) : (
         <>
-          <Header
+          <HomeHeader
             title={
               "India's 1st Full-Stack B2B and B2C Service Marketplace for Gig Workers"
             }
@@ -82,7 +83,7 @@ function page() {
             }
             isButtons
             isHome
-            mobile={"420px"}
+            mobile={"1020px"}
           />{" "}
           <CarouselOne images1={images1} images2={images2} />
           <StyledBox>

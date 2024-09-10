@@ -9,13 +9,13 @@ const PhoneNumberContainer = styled.div`
   display: flex;
   align-items: center;
   border-radius: 8px;
-  background-color: #2F2F2F;
+ background-color: ${(props) => props.backgroundColor || "#2F2F2F"};
   padding: 8px;
-  color: #fff; /* White text */
+  color:  ${(props) => props.backgroundColor ? "#000" : "#fff"};
 `;
 const CountryCodeSelect = styled.select`
-  color: #fff;
-  background-color: #2F2F2F;
+  color:  ${(props) => props.backgroundColor ? "#000" : "#fff"};
+ background-color: ${(props) => props.backgroundColor || "#2F2F2F"};
   border: none;
   padding: 8px;
   outline: none;
@@ -25,7 +25,7 @@ const CountryCodeSelect = styled.select`
     outline: none;
   }
   option {
-    background-color: #2F2F2F;
+   background-color: ${(props) => props.backgroundColor || "#2F2F2F"};
     color: #BDBDBD;
   }
 `;
@@ -36,7 +36,7 @@ const Input = styled.input`
   background: none;
   border: none;
   outline: none;
-  color: #fff;
+  color: ${(props) => props.backgroundColor ? "#000" : "#fff"};
   flex: 1;
   &::placeholder {
     color: #BDBDBD;
@@ -52,7 +52,7 @@ const DropIconContainer = styled.div`
   padding-right: 10px;
 `;
 
-const StyledPhoneInput = ({ onChange }) => {
+const StyledPhoneInput = ({ onChange , backgroundColor}) => {
   const [countryCode, setCountryCode] = useState("+91");
   const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -72,8 +72,8 @@ const StyledPhoneInput = ({ onChange }) => {
   };
 
   return (
-    <PhoneNumberContainer>
-      <CountryCodeSelect value={countryCode} onChange={handleCountryCodeChange}>
+    <PhoneNumberContainer backgroundColor={backgroundColor}>
+      <CountryCodeSelect value={countryCode}backgroundColor={backgroundColor} onChange={handleCountryCodeChange}>
         <option value="+91">+91</option>
         <option value="+1">+1</option>
         <option value="+44">+44</option>
@@ -82,7 +82,7 @@ const StyledPhoneInput = ({ onChange }) => {
         <ArrowDropUpIcon />
         <ArrowDropDownIcon />
       </DropIconContainer>
-      <Input placeholder="Enter Phone number" onChange={handleChange} />
+      <Input placeholder="Enter Phone number" onChange={handleChange} backgroundColor={backgroundColor} />
     </PhoneNumberContainer>
   );
 };

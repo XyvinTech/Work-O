@@ -9,7 +9,7 @@ const SelectContainer = styled.div`
   width: 100%; /* Adjust width as needed */
 `;
 
-const StyledSelectField = ({ placeholder, options, onChange, value, color ,isMulti}) => {
+const StyledSelectField = ({ placeholder, options, backgroundColor,onChange, value, color ,isMulti}) => {
 
   const customStyles = {
     control: (provided, state) => ({
@@ -18,8 +18,8 @@ const StyledSelectField = ({ placeholder, options, onChange, value, color ,isMul
       padding: "8px",
       border: "1px solid var(--White-20, rgba(255, 255, 255, 0.20));",
       borderRadius: "4px",
-      backgroundColor: "#282828",
-      color: color || "#FFFFFF",
+      backgroundColor: backgroundColor || "#282828",
+      color: backgroundColor ? "#000" : "#FFFFFF",
       boxShadow: state.isFocused ? "0 0 0 2px #fff" : "none",
       cursor: "pointer",
       fontFamily: mont.style.fontFamily,
@@ -31,7 +31,7 @@ const StyledSelectField = ({ placeholder, options, onChange, value, color ,isMul
     option: (provided, state) => ({
       ...provided,
       backgroundColor: state.isFocused ? "transparent" : "transparent",
-      color: state.isFocused ? "#FC8229" : "#ffffff",
+      color: state.isFocused ? "#FC8229" :backgroundColor ? "#000" : "#ffffff",
       cursor: "pointer",
       fontFamily: mont.style.fontFamily,
       ":active": {
@@ -40,7 +40,7 @@ const StyledSelectField = ({ placeholder, options, onChange, value, color ,isMul
     }),
     menu: (provided) => ({
       ...provided,
-      backgroundColor: "#282828",
+      backgroundColor: backgroundColor? "#fff" : "#282828",
       color: "#B5B8C5",
       zIndex: 10,
        '@media (max-width: 600px)': { // Adjust max height for mobile devices
@@ -54,7 +54,7 @@ const StyledSelectField = ({ placeholder, options, onChange, value, color ,isMul
     }),
     singleValue: (provided) => ({
       ...provided,
-      color: "#F7F8FC",
+      color:backgroundColor ? "#000" : "#F7F8FC",
     }),
     placeholder: (provided) => ({
       ...provided,

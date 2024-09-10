@@ -23,6 +23,7 @@ import CCTV from "../../assets/icons/cctv.svg";
 import Laptop from "../../assets/icons/Laptop.svg";
 import { useEffect, useState } from "react";
 import StyledLoader from "@/components/StyledLoader";
+import HomeHeader from "@/components/HomeHeader";
 
 const service1 = [
   {
@@ -115,12 +116,12 @@ function page() {
   }, []);
   return (
     <>
-      <Header
+      <HomeHeader
         title={"How our services help the community?"}
         subtitle={
           "At Worko, we connect businesses and consumers with India's first all-in-one service marketplace."
         }
-        isService
+        isService mobile={"1020px"}
         bgImg={bgImage.src}
       />
       {isLoading ? (
