@@ -100,6 +100,7 @@ const LandingForm = () => {
 
       const responseData = await response.json();
       reset();
+      router.push("/thank");
       setSelectedCourse(null);
       setService(null);
       setSelectedState(null);

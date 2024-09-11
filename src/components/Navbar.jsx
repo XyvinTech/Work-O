@@ -46,7 +46,7 @@ const Navbar = () => {
   const router = useRouter();
 
   const isTransparent = pathname === "/" || pathname.startsWith("/blog/");
-
+  const isThankPage = pathname === "/thank";
   useEffect(() => {
     const activeMenuItem = menuItems.find((item) => item.href === pathname);
     setActiveTab(activeMenuItem?.label || "");
@@ -54,27 +54,32 @@ const Navbar = () => {
 
   return (
     <AppBar
-      position="absolute"
-      style={{
-        backgroundColor:
-          mobileMenuOpen && isTransparent
-            ? "#fff"
-            : mobileMenuOpen
-            ? "#000000"
-            : isTransparent
-            ? "transparent"
-            : "#00000033",
-        color:
-          mobileMenuOpen && isTransparent
-            ? "#000"
-            : mobileMenuOpen
-            ? "#fff"
-            : isTransparent
-            ? "#000"
-            : "#fff",
-        height: isMobile ? (mobileMenuOpen ? "auto" : "64px") : "",
-      }}
-    >
+  position="absolute"
+  style={{
+    backgroundColor:
+      isThankPage
+        ? "#fff" // Set background color to #fff for Thank You page
+        : mobileMenuOpen && isTransparent
+        ? "#fff"
+        : mobileMenuOpen
+        ? "#000000"
+        : isTransparent
+        ? "transparent"
+        : "#00000033",
+    color:
+      isThankPage
+        ? "#000" // Set text color to black for Thank You page
+        : mobileMenuOpen && isTransparent
+        ? "#000"
+        : mobileMenuOpen
+        ? "#fff"
+        : isTransparent
+        ? "#000"
+        : "#fff",
+    height: isMobile ? (mobileMenuOpen ? "auto" : "64px") : "",
+  }}
+>
+
       <Toolbar>
         <Box display="flex" flexDirection="column" width="100%" p={2}>
           <Box
@@ -149,15 +154,19 @@ const Navbar = () => {
                         fontFamily: mont.style.fontFamily,
                         textTransform: "uppercase",
                         color:
-                          isMobile && isTransparent
-                            ? activeTab === label
-                              ? theme.palette.primary.main
-                              : "#1B1B1B"
-                            : activeTab === label
+                        isThankPage
+                          ? activeTab === label
+                            ? theme.palette.primary.main // Active tab color for Thank You page
+                            : "#1B1B1B" // Inactive tab color for Thank You page
+                          : isMobile && isTransparent
+                          ? activeTab === label
                             ? theme.palette.primary.main
-                            : isTransparent
-                            ? "#1B1B1B"
-                            : "#fff",
+                            : "#1B1B1B"
+                          : activeTab === label
+                          ? theme.palette.primary.main
+                          : isTransparent
+                          ? "#1B1B1B"
+                          : "#fff",
 
                         fontSize: "14px",
                         fontWeight: 600,
@@ -211,15 +220,19 @@ const Navbar = () => {
                       fontFamily: mont.style.fontFamily,
                       textTransform: "uppercase",
                       color:
-                        isMobile && isTransparent
-                          ? activeTab === label
-                            ? theme.palette.primary.main
-                            : "#1B1B1B"
-                          : activeTab === label
+                      isThankPage
+                        ? activeTab === label
+                          ? theme.palette.primary.main // Active tab color for Thank You page
+                          : "#1B1B1B" // Inactive tab color for Thank You page
+                        : isMobile && isTransparent
+                        ? activeTab === label
                           ? theme.palette.primary.main
-                          : isTransparent
-                          ? "#1B1B1B"
-                          : "#fff",
+                          : "#1B1B1B"
+                        : activeTab === label
+                        ? theme.palette.primary.main
+                        : isTransparent
+                        ? "#1B1B1B"
+                        : "#fff",
                       borderRadius: "0px",
                       borderBottom:
                         activeTab === label
