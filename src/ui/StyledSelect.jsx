@@ -35,7 +35,7 @@ const StyledSelectField = ({ placeholder, options, backgroundColor,onChange, val
       cursor: "pointer",
       fontFamily: mont.style.fontFamily,
       ":active": {
-        backgroundColor: "#282828",
+        backgroundColor:backgroundColor ? "#fff" : "#282828",
       },
     }),
     menu: (provided) => ({
