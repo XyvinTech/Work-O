@@ -100,14 +100,13 @@ const LandingForm = () => {
 
       const responseData = await response.json();
       reset();
-      router.push("/thank");
       setSelectedCourse(null);
       setService(null);
       setSelectedState(null);
       setDistrictOptions([]);
     } catch (err) {
       console.error(err);
-      alert("Error, please try resubmitting the form");
+     
     } finally {
       setLoading(false); // Stop loading
     }
@@ -322,8 +321,8 @@ const LandingForm = () => {
             </Grid>
           </Grid>{" "}
           <Stack justifyContent={"center"} direction={"row"} py={3}>
-            <Button variant="navbar" type="submit" fullWidth>
-            {loading ? "Submitting..." : "Book your expert now"}
+            <Button variant="navbar" type="submit" fullWidth onClick={() => router.push("/thank")}>
+           Book your expert now
             </Button>
           </Stack>
         </Box>
