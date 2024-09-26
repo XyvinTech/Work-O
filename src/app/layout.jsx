@@ -4,6 +4,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import theme from "../theme/index.jsx";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import LayoutTheme from "@/components/LayoutTheme";
 
 export const metadata = {
   title: "Worko",
@@ -44,9 +45,7 @@ export default function RootLayout({ children }) {
         {/* End Google Tag Manager (noscript) */}
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
-            <Navbar />
-            {children}
-            <Footer />
+           <LayoutTheme children={children}/>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

@@ -13,9 +13,7 @@ function page() {
   }, []);
   return (
     <>
-      {isLoading ? (
-        <StyledLoader />
-      ) : (
+     
         <>
           <Header
             title={"Where can you find Worko locations?"}
@@ -25,7 +23,7 @@ function page() {
             isButtons
           />
         </>
-      )}
+     
     </>
   );
 }

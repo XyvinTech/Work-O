@@ -19,9 +19,7 @@ function page() {
   return (
     <>
       <Header title={"Privacy policy"} bgImg={bgImage.src} />{" "}
-      {isLoading ? (
-        <StyledLoader />
-      ) : (
+     
         <>
           <StyledBox>
             {" "}
@@ -156,7 +154,6 @@ function page() {
             </Stack>
           </StyledBox>
         </>
-      )}
     </>
   );
 }

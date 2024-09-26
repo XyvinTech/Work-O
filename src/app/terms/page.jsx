@@ -19,9 +19,7 @@ function page() {
   return (
     <>
       <Header title={" Terms and Conditions"} bgImg={bgImage.src} />{" "}
-      {isLoading ? (
-        <StyledLoader />
-      ) : (
+    
         <>
           <StyledBox>
             {" "}
@@ -314,7 +312,7 @@ function page() {
             </Stack>
           </StyledBox>
         </>
-      )}
+    
     </>
   );
 }

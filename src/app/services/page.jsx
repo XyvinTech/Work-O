@@ -124,9 +124,7 @@ function page() {
         isService mobile={"1020px"}
         bgImg={bgImage.src}
       />
-      {isLoading ? (
-        <StyledLoader />
-      ) : (
+    
         <>
           <StyledBox>
             <Service
@@ -179,7 +177,7 @@ function page() {
           <ConnectUs />
           <FreqenlyAskedQuestion />
         </>
-      )}
+    
     </>
   );
 }

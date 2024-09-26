@@ -70,9 +70,7 @@ function page() {
   }, []);
   return (
     <>
-      {isLoading ? (
-        <StyledLoader />
-      ) : (
+     
         <>
           <HomeHeader
             title={
@@ -120,7 +118,6 @@ function page() {
           <FreqenlyAskedQuestion showStillHaveQuestions={false} />
           <ContactUs />
         </>
-      )}
     </>
   );
 }

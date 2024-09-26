@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Header from "@/components/Header";
 import bgImage from "/public/Blog/Main.webp";
 import BlogData from "@/components/BlogData";
@@ -8,14 +8,13 @@ import StyledLoader from "@/components/StyledLoader";
 
 function page() {
   const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {   
+  useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 5000);
   }, []);
   return (
     <>
-      
       <Header
         title={"Get Inspired: Check Out Our Blog!"}
         subtitle={
@@ -23,15 +22,16 @@ function page() {
         }
         isButtons
         bgImg={bgImage.src}
-      />{isLoading ? (
-        <StyledLoader />
-      ) : (
-        <>
-      <StyledBox> <BlogData/></StyledBox>
+      />
      
+        <>
+          <StyledBox>
+            {" "}
+            <BlogData />
+          </StyledBox>
+        </>
+    
     </>
-     )}
-     </>
   );
 }
 

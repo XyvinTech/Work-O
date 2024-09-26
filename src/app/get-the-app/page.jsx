@@ -19,9 +19,7 @@ function page() {
     <>
      
           <Header title={"Download our Worko App"} bgImg={bgImage.src} />
-          {isLoading ? (
-        <StyledLoader />
-      ) : (
+      
         <>
           <GetApp />
           <StyledBox>
@@ -29,7 +27,7 @@ function page() {
           </StyledBox>
           <StyledBox></StyledBox>
         </>
-      )}
+    
     </>
   );
 }

@@ -16,13 +16,11 @@ function page() {
     <>
   
       <Header title={"Enroll Now"} top={15}bgImg={bgImage.src}  mobile={"280px"}height={"400px"}/>
-      {isLoading ? (
-        <StyledLoader />
-      ) : (
+     
         <>
       <ContactUs enroll />
     </>
-     )}
+     
      </>
   );
 }

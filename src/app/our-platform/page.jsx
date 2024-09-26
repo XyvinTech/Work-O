@@ -32,9 +32,7 @@ function page() {
   return (
     <>
       <Header title={"Explore Our Platform"} bgImg={bgImage.src} isApp />{" "}
-      {isLoading ? (
-        <StyledLoader />
-      ) : (
+     +
         <>
           <StyledBox>
             <PlatformMain />
@@ -60,7 +58,6 @@ function page() {
           </StyledBox>
           <StyledBox></StyledBox>
         </>
-      )}
     </>
   );
 }

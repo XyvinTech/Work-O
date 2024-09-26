@@ -54,9 +54,7 @@ function page() {
         isButtons
         bgImg={bgImage.src}
       />{" "}
-      {isLoading ? (
-        <StyledLoader />
-      ) : (
+     
         <>
           <StyledBox
             title={"Upgrading 20,000+ Lives Through Skill-Development Program"}
@@ -85,7 +83,6 @@ function page() {
           </StyledBox>
           <FreqenlyAskedQuestion showStillHaveQuestions={false} />
         </>
-      )}
     </>
   );
 }

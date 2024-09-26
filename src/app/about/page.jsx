@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Header from "@/components/Header";
 import bgImage from "/public/AboutUs/Header.webp";
 import VisionCardView from "@/components/VisionCardView";
@@ -49,14 +49,13 @@ function page() {
     "/Home/Remaining/Client7.png",
     "/Home/Remaining/Client8.png",
   ];
-  useEffect(() => {   
+  useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 5000);
   }, []);
   return (
     <>
-     
       <Header
         title={"Worko: What Makes Us Different?"}
         subtitle={
@@ -65,36 +64,36 @@ function page() {
         isButtons
         bgImg={bgImage.src}
       />
- {isLoading ? (
-        <StyledLoader />
-      ) : (
+     
         <>
-      
-<StyledBox><AboutMain /></StyledBox>
-      <StyledBox title={"Our Vision"}>
-        <VisionCardView viewMoreData={VisionData} />
-      </StyledBox>
-      <StyledBox title={"Leadership"}>
-        <TeamCarousel />
-      </StyledBox>
-      <StyledBox title={"Gallery"}><Gallery/></StyledBox>
-      <StyledBox title={"How We Differ?"}>
-        <PromiseCardView viewMoreData={viewMoreData} />
-      </StyledBox>
-      <StyledBox
-        title={"Upgrading 20,000+ Lives Through Skill-Development Program"}
-      >
-        <AvatarCarousel images={images} />
-      </StyledBox>
-      <StyledBox title={"Certifications"}>
-        <VisionCardView viewMoreData={Certification} />
-      </StyledBox>
+          <StyledBox>
+            <AboutMain />
+          </StyledBox>
+          <StyledBox title={"Our Vision"}>
+            <VisionCardView viewMoreData={VisionData} />
+          </StyledBox>
+          <StyledBox title={"Leadership"}>
+            <TeamCarousel />
+          </StyledBox>
+          <StyledBox title={"Gallery"}>
+            <Gallery />
+          </StyledBox>
+          <StyledBox title={"How We Differ?"}>
+            <PromiseCardView viewMoreData={viewMoreData} />
+          </StyledBox>
+          <StyledBox
+            title={"Upgrading 20,000+ Lives Through Skill-Development Program"}
+          >
+            <AvatarCarousel images={images} />
+          </StyledBox>
+          <StyledBox title={"Certifications"}>
+            <VisionCardView viewMoreData={Certification} />
+          </StyledBox>
 
-      <Achievements images={awards} />
+          <Achievements images={awards} />
 
-      <FreqenlyAskedQuestion />
-      </>
-      )}
+          <FreqenlyAskedQuestion />
+        </>
     </>
   );
 }

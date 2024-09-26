@@ -25,7 +25,7 @@ const FlowerImage = styled.img`
   z-index: 1;
   top: -25%; /* Adjusted positioning relative to the card container */
   left: 60%; /* Centered horizontally */
-  backgroundcolor: #f4f3f3;
+  backgroundColor: #f4f3f3;
   @media (max-width: 600px) {
     height: 230px;
     top: -60px;

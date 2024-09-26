@@ -22,13 +22,11 @@ function page() {
         isButtons
         bgImg={bgImage.src}
       />
-      {isLoading ? (
-        <StyledLoader />
-      ) : (
+    
         <>
           <Resources />
         </>
-      )}
+      
     </>
   );
 }
