@@ -17,7 +17,7 @@ function page() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 5000);
   }, []);
   const awards = [
     "/Home/Remaining/Client1.png",
