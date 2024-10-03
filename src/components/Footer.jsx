@@ -18,7 +18,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 const FooterContainer = styled(Box)(() => ({
-  backgroundImage: `url(${bgImage.src})`,
+  backgroundColor:"black",
   backgroundSize: "cover",
   backgroundPosition: "center",
   color: "white",

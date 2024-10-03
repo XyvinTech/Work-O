@@ -19,7 +19,7 @@ const tabData = [
 ];
 
 const Container = styled(Box)(({ theme }) => ({
-  backgroundImage: `url(${bgImageFooter.src})`,
+  backgroundColor:'black',
   backgroundSize: "cover",
   backgroundPosition: "center",
   // padding: "80px",

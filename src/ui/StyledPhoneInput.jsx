@@ -1,89 +1,45 @@
-"use client";
+import FormControl from "@mui/material/FormControl";
+import OutlinedInput from "@mui/material/OutlinedInput";
 import React, { useState } from "react";
-import styled from "styled-components";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
-import { mont } from "@/theme";
 
-const PhoneNumberContainer = styled.div`
-  display: flex;
-  align-items: center;
-  border-radius: 8px;
- background-color: ${(props) => props.backgroundColor || "#2F2F2F"};
-  padding: 8px;
-  color:  ${(props) => props.backgroundColor ? "#000" : "#fff"};
-`;
-const CountryCodeSelect = styled.select`
-  color:  ${(props) => props.backgroundColor ? "#000" : "#fff"};
- background-color: ${(props) => props.backgroundColor || "#2F2F2F"};
-  border: none;
-  padding: 8px;
-  outline: none;
-  appearance: none;
-  &:focus {
-    border: none;
-    outline: none;
-  }
-  option {
-   background-color: ${(props) => props.backgroundColor || "#2F2F2F"};
-    color: #BDBDBD;
-  }
-`;
+const StyledPhoneInput = ({ backgroundColor, onChange }) => {
+  const [phoneNumber, setPhoneNumber] = useState("+91");
 
-const Input = styled.input`
-  font-family: ${mont.style.fontFamily};
-  font-weight: 500;
-  background: none;
-  border: none;
-  outline: none;
-  color: ${(props) => props.backgroundColor ? "#000" : "#fff"};
-  flex: 1;
-  &::placeholder {
-    color: #BDBDBD;
-  }
-`;
-
-const DropIconContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding-right: 10px;
-`;
-
-const StyledPhoneInput = ({ onChange , backgroundColor}) => {
-  const [countryCode, setCountryCode] = useState("+91");
-  const [phoneNumber, setPhoneNumber] = useState("");
-
-  const handleCountryCodeChange = (event) => {
-    setCountryCode(event.target.value);
+  const handlePhoneNumberChange = (event) => {
+    const { value } = event.target;
+    setPhoneNumber(value);
     if (onChange) {
-      onChange(`${event.target.value}${phoneNumber}`);
-    }
-  };
-
-  const handleChange = (event) => {
-    const newPhoneNumber = event.target.value;
-    setPhoneNumber(newPhoneNumber);
-    if (onChange) {
-      onChange(`${countryCode}${newPhoneNumber}`);
+      onChange(event);
     }
   };
 
   return (
-    <PhoneNumberContainer backgroundColor={backgroundColor}>
-      <CountryCodeSelect value={countryCode}backgroundColor={backgroundColor} onChange={handleCountryCodeChange}>
-        <option value="+91">+91</option>
-        <option value="+1">+1</option>
-        <option value="+44">+44</option>
-      </CountryCodeSelect>
-      <DropIconContainer>
-        <ArrowDropUpIcon />
-        <ArrowDropDownIcon />
-      </DropIconContainer>
-      <Input placeholder="Enter Phone number" onChange={handleChange} backgroundColor={backgroundColor} />
-    </PhoneNumberContainer>
+    <FormControl sx={{ width: "100%" }} variant="outlined">
+      <OutlinedInput
+        value={phoneNumber}
+        onChange={handlePhoneNumberChange}
+        placeholder="Enter Phone number"
+        sx={{
+          width: "100%",
+          padding: "2px",
+          backgroundColor: backgroundColor || "text.background",
+          borderRadius: "8px",
+          "& .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid var(--White-20, rgba(255, 255, 255, 0.20))",
+          },
+          "&:hover .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid var(--White-20, rgba(255, 255, 255, 0.20))",
+          },
+          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid var(--White-20, rgba(255, 255, 255, 0.20))",
+          },
+          "& .MuiInputBase-input": {
+            color: backgroundColor ? "#000" : "background.paper",
+            padding: "14px",
+          },
+        }}
+      />
+    </FormControl>
   );
 };
 

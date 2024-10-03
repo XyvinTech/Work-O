@@ -6,7 +6,7 @@ import bgImageFooter from "/public/assets/home/img/footer.png";
 import { useRouter } from "next/navigation";
 
 const Container = styled(Box)(() => ({
-  backgroundImage: `url(${bgImageFooter.src})`,
+  backgroundColor: 'black',
   backgroundSize: "cover",
   backgroundPosition: "center",
   padding: "20px",

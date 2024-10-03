@@ -69,7 +69,7 @@ function ContactUs({ enroll }) {
 export default ContactUs;
 
 const Container = styled(Box)(() => ({
-  backgroundImage: `url(${bgImageFooter.src})`,
+  backgroundColor:"black",
   backgroundSize: "cover",
   backgroundPosition: "center",
   color: "white",

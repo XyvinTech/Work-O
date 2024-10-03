@@ -18,7 +18,7 @@ const tabData = [
   { tabName: "For Businesses", accordions: skillData },
 ];
 const Container = styled(Box)(() => ({
-  backgroundImage: `url(${bgImageFooter.src})`,
+  backgroundColor: 'black',
   backgroundSize: "cover",
   backgroundPosition: "center",
   color: "white",
