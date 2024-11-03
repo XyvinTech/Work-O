@@ -1,0 +1,61 @@
+/* CarousalOne.module.css */
+
+@keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes reverseMarquee {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .container {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 5px; /* Space between the two marquees */
+  }
+  
+  .picContainer {
+    display: flex;
+    animation: marquee 40s linear infinite;
+  }
+  
+  .reversePicContainer {
+    display: flex;
+    animation: reverseMarquee 40s linear infinite;
+  }
+  
+  .pic {
+    flex-shrink: 0;
+    width: 216px;
+    margin: 0 5px; /* Gap between images */
+  }
+  
+  .img {
+    width: 216px;
+    height: 180px;
+    object-fit: cover;
+    border: 1px solid rgba(238, 231, 231, 0.9);
+    border-radius: 4px;
+  }
+  
+  @media (max-width: 768px) {
+    .pic {
+      width: 104px;
+      margin: 0 2px;
+    }
+    .img {
+      width: 104px;
+      height: 90px;
+    }
+  }
+  

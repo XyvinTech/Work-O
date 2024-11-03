@@ -1,0 +1,90 @@
+/* StyledTabs.module.css */
+
+.tabsContainer {
+    width: 100%;
+    padding-bottom: 150px;
+  }
+  
+  @media (max-width: 600px) {
+    .tabsContainer {
+      max-width: 100%;
+      padding-bottom: 50px;
+    }
+  }
+  
+  .tabHeader {
+    padding-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .tabButton {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 36px 26px;
+    width: 324px;
+    font-family: var(--mont-font);
+    font-weight: 600;
+    font-size: 16px;
+    height: 59px;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #e3dccd;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .tabButton.active {
+    border: 0px;
+    border-bottom: 3px solid #fc8229;
+    background-color: #ffe7d5;
+  }
+  
+  @media (max-width: 600px) {
+    .tabButton {
+      height: 34px;
+      padding: 2px;
+      font-weight: 400;
+      font-size: 12px;
+      flex-basis: calc(50% - 10px);
+    }
+  }
+  
+  .tabContent {
+    padding: 20px;
+    background-color: white;
+    border-top: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+    opacity: 0;
+    animation: fadeIn ease 2s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .tabContent {
+      grid-template-columns: 1fr 1fr;
+      grid-auto-flow: dense;
+      padding: 0px;
+      gap: 8px;
+      min-height: 950px;
+    }
+    .tabContent > :nth-child(3) {
+      margin-top: 50px;
+      grid-column: 1 / -1;
+    }
+  }
+  

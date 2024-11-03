@@ -1,0 +1,87 @@
+/* BookNowCard.module.css */
+
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 220px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 600px) {
+    .cardContainer {
+      height: 220px;
+    }
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  @media (max-width: 768px) {
+    .content {
+      width: 50%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .content {
+      width: 50%;
+      padding: 10px;
+    }
+  }
+  
+  .imageContainer {
+    position: relative;
+    width: 55%;
+    height: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .imageContainer {
+      width: 40%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .imageContainer {
+      width: 50%;
+      height: 220px;
+    }
+  }
+  
+  .styledImage {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .descriptionTypography {
+    margin-top: 16px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #a0a0a0;
+    padding-bottom: 2px;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    align-items: flex-end;
+    height: 50px;
+  }
+  
+  @media (max-width: 600px) {
+    .buttonContainer {
+      height: auto;
+      align-items: flex-start;
+    }
+  }
+  

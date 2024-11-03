@@ -1,0 +1,71 @@
+/* ServiceCard.module.css */
+
+.card {
+    width: 100%;
+    height: 559px;
+    box-shadow: none;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card:hover {
+    box-shadow: none;
+    background-color: inherit;
+  }
+  
+  @media (max-width: 600px) {
+    .card {
+      width: 170px;
+      height: 302px;
+    }
+  }
+  
+  .cardActionArea {
+    cursor: pointer;
+    flex-grow: 1;
+  }
+  
+  .cardMediaWrapper {
+    width: 100%;
+    height: 395px;
+    overflow: hidden;
+  }
+  
+  @media (max-width: 600px) {
+    .cardMediaWrapper {
+      width: 160px;
+      height: 190px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cardMediaWrapper {
+      width: 160px;
+      height: 190px;
+    }
+  }
+  
+  .cardMedia {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .cardMedia:hover {
+    transform: scale(1.05);
+  }
+  
+  .cardContent {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .contentWrapper {
+    flex-grow: 1;
+  }
+  

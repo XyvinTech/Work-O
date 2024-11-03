@@ -1,0 +1,34 @@
+.container {
+    padding: 16px; /* Equivalent to MUI's Box padding */
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .viewMoreButton {
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #FC8229;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .grid {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 10px;
+    }
+  }
+  

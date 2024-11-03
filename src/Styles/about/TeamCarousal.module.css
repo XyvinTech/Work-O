@@ -1,0 +1,42 @@
+.container {
+    margin-top: 60px;
+    padding: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+  }
+  
+  .imageContainer img {
+    height: 389px;
+    width: 389px;
+    transition: transform 0.7s ease;
+  }
+  
+  .imageContainer:hover img {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 600px) {
+    .imageContainer img {
+      height: 289px;
+      width: 289px;
+    }
+  }
+  
+  .description {
+    padding-top: 30px;
+    line-height: 27px;
+    font-size: 18px;
+    font-family: var(--mont-font);
+  }
+  
+  .description a {
+    color: #368ff6;
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 600px) {
+    .description {
+      text-align: justify;
+      font-size: 14px;
+    }
+  }
+  

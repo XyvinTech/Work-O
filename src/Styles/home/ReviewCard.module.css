@@ -1,0 +1,35 @@
+
+
+.styledCard {
+    width: calc(100% - 30px); 
+    margin: 0 15px; 
+    height: 350px;
+    background: white;
+    border-radius: 0;
+    border: 1px solid #e3dccd;
+}
+
+  
+  .styledCardActionArea {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .styledLabel {
+    font-family: var(--mont-font); /* Assuming `mont` is loaded as a CSS variable */
+    font-size: 14px;
+  }
+  
+  @media (max-width: 600px) {
+    .styledLabel {
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+  
+  .styledAvatar {
+    margin-right: 10px;
+  }
+  

@@ -1,0 +1,49 @@
+/* CSS module file: Achievements.module.css */
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.styledContainer {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.styledPicContainer {
+    display: flex;
+    animation: marquee 30s linear infinite;
+}
+
+.styledPic {
+    flex-shrink: 0;
+    width: 300px;
+    margin: 0 15px; /* Gap between images */
+}
+
+@media (max-width: 768px) {
+    .styledPic {
+        width: 300px;
+        margin: 0 5px;
+    }
+}
+
+.styledImg {
+    width: 236px;
+    height: auto;
+    object-fit: cover;
+    border: 1px solid rgba(238, 231, 231, 0.9);
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .styledImg {
+        width: 260px;
+        height: auto;
+    }
+}

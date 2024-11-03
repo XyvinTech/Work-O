@@ -1,0 +1,56 @@
+/* OurStory.module.css */
+
+.container {
+    overflow: hidden;
+  }
+  
+  .imageContainer {
+    width: 100%;
+    height: 294px;
+  }
+  
+  @media (min-width: 600px) and (max-width: 960px) {
+    .imageContainer {
+      width: 700px;
+      height: 520px;
+    }
+  }
+  
+  @media (min-width: 960px) {
+    .imageContainer {
+      width: 2300px;
+      height: 520px;
+    }
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .image:hover {
+    transform: scale(1.05);
+  }
+  
+  .stackDirection {
+    padding-top: 2rem;
+  }
+  
+  @media (min-width: 600px) {
+    .stackDirection {
+      padding-top: 3rem;
+    }
+  }
+  
+  .buttonFullWidth {
+    width: 100%;
+  }
+  
+  @media (min-width: 600px) {
+    .buttonFullWidth {
+      width: 230px;
+    }
+  }
+  

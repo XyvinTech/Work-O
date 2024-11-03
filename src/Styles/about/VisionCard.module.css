@@ -1,0 +1,38 @@
+.card {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: none;
+    background: white;
+    border-radius: 0;
+    overflow: hidden;
+  }
+  
+  .cardActionArea {
+    position: relative;
+  }
+  
+  .flowerImage {
+    height: 335px;
+    width: auto;
+    position: absolute;
+    z-index: 1;
+    top: -25%;
+    left: 60%;
+  }
+  
+  @media (max-width: 600px) {
+    .flowerImage {
+      height: 230px;
+      top: -60px;
+      left: 120px;
+    }
+  }
+  
+  .frameImage {
+    height: 70px;
+    width: 70px;
+    margin-top: 23%;
+  }
+  

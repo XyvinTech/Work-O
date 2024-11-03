@@ -1,0 +1,53 @@
+/* BookNowCarousel.module.css */
+
+.sliderContainer {
+    overflow: hidden;
+    height: 390px;
+    align-content: center;
+    position: relative;
+  }
+  
+  .buttonBox {
+    position: absolute;
+    right: 40px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    .buttonBox {
+      display: none;
+    }
+  }
+  
+  .slideWrapper {
+    padding: 0 10px;
+  }
+  
+  .slickSlider .slick-dots {
+    left: 10px;
+    bottom: -30px;
+    text-align: left;
+  }
+  
+  .slickSlider .slick-dots li {
+    margin: 0;
+  }
+  
+  .slickSlider .slick-dots li button:before {
+    color: #fc8229;
+    font-size: 8px;
+  }
+  
+  .slickSlider .slick-dots li.slick-active button:before {
+    color: #fc8229;
+    font-size: 8px;
+  }
+  
+  @media (max-width: 600px) {
+    .slickSlider .slick-dots {
+      text-align: center;
+      bottom: -29px;
+    }
+  }
+  
