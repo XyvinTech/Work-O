@@ -11,6 +11,9 @@ import {
 import StyledInput from "@/ui/StyledInput";
 import { useState } from "react";
 import Link from "next/link";
+import PlusIcon from "../assets/icons/call.svg";
+import SMSIcon from "../assets/icons/sms.svg";
+import StyledIconButton from "./StyledIconButton";
 
 function Footer() {
   const theme = useTheme();
@@ -206,20 +209,20 @@ function Footer() {
             direction={isMobile ? "column" : isTablet ? "column" : "row"}
             spacing={3}
           >
-            {/* <StyledIconButton
+            <StyledIconButton
               hover={true}
               icon={PlusIcon}
               buttonText="+91 7-666-666-559"
               color={"white"}
               borderColor={"rgba(255, 255, 255, 0.12)"}
-            /> */}
-            {/* <StyledIconButton
+            />
+            <StyledIconButton
               hover={true}
               icon={SMSIcon}
               buttonText="info@workoindia.com"
               color={"white"}
               borderColor={"rgba(255, 255, 255, 0.12)"}
-            /> */}
+            />
           </Stack>
         </Stack>
       </Stack>

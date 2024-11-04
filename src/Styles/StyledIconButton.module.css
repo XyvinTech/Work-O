@@ -1,0 +1,23 @@
+
+
+.roundIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 135px;
+    border: 1px solid #fc8229;
+    transition: border-color 0.3s, background-color 0.3s;
+  }
+  
+  .roundIcon svg {
+    fill: #fc8229;
+    transition: fill 0.3s;
+  }
+  
+  .textWrapper {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+  }
+  

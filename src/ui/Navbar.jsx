@@ -16,6 +16,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { mont } from "@/Theme/Theme";
+import NavbarButton from "./NavbarButton";
+import PlusIcon from "../assets/icons/call.svg";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -99,11 +101,11 @@ const Navbar = () => {
                   target="_blank"
                   style={{ textDecorationLine: "none" }}
                 >
-                  {/* <NavbarButton
+                  <NavbarButton
                     icon={PlusIcon}
                      buttonText="+91 7-666-666-559"
                     width={"210px"}
-                  /> */}
+                  />
                 </Link>
                 <Link
                   href={"/get-the-app"}
@@ -184,11 +186,11 @@ const Navbar = () => {
                     target="_blank"
                     style={{ textDecorationLine: "none", width: "100%" }}
                   >
-                    {/* <NavbarButton
+                    <NavbarButton
                       icon={PlusIcon}
                       buttonText="+91 7-666-666-559"
                       width={"100%"}
-                    /> */}
+                    />
                   </Link>
                   <Button
                     variant="contained"

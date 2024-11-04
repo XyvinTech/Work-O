@@ -1,0 +1,23 @@
+
+
+.roundIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #fc8229;
+  }
+  
+  .textWrapper {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateY(0);
+  }
+  
+  .textWrapper.animating {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  
