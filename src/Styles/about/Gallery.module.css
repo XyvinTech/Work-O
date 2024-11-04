@@ -47,8 +47,8 @@
   .button-box {
     position: absolute;
     right: 40px;
-    display: flex; /* Ensure it's flex for gap to apply */
-    gap: 10px; /* Space between buttons */
+    display: flex; 
+    gap: 10px; 
     margin-top: 20px;
   }
   

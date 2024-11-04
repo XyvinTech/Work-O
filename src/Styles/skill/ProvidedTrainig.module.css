@@ -1,0 +1,23 @@
+.sliderContainer {
+    overflow: hidden;
+  }
+  
+  .slickDots {
+    bottom: -30px;
+    text-align: right;
+  }
+  
+  .slickDots li {
+    margin: 0 2px;
+  }
+  
+  .slickDots li button:before {
+    color: #fc8229;
+    font-size: 8px;
+  }
+  
+  .slickDots li.slick-active button:before {
+    color: #fc8229;
+    font-size: 8px;
+  }
+  

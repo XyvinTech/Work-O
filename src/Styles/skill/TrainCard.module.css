@@ -1,0 +1,71 @@
+.cardContainer {
+    width: 395px;
+    height: auto;
+    border-radius: 0px;
+    overflow: hidden;
+  }
+  
+  .cardActionArea {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  .cardMedia {
+    width: 100%;
+    height: auto;
+  }
+  
+  .cardContent {
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .description {
+    font-size: 16px;
+    text-align: justify;
+    color: #333;
+  }
+  
+  .enrollNow {
+    margin-top: auto;
+    text-align: match-parent;
+    font-weight: 700;
+    color: #3B3B3B;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 600px) {
+    .cardContainer {
+      height: 352px;
+    }
+  
+    .cardMedia {
+      height: 390px;
+    }
+  
+    .title {
+      font-size: 14px;
+    }
+  
+    .description,
+    .enrollNow {
+      font-size: 12px;
+
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cardMedia {
+      height: 210px;
+    }
+  }
+  

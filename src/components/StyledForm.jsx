@@ -1,13 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-
+import styles from "../Styles/Form.module.css";
 import StyledInput from "@/ui/StyledInput";
 import StyledPhoneInput from "@/ui/StyledPhoneInput";
-
-import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import StyledTextArea from "@/ui/StyledTextArea";
-import ToolTipIcon from "../assets/icons/tooltip.svg";
 import {
   Grid,
   FormControlLabel,
@@ -21,7 +17,6 @@ import {
   Modal,
   Box,
 } from "@mui/material";
-import { mont } from "@/theme";
 import StyledRadioButton from "@/ui/StyledRadioButton";
 import { getIndiaState, getIndiaDistrict } from "india-state-district";
 import StyledSelectField from "@/ui/StyledSelect";
@@ -155,63 +150,6 @@ const StyledForm = () => {
     handleClose();
     router.push("/");
   };
-  const labelStyles = {
-    fontFamily: mont.style.fontFamily,
-    fontWeight: 900,
-    fontSize: "13px",
-    display: "flex",
-    alignItems: "center",
-    "@media (max-width: 600px)": {
-      fontSize: "12px",
-      fontWeight: 500,
-    },
-  };
-
-  // Inline style or `sx` for `StyledToolTipIcon`
-  const toolTipIconStyles = {
-    marginLeft: "6px",
-    marginTop: "4px",
-    "@media (max-width: 600px)": {
-      margin: "0px",
-    },
-  };
-
-  const modalContentStyles = {
-    position: "absolute",
-    top: "52%",
-    left: "65%",
-    height: "583px",
-    gap: "30px",
-    width: "50%",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    transform: "translate(-50%, -50%)",
-    backgroundColor: "#1B1B18",
-    padding: "80px",
-    boxShadow: 24,
-    "@media (max-width:600px)": {
-      width: "100%",
-      left: "50%",
-      padding: "30px",
-      height: "483px",
-    },
-  };
-  const HtmlTooltip = (props) => (
-    <Tooltip
-      {...props}
-      sx={{
-        [`& .${tooltipClasses.tooltip}`]: {
-          backgroundColor: "text.secondary",
-          color: "white",
-          maxWidth: 220,
-          border: "none",
-          borderRadius: "4px",
-        },
-      }}
-    />
-  );
   return (
     <div>
       <Stack
@@ -226,34 +164,27 @@ const StyledForm = () => {
         >
           <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
-              <HtmlTooltip placement="bottom">
-                <FormControlLabel
-                  value="Business enquiry"
-                  control={<StyledRadioButton />}
-                  label={
-                    <span style={labelStyles}>
-                      Business enquiry
-                      <ToolTipIcon style={toolTipIconStyles} />
-                    </span>
-                  }
-                />
-              </HtmlTooltip>
+              <FormControlLabel
+                value="Business enquiry"
+                control={<StyledRadioButton />}
+                label={
+                  <span className={styles.styledLabel}>Business enquiry</span>
+                }
+              />
             </RadioGroup>
           </FormControl>{" "}
           <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
-              <HtmlTooltip placement="bottom">
+            
                 <FormControlLabel
                   value="Service Partner"
                   control={<StyledRadioButton />}
                   label={
-                    <StyledLabel>
+                    <span className={styles.styledLabel}>
                       Service Partner
-                      <StyledToolTipIcon />
-                    </StyledLabel>
+                    </span>
                   }
                 />
-              </HtmlTooltip>
             </RadioGroup>
           </FormControl>
         </Stack>
@@ -264,34 +195,30 @@ const StyledForm = () => {
         >
           <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
-              <HtmlTooltip placement="bottom">
+            
                 <FormControlLabel
                   value="Customer"
                   control={<StyledRadioButton />}
                   label={
-                    <StyledLabel>
+                    <span className={styles.styledLabel}>
                       Customer
-                      <StyledToolTipIcon />
-                    </StyledLabel>
+                    </span>
                   }
                 />
-              </HtmlTooltip>
             </RadioGroup>
           </FormControl>
           <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
-              <HtmlTooltip placement="bottom">
+             
                 <FormControlLabel
                   value="Candidates For Training"
                   control={<StyledRadioButton />}
                   label={
-                    <StyledLabel>
+                    <span className={styles.styledLabel}>
                       Candidates For Training
-                      <StyledToolTipIcon />
-                    </StyledLabel>
+                    </span>
                   }
                 />
-              </HtmlTooltip>
             </RadioGroup>
           </FormControl>
         </Stack>
@@ -889,7 +816,7 @@ const StyledForm = () => {
         </form>
       )}
       <Modal open={open} onClose={handleClose}>
-        <Box sx={modalContentStyles}>
+        <Box className={styles.modalContent}>
           <Typography variant="h6" fontWeight={"600"} color={"#ffffff"}>
             Your Submission Has Been Successfull
           </Typography>
@@ -907,26 +834,3 @@ const StyledForm = () => {
 };
 
 export default StyledForm;
-const ModalContent = styled(Box)(() => ({
-  position: "absolute",
-  top: "52%",
-  left: "65%",
-  height: "583px",
-  gap: "30px",
-  width: "50%",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-  transform: "translate(-50%, -50%)",
-  backgroundColor: "#1B1B18",
-  padding: "80px",
-  boxShadow: 24,
-  p: 4,
-  "@media (max-width:600px)": {
-    width: "100%",
-    left: "50%",
-    padding: "30px",
-    height: "483px",
-  },
-}));

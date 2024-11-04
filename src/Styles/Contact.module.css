@@ -1,0 +1,32 @@
+.container {
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    padding: 80px;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 1;
+  }
+  
+  .container > * {
+    z-index: 2;
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      padding: 20px;
+    }
+  }
+  

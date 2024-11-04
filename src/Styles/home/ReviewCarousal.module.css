@@ -23,35 +23,33 @@
 }
 
 .styledSlider .slick-slide {
-  padding: 0 25px; /* Increase padding for more gap between cards */
+  padding: 0 25px;
 }
 
 @media (max-width: 600px) {
   .styledSlider .slick-slide {
-    padding: 0 15px; /* Adjust gap for mobile view */
+    padding: 0 15px; 
   }
 }
 
 @media (max-width: 768px) {
   .styledSlider .slick-slide {
-    padding: 0 20px; /* Adjust gap for tablet view */
+    padding: 0 20px;
   }
 }
-
-/* Adjusted padding for larger gap between cards */
 .styledSlider .slick-slide {
-    padding: 0 25px; /* Increase padding for larger gap */
+    padding: 0 25px; 
 }
 
 @media (max-width: 768px) {
     .styledSlider .slick-slide {
-        padding: 0 20px; /* Adjust for medium screens */
+        padding: 0 20px;
     }
 }
 
 @media (max-width: 600px) {
     .styledSlider .slick-slide {
-        padding: 0 15px; /* Adjust for smaller screens */
+        padding: 0 15px; 
     }
 }
 
