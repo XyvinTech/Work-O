@@ -36,10 +36,10 @@ const OurStory = () => {
             textAlign={isMobile ? "justify" : undefined}
             lineHeight="27px"
           >
-            Welcome to Worko, where we're not just shaping careers; we're
-            shaping futures. As a non-profit organization, our mission is to
-            empower individuals with the skills and knowledge needed to thrive
-            in today's job market.
+            Welcome to Worko, where we&apos;re not just shaping careers;
+            we&apos;re shaping futures. As a non-profit organization, our
+            mission is to empower individuals with the skills and knowledge
+            needed to thrive in today&apos;s job market.
           </Typography>
           <Typography
             variant={isMobile ? "h7" : "h5"}
@@ -47,9 +47,9 @@ const OurStory = () => {
             lineHeight="27px"
           >
             At Worko, we understand that the key to success lies in practical,
-            job-oriented skills. That's why we offer comprehensive training
+            job-oriented skills. That&apos;s why we offer comprehensive training
             programs designed to equip participants with the expertise demanded
-            by industries across the board. Let's transform passion into
+            by industries across the board. Let&apos;s transform passion into
             profession and dreams into reality. Join us at Worko today.
           </Typography>
           <Stack direction={isMobile ? "column" : "row"} spacing={2}>
