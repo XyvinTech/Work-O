@@ -1,3 +1,4 @@
+"use client"
 import HomeHeader from "@/components/home/HomeHeader";
 
 import bgImage from "/public/Services/Main.webp";
@@ -9,44 +10,57 @@ import GetApp from "@/ui/home/GetApp";
 import FreqenlyAskedQuestion from "@/components/FrequentlyAskedQuestions";
 import PromiseCardView from "@/components/home/PromiseCardView";
 import ConnectUs from "@/components/services/ConnectUs";
+
+import Repair from "../../assets/icons/Repair.svg";
+import Installation from "../../assets/icons/Installation.svg";
+import Maintance from "../../assets/icons/Maintance.svg";
+import Refridgerator from "../../assets/icons/Refrigerator.svg";
+import WashingMachine from "../../assets/icons/washingmachine.svg";
+import AC from "../../assets/icons/Ac.svg";
+import Hair from "../../assets/icons/Hair.svg";
+import Makeup from "../../assets/icons/Makeup.svg";
+import Spa from "../../assets/icons/Spa.svg";
+import Networking from "../../assets/icons/Networking.svg";
+import CCTV from "../../assets/icons/cctv.svg";
+import Laptop from "../../assets/icons/Laptop.svg";
 export default function Services() {
   const service1 = [
     {
       title: "AC Repair",
       sub: "Swift and reliable AC repair services to restore comfort to your space.",
-      //   icon: <AC />,
+        icon: <AC />,
     },
     {
       title: "AC Installation",
       sub: "Professional AC installation services customized to your requirements.",
-      //   icon: <Installation />,
+        icon: <Installation />,
     },
     {
       title: "AC Maintenance",
       sub: "Keep your AC running smoothly with our maintenance services.",
-      //   icon: <Maintance />,
+        icon: <Maintance />,
     },
   ];
   const service2 = [
     {
       title: "Appliances Repair ",
       sub: "Fast fixes for all your appliance issues and troubles.",
-      //   icon: <Repair />,
+        icon: <Repair />,
     },
     {
       title: "Refrigerators Repair",
       sub: "Trust our experts to diagnose and repair refrigerator problems.",
-      //   icon: <Refridgerator />,
+        icon: <Refridgerator />,
     },
     {
       title: "Washing Machines",
       sub: "Keep your laundry running smoothly with our help.",
-      //   icon: <WashingMachine />,
+        icon: <WashingMachine />,
     },
     {
       title: "Maintenance",
       sub: "Our maintenance services ensure your appliances run smoothly",
-      //   icon: <Maintance />,
+        icon: <Maintance />,
     },
   ];
 
@@ -54,17 +68,17 @@ export default function Services() {
     {
       title: "Hair Services",
       sub: "Elevate your style with our expert hair care. ",
-      //   icon: <Hair />,
+        icon: <Hair />,
     },
     {
       title: "Makeup Services",
       sub: "Enhance your beauty with our professional makeup artistry.",
-      //   icon: <Makeup />,
+        icon: <Makeup />,
     },
     {
       title: "Spa Services",
       sub: "Relax and rejuvenate with our luxurious spa treatments. ",
-      //   icon: <Spa />,
+        icon: <Spa />,
     },
   ];
 
@@ -72,22 +86,22 @@ export default function Services() {
     {
       title: "Networking",
       sub: "Our networking solutions optimize performance and reliability.",
-      //   icon: <Networking />,
+        icon: <Networking />,
     },
     {
       title: "Installation",
       sub: "Our technicians ensure a smooth installation of your equipment",
-      //   icon: <Installation />,
+        icon: <Installation />,
     },
     {
       title: "CCTV Installation",
       sub: "Enhance your security with our professional CCTV setup.",
-      //   icon: <CCTV />,
+        icon: <CCTV />,
     },
     {
       title: "CCTV Maintenance",
       sub: "Keep your surveillance system running smoothly with our help.",
-      //   icon: <Laptop />,
+        icon: <Laptop />,
     },
   ];
   return (
