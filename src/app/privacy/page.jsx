@@ -1,11 +1,12 @@
-"use client";
+
+"use client"
 import Header from "@/components/Header";
 import bgImage from "/public/platform/home.webp";
 import { Stack, Typography, useMediaQuery } from "@mui/material";
 import Link from "next/link";
 import StyledBox from "@/components/StyledBox";
 
-function page() {
+function Page() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
   return (
@@ -148,4 +149,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
