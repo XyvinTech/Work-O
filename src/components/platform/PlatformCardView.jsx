@@ -1,21 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import { useMediaQuery } from "@mui/material";
-import styles from "../../Styles/platform/PlatformCardView.module.css"; // Import the CSS Module
+import styles from "../../Styles/platform/platformcardview.module.css"; 
 import cardData from "../../assets/json/PlatformCardData";
 import PlatformCard from "./PlatformCard";
 
 const PlatformCardView = () => {
   const [showAllCards, setShowAllCards] = useState(false);
 
-  // Use Material-UI's useMediaQuery hook to determine if the screen width is 600px or less
   const isMobile = useMediaQuery("(max-width:600px)");
 
   const toggleShowAllCards = () => {
     setShowAllCards(!showAllCards);
   };
 
-  // Determine how many cards to display based on showAllCards and screen width
   const displayedCards = showAllCards || !isMobile ? cardData : cardData.slice(0, 5);
 
   return (
