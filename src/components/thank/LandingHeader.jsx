@@ -48,7 +48,7 @@ function LandingHeader({ bgImg, title, isHome, height, mobile, top, isLand }) {
               },
             }
           : {
-              backgroundColor: "#fff", // Set background color to white when isLand is false
+              backgroundColor: "#fff",
             }),
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -58,9 +58,9 @@ function LandingHeader({ bgImg, title, isHome, height, mobile, top, isLand }) {
       }
       alignItems={isLand ? "left" : "center"}
       justifyContent={isMobile ? "flex-start" : "center"}
-      spacing={2}paddingTop={isMobile ? 20 : 0}
+      spacing={2}
+      paddingTop={isMobile ? 20 : 0}
     >
-      {" "}
       {isLand && (
         <Grid
           container
@@ -80,8 +80,10 @@ function LandingHeader({ bgImg, title, isHome, height, mobile, top, isLand }) {
               {title}
             </Typography>
             <Typography
-              variant="h5" lineHeight={2}
-              color="#fff"paddingRight={isMobile ? 0 : 10}
+              variant="h5"
+              lineHeight={2}
+              color="#fff"
+              paddingRight={isMobile ? 0 : 10}
               paddingBottom={isMobile ? 2 : 0}
             >
               Expert Services for AC, Refrigerator, Geyser, Washing Machine, and
@@ -122,24 +124,14 @@ function LandingHeader({ bgImg, title, isHome, height, mobile, top, isLand }) {
             <span style={{ color: "#FC8229" }}>Worko</span>
           </Typography>
           <Typography variant="h5" color="#605F5E">
-            We're thrilled to have you as part of our family!
+            We&apos;re thrilled to have you as part of our family!
           </Typography>
           <Typography variant="h6" color="#605F5E">
             We appreciate your trust in us for your appliance repair and
             maintenance needs. Our team is dedicated to keeping your home
-            running smoothly. If you need further assistance, we're always here
-            to help!
-          </Typography>{" "}
-          {/* <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            marginTop="20px"
-          >
-            <Button variant="navbar" fullWidth={isMobile} color="primary"onClick={() => router.push("https://www.workoindia.com")}>
-              Get in Touch
-            </Button>
-          </Box> */}
+            running smoothly. If you need further assistance, we&apos;re always
+            here to help!
+          </Typography>
         </Stack>
       )}
     </Stack>

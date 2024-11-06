@@ -51,7 +51,13 @@ const PlatformCard = ({ title, icon, number }) => {
           {number}
         </Box>
 
-        <Box display="flex" flexDirection="column" alignItems="flex-start" marginTop={10} width={"90%"}>
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="flex-start"
+          marginTop={10}
+          width={"90%"}
+        >
           <img
             src={icon}
             alt="Frame"
@@ -59,13 +65,17 @@ const PlatformCard = ({ title, icon, number }) => {
               height: "70px",
               width: "70px",
               marginBottom: "10px",
-              '@media (max-width: 600px)': {
+              "@media (max-width: 600px)": {
                 height: "60px",
                 width: "60px",
               },
             }}
           />
-          <Typography variant={isMobile ? "h12" : "h3"} component="div" paddingBottom={"2px"}>
+          <Typography
+            variant={isMobile ? "h12" : "h3"}
+            component="div"
+            paddingBottom={"2px"}
+          >
             {title}
           </Typography>
         </Box>
@@ -93,7 +103,11 @@ const PlatformCard = ({ title, icon, number }) => {
           className="hover-content"
         >
           <Typography variant="h6" component="div" textAlign={"center"}>
-            At Worko, our primary focus is on serving individuals looking to enhance their skill sets and advance their careers. Whether you're a recent graduate seeking your first job or a professional looking to upskill or career change, our training programs cater to individuals from all backgrounds.
+            At Worko, our primary focus is on serving individuals looking to
+            enhance their skill sets and advance their careers. Whether
+            you&apos;re a recent graduate seeking your first job or a
+            professional looking to upskill or career change, our training
+            programs cater to individuals from all backgrounds.
           </Typography>
         </Box>
 
@@ -107,9 +121,8 @@ const PlatformCard = ({ title, icon, number }) => {
             zIndex: 1,
             bottom: "-3%",
             right: "-2%",
-            // backgroundColor: "#f4f3f3",
             transition: "opacity 0.3s ease",
-            '@media (max-width: 600px)': {
+            "@media (max-width: 600px)": {
               height: "230px",
             },
           }}
