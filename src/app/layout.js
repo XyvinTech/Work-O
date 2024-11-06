@@ -6,6 +6,7 @@ import theme from "@/Theme/Theme";
 import { ThemeProvider } from "@mui/material";
 import Navbar from "@/ui/Navbar";
 import Footer from "@/ui/Footer";
+import Script from "next/script";
 const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",
@@ -29,7 +30,9 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="M0JA93C5fbtkgRdM7T79B30hKzLPx_8vv85bK947VP0"
         />
-        <script
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

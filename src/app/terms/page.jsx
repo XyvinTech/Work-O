@@ -234,7 +234,7 @@ function Page() {
                 </li>
                 <li style={{ paddingBottom: "8px" }}>
                   <Typography variant={isMobile ? "h7" : "h6"}>
-                    Interfere with or disrupt the Platform or any other user's
+                    Interfere with or disrupt the Platform or any other users
                     use of the Platform
                   </Typography>
                 </li>
