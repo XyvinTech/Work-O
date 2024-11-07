@@ -6,9 +6,11 @@ import styles from "../../Styles/home/ServiceCard.module.css";
 
 const ServiceCard = ({ title, image, description, activetab }) => {
   const setSelectedService = useServiceStore((state) => state.setSelectedService);
+  const setSelectedForm = useServiceStore((state) => state.setSelectedForm);
 
   const handleBookNow = () => {
     setSelectedService(title);
+    setSelectedForm();
   };
 
   return (

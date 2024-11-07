@@ -66,7 +66,8 @@ const EnrollNow = () => {
   const onSubmit = async (data) => {
     const formData = new FormData();
     formData.append("selectedForm", "Enroll Now");
-    formData.append("name", data?.firstName + " " + data?.lastName);
+    formData.append("firstName",data?.firstName);
+    formData.append("lastName", data?.lastName);
     formData.append("email", data?.email);
     formData.append("phoneNumber", data?.phoneNumber);
     formData.append("message", data?.description);

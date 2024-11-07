@@ -31,8 +31,8 @@ const StyledForm = () => {
     formState: { errors },
     reset,
   } = useForm();
-  const { selectedService } = useServiceStore();
-  const [selectedForm, setSelectedForm] = useState("Business enquiry");
+  const { selectedService, selected } = useServiceStore();
+  const [selectedForm, setSelectedForm] = useState(selected);
   const [selectedState, setSelectedState] = useState(null);
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [service, setService] = useState(selectedService);
@@ -104,7 +104,8 @@ const StyledForm = () => {
   const onSubmit = async (data) => {
     const formData = new FormData();
     formData.append("selectedForm", selectedForm);
-    formData.append("name", `${data?.firstName} ${data?.lastName}`);
+    formData.append("firstName",data?.firstName);
+    formData.append("lastName", data?.lastName);
     formData.append("fullname", data?.fullName);
 
     formData.append("email", data?.email);
@@ -175,16 +176,13 @@ const StyledForm = () => {
           </FormControl>{" "}
           <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
-            
-                <FormControlLabel
-                  value="Service Partner"
-                  control={<StyledRadioButton />}
-                  label={
-                    <span className={styles.styledLabel}>
-                      Service Partner
-                    </span>
-                  }
-                />
+              <FormControlLabel
+                value="Service Partner"
+                control={<StyledRadioButton />}
+                label={
+                  <span className={styles.styledLabel}>Service Partner</span>
+                }
+              />
             </RadioGroup>
           </FormControl>
         </Stack>
@@ -195,30 +193,24 @@ const StyledForm = () => {
         >
           <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
-            
-                <FormControlLabel
-                  value="Customer"
-                  control={<StyledRadioButton />}
-                  label={
-                    <span className={styles.styledLabel}>
-                      Customer
-                    </span>
-                  }
-                />
+              <FormControlLabel
+                value="Customer"
+                control={<StyledRadioButton />}
+                label={<span className={styles.styledLabel}>Customer</span>}
+              />
             </RadioGroup>
           </FormControl>
           <FormControl component="fieldset">
             <RadioGroup row value={selectedForm} onChange={handleRadioChange}>
-             
-                <FormControlLabel
-                  value="Candidates For Training"
-                  control={<StyledRadioButton />}
-                  label={
-                    <span className={styles.styledLabel}>
-                      Candidates For Training
-                    </span>
-                  }
-                />
+              <FormControlLabel
+                value="Candidates For Training"
+                control={<StyledRadioButton />}
+                label={
+                  <span className={styles.styledLabel}>
+                    Candidates For Training
+                  </span>
+                }
+              />
             </RadioGroup>
           </FormControl>
         </Stack>
