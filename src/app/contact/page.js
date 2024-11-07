@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import bgImage from "/public/assets/contact/img/2.png";
 import ContactUs from "@/components/ContactUs";
 import { useEffect } from "react";
-export default function page() {
+export default function Page() {
   useEffect(() => {
     window.scrollTo(0, 0); 
   }, []); 
