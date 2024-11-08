@@ -23,6 +23,7 @@ import StyledSelectField from "@/ui/StyledSelect";
 import { useRouter } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
 import { useServiceStore } from "@/Store/ServiceStore";
+import { mont } from "@/Theme/Theme";
 
 const StyledForm = () => {
   const {
@@ -169,7 +170,7 @@ const StyledForm = () => {
                 value="Business enquiry"
                 control={<StyledRadioButton />}
                 label={
-                  <span className={styles.styledLabel}>Business enquiry</span>
+                  <span style={{ fontFamily: mont.style.fontFamily,}} className={styles.styledLabel}>Business enquiry</span>
                 }
               />
             </RadioGroup>
@@ -180,7 +181,7 @@ const StyledForm = () => {
                 value="Service Partner"
                 control={<StyledRadioButton />}
                 label={
-                  <span className={styles.styledLabel}>Service Partner</span>
+                  <span style={{ fontFamily: mont.style.fontFamily,}} className={styles.styledLabel}>Service Partner</span>
                 }
               />
             </RadioGroup>
@@ -196,7 +197,7 @@ const StyledForm = () => {
               <FormControlLabel
                 value="Customer"
                 control={<StyledRadioButton />}
-                label={<span className={styles.styledLabel}>Customer</span>}
+                label={<span className={styles.styledLabel}style={{ fontFamily: mont.style.fontFamily,}}>Customer</span>}
               />
             </RadioGroup>
           </FormControl>
@@ -206,7 +207,7 @@ const StyledForm = () => {
                 value="Candidates For Training"
                 control={<StyledRadioButton />}
                 label={
-                  <span className={styles.styledLabel}>
+                  <span className={styles.styledLabel}style={{ fontFamily: mont.style.fontFamily,}}>
                     Candidates For Training
                   </span>
                 }

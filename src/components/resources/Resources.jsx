@@ -40,7 +40,10 @@ const Resources = () => {
         flexDirection: { xs: "column", md: "row" },
         alignItems: { xs: "center", md: "flex-start" },
         position: "relative",
+        borderBottom:"1px solid white",
+        
         padding: { xs: "20px", md: "80px" },
+        paddingBottom: { md: "0" },
         "&::before": {
           content: '""',
           position: "absolute",

@@ -52,7 +52,7 @@ function Gallery() {
   return (
     <div className={styles.sliderContainer}>
       <Slider ref={sliderRef} {...settings}>
-        <div style={{ width: 300, marginRight: 20 }}>
+        <div className={styles.slideWrapper}>
           <img
             src="/AboutUs/Gallery1.png"
             style={{
@@ -63,7 +63,7 @@ function Gallery() {
             alt="Gallery 1"
           />
         </div>
-        <div style={{ width: 300, marginRight: 20 }}>
+        <div className={styles.slideWrapper}>
           <img
             src="/AboutUs/Gallery2.png"
             style={{
@@ -74,7 +74,7 @@ function Gallery() {
             alt="Gallery 2"
           />
         </div>
-        <div style={{ width: 300, marginRight: 20 }}>
+        <div className={styles.slideWrapper}>
           <img
             src="/AboutUs/Gallery3.png"
             style={{
@@ -85,7 +85,7 @@ function Gallery() {
             alt="Gallery 3"
           />
         </div>
-        <div style={{ width: 300 }}>
+        <div className={styles.slideWrapper}>
           <img
             src="/AboutUs/Gallery4.png"
             style={{
@@ -97,7 +97,7 @@ function Gallery() {
           />
         </div>
       </Slider>
-      <Box className={styles.buttonBox}>
+      <Box className={styles.buttonBox} display={isMobile ? "none" : "flex"}>
         <img
           src={
             isPreviousClicked ? "/images/Button2.png" : "/images/Button1.png"

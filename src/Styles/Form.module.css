@@ -1,9 +1,10 @@
 .styledLabel {
-    font-family: var(--mont-font-family);
-    font-weight: 900;
+    /* font-family: var(--mont-font-family); */
+    font-weight: 600;
     font-size: 13px;
     display: flex;
     align-items: center;
+    /* font-family: var(--mont-font); */
   }
   
   @media (max-width: 600px) {

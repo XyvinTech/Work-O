@@ -23,7 +23,9 @@
       display: none;
     }
   }
-  
+  .slideWrapper {
+    padding: 0 10px;
+  }
   .slick-dots {
     left: 10px;
     bottom: -30px;
