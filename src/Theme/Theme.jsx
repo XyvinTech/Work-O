@@ -61,7 +61,7 @@ const theme = createTheme({
       fontFamily: cormo.style.fontFamily,
       "@media (max-width:600px)": {
         fontSize: "28px",
-      }
+      },
     },
     h4: {
       fontSize: "24px",
@@ -100,13 +100,11 @@ const theme = createTheme({
       fontSize: "16px",
       fontWeight: "normal",
       fontFamily: mont.style.fontFamily,
-     
     },
     h7: {
       fontSize: "14px",
       fontWeight: "normal",
       fontFamily: mont.style.fontFamily,
-      
     },
     h8: {
       fontSize: "10px",
@@ -177,6 +175,22 @@ const theme = createTheme({
           fontWeight: "600",
           boxShadow: "none",
         },
+        navbarSecondary: {
+          gap: "8px",
+          borderRadius: 4,
+          padding: "15px 55px",
+          // width: "200px",
+          "@media (max-width:600px)": {
+            padding: "15px 20px",
+          },
+          border: "1px solid #FF7043",
+          backgroundColor: "#FFF",
+          color: "#FC8229",
+          borderColor: "#FF7043",
+          fontFamily: mont.style.fontFamily,
+          fontWeight: "600",
+          boxShadow: "none",
+        },
         containedPrimary: {
           gap: "8px",
           borderRadius: 4,
@@ -186,7 +200,7 @@ const theme = createTheme({
             padding: "10px 15px 10px 40px",
             // width: "500px"
           },
-        
+
           backgroundColor: "#FC8229",
           color: "#FFFFFF",
           position: "relative",
@@ -198,7 +212,8 @@ const theme = createTheme({
             display: "inline-block",
             width: "23px",
             height: "17px",
-            backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='23' height='17' viewBox='0 0 23 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97428 14.5284L21.0261 3.47145M21.0261 3.47145L8.57695 1.22022M21.0261 3.47145L16.8049 15.3975' stroke='%23FBF8F2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg width='23' height='17' viewBox='0 0 23 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97428 14.5284L21.0261 3.47145M21.0261 3.47145L8.57695 1.22022M21.0261 3.47145L16.8049 15.3975' stroke='%23FBF8F2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
             marginLeft: "8px",
             opacity: 0,
             transition: "opacity 1s ease, margin-left 1s ease",
@@ -231,10 +246,9 @@ const theme = createTheme({
             height: "17px",
             backgroundImage:
               "url(\"data:image/svg+xml,%3Csvg width='23' height='17' viewBox='0 0 23 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97428 14.5284L21.0261 3.47145M21.0261 3.47145L8.57695 1.22022M21.0261 3.47145L16.8049 15.3975' stroke='%233B3B3B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
-              marginLeft: "8px",
-              opacity: 0,
-              transition: "opacity 1s ease, margin-left 1s ease",
-             
+            marginLeft: "8px",
+            opacity: 0,
+            transition: "opacity 1s ease, margin-left 1s ease",
           },
           "&:hover": {
             backgroundColor: "#FFFFFF",
@@ -243,7 +257,6 @@ const theme = createTheme({
               marginLeft: "16px",
             },
           },
-         
         },
         outlinedPrimary: {
           gap: "8px",
@@ -267,10 +280,9 @@ const theme = createTheme({
             height: "17px",
             backgroundImage:
               "url(\"data:image/svg+xml,%3Csvg width='23' height='17' viewBox='0 0 23 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97428 14.5285L21.0261 3.47157M21.0261 3.47157L8.57695 1.22034M21.0261 3.47157L16.8049 15.3976' stroke='%23FC8229' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
-              marginLeft: "8px",
-              opacity: 0,
-              transition: "opacity 1s ease, margin-left 1s ease",
-             
+            marginLeft: "8px",
+            opacity: 0,
+            transition: "opacity 1s ease, margin-left 1s ease",
           },
           "&:hover": {
             borderColor: "#FF7043", // Darker shade for hover state
@@ -282,7 +294,6 @@ const theme = createTheme({
               marginLeft: "16px",
             },
           },
-         
         },
         outlinedSecondary: {
           gap: "8px",
@@ -300,17 +311,15 @@ const theme = createTheme({
           fontWeight: "600",
           boxShadow: "none",
           "&::after": {
-           
             content: '""',
             display: "inline-block",
             width: "23px",
             height: "17px",
             backgroundImage:
               "url(\"data:image/svg+xml,%3Csvg width='23' height='17' viewBox='0 0 23 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97428 14.5284L21.0261 3.47145M21.0261 3.47145L8.57695 1.22022M21.0261 3.47145L16.8049 15.3975' stroke='%23FBF8F2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
-              marginLeft: "8px",
-              opacity: 0,
-              transition: "opacity 1s ease, margin-left 1s ease",
-             
+            marginLeft: "8px",
+            opacity: 0,
+            transition: "opacity 1s ease, margin-left 1s ease",
           },
           "&:hover": {
             "&::after": {
@@ -318,7 +327,6 @@ const theme = createTheme({
               marginLeft: "16px",
             },
           },
-         
         },
         filledPrimary: {
           gap: "8px",
@@ -333,7 +341,7 @@ const theme = createTheme({
           fontWeight: "700",
           boxShadow: "none",
           position: "relative",
-        
+
           "&::after": {
             content: '""',
             display: "inline-block",
@@ -341,10 +349,9 @@ const theme = createTheme({
             height: "17px",
             backgroundImage:
               "url(\"data:image/svg+xml,%3Csvg width='23' height='17' viewBox='0 0 23 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97428 14.5284L21.0261 3.47145M21.0261 3.47145L8.57695 1.22022M21.0261 3.47145L16.8049 15.3975' stroke='%23FBF8F2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
-              marginLeft: "8px",
-              opacity: 0,
-              transition: "opacity 1s ease, margin-left 1s ease",
-              
+            marginLeft: "8px",
+            opacity: 0,
+            transition: "opacity 1s ease, margin-left 1s ease",
           },
           "&:hover": {
             backgroundColor: "#3B3B3B",
@@ -352,9 +359,7 @@ const theme = createTheme({
               opacity: 1,
               marginLeft: "16px",
             },
-           
           },
-         
         },
       },
     },

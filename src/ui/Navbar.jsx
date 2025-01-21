@@ -51,35 +51,38 @@ const Navbar = () => {
     const activeMenuItem = menuItems.find((item) => item.href === pathname);
     setActiveTab(activeMenuItem?.label || "");
   }, [pathname]);
-
+  const handleGetAppClick = (e) => {
+    e.preventDefault();
+    // Replace this URL with your actual Calendly scheduling page URL
+    const calendlyUrl =
+      "https://calendly.com/avneesh-chaudhary-workoindia/worko-crm-demo";
+    window.open(calendlyUrl, "_blank");
+  };
   return (
     <AppBar
-  position="absolute"
-  style={{
-    backgroundColor:
-      isThankPage
-        ? "#fff" // Set background color to #fff for Thank You page
-        : mobileMenuOpen && isTransparent
-        ? "#fff"
-        : mobileMenuOpen
-        ? "#000000"
-        : isTransparent
-        ? "transparent"
-        : "#00000033",
-    color:
-      isThankPage
-        ? "#000" // Set text color to black for Thank You page
-        : mobileMenuOpen && isTransparent
-        ? "#000"
-        : mobileMenuOpen
-        ? "#fff"
-        : isTransparent
-        ? "#000"
-        : "#fff",
-    height: isMobile ? (mobileMenuOpen ? "auto" : "64px") : "",
-  }}
->
-
+      position="absolute"
+      style={{
+        backgroundColor: isThankPage
+          ? "#fff" // Set background color to #fff for Thank You page
+          : mobileMenuOpen && isTransparent
+          ? "#fff"
+          : mobileMenuOpen
+          ? "#000000"
+          : isTransparent
+          ? "transparent"
+          : "#00000033",
+        color: isThankPage
+          ? "#000" // Set text color to black for Thank You page
+          : mobileMenuOpen && isTransparent
+          ? "#000"
+          : mobileMenuOpen
+          ? "#fff"
+          : isTransparent
+          ? "#000"
+          : "#fff",
+        height: isMobile ? (mobileMenuOpen ? "auto" : "64px") : "",
+      }}
+    >
       <Toolbar>
         <Box display="flex" flexDirection="column" width="100%" p={2}>
           <Box
@@ -103,7 +106,7 @@ const Navbar = () => {
                 >
                   <NavbarButton
                     icon={PlusIcon}
-                     buttonText="+91 7-666-666-559"
+                    buttonText="+91 7-666-666-559"
                     width={"210px"}
                   />
                 </Link>
@@ -114,12 +117,20 @@ const Navbar = () => {
                 >
                   <Button
                     variant="navbar"
-                    color="primary"
-                    // onClick={() => router.push("/get-the-app")}
+                    color="secondary"
+                    onClick={() => router.push("/get-the-app")}
                   >
                     Get the App
                   </Button>
                 </Link>
+
+                <Button
+                  variant="navbar"
+                  color="primary"
+                  onClick={handleGetAppClick}
+                >
+                  Book a Demo
+                </Button>
               </Stack>
             )}
 
@@ -153,8 +164,7 @@ const Navbar = () => {
                       sx={{
                         fontFamily: mont.style.fontFamily,
                         textTransform: "uppercase",
-                        color:
-                        isThankPage
+                        color: isThankPage
                           ? activeTab === label
                             ? theme.palette.primary.main // Active tab color for Thank You page
                             : "#1B1B1B" // Inactive tab color for Thank You page
@@ -193,13 +203,20 @@ const Navbar = () => {
                     />
                   </Link>
                   <Button
-                    variant="contained"
-                    color="primary"
+                    variant="navbar"
+                    color="secondary"
                     fullWidth
                     onClick={() => router.push("/get-the-app")}
                   >
                     Get the App
                   </Button>{" "}
+                  <Button
+                    variant="navbar"
+                    color="primary"
+                    onClick={handleGetAppClick}
+                  >
+                    Book a Demo
+                  </Button>
                 </Stack>
               </Box>
             </Collapse>
@@ -219,8 +236,7 @@ const Navbar = () => {
                     sx={{
                       fontFamily: mont.style.fontFamily,
                       textTransform: "uppercase",
-                      color:
-                      isThankPage
+                      color: isThankPage
                         ? activeTab === label
                           ? theme.palette.primary.main // Active tab color for Thank You page
                           : "#1B1B1B" // Inactive tab color for Thank You page

@@ -35,7 +35,7 @@ const NavbarButton = ({
     <Button
       startIcon={<div className={styles.roundIcon}><Icon /></div>}
       sx={{
-        border: `1px solid ${borderColor || "#FC8229"}`,
+        // border: `1px solid ${borderColor || "#FC8229"}`,
         minWidth: width || "300px",
         fontWeight: "700",
         fontSize: "16px",
