@@ -49,7 +49,7 @@
         flex-direction: column; 
         flex-wrap: wrap; 
         height: 100%;
-        animation: marquee 15s linear infinite;
+        animation: marquee 7s linear infinite;
     }
 
     .styledPic {
@@ -57,7 +57,7 @@
     }
 
     .styledImg {
-        width: 100%;
+        width: 90%;
         height: auto;
     }
 }

@@ -54,6 +54,8 @@ export default function Home() {
     "/Home/Remaining/Client6.png",
     "/Home/Remaining/Client7.png",
     "/Home/Remaining/Client8.png",
+    "/Home/Remaining/Client9.png",
+    "/Home/Remaining/Client10.png",
   ];
   return (
     <>
