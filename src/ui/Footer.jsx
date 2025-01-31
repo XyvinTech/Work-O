@@ -34,7 +34,7 @@ function Footer() {
       color: "transparent",
     },
   };
-
+const date=new Date();
   return (
     <Box bgcolor={"#000"} color={"white"}>
       <Stack
@@ -302,7 +302,7 @@ function Footer() {
         spacing={1}
       >
         <Typography variant="copyrights">
-          &copy; 2005-2024 Worko Private limited. All Rights Reserved
+          &copy; 2005-{new Date().getFullYear()} Worko Private limited. All Rights Reserved
         </Typography>
         <Typography variant="copyrights" color={"#908E8E"}>
           Handcrafted with ❤️ by Acute Angle
