@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(request) {
   const username = "workofoundation@gmail.com";
-  const password = "lvnj ryjr ckcz mesk";
+  const password = "ewoq pjhj eawf ggxy";
   const formData = await request.formData();
   const userEmail = formData.get("email");
   const firstName = formData.get("firstName") || "";
