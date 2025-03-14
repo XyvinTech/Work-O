@@ -102,6 +102,7 @@ const LandingForm = () => {
       setService(null);
       setSelectedState(null);
       setDistrictOptions([]);
+      router.push("/thank");
     } catch (err) {
       console.error(err);
     } finally {
@@ -281,7 +282,6 @@ const LandingForm = () => {
               variant="navbar"
               type="submit"
               fullWidth
-              onClick={() => router.push("/thank")}
             >
               Book your expert now
             </Button>
