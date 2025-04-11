@@ -14,12 +14,14 @@ import Link from "next/link";
 import PlusIcon from "../assets/icons/call.svg";
 import SMSIcon from "../assets/icons/sms.svg";
 import StyledIconButton from "./StyledIconButton";
+import ComplaintForm from "@/components/ComplaintForm";
 
 function Footer() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
   const [showMore, setShowMore] = useState(false);
+  const[open,setOpen]=useState(false);  
   const handleViewMoreClick = () => {
     setShowMore(!showMore);
   };
@@ -115,7 +117,7 @@ const date=new Date();
                   Enroll Now
                 </Typography>
               </Link>
-              <Typography variant={isMobile ? "h7" : "footer_subtitle"}>
+              <Typography variant={isMobile ? "h7" : "footer_subtitle"} sx={{cursor:"pointer"}} onClick={()=>setOpen(true)}>
                 Help centre
               </Typography>
             </Stack>
@@ -309,6 +311,7 @@ const date=new Date();
         </Typography>
       </Stack>
       {/* </StyledBox> */}
+      <ComplaintForm open={open} onClose={() => setOpen(false)} />
     </Box>
   );
 }
