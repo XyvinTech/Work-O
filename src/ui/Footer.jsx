@@ -53,10 +53,7 @@ const date=new Date();
           />
           <Typography variant="h6" lineHeight={"30px"} p={2} color="white">
             Address: <br />
-            Nextra the address, plot no. 4B, District <br /> center, Mayur Vihar
-            phase 1 extension,
-            <br />
-            New Delhi
+            Worko India, Office No. 415-416, Fourth Floor, Tower A, Plot No. 4B, District Center, Mayur Vihar Phase 1 Extension, New Delhi, 110091
           </Typography>
         </Box>
         <Stack
