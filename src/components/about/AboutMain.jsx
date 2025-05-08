@@ -1,3 +1,6 @@
+<html>
+   <head>
+      <title>Beauty Salon &amp; Home Appliances Repair Service | Worko India </title>
 "use client";
 import { Box, Button, Stack, useMediaQuery } from "@mui/material";
 import { Typography } from "@mui/material";
