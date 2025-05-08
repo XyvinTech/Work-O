@@ -23,8 +23,7 @@ function ContactUs({ enroll }) {
           <Typography variant="h3">Contact Us</Typography>
           <Typography variant="h6">
             Address: <br />
-            Nextra the address, plot no. 4B, District center,
-            <br /> Mayur vihar phase 1 extension, New Delhi
+            Worko India, Office No. 415-416, Fourth Floor, Tower A, Plot No. 4B, District Center, Mayur Vihar Phase 1 Extension, New Delhi, 110091
           </Typography>
           <Box>
             <Typography variant="h6"> Contact Us :</Typography>
