@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function POST(request) {
-  const username = "workofoundation@gmail.com";
-  const password = "ewoq pjhj eawf ggxy";
+   const username = "info@workoindia.com";
+  const password = "wgzf arlp sfwv abre";
   const formData = await request.formData();
   const userEmail = formData.get("email");
   const firstName = formData.get("firstName") || "";
