@@ -283,7 +283,7 @@ const LandingForm = () => {
               type="submit"
               fullWidth
             >
-              Book your expert now
+              Book your expert
             </Button>
           </Stack>
         </Box>
