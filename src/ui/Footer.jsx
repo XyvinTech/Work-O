@@ -21,7 +21,7 @@ function Footer() {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
   const [showMore, setShowMore] = useState(false);
-  const[open,setOpen]=useState(false);  
+  const [open, setOpen] = useState(false);
   const handleViewMoreClick = () => {
     setShowMore(!showMore);
   };
@@ -36,7 +36,7 @@ function Footer() {
       color: "transparent",
     },
   };
-const date=new Date();
+  const date = new Date();
   return (
     <Box bgcolor={"#000"} color={"white"}>
       <Stack
@@ -53,7 +53,8 @@ const date=new Date();
           />
           <Typography variant="h6" lineHeight={"30px"} p={2} color="white">
             Address: <br />
-            Worko India, Office No. 415-416, Fourth Floor, Tower A, Plot No. 4B, District Center, Mayur Vihar Phase 1 Extension, New Delhi, 110091
+            Worko India, Office No. 415-416, Fourth Floor, Tower A, Plot No. 4B,
+            District Center, Mayur Vihar Phase 1 Extension, New Delhi, 110091
           </Typography>
         </Box>
         <Stack
@@ -64,7 +65,12 @@ const date=new Date();
         >
           <Stack direction={"row"} spacing={isTablet ? 4 : 11}>
             <Stack spacing={2}>
-              <Typography fontWeight={isMobile ? 700 : 500}   variant="footer_title">Legal</Typography>
+              <Typography
+                fontWeight={isMobile ? 700 : 500}
+                variant="footer_title"
+              >
+                Legal
+              </Typography>
               <Link
                 href={"/contact"}
                 passHref
@@ -114,7 +120,11 @@ const date=new Date();
                   Enroll Now
                 </Typography>
               </Link>
-              <Typography variant={isMobile ? "h7" : "footer_subtitle"} sx={{cursor:"pointer"}} onClick={()=>setOpen(true)}>
+              <Typography
+                variant={isMobile ? "h7" : "footer_subtitle"}
+                sx={{ cursor: "pointer" }}
+                onClick={() => setOpen(true)}
+              >
                 Help centre
               </Typography>
             </Stack>
@@ -301,10 +311,17 @@ const date=new Date();
         spacing={1}
       >
         <Typography variant="copyrights">
-          &copy; 2005-{new Date().getFullYear()} Worko Private limited. All Rights Reserved
+          &copy; 2005-{new Date().getFullYear()} Worko Private limited. All
+          Rights Reserved
         </Typography>
         <Typography variant="copyrights" color={"#908E8E"}>
-          Handcrafted with ❤️ by Acute Angle
+          Developed with ❤️ by{" "}
+          <Link
+            href="https://www.xyvin.com/"
+            style={{ textDecoration: "none",color:"#908E8E" }}
+          >
+            Xyvin Technologies
+          </Link>
         </Typography>
       </Stack>
       {/* </StyledBox> */}
